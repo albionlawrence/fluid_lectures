@@ -1,0 +1,26 @@
+@book{acheson1990elementary,
+  title={Elementary fluid dynamics: Oxford University Press},
+  author={Acheson, DJ},
+  year={1990},
+  publisher={Oxford, England}
+}
+
+@book{batchelor2000introduction,
+  title={An Introduction to Fluid Dynamics},
+  author={Batchelor, G.K.},
+  isbn={9780521663960},
+  lccn={67021953},
+  series={Cambridge Mathematical Library},
+    year={2000},
+  publisher={Cambridge University Press}
+}
+
+@book{chorin1990mathematical,
+  title={A mathematical introduction to fluid mechanics},
+  author={Chorin, Alexandre Joel and Marsden, Jerrold E and Marsden, Jerrold E},
+  year={1990},
+  edition={3rd},
+  publisher={Springer}
+}
+
+@book{falkovich_2018, place={Cambridge}, edition={2}, title={Fluid Mechanics}, DOI={10.1017/9781316416600}, publisher={Cambridge University Press}, author={Falkovich, Gregory}, year={2018}}
