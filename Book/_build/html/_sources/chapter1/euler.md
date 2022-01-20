@@ -200,12 +200,14 @@ we only need a single boundary condition. This is not meant to be
 completely obvious! 
 
 A physical boundary condition is
+
 $$
 	{\vec u} \cdot {\vec n}\big|_{boundary} = 0
 $$
+
 where ${\vec n}$ is the unit normal at the boundary. That is, the
 fluid should not be allowed to leave the boundary of the system. Certainly
-there are times when you might want a differen boundary condition.
+there are times when you might want a different boundary condition.
 For example, you may want to describe what is going on behind a filter mask.
 This kind of boundary conition is in many ways a forefront subject. 
 [This paper](https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.6.090501) 

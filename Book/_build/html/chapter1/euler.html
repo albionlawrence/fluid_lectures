@@ -425,8 +425,8 @@ is</p>
 <p>On the other hand, the total rate of mass flux into the volume is the
 density times the velocity flux through the boundary
 surface <span class="math notranslate nohighlight">\({\partial W}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f8bdbbe-7cc2-4e25-bde2-7b55db903ab8">
-<span class="eqno">(8)<a class="headerlink" href="#equation-0f8bdbbe-7cc2-4e25-bde2-7b55db903ab8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3b32bea6-6947-4596-9311-5f543f3e6b8d">
+<span class="eqno">(8)<a class="headerlink" href="#equation-3b32bea6-6947-4596-9311-5f543f3e6b8d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	\frac{d}{dt} M &amp; =  - \int_{\partial W} d{\vec A}\cdot \rho {\vec v}\\
 	&amp; = \int_W d^d x {\vec \nabla} \cdot (\rho {\vec v})
 \end{align}\]</div>
@@ -501,13 +501,14 @@ equation by <span class="math notranslate nohighlight">\(\rho\)</span> we get <e
 Since the equations of motion are first order in space, we can guess that
 we only need a single boundary condition. This is not meant to be
 completely obvious!</p>
-<p>A physical boundary condition is
-$<span class="math notranslate nohighlight">\(
+<p>A physical boundary condition is</p>
+<div class="math notranslate nohighlight">
+\[
 	{\vec u} \cdot {\vec n}\big|_{boundary} = 0
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>{\vec n}$ is the unit normal at the boundary. That is, the
+\]</div>
+<p>where <span class="math notranslate nohighlight">\({\vec n}\)</span> is the unit normal at the boundary. That is, the
 fluid should not be allowed to leave the boundary of the system. Certainly
-there are times when you might want a differen boundary condition.
+there are times when you might want a different boundary condition.
 For example, you may want to describe what is going on behind a filter mask.
 This kind of boundary conition is in many ways a forefront subject.
 <a class="reference external" href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.6.090501">This paper</a>
