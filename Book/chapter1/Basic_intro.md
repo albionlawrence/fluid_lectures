@@ -41,6 +41,9 @@ As Brad Marston pointed out:
 
 </div>
 
+(As you can see from the followon discussions the statement that convection is being initiated
+is questionable, but certainly Brad's point stands).
+
 - Generation and movement of vortices. Here is a picture ([from](https://www.universetoday.com/149514/these-bizarre-cloud-patterns-are-von-karmans-vortices-caused-by-the-air-wrapping-around-tall-islands/) of vortices in atmospheric flow (imprinting on the clouds) past islands in the Cape Verde archipelago:
 
 

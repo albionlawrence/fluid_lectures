@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bernoulli’s Theorem &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Vorticity &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vorticity Dynamics" href="Vorticity_dynamics.html" />
-    <link rel="prev" title="Vorticity" href="Vorticity.html" />
+    <link rel="next" title="Bernoulli’s Theorem" href="Bernoulli.html" />
+    <link rel="prev" title="Hydrostatics" href="Hydrostatics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,13 +124,13 @@
      Hydrostatics
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Vorticity.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Vorticity
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Bernoulli.html">
      Bernoulli’s Theorem
     </a>
    </li>
@@ -187,7 +187,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter1/Bernoulli.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter1/Vorticity.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -207,7 +207,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter1/Bernoulli.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter1/Vorticity.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -234,18 +234,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#isentropic-motion">
-   1. Isentropic motion
+  <a class="reference internal nav-link" href="#motivation-and-interpretation">
+   Motivation and interpretation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constant-density">
-   2. Constant density
+  <a class="reference internal nav-link" href="#irrotational-flows">
+   Irrotational flows
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   3. Bernoulli’s theorem
+  <a class="reference internal nav-link" href="#two-dimensional-incompressible-flow">
+   Two-dimensional Incompressible flow
   </a>
  </li>
 </ul>
@@ -258,7 +258,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Bernoulli’s Theorem</h1>
+                <h1>Vorticity</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -269,18 +269,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#isentropic-motion">
-   1. Isentropic motion
+  <a class="reference internal nav-link" href="#motivation-and-interpretation">
+   Motivation and interpretation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constant-density">
-   2. Constant density
+  <a class="reference internal nav-link" href="#irrotational-flows">
+   Irrotational flows
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   3. Bernoulli’s theorem
+  <a class="reference internal nav-link" href="#two-dimensional-incompressible-flow">
+   Two-dimensional Incompressible flow
   </a>
  </li>
 </ul>
@@ -292,76 +292,136 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bernoulli-s-theorem">
-<h1>Bernoulli’s Theorem<a class="headerlink" href="#bernoulli-s-theorem" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="isentropic-motion">
-<h2>1. Isentropic motion<a class="headerlink" href="#isentropic-motion" title="Permalink to this headline">¶</a></h2>
-<p>Here we will make recourse to a bit of thermodynamics. We can define
-the <em>enthalpy</em> as</p>
-<div class="math notranslate nohighlight" id="equation-enthalpy">
-<span class="eqno">(15)<a class="headerlink" href="#equation-enthalpy" title="Permalink to this equation">¶</a></span>\[W = E + p V\]</div>
-<p>where <span class="math notranslate nohighlight">\(E\)</span> is the inernal energy. Using the first law of thermodynamics,
-<span class="math notranslate nohighlight">\(dE = T dS - p d V\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is the entropy, we find</p>
-<div class="math notranslate nohighlight" id="equation-denth">
-<span class="eqno">(16)<a class="headerlink" href="#equation-denth" title="Permalink to this equation">¶</a></span>\[dW = T dS + V dp = T dS + \frac{1}{\rho} dp\]</div>
-<p>For “isentropic” fluids, with no input of hea and no heat exchange between
-fluid parcels, <span class="math notranslate nohighlight">\(dS = 0\)</span> for each parcel, and <span class="math notranslate nohighlight">\(\frac{dp}{d\rho} = dW\)</span>. Thus</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="vorticity">
+<h1>Vorticity<a class="headerlink" href="#vorticity" title="Permalink to this headline">¶</a></h1>
+<p>A central concept of fluid dynamics is <em>vorticity</em>, defined in three
+dimensions as</p>
+<div class="math notranslate nohighlight" id="equation-vorticity">
+<span class="eqno">(12)<a class="headerlink" href="#equation-vorticity" title="Permalink to this equation">¶</a></span>\[{\vec \omega} = {\vec \nabla} \times {\vec v}\]</div>
+<p>If you are comforable with the curl being a (pseudo)scalar in two
+dimenions, the definition is basically the same. Alternate definitions
+in 2d are:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} {\vec v} + {\vec v} \cdot {\vec \nabla}
-{\vec v} = - {\vec \nabla} W\]</div>
+\[
+	\omega_{2d} = \epsilon^{ij}\partial_i v_j
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon^{ij}\)</span> is the totally antisymmetric tensor with <span class="math notranslate nohighlight">\(\epsilon^{12} = 1\)</span>,
+we are using Einstein summation notation for repeated indices, and we are
+using the notation</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_i \equiv \frac{\partial}{\partial x^i}
+\]</div>
+<p>[For afficionados of differential forms, if we let <span class="math notranslate nohighlight">\(v\)</span> with lower indices
+be a 1-form, <span class="math notranslate nohighlight">\(\omega = dv\)</span> is a two-form. In 3 dimensions a two-form
+is dual to a vector; in 2 dimensions it is dual to a scalar. This is the
+path to defining vorticity in higher dimensions if one wanted to do that.</p>
+<p>Vorticity is crucial for a number of reasons; physically it records how
+the shape of a fluid element distorts in a nontrivial manner.</p>
+<div class="section" id="motivation-and-interpretation">
+<h2>Motivation and interpretation<a class="headerlink" href="#motivation-and-interpretation" title="Permalink to this headline">¶</a></h2>
+<p>A nice discussion is in the text, I would like to offer a more general
+one (see for example <span id="id1">[<a class="reference internal" href="../bibliography.html#id4">Chorin <em>et al.</em>, 1990</a>]</span>.) The essential point
+is that a constant velocity field <span class="math notranslate nohighlight">\({\vec v}\)</span> is not by itself all that
+interesting (or particularly physical – the velocity usually goes to zero at
+the boundaries).  What is interesting is when the velocity changes in space and
+time. Let us focus on characerizing the former.</p>
+<p>Consider a velocity field <span class="math notranslate nohighlight">\(v_i({\vec x})\)</span>. Let</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec x} = {\vec x}_0 + \delta {\vec x}
+\]</div>
+<p>A local sense of the variation of velocity can be found by doing a Taylor
+expansion. To first order in <span class="math notranslate nohighlight">\(\delta {\vec x}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+	v_i(x_0^j + \delta x^j) = v^i(x_0) +  \delta x^j \partial_j
+	v_i(x_0) + ...
+\]</div>
+<p>Again, we are using Einstein summation notation here. Now we can write</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5a3ddc8b-317b-450d-bfac-6345e0d0f1a6">
+<span class="eqno">(13)<a class="headerlink" href="#equation-5a3ddc8b-317b-450d-bfac-6345e0d0f1a6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	\partial_j v_i &amp; = &amp; \frac{1}{2}\left(\partial_j v_i + 
+	\partial_i v_j\right) + 
+	\frac{1}{2} \left(\partial_j v_i - \partial_i v_j\right) \\
+	&amp; = &amp; S_{ij} + \omega_{ij}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(S_{ij}\)</span> is called the <em>strain tensor</em>, and <span class="math notranslate nohighlight">\(\omega_{ij}\)</span> is the
+<em>vorticity tensor</em>. In the second case, for <span class="math notranslate nohighlight">\(d = 2\)</span> dimensions,
+<span class="math notranslate nohighlight">\(\omega = \epsilon^{ij} \omega_{ij}\)</span> is the vorticity as defined in the
+text. In three dimensions,</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega^i \equiv \epsilon^{ijk} \partial_j v_k = ({\vec \nabla}\times{\vec v})^i
+\]</div>
+<p>is the usual definiion of the vorticity. Here <span class="math notranslate nohighlight">\(\epsilon^{ijk}\)</span> is
+the totally antisymmetric tensor in <span class="math notranslate nohighlight">\(d = 3\)</span>, such that <span class="math notranslate nohighlight">\(\epsilon^{123} = 1\)</span>.</p>
+<p>Returning to an interpretation of <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-187e1119-7215-4523-87ed-2561f7438538">
+<span class="eqno">(14)<a class="headerlink" href="#equation-187e1119-7215-4523-87ed-2561f7438538" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	\delta v_i(x_0) &amp; = &amp; v_i({\vec x}_0 + \delta {\vec x}) - v_i({\vec x}_0)\\
+	&amp; = &amp; S_{ij} \delta x^j + \omega_{ij} \delta x^j
+\end{align}\]</div>
+<p>If we adopt the Lagrangian picture, with <span class="math notranslate nohighlight">\(\delta x(t)\)</span> corresponding to
+the physical location of a fluid parcel near <span class="math notranslate nohighlight">\({\vec x}_0\)</span>, then
+<span class="math notranslate nohighlight">\(\delta v_i = \frac{d}{dt} \delta x^i\)</span>, and we have</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{d}{dt} \delta x^i = S_{ij} \delta x^i + \omega_{ij} \delta x^j
+\]</div>
+<p>Now consider a blob of fluid surrounding <span class="math notranslate nohighlight">\({\vec x}_0\)</span> defined by a collection
+of such vectors. As a symmetric matrix, <span class="math notranslate nohighlight">\(S_{ij}\)</span> will have three real
+eigenvalues <span class="math notranslate nohighlight">\(s^{\alpha}\)</span> <span class="math notranslate nohighlight">\(\alpha \in {1,2,3}\)</span> and associated eigenvectors
+or <em>principle axes</em> <span class="math notranslate nohighlight">\(h^{\alpha}_i\)</span>, such that
+<span class="math notranslate nohighlight">\(S_{ij} h^{\alpha}_j = s^{\alpha} h^{\alpha}_i\)</span>.
+If <span class="math notranslate nohighlight">\(\delta x\)</span> points in one of these directions, it will stretch or
+shrink in time depending onthe sign of <span class="math notranslate nohighlight">\(s^{\alpha}\)</span>. In other words,
+<span class="math notranslate nohighlight">\(S_{ij}\)</span> will cause he blob to stretch or shrink along the principle axes.</p>
+<p>On the oher hand, if <span class="math notranslate nohighlight">\(\epsilon^{ijk} \omega_{jk} \equiv \omega^i\)</span>, then
+we can use the identity</p>
+<div class="math notranslate nohighlight">
+\[
+	\epsilon^{ijk} \epsilon_{ilm} = \delta^j_l \delta^k_m 
+	- \delta^j_m \delta^k_l
+\]</div>
+<p>to show that</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega_{ij} = 2 \epsilon_{ijk} \omega^k
+\]</div>
+<p>and so</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega_{ij} \delta x^j = 2 \epsilon_{ijk} \delta x^j \omega^k
+	= 2 (\delta {\vec x} \times {\vec \omega})^i
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(S_{ij}\)</span> were vanishing, then</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{d}{dt} \delta {\vec x} = 2 \delta{\vec x} \times {\vec \omega}
+\]</div>
+<p>describes a rotation of <span class="math notranslate nohighlight">\(\delta {\vec x}\)</span> about the axis defined by <span class="math notranslate nohighlight">\(\omega\)</span>,
+with angular velocity <span class="math notranslate nohighlight">\(2|\omega|\)</span>.</p>
 </div>
-<div class="section" id="constant-density">
-<h2>2. Constant density<a class="headerlink" href="#constant-density" title="Permalink to this headline">¶</a></h2>
-<p>By the same argument, if <span class="math notranslate nohighlight">\(\rho\)</span> is constant, then</p>
-<div class="math notranslate nohighlight">
-\[
-	\frac{1}{\rho} {\vec \nabla} p = {\vec \nabla} \frac{p}{\rho}
-\]</div>
+<div class="section" id="irrotational-flows">
+<h2>Irrotational flows<a class="headerlink" href="#irrotational-flows" title="Permalink to this headline">¶</a></h2>
+<p>When <span class="math notranslate nohighlight">\({\vec \omega} = {\vec \nabla} \times {\vec v} = 0\)</span> throughout the flow, we say the flow is <em>irrotational</em>. This
+flow will have special properties. In particular, in any simply connected region, we can write
+<span class="math notranslate nohighlight">\({\vec v} = {\vec \nabla} \phi\)</span>. We call <span class="math notranslate nohighlight">\(\phi\)</span> the potential, and he associated flow potential flow.</p>
 </div>
-<div class="section" id="id1">
-<h2>3. Bernoulli’s theorem<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Let us consider a velocity field <span class="math notranslate nohighlight">\({\vec v}\)</span> which is constant in time.
-In this case, the trajectories of fluid parcels follow the streamlines
-of the velocity field. COnsider an isotropic fluid with <span class="math notranslate nohighlight">\(H = W\)</span> or a constant
-density fluid with <span class="math notranslate nohighlight">\(H = p/\rho\)</span>. <em>Bernoulli’s theorem</em> states that
-in these cases, <span class="math notranslate nohighlight">\(H + \frac{1}{2} {\vec v}^2\)</span> is constant along streamlines.</p>
-<p>The proof starts with the vector identity</p>
+<div class="section" id="two-dimensional-incompressible-flow">
+<h2>Two-dimensional Incompressible flow<a class="headerlink" href="#two-dimensional-incompressible-flow" title="Permalink to this headline">¶</a></h2>
+<p>Any vector which is divergenceless can b written as a curl (in a simply connected region).
+In three dimensions this is no obvious simplification – you trade a vector for a vector -
+but in two dimensions, this means that you can write</p>
 <div class="math notranslate nohighlight">
 \[
-	{\vec A} \times ({\vec \nabla}\times {\vec B}) = 
-	A^i {\vec \nabla} B_i - {\vec A} \cdot {\vec \nabla} {\vec B}
+	{\vec v} = - \partial_y \psi {\hat x} + \partial_x \psi {\hat y}
 \]</div>
-<p>(where we have used Einstein summation notation). Applying this to
-<span class="math notranslate nohighlight">\({\vec A} = {\vec B} = {\vec v}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[
-	{\vec v} \times ({\vec \nabla} \times {\vec v}) = 
-	\frac{1}{2} {\vec \nabla} {\vec v}^2 - {\vec v} \cdot{\vec \nabla}
-	{\vec v}
-\]</div>
-<p>Applying this to the Euler equation, and taking the case
-<span class="math notranslate nohighlight">\(\partial_t {\vec v} = 0\)</span>, we find</p>
-<div class="math notranslate nohighlight" id="equation-staticeuler">
-<span class="eqno">(17)<a class="headerlink" href="#equation-staticeuler" title="Permalink to this equation">¶</a></span>\[{\vec \nabla} (H + \frac{1}{2} {\vec v}^2) = {\vec v} \times({\vec \nabla}\times{\vec v})\]</div>
-<p>Now the RHS is perpendicular to <span class="math notranslate nohighlight">\({\vec v}\)</span> since is a cross product with this
-vector, and thus</p>
-<div class="math notranslate nohighlight">
-\[
-	{\vec v} \cdot {\vec \nabla}  (H + \frac{1}{2} {\vec v}^2) = 0
-\]</div>
-<p>But <span class="math notranslate nohighlight">\({\vec v} \cdot {\vec \nabla}\)</span> corresponds precisely to the derivative
-along streamlines.</p>
-<p>In the case of <em>irrotational</em> flow, we can write <span class="math notranslate nohighlight">\({\vec v} = {\vec \nabla \phi}\)</span>. In this case,
-the right hand side of Equation <a class="reference internal" href="#equation-staticeuler">(17)</a> clearly vanishes, and we can state that
-<span class="math notranslate nohighlight">\((H + \frac{1}{2} {\vec v}^2\)</span> is constant throughout the fluid.</p>
-<p>Irrotational flows also have a version of Bernoulli’s theorem when they are not steady.
-In this case <span class="math notranslate nohighlight">\({\vec v} = {\vec \nabla} \psi\)</span>, and we can run the same arguments as above to
-write</p>
-<div class="math notranslate nohighlight">
-\[
-	\partial_t \phi + H +  \frac{1}{2} {\vec v}^2 = constant
-\]</div>
-<p>and we can set the constant to zero by shifting <span class="math notranslate nohighlight">\(\phi \to \phi + (constant t\)</span> wihout changing <span class="math notranslate nohighlight">\({\vec v}\)</span>.</p>
+<p>for some scalar <em>streamfunction</em> <span class="math notranslate nohighlight">\(\psi\)</span>. In this case, <span class="math notranslate nohighlight">\(\omega = \nabla^2 \psi\)</span>.
+This is a useful object in two dimensions and variants are important for large-scale
+atmospheric and oceanic flows: the streamfunction <span class="math notranslate nohighlight">\(\psi\)</span> can be written as the integral of the
+velocity and so becomes a measure of tansport across a line.</p>
 </div>
 </div>
 
@@ -390,17 +450,17 @@ write</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Vorticity.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Hydrostatics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Vorticity</p>
+            <p class="prev-next-title">Hydrostatics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Vorticity_dynamics.html" title="next page">
+    <a class='right-next' id="next-link" href="Bernoulli.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vorticity Dynamics</p>
+        <p class="prev-next-title">Bernoulli’s Theorem</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

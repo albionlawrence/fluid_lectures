@@ -1,4 +1,4 @@
-# Bernoulli's Equation
+# Bernoulli's Theorem
 
 ## 1. Isentropic motion
 
@@ -21,12 +21,22 @@ fluid parcels, $dS = 0$ for each parcel, and $\frac{dp}{d\rho} = dW$. Thus
 {\vec v} = - {\vec \nabla} W
 ```
 
-## 2. Bernoulli's theorem.
+## 2. Constant density
+
+By the same argument, if $\rho$ is constant, then 
+
+$$
+	\frac{1}{\rho} {\vec \nabla} p = {\vec \nabla} \frac{p}{\rho}
+$$
+
+
+## 3. Bernoulli's theorem
 
 Let us consider a velocity field ${\vec v}$ which is constant in time.
 In this case, the trajectories of fluid parcels follow the streamlines
-of the velocity field. In this case, *Bernoulli's theorem* states that
-$W + \frac{1}{2} {\vec v}^2$ is constant along streamlines.
+of the velocity field. COnsider an isotropic fluid with $H = W$ or a constant
+density fluid with $H = p/\rho$. *Bernoulli's theorem* states that
+in these cases, $H + \frac{1}{2} {\vec v}^2$ is constant along streamlines.
 
 The proof starts with the vector identity
 
@@ -46,17 +56,31 @@ $$
 
 Applying this to the Euler equation, and taking the case 
 $\partial_t {\vec v} = 0$, we find
-
-$$
-{\vec \nabla} (W + \frac{1}{2} {\vec v}^2) = {\vec v} \times({\vec \nabla}\times{\vec v})
-$$
+```{math}
+:label: staticeuler
+{\vec \nabla} (H + \frac{1}{2} {\vec v}^2) = {\vec v} \times({\vec \nabla}\times{\vec v})
+```
 
 Now the RHS is perpendicular to ${\vec v}$ since is a cross product with this
 vector, and thus
 
 $$
-	{\vec v} \cdot {\vec \nabla}  (W + \frac{1}{2} {\vec v}^2) = 0
+	{\vec v} \cdot {\vec \nabla}  (H + \frac{1}{2} {\vec v}^2) = 0
 $$
 
 But ${\vec v} \cdot {\vec \nabla}$ corresponds precisely to the derivative
 along streamlines.
+
+In the case of *irrotational* flow, we can write ${\vec v} = {\vec \nabla \phi}$. In this case,
+the right hand side of Equation {eq}`staticeuler` clearly vanishes, and we can state that 
+$(H + \frac{1}{2} {\vec v}^2$ is constant throughout the fluid.
+
+Irrotational flows also have a version of Bernoulli's theorem when they are not steady.
+In this case ${\vec v} = {\vec \nabla} \psi$, and we can run the same arguments as above to
+write
+
+$$
+	\partial_t \phi + H +  \frac{1}{2} {\vec v}^2 = constant
+$$
+
+and we can set the constant to zero by shifting $\phi \to \phi + (constant t$ wihout changing ${\vec v}$.

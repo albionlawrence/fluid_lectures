@@ -1,0 +1,32 @@
+# Vorticity Dynamics
+
+The vorticity itself has dynamics which gives additional information about fluid flows.
+In some cases it is either a conserved quantity or a piece of a concerved quantity.
+
+## Circulation and Kelvin's theorem
+
+We will work mostly with $d = 3$ but much of this holds in $d = 2$.
+
+For some initial time $t_0$, consider a closed loop $L$ of fluid particles. As these evolve in time (at least for short
+enough times), the particles will evolve to lie along a new loop $L(t)$. We define the *circulation*
+as
+
+\begin{align}
+	C(t) & = & \oint_{L(t)} d{\vec \ell}\cdot {\vec v(t)}\\
+	& = & \int_{A(t)} d{\vec A} \cdot ({\vec \nabla}\times {\vec v})\\
+	& = & \int_{A(t)} d{\vec A} \cdot {\vec \omega}(t)
+\end{eqalign}
+
+which captures the par of the velocity field that is running along the loop $L$.
+Here $\partial A = L(t)$, and $A$ is arbitrary; the second line follows from Stoke's theorem.
+$d{\vec A}$ denotes an infinitesimal area element on A, with the direction perpendicular to that element.
+In two dimensions we would replace $d{\vec A} \cdot {\vec \omega}$ with $dA \omega$. 
+
+Now
+
+$$
+	d_t C(t) = \oint \left(d_t ({\vec v}) \cdot d{\vec \ell}(t) + {\vec v} \cdot d_t d{\vec \ell}(t)\right)
+$$
+
+
+

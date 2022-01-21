@@ -9,5 +9,7 @@ chapters:
   - file: chapter1/whatis_fluid
   - file: chapter1/euler
   - file: chapter1/Hydrostatics
+  - file: chapter1/Vorticity
   - file: chapter1/Bernoulli
+  - file: chapter1/Vorticity_dynamics
 - file: bibliography
