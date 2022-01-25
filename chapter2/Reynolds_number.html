@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What is a Fluid? &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Dimensional analysis and the Reynolds number &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Equations for Ideal Fluids" href="euler.html" />
-    <link rel="prev" title="Basic Equations and Concepts" href="Basic_intro.html" />
+    <link rel="next" title="Simple example of viscous flow" href="simple_viscous_flow.html" />
+    <link rel="prev" title="Introduction to the Navier-Stokes equation" href="navier_stokes_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -99,66 +99,71 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Basic_intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/Basic_intro.html">
    Basic Equations and Concepts
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     What is a Fluid?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="euler.html">
-     Equations for Ideal Fluids
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Hydrostatics.html">
-     Hydrostatics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Vorticity.html">
-     Vorticity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Bernoulli.html">
-     Bernoulli’s Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Vorticity_dynamics.html">
-     Vorticity Dynamics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter2/Intro_viscosity.html">
-   Viscosity: a first pass
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/navier_stokes_1.html">
-     Introduction to the Navier-Stokes equation
+    <a class="reference internal" href="../chapter1/whatis_fluid.html">
+     What is a Fluid?
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/simple_viscous_flow.html">
-     Simple examples of viscous flow
+    <a class="reference internal" href="../chapter1/euler.html">
+     Equations for Ideal Fluids
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Hydrostatics.html">
+     Hydrostatics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Vorticity.html">
+     Vorticity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Bernoulli.html">
+     Bernoulli’s Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Vorticity_dynamics.html">
+     Vorticity Dynamics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Intro_viscosity.html">
+   Viscosity: a first pass
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="navier_stokes_1.html">
+     Introduction to the Navier-Stokes equation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Dimensional analysis and the Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="simple_viscous_flow.html">
+     Simple example of viscous flow
     </a>
    </li>
   </ul>
@@ -209,7 +214,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter1/whatis_fluid.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter2/Reynolds_number.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -229,7 +234,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter1/whatis_fluid.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/Reynolds_number.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -250,40 +255,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#characterization">
-   1. Characterization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-continuous-medium-with-material-at-every-point">
-     A
-     <em>
-      continuous medium
-     </em>
-     with material at every point.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deformation-under-shear">
-     Deformation under shear
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples">
-   2. Examples
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -291,107 +262,85 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>What is a Fluid?</h1>
+                <h1>Dimensional analysis and the Reynolds number</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#characterization">
-   1. Characterization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-continuous-medium-with-material-at-every-point">
-     A
-     <em>
-      continuous medium
-     </em>
-     with material at every point.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deformation-under-shear">
-     Deformation under shear
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples">
-   2. Examples
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="what-is-a-fluid">
-<h1>What is a Fluid?<a class="headerlink" href="#what-is-a-fluid" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="characterization">
-<h2>1. Characterization<a class="headerlink" href="#characterization" title="Permalink to this headline">¶</a></h2>
-<p>I highly recommend the introductory chapter of Batchelor’s book
-<span id="id1">[<a class="reference internal" href="../bibliography.html#id3">Batchelor, 2000</a>]</span> `for an
-in-depth discussion of this issue.</p>
-<div class="section" id="a-continuous-medium-with-material-at-every-point">
-<h3>A <em>continuous medium</em> with material at every point.<a class="headerlink" href="#a-continuous-medium-with-material-at-every-point" title="Permalink to this headline">¶</a></h3>
-<p>This is of course a mathematical abstraction. A fluid is comprised of
-individual molecules and at sufficiently short distances the continuum
-approximation breaks down. In practice fluid mechanics is a <em>coarse-grained</em>
-description of materials.</p>
-<p>The assumption is that if we coarse-grain over a large enough volume, the
-material can be effectively described by a set of quantities which vary
-smoothly in space and time, eg:
-1. <em>velocity</em>: <span class="math notranslate nohighlight">\({\vec v}({\vec x},t)\)</span>
-2. <em>density</em>: <span class="math notranslate nohighlight">\(\rho({\vec x},t)\)</span> (we will often take this to be constant)
-3. <em>temperature</em>: <span class="math notranslate nohighlight">\(T({\vec x},t)\)</span>
-4. For ocean water, <em>salinity</em> (salt content): <span class="math notranslate nohighlight">\(S({\vec x},t)\)</span>
-5. For the atmosphere, <em>specific humidity</em> <span class="math notranslate nohighlight">\(q = \rho_{vapor}/\rho\)</span>.
-and so on.</p>
-<p>Density, temperature, and so on are themodynamic quantities that we typically
-define in equilibrium. A dynamic fluid will not be in equilibrium and in many
-interesting examples it is constantly being driven out of equilibrium. As
-an example, the solar heating of the atmosphere varies from the equator to
-th poles, varies with time over the seasons and over longer times as
-the Earth’s roational axis and orbital characteristics change. In this class
-we will be assuming that the fluid is in local thermal equilibrium, such
-that thermodynamic quantities make sense but vary in space and time.</p>
-</div>
-<div class="section" id="deformation-under-shear">
-<h3>Deformation under shear<a class="headerlink" href="#deformation-under-shear" title="Permalink to this headline">¶</a></h3>
-<p>Fluids always deform under <em>shear stress</em>: essentially, a gradient of force
-across some planar surface. There may be friction, corresponding to a
-force between two layers sliding on top of each other, but there is no
-restoring force.</p>
-</div>
-</div>
-<div class="section" id="examples">
-<h2>2. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Note that for our purposes, a fluid could be a liquid, a gas, a plasma, and
-so on.  Examples of fluids:</p>
-<ol class="simple">
-<li><p>Planetary fluids: oceans, atmospheres, ice sheets, magma</p></li>
-<li><p>Astrophysics and cosmology: protons and electrons in the
-early universe, solar interiors, accretion disks, protoplanetary disks,
-near-horizon geometry of black holes (spacetime as an effective fluid)</p></li>
-<li><p>Condensed matter physics: superfluids, quantum hall fluids</p></li>
-<li><p>Biological media (blood, mucous,…)</p></li>
-<li><p>Plasma in heavy ion collisions</p></li>
-</ol>
-<p>In other words this subject is everywhere: biological physics, soft and
-hard condensed matter physics, nuclear physics, astrophysics, cosmology,
-earth science, and so on.</p>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="dimensional-analysis-and-the-reynolds-number">
+<h1>Dimensional analysis and the Reynolds number<a class="headerlink" href="#dimensional-analysis-and-the-reynolds-number" title="Permalink to this headline">¶</a></h1>
+<p>The voscosity is clearly never non-vanishing, but it appears that
+there are cases where we can ignore it. We would like tp understand
+this in a more precise way. Saying “the viscosity is small” is insufficient,
+as <span class="math notranslate nohighlight">\(\nu\)</span> has dimensions of <span class="math notranslate nohighlight">\((length)^2/(time)\)</span>, and it makes no sense to say
+that a dimensionful quantity is small (a cenimeter is small for
+you but large for a bacterium, etc.)</p>
+<p>For the Navier-Stokes equation with <span class="math notranslate nohighlight">\({\vec F}_{ext} = 0\)</span>,
+<span class="math notranslate nohighlight">\(\nu\)</span> is the only dimensionful parameter. However, if we have a
+characteristic length scale <span class="math notranslate nohighlight">\(L\)</span> and and time scale <span class="math notranslate nohighlight">\(T\)</span>, we can
+write <span class="math notranslate nohighlight">\(Re \equiv T \nu/L^2\)</span> as a dimensionless quantity.</p>
+<p>In the context of fluid motion, let us set <span class="math notranslate nohighlight">\({\vec u} = U {\vec V}\)</span>,
+where <span class="math notranslate nohighlight">\(U\)</span> is a velociyt scale and <span class="math notranslate nohighlight">\({\vec V} \sim {\cal O}(1)\)</span>.
+We set <span class="math notranslate nohighlight">\({\vec x} = L {\vec \chi}\)</span>, and <span class="math notranslate nohighlight">\(t = T \tau\)</span>, with
+<span class="math notranslate nohighlight">\({\vec \chi},\tau \sim {\cal O}(1)\)</span>, and <span class="math notranslate nohighlight">\(\rho = \rho_0 n\)</span>, <span class="math notranslate nohighlight">\(n \sim {\cal O}(1)\)</span>.
+We further assume that <span class="math notranslate nohighlight">\(U = L/T\)</span>, or <span class="math notranslate nohighlight">\(T = L/U\)</span>. Using this scaling,</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{U^2}{L} \left(\partial_{\tau} + {\vec V} \cdot {\vec \nabla}_{\chi} \right){\vec V} 
+	= - \frac{1}{L\rho_0 n} {\vec \nabla}_{\chi} p + \frac{U \nu}{L^2} \nabla^2_{\chi} {\vec V} = 0.
+\]</div>
+<p>Dividing through by <span class="math notranslate nohighlight">\(U^2/L\)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+	 \left(\partial_{\tau} + {\vec V} \cdot {\vec \nabla}_{\chi} \right){\vec V}
+	 = - \frac{1}{n} {\vec \nabla}_{\chi} \left(\frac{p}{U^2\rho_0}\right) + \frac{\nu}{U L} 
+	 \nabla^2_{\chi} {\vec V}
+\]</div>
+<p>if we set <span class="math notranslate nohighlight">\(p' = p/(\rho_0 U^2)\)</span> we get:</p>
+<div class="math notranslate nohighlight">
+\[
+	 \left(\partial_{\tau} + {\vec V} \cdot {\vec \nabla}_{\chi} \right){\vec V}
+	 = - \frac{1}{n} {\vec \nabla}^2_{\chi} p' + \frac{\nu}{U L} 
+	 \nabla^2_{\chi} {\vec V}
+\]</div>
+<p>We define the <em>Reynolds number</em> as <span class="math notranslate nohighlight">\(Re = \frac{UL}{\nu}\)</span>, where <span class="math notranslate nohighlight">\(U\)</span> is the
+characeristic velocity of the flow, and <span class="math notranslate nohighlight">\(L\)</span> the characteristic scale of the flow.
+Thus the viscosity is relativly unimportant when the Reynolds number is large,
+and dominates when the Reynolds numbe is small. One way to think about the
+Reynolds number is that it measures the relative strength of the “inertial term”
+<span class="math notranslate nohighlight">\({\vec u} \cdot {\vec \nabla} {\vec u}\)</span> and the “viscous term” <span class="math notranslate nohighlight">\(\nu \nabla^2 {\vec u}\)</span>.</p>
+<p>High and low Reynolds numbers are qualitatively quite different.
+For example, as <span class="math notranslate nohighlight">\(Re \to 0\)</span> we can ignore the nonlinear inertial term, and
+<span class="math notranslate nohighlight">\({\vec u}\)</span> \to - <span class="math notranslate nohighlight">\({\vec u}\)</span> becomes a symmetry of the equations. The flow is
+thus <em>reversible</em>. Put dye in a viscous fluid and slowly stir it and watch it mix.
+Then reverse the direction of stirring, and the dye will return to its original configuration
+as long as it is not also diffusing over the time scale of the experiment.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8V6kc0PQa14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Low Reynolds number flows are important in many biological applications: the flow of blood,
+the swimming motion of bacteria and so on. High Reynolds number is important in many
+geophysical situations, particularly in ocean and atmospheric dynamics at the right scales.</p>
+<p>What <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(L\)</span> means takes a little thought. For example, if the flow has features at
+a range of spatial scales, those features have different characteristic Reynolds numbers
+attached. In the flow past a cylindr we looked at earlier, the Reynolds number is high
+far from the cyliner, particularly in the turbulent wake behind the cyliner, while it
+is low in the thin layer close to the boundary where the boundary conditions set the velocity
+to zero. Thus in the ocean, turbulent behavior sets in the <span class="math notranslate nohighlight">\(\sim few \times 100\)</span> km
+“mesoscale” and below.</p>
+<p><img alt="mesoscale" src="../_images/Mesoscale-eddies.jpeg" /></p>
+<p><a class="reference external" href="http://web.gps.caltech.edu/~andrewt/teaching.html">Taken from this website</a>.</p>
+<p>Another use of this scaling is that since in dimensionless coordinates only the Reynolds number
+appears, we know that if we rescale <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, and <span class="math notranslate nohighlight">\(\nu\)</span> so that the geometry of a configuration
+is the same and the Reynolds number does not change, the geometry of the flow is identical. Thus,
+for example, if we wan to understand the behavior of the flow around a full-sized wing, or a boat
+in the water, we can do a laboratory experiment with a much smaller wing or model boat if we change
+<span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span> as well so that the Reynolds number does not change. For a nice discussion of
+the uses of similarity, see <span id="id1">[<a class="reference internal" href="../bibliography.html#id8">Bolster <em>et al.</em>, 2011</a>]</span>.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -407,7 +356,7 @@ earth science, and so on.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapter1"
+            path: "./chapter2"
         },
         predefinedOutput: true
     }
@@ -419,17 +368,17 @@ earth science, and so on.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Basic_intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="navier_stokes_1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Basic Equations and Concepts</p>
+            <p class="prev-next-title">Introduction to the Navier-Stokes equation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="euler.html" title="next page">
+    <a class='right-next' id="next-link" href="simple_viscous_flow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Equations for Ideal Fluids</p>
+        <p class="prev-next-title">Simple example of viscous flow</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
