@@ -100,15 +100,15 @@ $$
 Recalling that
 
 $$
-	{\vec v} \cdot {\vec \nabla} {\vec v} = \frac{1}{2} {\vec v}^2 - {\vec v} 
-	\times ({\vec \nabla} \times {\vec v} = \frac{1}{2} {\vec v}^2 - {\vec v} \times {\vec \omega}
+	{\vec v} \cdot {\vec \nabla} {\vec v} = \frac{1}{2} {\vec \nabla}({\vec v}^2) - {\vec v} 
+	\times ({\vec \nabla} \times {\vec v}) = \frac{1}{2} {\vec \nabla} ({\vec v}^2) - {\vec v} \times {\vec \omega}
 $$
 
 we can take the curl of the Euler's equation, using the fact that the curl of the gradient 
 vanishes and that a vector has vanishing cross product with itself, to find:
 
 $$
-	\p_t \omega - {\vec \nabla} \times ({\vec v} \times {\vec \omega}) = \frac{1}{\rho^2} {\vec \nabla} \rho \times
+	\partial_t \omega - {\vec \nabla} \times ({\vec v} \times {\vec \omega}) = \frac{1}{\rho^2} {\vec \nabla} \rho \times
 	{\vec \nabla p}
 $$
 
@@ -116,20 +116,26 @@ The right hand side vanishes if $p = p(\rho)$. if $\rho$ is constant, or if the 
 
 ### Incompressible flows
 
-When the fluid is incomressible, we may write
+We start with the vector identity
 
-\begin{align}
-	{\vec \nabla} \times ({\vec v} \times {\vec \omega}) & = & 
+$$
+	{\vec \nabla} \times ({\vec v} \times {\vec \omega}) = 
 	{\vec v} {\vec \nabla}\cdot{\vec \omega} - {\vec \omega} {\vec \nabla}\cdot{\vec v}
-	+ {\vec \omega}\cdot {\vec v} - {\vec v} \cdot {\vec \omega}\\
-	& = & {\vec \omega}\cdot {\vec v} - {\vec v} \cdot {\vec \omega}
-\end{align}
+	+ {\vec \omega}\cdot {\vec \nabla} {\vec v} - {\vec v} \cdot {\vec \nabla} {\vec \omega}
+$$
+	
+Incompressibility means that ${\vec \nabla}\cdot{\vec v} = 0$, while the fact that $\omega$ is a curl means
+that $ ${\vec \nabla}\cdot{\vec \omega} = 0$. Thus,
 
-where we have used incompressibility combined with the fact that the divergence of a curl vanishes.
+$$
+	 {\vec \nabla} \times ({\vec v} \times {\vec \omega}) = {\vec \omega}\cdot {\vec \nabla} {\vec v} - 
+	 {\vec v} \cdot {\vec \nabla} {\vec \omega}
+$$
+
 Thus,
 
 $$
-	D_t {\vec \omega} -  {\vec \omega}\cdot {\vec v} = \frac{1}{\rho^2} {\vec \nabla} \rho \times
+	D_t {\vec \omega} -  {\vec \omega}\cdot {\vec \nabla} {\vec v} = \frac{1}{\rho^2} {\vec \nabla} \rho \times
 	{\vec \nabla p}
 $$
 

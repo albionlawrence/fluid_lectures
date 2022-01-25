@@ -163,7 +163,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="simple_viscous_flow.html">
-     Simple examples of viscous flow
+     Simple example of viscous flow
     </a>
    </li>
   </ul>
@@ -277,7 +277,7 @@
 <h1>Introduction to the Navier-Stokes equation<a class="headerlink" href="#introduction-to-the-navier-stokes-equation" title="Permalink to this headline">¶</a></h1>
 <p>Recall that the Euler equation</p>
 <div class="math notranslate nohighlight" id="equation-eulerrev">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eulerrev" title="Permalink to this equation">¶</a></span>\[D_t {\vec v} = - \frac{1}{\rho} {\vec \nabla} {\vec v} + \frac{1}{\rho} {\vec F}_{ext}\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-eulerrev" title="Permalink to this equation">¶</a></span>\[D_t {\vec v} = - \frac{1}{\rho} {\vec \nabla} {\vec v} + \frac{1}{\rho} {\vec F}_{ext}\]</div>
 <p>is basically Newton’s second law applied to fluid parcels. This was under the assumption that the
 force between fluid elements took the form of contact forces. We also expect some kind of frictional
 force. We expect that this should depend at least linearly on the velocity, and involve derivatives
@@ -301,7 +301,7 @@ the only possibility is</p>
 <span class="math notranslate nohighlight">\(\nu = \mu/\rho\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span> is called the <em>kinematic viscosity</em>, and appears in the standard presentation of the
 <em>Navier-Stokes equation</em>:</p>
 <div class="math notranslate nohighlight" id="equation-navier-stokes">
-<span class="eqno">(22)<a class="headerlink" href="#equation-navier-stokes" title="Permalink to this equation">¶</a></span>\[\frac{\partial}{\partial t} {\vec v} + {\vec v} \cdot {\vec \nabla} {\vec v} = 
+<span class="eqno">(21)<a class="headerlink" href="#equation-navier-stokes" title="Permalink to this equation">¶</a></span>\[\frac{\partial}{\partial t} {\vec v} + {\vec v} \cdot {\vec \nabla} {\vec v} = 
 	- \frac{1}{\rho} {\vec \nabla} p + \nu \nabla^2 {\vec u} + \frac{1}{\rho} {\vec F}_{ext}\]</div>
 <p>Because this equation is second order in space, we need two boundary conditions. We will consider solid boundaries for the time
 being. For these, one boundary condition (as we’ve said) is clearly <span class="math notranslate nohighlight">\({\vec u} \cdot {\vec n} \big|_{boundary} = 0\)</span>.
