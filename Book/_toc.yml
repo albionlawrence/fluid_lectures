@@ -12,4 +12,9 @@ chapters:
   - file: chapter1/Vorticity
   - file: chapter1/Bernoulli
   - file: chapter1/Vorticity_dynamics
+- file: chapter2/Intro_viscosity
+  sections:
+  - file: chapter2/navier_stokes_1
+  - file: chapter2/Reynolds_number
+  - file: chapter2/simple_viscous_flow
 - file: bibliography

@@ -75,13 +75,15 @@ $$
 	d_t C = - \oint d{\vec \ell_i} \frac{\partial_i p}{\rho} 
 $$
 
-Now there are two cases where this vanishes:
+Now there are three cases where this vanishes:
 
 1. if $p = p(\rho)$, we can write $\frac{1}{\rho} {\vec \nabla} p = {\vec \nabla q}$. This is because
 for any function of a single variable $f(\rho)$, we can always find a $g(\rho)$ such that 
 $\partial_i f/\rho = \partial_i g$. The integrand above is a total derivative. 
 
-2. Isentropic flow. In this case, as we hae shows, $\frac{1}{\rho} {\vec \nabla} p = {\vec \nabla} W$,
+2. $\rho$ is constant.
+
+3. Isentropic flow. In this case, as we hae shows, $\frac{1}{\rho} {\vec \nabla} p = {\vec \nabla} W$,
 and he same argument holds.
 
 The time-independence or conservation of circulation in these cases is known as Kelvin's Theorem.
@@ -151,7 +153,7 @@ irroational far from the object, it will remain irrotational. We can then use th
 flows to describe such a system. As we will see in a few weeks (and as discussed in the text), this turns
 out to be important for understanding basic aerodynamics.
 
-However, you may recall the picture such as the dpg which graces the notes of this textbook; or you may
+However, you may recall the picture such as the dog which graces the notes of this textbook; or you may
 think about what happens when you drag your hand fast enought through still water. Turbulent vortices appear.
 Howe is this consistent with the above? The answer is that we have ignored the effects of *viscosity*.
 As we will see starting next week, viscosity can generate and dissipate vorticity, and it becomes important
