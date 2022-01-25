@@ -157,8 +157,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Reynolds_number.html">
+     Dimensional analysis and the Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../chapter2/simple_viscous_flow.html">
-     Simple examples of viscous flow
+     Simple example of viscous flow
     </a>
    </li>
   </ul>
@@ -355,8 +360,8 @@ as</p>
 <p>which captures the part of the velocity field that is running along the loop <span class="math notranslate nohighlight">\(L\)</span>.
 Now first consider the case that <span class="math notranslate nohighlight">\(L\)</span> can be shrunk to a point. Thus, there is a
 surface <span class="math notranslate nohighlight">\(A\)</span> whose only boundary is <span class="math notranslate nohighlight">\(L\)</span>, and we can use Stoke’s theorem to find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-411f70a2-d083-4cbd-bffe-3929d2cd8b41">
-<span class="eqno">(18)<a class="headerlink" href="#equation-411f70a2-d083-4cbd-bffe-3929d2cd8b41" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d604f29f-1fcc-4542-b94c-f06fc2460248">
+<span class="eqno">(18)<a class="headerlink" href="#equation-d604f29f-1fcc-4542-b94c-f06fc2460248" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	C(t) &amp; = &amp; \oint_{L(t)} d{\vec \ell}\cdot {\vec v(t)}\\
 	&amp; = &amp; \int_{A(t)} d{\vec A} \cdot ({\vec \nabla}\times {\vec v})\\
 	&amp; = &amp; \int_{A(t)} d{\vec A} \cdot {\vec \omega}(t)
@@ -368,8 +373,8 @@ In this case, the circulation vanishes when the fluid is irrotational.</p>
 perhaps a wing which spans the fluid, and let <span class="math notranslate nohighlight">\(C\)</span> encircle this. If we choose a second loop <span class="math notranslate nohighlight">\(L'\)</span>
 such that there is a surface <span class="math notranslate nohighlight">\(A\)</span> whose boundaries are <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(L'\)</span> – that is, such that <span class="math notranslate nohighlight">\(L\)</span> can
 be smoothly deformed to <span class="math notranslate nohighlight">\(L'\)</span>, sweeping out <span class="math notranslate nohighlight">\(A\)</span> – tthen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-badef3ae-cef8-47cd-8031-b4a5edb7c612">
-<span class="eqno">(19)<a class="headerlink" href="#equation-badef3ae-cef8-47cd-8031-b4a5edb7c612" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fc9824ec-d6e8-4728-acfb-0be663c26316">
+<span class="eqno">(19)<a class="headerlink" href="#equation-fc9824ec-d6e8-4728-acfb-0be663c26316" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	\left[ \oint_{L(t)} - \oint_{L'}\right] d{\vec \ell}\cdot {\vec v(t)}
 	&amp; = &amp; C(t) -  \oint_{L'} d{\vec \ell}\cdot {\vec v(t)}\\
 	&amp; = &amp;  \int_{A(t)} d{\vec A} \cdot {\vec \omega}(t)
@@ -426,32 +431,37 @@ Euler equations</p>
 <p>Recalling that</p>
 <div class="math notranslate nohighlight">
 \[
-	{\vec v} \cdot {\vec \nabla} {\vec v} = \frac{1}{2} {\vec v}^2 - {\vec v} 
-	\times ({\vec \nabla} \times {\vec v} = \frac{1}{2} {\vec v}^2 - {\vec v} \times {\vec \omega}
+	{\vec v} \cdot {\vec \nabla} {\vec v} = \frac{1}{2} {\vec \nabla}({\vec v}^2) - {\vec v} 
+	\times ({\vec \nabla} \times {\vec v}) = \frac{1}{2} {\vec \nabla} ({\vec v}^2) - {\vec v} \times {\vec \omega}
 \]</div>
 <p>we can take the curl of the Euler’s equation, using the fact that the curl of the gradient
 vanishes and that a vector has vanishing cross product with itself, to find:</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_t \omega - {\vec \nabla} \times ({\vec v} \times {\vec \omega}) = \frac{1}{\rho^2} {\vec \nabla} \rho \times
+	\partial_t \omega - {\vec \nabla} \times ({\vec v} \times {\vec \omega}) = \frac{1}{\rho^2} {\vec \nabla} \rho \times
 	{\vec \nabla p}
 \]</div>
 <p>The right hand side vanishes if <span class="math notranslate nohighlight">\(p = p(\rho)\)</span>. if <span class="math notranslate nohighlight">\(\rho\)</span> is constant, or if the fluid is isentropic.</p>
 <div class="section" id="incompressible-flows">
 <h3>Incompressible flows<a class="headerlink" href="#incompressible-flows" title="Permalink to this headline">¶</a></h3>
-<p>When the fluid is incomressible, we may write</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c99d9aa-b019-4327-a9c8-c90a072f20e9">
-<span class="eqno">(20)<a class="headerlink" href="#equation-7c99d9aa-b019-4327-a9c8-c90a072f20e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	{\vec \nabla} \times ({\vec v} \times {\vec \omega}) &amp; = &amp; 
-	{\vec v} {\vec \nabla}\cdot{\vec \omega} - {\vec \omega} {\vec \nabla}\cdot{\vec v}
-	+ {\vec \omega}\cdot {\vec v} - {\vec v} \cdot {\vec \omega}\\
-	&amp; = &amp; {\vec \omega}\cdot {\vec v} - {\vec v} \cdot {\vec \omega}
-\end{align}\]</div>
-<p>where we have used incompressibility combined with the fact that the divergence of a curl vanishes.
-Thus,</p>
+<p>We start with the vector identity</p>
 <div class="math notranslate nohighlight">
 \[
-	D_t {\vec \omega} -  {\vec \omega}\cdot {\vec v} = \frac{1}{\rho^2} {\vec \nabla} \rho \times
+	{\vec \nabla} \times ({\vec v} \times {\vec \omega}) = 
+	{\vec v} {\vec \nabla}\cdot{\vec \omega} - {\vec \omega} {\vec \nabla}\cdot{\vec v}
+	+ {\vec \omega}\cdot {\vec \nabla} {\vec v} - {\vec v} \cdot {\vec \nabla} {\vec \omega}
+\]</div>
+<p>Incompressibility means that <span class="math notranslate nohighlight">\({\vec \nabla}\cdot{\vec v} = 0\)</span>, while the fact that <span class="math notranslate nohighlight">\(\omega\)</span> is a curl means
+that <span class="math notranslate nohighlight">\( \)</span>{\vec \nabla}\cdot{\vec \omega} = 0$. Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+	 {\vec \nabla} \times ({\vec v} \times {\vec \omega}) = {\vec \omega}\cdot {\vec \nabla} {\vec v} - 
+	 {\vec v} \cdot {\vec \nabla} {\vec \omega}
+\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+	D_t {\vec \omega} -  {\vec \omega}\cdot {\vec \nabla} {\vec v} = \frac{1}{\rho^2} {\vec \nabla} \rho \times
 	{\vec \nabla p}
 \]</div>
 <p>Note that in two dimensions, the second term on the left hand side drops out and we have</p>
