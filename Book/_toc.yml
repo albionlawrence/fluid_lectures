@@ -17,4 +17,6 @@ chapters:
   - file: chapter2/navier_stokes_1
   - file: chapter2/Reynolds_number
   - file: chapter2/simple_viscous_flow
+  - file: chapter2/Diffusion
+  - file: chapter2/diffusion_viscosity
 - file: bibliography

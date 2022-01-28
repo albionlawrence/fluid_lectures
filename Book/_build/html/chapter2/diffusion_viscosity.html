@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viscosity: a first pass &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Diffusion and Viscosity &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to the Navier-Stokes equation" href="navier_stokes_1.html" />
-    <link rel="prev" title="Vorticity Dynamics" href="../chapter1/Vorticity_dynamics.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Introduction to diffusion" href="Diffusion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,7 +142,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Intro_viscosity.html">
    Viscosity: a first pass
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -148,7 +150,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="navier_stokes_1.html">
      Introduction to the Navier-Stokes equation
@@ -169,8 +171,8 @@
      Introduction to diffusion
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="diffusion_viscosity.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Diffusion and Viscosity
     </a>
    </li>
@@ -222,7 +224,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter2/Intro_viscosity.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter2/diffusion_viscosity.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -242,7 +244,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/Intro_viscosity.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/diffusion_viscosity.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -263,6 +265,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fluid-near-a-moving-plate">
+   Fluid near a moving plate
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -270,44 +285,94 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Viscosity: a first pass</h1>
+                <h1>Diffusion and Viscosity</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fluid-near-a-moving-plate">
+   Fluid near a moving plate
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="viscosity-a-first-pass">
-<h1>Viscosity: a first pass<a class="headerlink" href="#viscosity-a-first-pass" title="Permalink to this headline">¶</a></h1>
-<p>The Euler equation captures the behavior of fluids in a variety of situations. It does well in describing
-aerodynamics, as we will see, and it does well in describing strongly turbulent flow away from the
-boundaries of the fluid.</p>
-<p>However, experience teaches us that there is an additional frictional force acting inside the fluid,
-when one <em>shears</em> the fluid – sets up a motion with the velocity changing in space.
-If one  initiates flow and then does not force the fluid any further, for example, the fluid will
-often slowly come to rest (think about stirring your coffee). This force is known as <em>viscosity</em>.</p>
-<p>Viscosity plays a sort of dual role in the flow about objects. At low velocities, Euler’s equations apply,
-and for flows that enter from infinity, initially irrotational fluid stays irrotational.</p>
-<p><img alt="Uniform flow" src="../_images/cylinder_uniform.png" /></p>
-<p>(Image taken from <span id="id1">[<a class="reference internal" href="../bibliography.html#id7">Van Dyke, 1982</a>]</span>.)</p>
-<p>As we increase the velocity of the incoming fluid a turbulent wave develops behind the cylinder
-as we can ee here <span id="id2">[<a class="reference internal" href="../bibliography.html#id7">Van Dyke, 1982</a>]</span>.</p>
-<p><img alt="Turbulent flow" src="../_images/cylinder_turbulent.png" /></p>
-<p>Clearly the flow ceases to be irrotational behind the cylinder. Now the presence of viscosity will
-allow vorticity to develop (as we will see). On the other hand, the viscosity is a
-subdominant effect at he scales we’re looking at. What is happening is that viscosity becomes
-important at the boundary layer surrounding the cylinder. This is because in the presence of viscosity
-we must assume that the tangential velocity vanishes at the sphere. A strong shear thus develops
-in a “boundary layer” near the sphere and the viscosity becomes important, allowing the generation
-of vorticity.</p>
-<p>This week we will introduce the concept of viscosity and its operation in simple examples,
-but put off a more detailed first-principles argument for the specific form it usually
-takes in the usual equations of fluid dynamics.</p>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="diffusion-and-viscosity">
+<h1>Diffusion and Viscosity<a class="headerlink" href="#diffusion-and-viscosity" title="Permalink to this headline">¶</a></h1>
+<p>With this background I next want to work throug some examples, mostly from the book, which
+demonstrate the role of viscosity as something that diffuses vorticity. This is especially
+apparent in two dimensions, for which the vorticity equations are</p>
+<div class="math notranslate nohighlight">
+\[
+	D_t \omega = \nu \nabla^2 \omega
+\]</div>
+<p>This equation is the advection-diffusion equation for vorticity. he vorticity has a tendency to spread out
+over time. Note that this equation shows the degree to which we can think of vorticity (or in 3d stratified
+fluids, a related quantity known as <em>potential vorticity</em>) as a material quantity that is advected by and
+that diffuses through the fluid.</p>
+<div class="section" id="fluid-near-a-moving-plate">
+<h2>Fluid near a moving plate<a class="headerlink" href="#fluid-near-a-moving-plate" title="Permalink to this headline">¶</a></h2>
+<p>Before moving to vorticity, let us look at a “simple” 2d problem. Consider a semiinfinite fluid
+occupying <span class="math notranslate nohighlight">\(y &gt; 0\)</span> in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane. At <span class="math notranslate nohighlight">\(t = 0\)</span> it is completely static. Equal pressure is exerted from
+infinity. For <span class="math notranslate nohighlight">\(t &gt; 0\)</span>, the bottom boundary at <span class="math notranslate nohighlight">\(y = 0\)</span> moves in the <span class="math notranslate nohighlight">\(+x\)</span> direction with velocity <span class="math notranslate nohighlight">\(u_0\)</span>.</p>
+<p>To solve this, we will assume that <span class="math notranslate nohighlight">\({\vec v} = u(y,t) {\hat x}\)</span>, given the uniformity in <span class="math notranslate nohighlight">\(x\)</span>.
+(Can we think of a good argument for the lack of a <span class="math notranslate nohighlight">\(y\)</span> component?). With this ansätz the
+nonlinear term <span class="math notranslate nohighlight">\({\vec v} \cdot {\vec \nabla} {\vec v}\)</span> drops out. The equation is</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t u = - \frac{1}{\rho} \partial_x p + \nu \partial_y^2 u
+\]</div>
+<p>The gradient of <span class="math notranslate nohighlight">\(p\)</span> vanishes in the other directions. Since <span class="math notranslate nohighlight">\(u\)</span> depends only on <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\partial_x p\)</span> must
+be a constant. Since we impose equal pressure at infinity, this constant must be zero. Finally, we need boundary
+conditions. The no-slip condition for a static boundary is <span class="math notranslate nohighlight">\(u = 0\)</span>. For a uniformly moving boundary, we can work
+in the moving reference frame, to get the same no-slip condition. This in the rest frame of the fluid
+at infinity, for which the boundary is moving <span class="math notranslate nohighlight">\(u(0,t) = u_0\)</span>. We must also puta boundary condition at <span class="math notranslate nohighlight">\(y = \infty\)</span>.
+We will demand that <span class="math notranslate nohighlight">\(u(\infty, t) = 0\)</span> for any finite <span class="math notranslate nohighlight">\(t\)</span>; there is not time for the fluid at infinity to
+respond to the plate.</p>
+<p>Note that we get the same equation for <span class="math notranslate nohighlight">\(\partial_y u = - \omega\)</span>, so we have a diffusion equation for <span class="math notranslate nohighlight">\(\omega\)</span>,
+which in this simple case is also a diffusion equation for <span class="math notranslate nohighlight">\(u\)</span> itself. Initially, we should find that <span class="math notranslate nohighlight">\(u,\omega \neq 0\)</span>
+only at the boundary <span class="math notranslate nohighlight">\(y = 0\)</span>, corresponding to a delta function-supported <em>vortex sheet</em> that diffuses upwards.
+Indeed, as we will see, <span class="math notranslate nohighlight">\(\omega\)</span> is a Gaussian spreading as <span class="math notranslate nohighlight">\(\Delta y \sim \sqrt{\nu t}\)</span>.</p>
+<p>Because we expect (dimensionally) <span class="math notranslate nohighlight">\(\delta x \sim \sqrt{\nu t}\)</span>, we will attempt a <em>similarity solution</em>
+<span class="math notranslate nohighlight">\(u(y,t) = u_0 f(\eta)\)</span> with <span class="math notranslate nohighlight">\(\eta = y/(\nu t)^{1/2}\)</span>. We will dig into this sort of ansätz much later in the book.
+Here <span class="math notranslate nohighlight">\(f\)</span> is dimensionless and the factor of <span class="math notranslate nohighlight">\(u_0\)</span> is used simply because <span class="math notranslate nohighlight">\(u_0\)</span> is the only parameter with dimensions
+of velocity in the problem. Applying the Navier-stokes equation to this ansätz, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	f''(\eta) + \frac{1}{2} \eta f'(\eta) = 0
+\]</div>
+<p>We can think of this as a first order equation for <span class="math notranslate nohighlight">\(f'\)</span>, with solution <span class="math notranslate nohighlight">\(f' - C e^{-\eta^2/4}\)</span>. Integrating further,</p>
+<div class="math notranslate nohighlight">
+\[
+	f = A + C \int_0^{\eta} ds e^{-s^2/4}
+\]</div>
+<p>Now <span class="math notranslate nohighlight">\(C,A\)</span> must be fixed by the boundary conditions. First, we need <span class="math notranslate nohighlight">\(f(0) = 1\)</span>
+to satisfy the boundary conditions at <span class="math notranslate nohighlight">\(y = \eta = 0\)</span>, and thus <span class="math notranslate nohighlight">\(A = 1\)</span>.
+Next, we need <span class="math notranslate nohighlight">\(f(\infty) = 0\)</span>. Since <span class="math notranslate nohighlight">\( \int_0^{\infty} ds e^{-s^2/4} = \sqrt{\pi}\)</span>,
+we have <span class="math notranslate nohighlight">\(B = - \frac{1}{\sqrt{\pi}\)</span>. Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+	u(y,t) = u_0 \left[1 - \frac{1}{\sqrt{\pi}} \int_0^{y/\sqrt{\nu t}} ds e^{-s^2/4} \right]
+\]</div>
+<p>The viscosity is</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega = - \partial_y u = \frac{u_0}{\sqrt{\pi \nu t}} e^{- \frac{y^2}{4\nu t}}
+\]</div>
+<p>Note that this is basically exactly the solution to the diffusion equation for a delta function
+initial condition. Indeed you can show from the solution that as <span class="math notranslate nohighlight">\(t \to 0\)</span>, <span class="math notranslate nohighlight">\(\omega \to u_0 \delta(y)\)</span>.</p>
 </div>
 </div>
 
@@ -336,17 +401,17 @@ takes in the usual equations of fluid dynamics.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../chapter1/Vorticity_dynamics.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Diffusion.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Vorticity Dynamics</p>
+            <p class="prev-next-title">Introduction to diffusion</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="navier_stokes_1.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to the Navier-Stokes equation</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

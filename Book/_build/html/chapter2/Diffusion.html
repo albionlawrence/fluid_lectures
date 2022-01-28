@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viscosity: a first pass &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Introduction to diffusion &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to the Navier-Stokes equation" href="navier_stokes_1.html" />
-    <link rel="prev" title="Vorticity Dynamics" href="../chapter1/Vorticity_dynamics.html" />
+    <link rel="next" title="Diffusion and Viscosity" href="diffusion_viscosity.html" />
+    <link rel="prev" title="Simple example of viscous flow" href="simple_viscous_flow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,7 +142,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Intro_viscosity.html">
    Viscosity: a first pass
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -148,7 +150,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="navier_stokes_1.html">
      Introduction to the Navier-Stokes equation
@@ -164,8 +166,8 @@
      Simple example of viscous flow
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Diffusion.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Introduction to diffusion
     </a>
    </li>
@@ -222,7 +224,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter2/Intro_viscosity.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter2/Diffusion.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -242,7 +244,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/Intro_viscosity.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/Diffusion.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -270,7 +272,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Viscosity: a first pass</h1>
+                <h1>Introduction to diffusion</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -281,34 +283,117 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="viscosity-a-first-pass">
-<h1>Viscosity: a first pass<a class="headerlink" href="#viscosity-a-first-pass" title="Permalink to this headline">¶</a></h1>
-<p>The Euler equation captures the behavior of fluids in a variety of situations. It does well in describing
-aerodynamics, as we will see, and it does well in describing strongly turbulent flow away from the
-boundaries of the fluid.</p>
-<p>However, experience teaches us that there is an additional frictional force acting inside the fluid,
-when one <em>shears</em> the fluid – sets up a motion with the velocity changing in space.
-If one  initiates flow and then does not force the fluid any further, for example, the fluid will
-often slowly come to rest (think about stirring your coffee). This force is known as <em>viscosity</em>.</p>
-<p>Viscosity plays a sort of dual role in the flow about objects. At low velocities, Euler’s equations apply,
-and for flows that enter from infinity, initially irrotational fluid stays irrotational.</p>
-<p><img alt="Uniform flow" src="../_images/cylinder_uniform.png" /></p>
-<p>(Image taken from <span id="id1">[<a class="reference internal" href="../bibliography.html#id7">Van Dyke, 1982</a>]</span>.)</p>
-<p>As we increase the velocity of the incoming fluid a turbulent wave develops behind the cylinder
-as we can ee here <span id="id2">[<a class="reference internal" href="../bibliography.html#id7">Van Dyke, 1982</a>]</span>.</p>
-<p><img alt="Turbulent flow" src="../_images/cylinder_turbulent.png" /></p>
-<p>Clearly the flow ceases to be irrotational behind the cylinder. Now the presence of viscosity will
-allow vorticity to develop (as we will see). On the other hand, the viscosity is a
-subdominant effect at he scales we’re looking at. What is happening is that viscosity becomes
-important at the boundary layer surrounding the cylinder. This is because in the presence of viscosity
-we must assume that the tangential velocity vanishes at the sphere. A strong shear thus develops
-in a “boundary layer” near the sphere and the viscosity becomes important, allowing the generation
-of vorticity.</p>
-<p>This week we will introduce the concept of viscosity and its operation in simple examples,
-but put off a more detailed first-principles argument for the specific form it usually
-takes in the usual equations of fluid dynamics.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-diffusion">
+<h1>Introduction to diffusion<a class="headerlink" href="#introduction-to-diffusion" title="Permalink to this headline">¶</a></h1>
+<p>In the Navier-Stokes equation, <span class="math notranslate nohighlight">\(D_t {\vec v} = - \frac{1}{\rho} {\vec\nabla} p + \nu \nabla^2 {\vec v}\)</span>, the vorticity
+term appears somewhat as a ``diffusion term”. To understand what is meant by this, let me introduce a couple of
+comments about diffusion (as I don’t know how many of you have encountered it yet).</p>
+<p>Einstein showed that the probability distrubution of a set of random walkers followed a diffusion equation</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t P({\vec x},t) = D \nabla^2 P
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(x,t)\)</span> is the probability density of the particle: that is, <span class="math notranslate nohighlight">\(P dx\)</span> is the probability to find the
+particle in an interval <span class="math notranslate nohighlight">\([x- \frac{1}{2} dx, x + \frac{1}{2} dx]\)</span>.</p>
+<p>This can be thought of as the equation for the density of some “tracer particles” in a static fluid, which move
+by random Brownian motion (every time <span class="math notranslate nohighlight">\(\delta t\)</span>, the particle moves some fixed <span class="math notranslate nohighlight">\(\delta x\)</span> with uniform
+probability in any direction), scattering off of the fluid particles. In one dimension, the derivation is
+straightfoward:</p>
+<div class="math notranslate nohighlight">
+\[
+	P(x, t + \delta t) = \frac{1}{2} (P(x + \delta x, t) + P(x - \delta x, t))
+\]</div>
+<p>Expanding the left hand side to leading nontrivial order in <span class="math notranslate nohighlight">\(\delta t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+	P(x, t + \delta t) = P(x, t) + \delta t {\dot P}(x, t)
+\]</div>
+<p>When expanding the right hand side, the terms linear in <span class="math notranslate nohighlight">\(\delta x\)</span> cancel. The terms <span class="math notranslate nohighlight">\(P(x,t)\)</span> cancel in the equation
+so we are left with</p>
+<div class="math notranslate nohighlight">
+\[
+	\delta T \partial_t P = \frac{1}{2} \delta x^2 \partial_x^2 P + ...
+\]</div>
+<p>we have left out higher orders in <span class="math notranslate nohighlight">\(\delta t\)</span>, <span class="math notranslate nohighlight">\(\delta x\)</span>. This is he diffusion equation with
+<span class="math notranslate nohighlight">\(D = \frac{\delta x^2}{2\delta t}\)</span>. Nete that this has the same dimension as the kinematic viscosity,
+as it must, since it converts the Laplacian into something with dimensions of a time derivative.
+For multiple diffusing particles, we can replace <span class="math notranslate nohighlight">\(P\)</span> with the density (thinking of the density as the
+probability of a single particle being at a given position, times the number of particles).</p>
+<p>It is worth noting that if we set <span class="math notranslate nohighlight">\(t - = i \tau\)</span>, we get something with the mathematical structure of
+the (free) Schrödinger equation. This is sometimes a useful trick (for example if you know solutions
+to one, you can do this rotation to get solutions to the other. More generally just as the wave function
+has an interpretation in terms of a Feynman path integral, such diffusive systems have a path integral
+representation.)</p>
+<p>Solutions of this equation spread out or diffuse in time. A classic example is a solution such that</p>
+<div class="math notranslate nohighlight">
+\[
+	P(x,0) = \delta(x)
+\]</div>
+<p>corresponding to a particle (or collection of particles) starting at a fixed location. The corresponding
+solution to the diffusion equation is</p>
+<div class="math notranslate nohighlight">
+\[
+	P(x,t) = \frac{1}{\sqrt{2 Dt}} e^{-\frac{x^2}{4Dt}}
+\]</div>
+<p>Note in this equation that the width of the distribution scales as <span class="math notranslate nohighlight">\(\Delta x \sim \sqrt{2 D t}\)</span>. This is characteristic
+of diffusion processes and can be guessed from dimensional analysis. If we assume that <span class="math notranslate nohighlight">\(P\)</span> varies by order <span class="math notranslate nohighlight">\({\cal O}(1)\)</span>
+over time scale <span class="math notranslate nohighlight">\(T\)</span> and distance scale <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(P = P(t/T, x/X)\)</span> and we assume derivatives of the arguments are
+order <span class="math notranslate nohighlight">\({\cal O}(1)\)</span>. Setting <span class="math notranslate nohighlight">\(t = T \tau\)</span>, <span class="math notranslate nohighlight">\(x = L y\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ 
+	\partial_{\tau} P = \frac{T D}{L^2} \partial_y^2 P
+\]</div>
+<p>Since by supposition the deivatives are order 1, <span class="math notranslate nohighlight">\(L^2 \sim T D\)</span>.</p>
+<p>These equations can be solved by Fourier transform. We know that we can write</p>
+<div class="math notranslate nohighlight">
+\[
+	P(x,t) = \int_{-\infty}^{\infty} \frac{dk}{\sqrt{2pi}} {\tilde P}(k,t) e^{i k x}
+\]</div>
+<p>In terms of this integral, the diffusion equation becomes</p>
+<div class="math notranslate nohighlight">
+\[
+	\int_{-\infty}^{\infty} \frac{dk}{\sqrt{2\pi}} \left(\dot{\tilde P} + D k^2 {\tilde P}\right) e^{i k x} = 0
+\]</div>
+<p>Integrating the above over <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} \frac{dx}{\sqrt{2\pi}} e^{-i q x}\)</span> and using</p>
+<div class="math notranslate nohighlight">
+\[
+	\int_{-\infty}^{\infty} \frac{dx}{2\pi} e^{i x (k - q)} = \delta(k - q)
+\]</div>
+<p>we find <span class="math notranslate nohighlight">\(\dot{\tilde P} + D k^2 {\tilde P} = 0\)</span>, solved by <span class="math notranslate nohighlight">\(P(k,t) = P(k,0) e^{- D k^2 t}\)</span>. For delta function
+initial conditions above, <span class="math notranslate nohighlight">\(P(k,0) = \frac{1}{\sqrt{2\pi}}\)</span>. Thus,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b719e45a-df1b-4e08-b05d-6063aa2fe464">
+<span class="eqno">(24)<a class="headerlink" href="#equation-b719e45a-df1b-4e08-b05d-6063aa2fe464" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	P(x,t) &amp; = &amp; \int_{-\infty}^{\infty} \frac{dk}{\sqrt{2pi}} {\tilde P}(k,t) e^{i k x}\\
+	&amp; = &amp; \int_{-\infty}^{\infty} \frac{dk}{2\pi} e^{i k x - D k^2 t}
+\end{align}\]</div>
+<p>This is just a Gaussian integral. Complete the square in the exponential,</p>
+<div class="math notranslate nohighlight">
+\[
+	D k^2 t - i k t = Dt (k^2 - \frac{ix}{Dt} k - \frac{x^2}{4 D^2t^2}) + \frac{x^2}{4 Dt}
+\]</div>
+<p>and using</p>
+<div class="math notranslate nohighlight">
+\[
+	\int_{-\infty}^{\infty} dx e^{-\alpha x^2} = \sqrt{\frac{\pi}{a}}
+\]</div>
+<p>we get the desired answer.</p>
+<p>The diffusion equation is central in fluid mechanics problems both for understanding viscosity and when the
+fluid is transporting additional quantities. This could be thermodynamic quantities like temperature, or
+the concentration of some chemical like salt or carbon. For example, if <span class="math notranslate nohighlight">\(p = p(\rho, T)\)</span> is the equation
+of state, the Navier-Stokes equation plus mass conservation <span class="math notranslate nohighlight">\(D_t \rho = 0\)</span> no longer close (there are four equations for
+five unknowns <span class="math notranslate nohighlight">\({\vec v}\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(T\)</span>); we need an equation for <span class="math notranslate nohighlight">\(T\)</span> which is typically</p>
+<div class="math notranslate nohighlight">
+\[
+	D_t T = D_{temp} \nabla^2 T
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_{temp}\)</span> is the <em>thermal diffusivity</em>. (Actually in the ocean and atmosphere a slightly differnt quantity
+known as <em>potential temperature</em> is used, but that is a longer story).</p>
+<p>These equations are known as <em>advection-diffusion</em> equations. Advection referrs to the <span class="math notranslate nohighlight">\({\vec v}\cdot{\vec nabla} T\)</span> term in <span class="math notranslate nohighlight">\(D_t\)</span>, describing the time derivative of the quanity along a fluid trajectory; without diffusion, blobs of a quantity move with the fluid. If <span class="math notranslate nohighlight">\(D = 0\)</span> and the velocity is constant in the <span class="math notranslate nohighlight">\(x\)</span> direction for example,</p>
+<div class="math notranslate nohighlight">
+\[
+	T(x,t) = T(x - vt)
+\]</div>
+<p>is a solution.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -336,17 +421,17 @@ takes in the usual equations of fluid dynamics.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../chapter1/Vorticity_dynamics.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="simple_viscous_flow.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Vorticity Dynamics</p>
+            <p class="prev-next-title">Simple example of viscous flow</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="navier_stokes_1.html" title="next page">
+    <a class='right-next' id="next-link" href="diffusion_viscosity.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to the Navier-Stokes equation</p>
+        <p class="prev-next-title">Diffusion and Viscosity</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

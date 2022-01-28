@@ -1,10 +1,10 @@
 # Dimensional analysis and the Reynolds number
 
-The voscosity is clearly never non-vanishing, but it appears that 
-there are cases where we can ignore it. We would like tp understand
+The viscosity is clearly never non-vanishing, but it appears that 
+there are cases where we can ignore it. We would like to understand
 this in a more precise way. Saying "the viscosity is small" is insufficient,
 as $\nu$ has dimensions of $(length)^2/(time)$, and it makes no sense to say
-that a dimensionful quantity is small (a cenimeter is small for 
+that a dimensionful quantity is small (a centimeter is small for 
 you but large for a bacterium, etc.)
 
 For the Navier-Stokes equation with ${\vec F}_{ext} = 0$, 
@@ -13,7 +13,7 @@ characteristic length scale $L$ and and time scale $T$, we can
 write $Re \equiv T \nu/L^2$ as a dimensionless quantity. 
 
 In the context of fluid motion, let us set ${\vec u} = U {\vec V}$,
-where $U$ is a velociyt scale and ${\vec V} \sim {\cal O}(1)$.
+where $U$ is a velocity scale and ${\vec V} \sim {\cal O}(1)$.
 We set ${\vec x} = L {\vec \chi}$, and $t = T \tau$, with 
 ${\vec \chi},\tau \sim {\cal O}(1)$, and $\rho = \rho_0 n$, $n \sim {\cal O}(1)$. 
 We further assume that $U = L/T$, or $T = L/U$. Using this scaling,
@@ -41,15 +41,19 @@ $$
 
 We define the *Reynolds number* as $Re = \frac{UL}{\nu}$, where $U$ is the 
 characeristic velocity of the flow, and $L$ the characteristic scale of the flow.
-Thus the viscosity is relativly unimportant when the Reynolds number is large,
-and dominates when the Reynolds numbe is small. One way to think about the
+Thus the viscosity is relatively unimportant when the Reynolds number is large,
+and dominates when the Reynolds number is small. One way to think about the
 Reynolds number is that it measures the relative strength of the "inertial term"
 ${\vec u} \cdot {\vec \nabla} {\vec u}$ and the "viscous term" $\nu \nabla^2 {\vec u}$.
 
+Another way to think about the Reynolds number is to consider an object of
+size $L$ in a viscous fluid. In this case there is a natural velocity
+$U_{visc} \sim \nu/L$, and the Reynolds number becomes the ratio
+$Re = U/U_{visc}$. 
 
 High and low Reynolds numbers are qualitatively quite different. 
 For example, as $Re \to 0$ we can ignore the nonlinear inertial term, and
-${\vec u}$ \to - ${\vec u}$ becomes a symmetry of the equations. The flow is
+${\vec u} \to - {\vec u}$ becomes a symmetry of the equations. The flow is
 thus *reversible*. Put dye in a viscous fluid and slowly stir it and watch it mix.
 Then reverse the direction of stirring, and the dye will return to its original configuration
 as long as it is not also diffusing over the time scale of the experiment.
@@ -57,17 +61,23 @@ as long as it is not also diffusing over the time scale of the experiment.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8V6kc0PQa14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Low Reynolds number flows are important in many biological applications: the flow of blood,
-the swimming motion of bacteria and so on. High Reynolds number is important in many
-geophysical situations, particularly in ocean and atmospheric dynamics at the right scales.
-
+the swimming motion of bacteria and so on. High Reynolds number is the domain of highly 
+turbulent motion.
 
 What $U$ and $L$ means takes a little thought. For example, if the flow has features at
 a range of spatial scales, those features have different characteristic Reynolds numbers
-attached. In the flow past a cylindr we looked at earlier, the Reynolds number is high
-far from the cyliner, particularly in the turbulent wake behind the cyliner, while it
+attached. In the flow past a cylinder we looked at earlier, the Reynolds number is high
+far from the cylinder, particularly in the turbulent wake behind the cylinder, while it
 is low in the thin layer close to the boundary where the boundary conditions set the velocity
-to zero. Thus in the ocean, turbulent behavior sets in the $\sim few \times 100$ km 
-"mesoscale" and below.
+to zero. 
+
+Fluids in more complicated situations are controlled by a wider variety of dimensionless
+numbers. For example, on a sphere rotating witn angular frequency $\Omega$, at latitude
+$\phi$, the vertical projection of the angular velocity is $f = \Omega \sin\phi$, and the 
+*Rossby number* is $Ro = U/L f$. In the ocean, $Ro \sim 1$ is he boundaty between quasi-two-dimensional
+*mesoscale* turbulence between $(few) \times 10$ and $(few)\times 100$ km, and 
+more three-dimensional *submesoscale* turbulence (where vertical velocities become
+important) at $\lesssim (few)\times 10$km.
 
 ![mesoscale](Mesoscale-eddies.jpeg "mesoscale eddies near the Gulf stream")
 
