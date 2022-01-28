@@ -166,6 +166,16 @@
      Simple example of viscous flow
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Diffusion.html">
+     Introduction to diffusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diffusion_viscosity.html">
+     Diffusion and Viscosity
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -275,18 +285,18 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dimensional-analysis-and-the-reynolds-number">
 <h1>Dimensional analysis and the Reynolds number<a class="headerlink" href="#dimensional-analysis-and-the-reynolds-number" title="Permalink to this headline">¶</a></h1>
-<p>The voscosity is clearly never non-vanishing, but it appears that
-there are cases where we can ignore it. We would like tp understand
+<p>The viscosity is clearly never non-vanishing, but it appears that
+there are cases where we can ignore it. We would like to understand
 this in a more precise way. Saying “the viscosity is small” is insufficient,
 as <span class="math notranslate nohighlight">\(\nu\)</span> has dimensions of <span class="math notranslate nohighlight">\((length)^2/(time)\)</span>, and it makes no sense to say
-that a dimensionful quantity is small (a cenimeter is small for
+that a dimensionful quantity is small (a centimeter is small for
 you but large for a bacterium, etc.)</p>
 <p>For the Navier-Stokes equation with <span class="math notranslate nohighlight">\({\vec F}_{ext} = 0\)</span>,
 <span class="math notranslate nohighlight">\(\nu\)</span> is the only dimensionful parameter. However, if we have a
 characteristic length scale <span class="math notranslate nohighlight">\(L\)</span> and and time scale <span class="math notranslate nohighlight">\(T\)</span>, we can
 write <span class="math notranslate nohighlight">\(Re \equiv T \nu/L^2\)</span> as a dimensionless quantity.</p>
 <p>In the context of fluid motion, let us set <span class="math notranslate nohighlight">\({\vec u} = U {\vec V}\)</span>,
-where <span class="math notranslate nohighlight">\(U\)</span> is a velociyt scale and <span class="math notranslate nohighlight">\({\vec V} \sim {\cal O}(1)\)</span>.
+where <span class="math notranslate nohighlight">\(U\)</span> is a velocity scale and <span class="math notranslate nohighlight">\({\vec V} \sim {\cal O}(1)\)</span>.
 We set <span class="math notranslate nohighlight">\({\vec x} = L {\vec \chi}\)</span>, and <span class="math notranslate nohighlight">\(t = T \tau\)</span>, with
 <span class="math notranslate nohighlight">\({\vec \chi},\tau \sim {\cal O}(1)\)</span>, and <span class="math notranslate nohighlight">\(\rho = \rho_0 n\)</span>, <span class="math notranslate nohighlight">\(n \sim {\cal O}(1)\)</span>.
 We further assume that <span class="math notranslate nohighlight">\(U = L/T\)</span>, or <span class="math notranslate nohighlight">\(T = L/U\)</span>. Using this scaling,</p>
@@ -311,27 +321,37 @@ We further assume that <span class="math notranslate nohighlight">\(U = L/T\)</s
 \]</div>
 <p>We define the <em>Reynolds number</em> as <span class="math notranslate nohighlight">\(Re = \frac{UL}{\nu}\)</span>, where <span class="math notranslate nohighlight">\(U\)</span> is the
 characeristic velocity of the flow, and <span class="math notranslate nohighlight">\(L\)</span> the characteristic scale of the flow.
-Thus the viscosity is relativly unimportant when the Reynolds number is large,
-and dominates when the Reynolds numbe is small. One way to think about the
+Thus the viscosity is relatively unimportant when the Reynolds number is large,
+and dominates when the Reynolds number is small. One way to think about the
 Reynolds number is that it measures the relative strength of the “inertial term”
 <span class="math notranslate nohighlight">\({\vec u} \cdot {\vec \nabla} {\vec u}\)</span> and the “viscous term” <span class="math notranslate nohighlight">\(\nu \nabla^2 {\vec u}\)</span>.</p>
+<p>Another way to think about the Reynolds number is to consider an object of
+size <span class="math notranslate nohighlight">\(L\)</span> in a viscous fluid. In this case there is a natural velocity
+<span class="math notranslate nohighlight">\(U_{visc} \sim \nu/L\)</span>, and the Reynolds number becomes the ratio
+<span class="math notranslate nohighlight">\(Re = U/U_{visc}\)</span>.</p>
 <p>High and low Reynolds numbers are qualitatively quite different.
 For example, as <span class="math notranslate nohighlight">\(Re \to 0\)</span> we can ignore the nonlinear inertial term, and
-<span class="math notranslate nohighlight">\({\vec u}\)</span> \to - <span class="math notranslate nohighlight">\({\vec u}\)</span> becomes a symmetry of the equations. The flow is
+<span class="math notranslate nohighlight">\({\vec u} \to - {\vec u}\)</span> becomes a symmetry of the equations. The flow is
 thus <em>reversible</em>. Put dye in a viscous fluid and slowly stir it and watch it mix.
 Then reverse the direction of stirring, and the dye will return to its original configuration
 as long as it is not also diffusing over the time scale of the experiment.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8V6kc0PQa14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>Low Reynolds number flows are important in many biological applications: the flow of blood,
-the swimming motion of bacteria and so on. High Reynolds number is important in many
-geophysical situations, particularly in ocean and atmospheric dynamics at the right scales.</p>
+the swimming motion of bacteria and so on. High Reynolds number is the domain of highly
+turbulent motion.</p>
 <p>What <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(L\)</span> means takes a little thought. For example, if the flow has features at
 a range of spatial scales, those features have different characteristic Reynolds numbers
-attached. In the flow past a cylindr we looked at earlier, the Reynolds number is high
-far from the cyliner, particularly in the turbulent wake behind the cyliner, while it
+attached. In the flow past a cylinder we looked at earlier, the Reynolds number is high
+far from the cylinder, particularly in the turbulent wake behind the cylinder, while it
 is low in the thin layer close to the boundary where the boundary conditions set the velocity
-to zero. Thus in the ocean, turbulent behavior sets in the <span class="math notranslate nohighlight">\(\sim few \times 100\)</span> km
-“mesoscale” and below.</p>
+to zero.</p>
+<p>Fluids in more complicated situations are controlled by a wider variety of dimensionless
+numbers. For example, on a sphere rotating witn angular frequency <span class="math notranslate nohighlight">\(\Omega\)</span>, at latitude
+<span class="math notranslate nohighlight">\(\phi\)</span>, the vertical projection of the angular velocity is <span class="math notranslate nohighlight">\(f = \Omega \sin\phi\)</span>, and the
+<em>Rossby number</em> is <span class="math notranslate nohighlight">\(Ro = U/L f\)</span>. In the ocean, <span class="math notranslate nohighlight">\(Ro \sim 1\)</span> is he boundaty between quasi-two-dimensional
+<em>mesoscale</em> turbulence between <span class="math notranslate nohighlight">\((few) \times 10\)</span> and <span class="math notranslate nohighlight">\((few)\times 100\)</span> km, and
+more three-dimensional <em>submesoscale</em> turbulence (where vertical velocities become
+important) at <span class="math notranslate nohighlight">\(\lesssim (few)\times 10\)</span>km.</p>
 <p><img alt="mesoscale" src="../_images/Mesoscale-eddies.jpeg" /></p>
 <p><a class="reference external" href="http://web.gps.caltech.edu/~andrewt/teaching.html">Taken from this website</a>.</p>
 <p>Another use of this scaling is that since in dimensionless coordinates only the Reynolds number
