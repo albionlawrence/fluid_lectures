@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Diffusion and Viscosity" href="diffusion_viscosity.html" />
-    <link rel="prev" title="Simple example of viscous flow" href="simple_viscous_flow.html" />
+    <link rel="prev" title="Simple examplew of viscous flow" href="simple_viscous_flow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -163,7 +163,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="simple_viscous_flow.html">
-     Simple example of viscous flow
+     Simple examplew of viscous flow
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -286,7 +286,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-diffusion">
 <h1>Introduction to diffusion<a class="headerlink" href="#introduction-to-diffusion" title="Permalink to this headline">¶</a></h1>
 <p>In the Navier-Stokes equation, <span class="math notranslate nohighlight">\(D_t {\vec v} = - \frac{1}{\rho} {\vec\nabla} p + \nu \nabla^2 {\vec v}\)</span>, the vorticity
-term appears somewhat as a ``diffusion term”. To understand what is meant by this, let me introduce a couple of
+term appears somewhat as a “diffusion term”. To understand what is meant by this, let me introduce a couple of
 comments about diffusion (as I don’t know how many of you have encountered it yet).</p>
 <p>Einstein showed that the probability distrubution of a set of random walkers followed a diffusion equation</p>
 <div class="math notranslate nohighlight">
@@ -361,8 +361,8 @@ order <span class="math notranslate nohighlight">\({\cal O}(1)\)</span>. Setting
 \]</div>
 <p>we find <span class="math notranslate nohighlight">\(\dot{\tilde P} + D k^2 {\tilde P} = 0\)</span>, solved by <span class="math notranslate nohighlight">\(P(k,t) = P(k,0) e^{- D k^2 t}\)</span>. For delta function
 initial conditions above, <span class="math notranslate nohighlight">\(P(k,0) = \frac{1}{\sqrt{2\pi}}\)</span>. Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b719e45a-df1b-4e08-b05d-6063aa2fe464">
-<span class="eqno">(24)<a class="headerlink" href="#equation-b719e45a-df1b-4e08-b05d-6063aa2fe464" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b53cb3c7-e421-4278-91b5-37d71d4a6c29">
+<span class="eqno">(24)<a class="headerlink" href="#equation-b53cb3c7-e421-4278-91b5-37d71d4a6c29" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	P(x,t) &amp; = &amp; \int_{-\infty}^{\infty} \frac{dk}{\sqrt{2pi}} {\tilde P}(k,t) e^{i k x}\\
 	&amp; = &amp; \int_{-\infty}^{\infty} \frac{dk}{2\pi} e^{i k x - D k^2 t}
 \end{align}\]</div>
@@ -386,9 +386,10 @@ five unknowns <span class="math notranslate nohighlight">\({\vec v}\)</span>, <s
 \[
 	D_t T = D_{temp} \nabla^2 T
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(D_{temp}\)</span> is the <em>thermal diffusivity</em>. (Actually in the ocean and atmosphere a slightly differnt quantity
-known as <em>potential temperature</em> is used, but that is a longer story).</p>
-<p>These equations are known as <em>advection-diffusion</em> equations. Advection referrs to the <span class="math notranslate nohighlight">\({\vec v}\cdot{\vec nabla} T\)</span> term in <span class="math notranslate nohighlight">\(D_t\)</span>, describing the time derivative of the quanity along a fluid trajectory; without diffusion, blobs of a quantity move with the fluid. If <span class="math notranslate nohighlight">\(D = 0\)</span> and the velocity is constant in the <span class="math notranslate nohighlight">\(x\)</span> direction for example,</p>
+<p>where <span class="math notranslate nohighlight">\(D_{temp}\)</span> is the <em>thermal diffusivity</em> (do not confuse it with a derivative operator such as <span class="math notranslate nohighlight">\(D_t\)</span>. Unfortunately
+this notation is canonical in the literature). Actually in the ocean and atmosphere a slightly differnt quantity
+known as <em>potential temperature</em> is used, but that is a longer story.</p>
+<p>These equations are known as <em>advection-diffusion</em> equations. Advection refers to the <span class="math notranslate nohighlight">\({\vec v}\cdot{\vec \nabla} T\)</span> term in <span class="math notranslate nohighlight">\(D_t\)</span>, describing the time derivative of the quanity along a fluid trajectory; without diffusion, blobs of a quantity move with the fluid. If <span class="math notranslate nohighlight">\(D = 0\)</span> and the velocity is constant in the <span class="math notranslate nohighlight">\(x\)</span> direction for example,</p>
 <div class="math notranslate nohighlight">
 \[
 	T(x,t) = T(x - vt)
@@ -425,7 +426,7 @@ known as <em>potential temperature</em> is used, but that is a longer story).</p
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Simple example of viscous flow</p>
+            <p class="prev-next-title">Simple examplew of viscous flow</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="diffusion_viscosity.html" title="next page">

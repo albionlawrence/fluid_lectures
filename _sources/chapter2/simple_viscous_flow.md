@@ -1,4 +1,4 @@
-# Simple example of viscous flow
+# Simple examplew of viscous flow
 
 ## Channel flow
 
@@ -18,9 +18,8 @@ Since $\partial_x p = \nu \rho c = \mu c$, $p = \mu c x + p_0$.
 ## Flow down a plane.
 
 Anther example, discussed in the book, is one of a layer of water with height $h$ 
-undergoing steady flow down an incline at angle $\alpha$
-from the ground, with atmospheric pressure $p_0$ at the top of the fluid. 
-Take the problem to be two-dimensional with $x,z$ the directions parallel and 
+undergoing steady flow down an incline at angle $\alpha$ from the ground, with atmospheric pressure 
+$p_0$ at the top of the fluid. Take the problem to be two-dimensional with $x,z$ the directions parallel and 
 perpendicular to the incline, and $z = 0$ the incline and $z = h$ the upper boundary. Let $p = p(z)$, and
 ${\vec u} = u(z) {\hat x}$, where incompressibility kills the $x$ dependence. 
 
