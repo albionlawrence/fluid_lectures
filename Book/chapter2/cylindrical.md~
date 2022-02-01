@@ -1,0 +1,23 @@
+# Simple solutions in cylindrical coordinates
+
+## Writing the Navier-Stokes equations
+
+### Vectors and derivatives
+
+We work in cylindrical coordinates $(r,\theta,z)$. There is a natural local basis of orthonormal vectors
+${\hat e}_r(\theta)$, ${\hat e}_{\theta}(\theta)$, ${\hat e}_z$. It is important that the directions of
+the first two of these depend on theta.
+
+We can expand a vector such as velocity in these coordinates as: 
+
+$$
+	{\vec u} = u_r {\hat e}_r + u_{\theta} {\hat e}_{\theta} + u_z {\hat e}_z
+$$
+
+In taking derivatives of such a vctor, we must take into account that $\partial_{\theta} {\hat e}_r = {\hat e}_{\theta}$,
+and $\partial_{\theta} {\hat e}_{\theta} = - {\hat e}_r$ (${\hat e}_z$ is constant). Thus, 
+
+$$
+	\partial_{\theta} {\vec u} = \left({\partial_{\theta} u_r - u_{\theta}\right){\hat e}_r 
+	+ \left({\partial_{\theta} u_{\theta} + u_r\right) {\hat e}_{\theta} + \partial_{\theta} u_z {\hat e}_z
+$$

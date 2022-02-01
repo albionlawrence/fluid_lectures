@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple examplew of viscous flow &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Gibbs phenomenon in Acheson 2.3 &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to diffusion" href="Diffusion.html" />
-    <link rel="prev" title="Dimensional analysis and the Reynolds number" href="Reynolds_number.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Diffusion and Viscosity" href="diffusion_viscosity.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -161,8 +161,8 @@
      Dimensional analysis and the Reynolds number
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="simple_viscous_flow.html">
      Simple examplew of viscous flow
     </a>
    </li>
@@ -174,6 +174,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="diffusion_viscosity.html">
      Diffusion and Viscosity
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Gibbs phenomenon in Acheson 2.3
     </a>
    </li>
   </ul>
@@ -224,9 +229,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter2/simple_viscous_flow.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter2/Gibbs_phenomenon.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -244,7 +249,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/simple_viscous_flow.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/Gibbs_phenomenon.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -260,29 +265,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter2/Gibbs_phenomenon.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#channel-flow">
-   Channel flow
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flow-down-a-plane">
-   Flow down a plane.
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -290,88 +294,75 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Simple examplew of viscous flow</h1>
+                <h1>Gibbs phenomenon in Acheson 2.3</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#channel-flow">
-   Channel flow
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flow-down-a-plane">
-   Flow down a plane.
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="simple-examplew-of-viscous-flow">
-<h1>Simple examplew of viscous flow<a class="headerlink" href="#simple-examplew-of-viscous-flow" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="channel-flow">
-<h2>Channel flow<a class="headerlink" href="#channel-flow" title="Permalink to this headline">¶</a></h2>
-<p>The book goes through many examples: let me discuss a particularly simple one, the steady flow of viscous fluid in
-two dimensions through a straight channel. Let the walls of the channel be at <span class="math notranslate nohighlight">\(y = 0,L\)</span>, extending in the <span class="math notranslate nohighlight">\(x\)</span> direction,
-while the fluid is flowing entirely along the <span class="math notranslate nohighlight">\(x\)</span> direction, and is <span class="math notranslate nohighlight">\(t\)</span>-independent. Incompressibility sets
-<span class="math notranslate nohighlight">\(\partial_x u = 0\)</span>, so that <span class="math notranslate nohighlight">\(u = u(y)\)</span>. We will look for a solution fo which <span class="math notranslate nohighlight">\(p = p(x)\)</span>, so that the fluid is being pushed
-down the channel. Plugging these solutions into he Navier-Stokes equation, we find</p>
-<div class="math notranslate nohighlight">
-\[ \frac{1}{\rho} \partial_x p(x) = \nu \partial_y^2 u(y) \]</div>
-<p>Each side depends on an independent variable, so they must be equal to a constant <span class="math notranslate nohighlight">\(\nu c\)</span>. We can write
-<span class="math notranslate nohighlight">\(u(y) = c y^2 + d y + e\)</span>. We set <span class="math notranslate nohighlight">\(u = 0\)</span> at <span class="math notranslate nohighlight">\(y = 0\)</span>, so that <span class="math notranslate nohighlight">\(e = 0\)</span>, and also at <span class="math notranslate nohighlight">\(y = L\)</span>, so that
-<span class="math notranslate nohighlight">\(c L^2 + d L = 0\)</span>, or <span class="math notranslate nohighlight">\(d = - c L\)</span>, so that <span class="math notranslate nohighlight">\(u(y) = c (y^2 - L y)\)</span>. <span class="math notranslate nohighlight">\(c\)</span> is thus set by the pressure gradient.
-Since <span class="math notranslate nohighlight">\(\partial_x p = \nu \rho c = \mu c\)</span>, <span class="math notranslate nohighlight">\(p = \mu c x + p_0\)</span>.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="gibbs-phenomenon-in-acheson-2-3">
+<h1>Gibbs phenomenon in Acheson 2.3<a class="headerlink" href="#gibbs-phenomenon-in-acheson-2-3" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this is to show that there is a problem with imposing <span class="math notranslate nohighlight">\(u(y,0) = 0\)</span> when <span class="math notranslate nohighlight">\(u(y,t) = \frac{U}{h}(h - y) - \sum_{n=1}^{\infty} \frac{2 U}{n \pi} e^{-n^2 \pi^2 \nu t/h^2}  \sin \frac{n \pi y}{h}\)</span>, the solution to the last example in sec. 2.3 of Acheson.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importing packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#Defining constants</span>
+<span class="n">U</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># velocity of lower plate</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># height of channel</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># kinematic viscosity</span>
+<span class="n">Nmax</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># maximum mode number in truncated Fourier series</span>
+</pre></div>
 </div>
-<div class="section" id="flow-down-a-plane">
-<h2>Flow down a plane.<a class="headerlink" href="#flow-down-a-plane" title="Permalink to this headline">¶</a></h2>
-<p>Anther example, discussed in the book, is one of a layer of water with height <span class="math notranslate nohighlight">\(h\)</span>
-undergoing steady flow down an incline at angle <span class="math notranslate nohighlight">\(\alpha\)</span> from the ground, with atmospheric pressure
-<span class="math notranslate nohighlight">\(p_0\)</span> at the top of the fluid. Take the problem to be two-dimensional with <span class="math notranslate nohighlight">\(x,z\)</span> the directions parallel and
-perpendicular to the incline, and <span class="math notranslate nohighlight">\(z = 0\)</span> the incline and <span class="math notranslate nohighlight">\(z = h\)</span> the upper boundary. Let <span class="math notranslate nohighlight">\(p = p(z)\)</span>, and
-<span class="math notranslate nohighlight">\({\vec u} = u(z) {\hat x}\)</span>, where incompressibility kills the <span class="math notranslate nohighlight">\(x\)</span> dependence.</p>
-<p>The Navier-Stokes equations in components become:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22c6be06-8547-49c8-9a67-e6a4cfa8b727">
-<span class="eqno">(22)<a class="headerlink" href="#equation-22c6be06-8547-49c8-9a67-e6a4cfa8b727" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \frac{1}{\rho} d_z p + g \cos\alpha = 0 \\
-	&amp; &amp; \nu d_z^2 u + g\sin\alpha = 0
-\end{align}\]</div>
-<p>NOte that <span class="math notranslate nohighlight">\({\vec u} \cdot {\vec\nabla} {\vec u} = 0\)</span> automatically. At <span class="math notranslate nohighlight">\(z = 0\)</span> the boundary
-conditions are <span class="math notranslate nohighlight">\(u(0) = 0\)</span>, At <span class="math notranslate nohighlight">\(z = h\)</span>, the no-slip condition is clearly false.
-At such a fluid interface, we instead impose the “no stress” condition on the tangential stress
-The tangential stress is taken to be proportional to <span class="math notranslate nohighlight">\(\partial_z v\)</span>, so this must vanish. The pressure, as stted
-above, is <span class="math notranslate nohighlight">\(p(h) = p_0\)</span>. The resoluting solution is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9008812-a4c8-4e58-9be9-60b35f6563b8">
-<span class="eqno">(23)<a class="headerlink" href="#equation-d9008812-a4c8-4e58-9be9-60b35f6563b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	p(z) &amp; = &amp; p_0 + \rho g (h - z) \\
-	u(z) &amp; = &amp; \frac{g}{2\nu} \sin\alpha (2 h z - z^2)
-\end{align}\]</div>
-<p>This is an idealized situation with a flat bottom. In practice, deviations fom flatness will start to lead
-to nonvanishing intertial terms, and turbulent flow is possible. If we assume that the hill has a rise angle <span class="math notranslate nohighlight">\(\beta\)</span>,
-and a length scale <span class="math notranslate nohighlight">\(L \sim h \beta\)</span>, the natural Reynolds number is</p>
-<div class="math notranslate nohighlight">
-\[
-	Re = \frac{u \beta h}{\nu} = \frac{g\alpha\beta H^3}{\nu^2}
-\]</div>
-<p>For water <span class="math notranslate nohighlight">\(\nu \sim 10^{-4} m^2/s\)</span>. If we cnsider a puddle with <span class="math notranslate nohighlight">\(h \sim 1 mm\)</span>, and <span class="math notranslate nohighlight">\(\alpha \sim .01\)</span>,
-we find for laminar flow <span class="math notranslate nohighlight">\(v \sim 5cm/sec\)</span>. Add an imperfection and
-then <span class="math notranslate nohighlight">\(Re \sim 50\beta\)</span>.</p>
-<p>For a large slow river with <span class="math notranslate nohighlight">\(h \sim 10 m\)</span>, <span class="math notranslate nohighlight">\(\alpha \sim 10^{-4}\)</span>, we would find <span class="math notranslate nohighlight">\(v \sim 100 
-km/sec\)</span> which is crazy. Here however <span class="math notranslate nohighlight">\(Re \sim 10^{12} \beta\)</span>. Thus, the slightest imperfection
-leads to turbulence, and our solution above is invalid.</p>
 </div>
+</div>
+<p>Set up c_n</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">U</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Nmax</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Define our truncated Fourier series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x range, define array of output of functions</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="o">+</span><span class="mf">.0001</span><span class="p">,</span><span class="mf">.0001</span><span class="p">)</span>
+
+<span class="n">truncated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cn</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">Nmax</span><span class="o">+</span><span class="mi">1</span><span class="p">)[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,:]</span><span class="o">/</span><span class="n">h</span><span class="p">),</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">static</span> <span class="o">=</span> <span class="n">U</span><span class="o">*</span><span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">truncated</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;truncated </span><span class="si">{:n}</span><span class="s1"> Fourier modes&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nmax</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">static</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;long time behavior&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$u(y,0)$ (vel)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">.9</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mf">1.1</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Gibbs_phenomenon_7_0.png" src="../_images/Gibbs_phenomenon_7_0.png" />
+</div>
+</div>
+<p>You can see the overshoot developing near the origin.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -399,17 +390,17 @@ leads to turbulence, and our solution above is invalid.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Reynolds_number.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="diffusion_viscosity.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dimensional analysis and the Reynolds number</p>
+            <p class="prev-next-title">Diffusion and Viscosity</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Diffusion.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to diffusion</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

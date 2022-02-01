@@ -1,7 +1,7 @@
 # Introduction to diffusion
 
 In the Navier-Stokes equation, $D_t {\vec v} = - \frac{1}{\rho} {\vec\nabla} p + \nu \nabla^2 {\vec v}$, the vorticity
-term appears somewhat as a ``diffusion term". To understand what is meant by this, let me introduce a couple of
+term appears somewhat as a "diffusion term". To understand what is meant by this, let me introduce a couple of
 comments about diffusion (as I don't know how many of you have encountered it yet).
 
 Einstein showed that the probability distrubution of a set of random walkers followed a diffusion equation
@@ -120,10 +120,11 @@ $$
 	D_t T = D_{temp} \nabla^2 T
 $$
 
-where $D_{temp}$ is the *thermal diffusivity*. (Actually in the ocean and atmosphere a slightly differnt quantity 
-known as *potential temperature* is used, but that is a longer story). 
+where $D_{temp}$ is the *thermal diffusivity* (do not confuse it with a derivative operator such as $D_t$. Unfortunately
+this notation is canonical in the literature). Actually in the ocean and atmosphere a slightly differnt quantity 
+known as *potential temperature* is used, but that is a longer story. 
 
-These equations are known as *advection-diffusion* equations. Advection referrs to the ${\vec v}\cdot{\vec nabla} T$ term in $D_t$, describing the time derivative of the quanity along a fluid trajectory; without diffusion, blobs of a quantity move with the fluid. If $D = 0$ and the velocity is constant in the $x$ direction for example,
+These equations are known as *advection-diffusion* equations. Advection refers to the ${\vec v}\cdot{\vec \nabla} T$ term in $D_t$, describing the time derivative of the quanity along a fluid trajectory; without diffusion, blobs of a quantity move with the fluid. If $D = 0$ and the velocity is constant in the $x$ direction for example,
 
 $$
 	T(x,t) = T(x - vt)

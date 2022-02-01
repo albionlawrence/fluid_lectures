@@ -19,4 +19,6 @@ chapters:
   - file: chapter2/simple_viscous_flow
   - file: chapter2/Diffusion
   - file: chapter2/diffusion_viscosity
+  - file: chapter2/Gibbs_phenomenon
+  - file: chapter2/cylindrical
 - file: bibliography

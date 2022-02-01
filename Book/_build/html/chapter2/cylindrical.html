@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple examplew of viscous flow &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Simple solutions in cylindrical coordinates &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to diffusion" href="Diffusion.html" />
-    <link rel="prev" title="Dimensional analysis and the Reynolds number" href="Reynolds_number.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Gibbs phenomenon in Acheson 2.3" href="Gibbs_phenomenon.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -161,8 +161,8 @@
      Dimensional analysis and the Reynolds number
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="simple_viscous_flow.html">
      Simple examplew of viscous flow
     </a>
    </li>
@@ -174,6 +174,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="diffusion_viscosity.html">
      Diffusion and Viscosity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Gibbs_phenomenon.html">
+     Gibbs phenomenon in Acheson 2.3
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Simple solutions in cylindrical coordinates
     </a>
    </li>
   </ul>
@@ -224,7 +234,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter2/simple_viscous_flow.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter2/cylindrical.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -244,7 +254,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/simple_viscous_flow.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2/cylindrical.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -271,13 +281,20 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#channel-flow">
-   Channel flow
+  <a class="reference internal nav-link" href="#writing-the-navier-stokes-equations">
+   Writing the Navier-Stokes equations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors-and-derivatives">
+     Vectors and derivatives
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flow-down-a-plane">
-   Flow down a plane.
+  <a class="reference internal nav-link" href="#steady-flow-between-rotating-cylinders">
+   Steady flow between rotating cylinders.
   </a>
  </li>
 </ul>
@@ -290,7 +307,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Simple examplew of viscous flow</h1>
+                <h1>Simple solutions in cylindrical coordinates</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -301,13 +318,20 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#channel-flow">
-   Channel flow
+  <a class="reference internal nav-link" href="#writing-the-navier-stokes-equations">
+   Writing the Navier-Stokes equations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors-and-derivatives">
+     Vectors and derivatives
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flow-down-a-plane">
-   Flow down a plane.
+  <a class="reference internal nav-link" href="#steady-flow-between-rotating-cylinders">
+   Steady flow between rotating cylinders.
   </a>
  </li>
 </ul>
@@ -319,58 +343,51 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="simple-examplew-of-viscous-flow">
-<h1>Simple examplew of viscous flow<a class="headerlink" href="#simple-examplew-of-viscous-flow" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="channel-flow">
-<h2>Channel flow<a class="headerlink" href="#channel-flow" title="Permalink to this headline">¶</a></h2>
-<p>The book goes through many examples: let me discuss a particularly simple one, the steady flow of viscous fluid in
-two dimensions through a straight channel. Let the walls of the channel be at <span class="math notranslate nohighlight">\(y = 0,L\)</span>, extending in the <span class="math notranslate nohighlight">\(x\)</span> direction,
-while the fluid is flowing entirely along the <span class="math notranslate nohighlight">\(x\)</span> direction, and is <span class="math notranslate nohighlight">\(t\)</span>-independent. Incompressibility sets
-<span class="math notranslate nohighlight">\(\partial_x u = 0\)</span>, so that <span class="math notranslate nohighlight">\(u = u(y)\)</span>. We will look for a solution fo which <span class="math notranslate nohighlight">\(p = p(x)\)</span>, so that the fluid is being pushed
-down the channel. Plugging these solutions into he Navier-Stokes equation, we find</p>
-<div class="math notranslate nohighlight">
-\[ \frac{1}{\rho} \partial_x p(x) = \nu \partial_y^2 u(y) \]</div>
-<p>Each side depends on an independent variable, so they must be equal to a constant <span class="math notranslate nohighlight">\(\nu c\)</span>. We can write
-<span class="math notranslate nohighlight">\(u(y) = c y^2 + d y + e\)</span>. We set <span class="math notranslate nohighlight">\(u = 0\)</span> at <span class="math notranslate nohighlight">\(y = 0\)</span>, so that <span class="math notranslate nohighlight">\(e = 0\)</span>, and also at <span class="math notranslate nohighlight">\(y = L\)</span>, so that
-<span class="math notranslate nohighlight">\(c L^2 + d L = 0\)</span>, or <span class="math notranslate nohighlight">\(d = - c L\)</span>, so that <span class="math notranslate nohighlight">\(u(y) = c (y^2 - L y)\)</span>. <span class="math notranslate nohighlight">\(c\)</span> is thus set by the pressure gradient.
-Since <span class="math notranslate nohighlight">\(\partial_x p = \nu \rho c = \mu c\)</span>, <span class="math notranslate nohighlight">\(p = \mu c x + p_0\)</span>.</p>
-</div>
-<div class="section" id="flow-down-a-plane">
-<h2>Flow down a plane.<a class="headerlink" href="#flow-down-a-plane" title="Permalink to this headline">¶</a></h2>
-<p>Anther example, discussed in the book, is one of a layer of water with height <span class="math notranslate nohighlight">\(h\)</span>
-undergoing steady flow down an incline at angle <span class="math notranslate nohighlight">\(\alpha\)</span> from the ground, with atmospheric pressure
-<span class="math notranslate nohighlight">\(p_0\)</span> at the top of the fluid. Take the problem to be two-dimensional with <span class="math notranslate nohighlight">\(x,z\)</span> the directions parallel and
-perpendicular to the incline, and <span class="math notranslate nohighlight">\(z = 0\)</span> the incline and <span class="math notranslate nohighlight">\(z = h\)</span> the upper boundary. Let <span class="math notranslate nohighlight">\(p = p(z)\)</span>, and
-<span class="math notranslate nohighlight">\({\vec u} = u(z) {\hat x}\)</span>, where incompressibility kills the <span class="math notranslate nohighlight">\(x\)</span> dependence.</p>
-<p>The Navier-Stokes equations in components become:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22c6be06-8547-49c8-9a67-e6a4cfa8b727">
-<span class="eqno">(22)<a class="headerlink" href="#equation-22c6be06-8547-49c8-9a67-e6a4cfa8b727" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \frac{1}{\rho} d_z p + g \cos\alpha = 0 \\
-	&amp; &amp; \nu d_z^2 u + g\sin\alpha = 0
-\end{align}\]</div>
-<p>NOte that <span class="math notranslate nohighlight">\({\vec u} \cdot {\vec\nabla} {\vec u} = 0\)</span> automatically. At <span class="math notranslate nohighlight">\(z = 0\)</span> the boundary
-conditions are <span class="math notranslate nohighlight">\(u(0) = 0\)</span>, At <span class="math notranslate nohighlight">\(z = h\)</span>, the no-slip condition is clearly false.
-At such a fluid interface, we instead impose the “no stress” condition on the tangential stress
-The tangential stress is taken to be proportional to <span class="math notranslate nohighlight">\(\partial_z v\)</span>, so this must vanish. The pressure, as stted
-above, is <span class="math notranslate nohighlight">\(p(h) = p_0\)</span>. The resoluting solution is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9008812-a4c8-4e58-9be9-60b35f6563b8">
-<span class="eqno">(23)<a class="headerlink" href="#equation-d9008812-a4c8-4e58-9be9-60b35f6563b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	p(z) &amp; = &amp; p_0 + \rho g (h - z) \\
-	u(z) &amp; = &amp; \frac{g}{2\nu} \sin\alpha (2 h z - z^2)
-\end{align}\]</div>
-<p>This is an idealized situation with a flat bottom. In practice, deviations fom flatness will start to lead
-to nonvanishing intertial terms, and turbulent flow is possible. If we assume that the hill has a rise angle <span class="math notranslate nohighlight">\(\beta\)</span>,
-and a length scale <span class="math notranslate nohighlight">\(L \sim h \beta\)</span>, the natural Reynolds number is</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="simple-solutions-in-cylindrical-coordinates">
+<h1>Simple solutions in cylindrical coordinates<a class="headerlink" href="#simple-solutions-in-cylindrical-coordinates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="writing-the-navier-stokes-equations">
+<h2>Writing the Navier-Stokes equations<a class="headerlink" href="#writing-the-navier-stokes-equations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vectors-and-derivatives">
+<h3>Vectors and derivatives<a class="headerlink" href="#vectors-and-derivatives" title="Permalink to this headline">¶</a></h3>
+<p>We work in cylindrical coordinates <span class="math notranslate nohighlight">\((r,\theta,z)\)</span>. There is a natural local basis of orthonormal vectors
+<span class="math notranslate nohighlight">\({\hat e}_r(\theta)\)</span>, <span class="math notranslate nohighlight">\({\hat e}_{\theta}(\theta)\)</span>, <span class="math notranslate nohighlight">\({\hat e}_z\)</span>. It is important that the directions of
+the first two of these depend on theta.</p>
+<p>We can expand a vector such as velocity in these coordinates as:</p>
 <div class="math notranslate nohighlight">
 \[
-	Re = \frac{u \beta h}{\nu} = \frac{g\alpha\beta H^3}{\nu^2}
+	{\vec u} = u_r {\hat e}_r + u_{\theta} {\hat e}_{\theta} + u_z {\hat e}_z
 \]</div>
-<p>For water <span class="math notranslate nohighlight">\(\nu \sim 10^{-4} m^2/s\)</span>. If we cnsider a puddle with <span class="math notranslate nohighlight">\(h \sim 1 mm\)</span>, and <span class="math notranslate nohighlight">\(\alpha \sim .01\)</span>,
-we find for laminar flow <span class="math notranslate nohighlight">\(v \sim 5cm/sec\)</span>. Add an imperfection and
-then <span class="math notranslate nohighlight">\(Re \sim 50\beta\)</span>.</p>
-<p>For a large slow river with <span class="math notranslate nohighlight">\(h \sim 10 m\)</span>, <span class="math notranslate nohighlight">\(\alpha \sim 10^{-4}\)</span>, we would find <span class="math notranslate nohighlight">\(v \sim 100 
-km/sec\)</span> which is crazy. Here however <span class="math notranslate nohighlight">\(Re \sim 10^{12} \beta\)</span>. Thus, the slightest imperfection
-leads to turbulence, and our solution above is invalid.</p>
+<p>In taking derivatives of such a vctor, we must take into account that <span class="math notranslate nohighlight">\(\partial_{\theta} {\hat e}_r = {\hat e}_{\theta}\)</span>,
+and <span class="math notranslate nohighlight">\(\partial_{\theta} {\hat e}_{\theta} = - {\hat e}_r\)</span> (<span class="math notranslate nohighlight">\({\hat e}_z\)</span> is constant). Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_{\theta} {\vec u} = \left(\partial_{\theta} u_r - u_{\theta}\right){\hat e}_r 
+	+ \left(\partial_{\theta} u_{\theta} + u_r\right) {\hat e}_{\theta} + \partial_{\theta} u_z {\hat e}_z
+\]</div>
+<p>This is the basis for the formulae in (A.35) of Acheson.</p>
+</div>
+</div>
+<div class="section" id="steady-flow-between-rotating-cylinders">
+<h2>Steady flow between rotating cylinders.<a class="headerlink" href="#steady-flow-between-rotating-cylinders" title="Permalink to this headline">¶</a></h2>
+<p>Consider a fluid between concentric cylindrs with radii <span class="math notranslate nohighlight">\(r_1 &lt; r_2\)</span>, rotating with angular velocities <span class="math notranslate nohighlight">\(\Omega_{1,2}\)</span> about <span class="math notranslate nohighlight">\(r = 0\)</span>.
+We are interested in a static solution with constant pressure throughout. We expect that the velocity will be entirely in the
+<span class="math notranslate nohighlight">\(heta\)</span> direction and that it will be independent of <span class="math notranslate nohighlight">\(\theta, z\)</span>. The <span class="math notranslate nohighlight">\(\theta\)</span> component of the Navier-Stokes equation for <span class="math notranslate nohighlight">\(u_{\theta}(r,t)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+	\nu \left( \partial_r^2 u_{\theta} + \frac{1}{r} \partial_r u_{\theta} - \frac{1}{r^2} u_{\theta}\right) = 0
+\]</div>
+<p>These equations are homogenous in <span class="math notranslate nohighlight">\(r\)</span>. Each term, actng on <span class="math notranslate nohighlight">\(r^k\)</span>, outputs the same power of <span class="math notranslate nohighlight">\(r\)</span>. We thus take the ansätz
+<span class="math notranslate nohighlight">\(u_{\theta} = c r^{\alpha}\)</span> and get the <em>indicial equation</em> <span class="math notranslate nohighlight">\(\alpha (\alpha - 1) + \alpha - 1 = \alpha^2 -1 = 0\)</span>.
+The solutions ae <span class="math notranslate nohighlight">\(\alpha = \pm 1\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+	u = \frac{B}{r} + A r
+\]</div>
+<p>From here we can apply the “no-slip” boundary conditions <span class="math notranslate nohighlight">\(u(r_k) = r_k \Omega_k\)</span> and solve for <span class="math notranslate nohighlight">\(A,B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	A = \frac{\Omega_2 r_2^2 - \Omega_1 r_1^2}{r_2^2 - r_1^2}\ ; B = \frac{(\Omega_1 - \Omega_2) r_1^2 r_2^2}{r_2^2 - r_1^2}
+\]</div>
 </div>
 </div>
 
@@ -399,17 +416,17 @@ leads to turbulence, and our solution above is invalid.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Reynolds_number.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Gibbs_phenomenon.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dimensional analysis and the Reynolds number</p>
+            <p class="prev-next-title">Gibbs phenomenon in Acheson 2.3</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Diffusion.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to diffusion</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
