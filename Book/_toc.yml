@@ -21,4 +21,10 @@ chapters:
   - file: chapter2/diffusion_viscosity
   - file: chapter2/Gibbs_phenomenon
   - file: chapter2/cylindrical
+- file: chapter3/Waves
+  sections:
+  - file: chapter3/linear_waves
+    sections:
+    - file: chapter3/surface_waves
+    - file: chapter3/surface_gravity_waves
 - file: bibliography

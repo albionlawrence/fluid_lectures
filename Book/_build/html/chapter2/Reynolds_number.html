@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Simple example of viscous flow" href="simple_viscous_flow.html" />
+    <link rel="next" title="Simple examplew of viscous flow" href="simple_viscous_flow.html" />
     <link rel="prev" title="Introduction to the Navier-Stokes equation" href="navier_stokes_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -163,7 +163,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="simple_viscous_flow.html">
-     Simple example of viscous flow
+     Simple examplew of viscous flow
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,6 +175,50 @@
     <a class="reference internal" href="diffusion_viscosity.html">
      Diffusion and Viscosity
     </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Gibbs_phenomenon.html">
+     Gibbs phenomenon in Acheson 2.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cylindrical.html">
+     Simple solutions in cylindrical coordinates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter3/Waves.html">
+   Waves in fluids
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter3/linear_waves.html">
+     Linear waves
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter3/surface_waves.html">
+       Surface waves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter3/surface_gravity_waves.html">
+       Surface Gravity Waves
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -345,6 +389,10 @@ attached. In the flow past a cylinder we looked at earlier, the Reynolds number 
 far from the cylinder, particularly in the turbulent wake behind the cylinder, while it
 is low in the thin layer close to the boundary where the boundary conditions set the velocity
 to zero.</p>
+<p>We can see the effects of varying the Reynolds number by looking at flow past a cylinder with varying velocity:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8WtEuw0GLg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Here you already see at <span class="math notranslate nohighlight">\(Re = 10\)</span> that a wake develops. One has to cank up the Reynolds number well past <span class="math notranslate nohighlight">\(10^3\)</span> to see fully developed turbulence:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l3CRE3EF2lA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>Fluids in more complicated situations are controlled by a wider variety of dimensionless
 numbers. For example, on a sphere rotating witn angular frequency <span class="math notranslate nohighlight">\(\Omega\)</span>, at latitude
 <span class="math notranslate nohighlight">\(\phi\)</span>, the vertical projection of the angular velocity is <span class="math notranslate nohighlight">\(f = \Omega \sin\phi\)</span>, and the
@@ -357,7 +405,7 @@ important) at <span class="math notranslate nohighlight">\(\lesssim (few)\times 
 <p>Another use of this scaling is that since in dimensionless coordinates only the Reynolds number
 appears, we know that if we rescale <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, and <span class="math notranslate nohighlight">\(\nu\)</span> so that the geometry of a configuration
 is the same and the Reynolds number does not change, the geometry of the flow is identical. Thus,
-for example, if we wan to understand the behavior of the flow around a full-sized wing, or a boat
+for example, if we want to understand the behavior of the flow around a full-sized wing, or a boat
 in the water, we can do a laboratory experiment with a much smaller wing or model boat if we change
 <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span> as well so that the Reynolds number does not change. For a nice discussion of
 the uses of similarity, see <span id="id1">[<a class="reference internal" href="../bibliography.html#id8">Bolster <em>et al.</em>, 2011</a>]</span>.</p>
@@ -398,7 +446,7 @@ the uses of similarity, see <span id="id1">[<a class="reference internal" href="
     <a class='right-next' id="next-link" href="simple_viscous_flow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Simple example of viscous flow</p>
+        <p class="prev-next-title">Simple examplew of viscous flow</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
