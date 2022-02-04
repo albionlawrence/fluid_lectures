@@ -30,14 +30,42 @@ for this case) plus incompressibility gives us:
 	& {\vec \nabla} \cdot {\vec v} = \nabla^2 \phi = 0
 \end{align}
 
+We will assume that the perturbations are in some sense small, in particular that $\zeta \ll h$, and 
 To solve this we must further supplement this with boundary conditions. In this case, at $z = - j$ we must have
-$v)z = \partial_z \phi = 0$, At the free surface, we demand $v_z = \partial_z \phi = \partial_t \zeta$.
-Thus, at the surfface where $p = p_0$, we have $p_0 =  - \rho(\partial_t \phi + g \zeta$. Taking the time deivative of
-this and using teh boundary conditions, we find:
+$v_z = \partial_z \phi = 0$, At the free surface, we demand $v_z = \partial_z \phi = \partial_t \zeta$.
+Thus, at the surface where $p = p_0$, we have $p_0 =  - \rho(\partial_t \phi + g \zeta$. Taking the time deivative of
+this and using the boundary conditions, we find:
 
 \begin{align}
 	& \partial_t^2 \phi + g \partial_z \phi\Big|_{z = \zeta} = 0\\
 	& \nabla^2 \phi = 0
 \end{align}
 
+We are going to look for solutions which oscillate in $t,x$: that is, they take the form
+
+$$
+	\phi(x,z,t) = {\rm Re} \left[ C e^{i k x - \omega(k) t} F(z) \right]
+$$
+
+Laplace's equation then gives us $\partial_z^2 F = k^2 F$, which means $F = A e^{kz} + B e^{-kz}$. If we
+impose $\partial_z \phi(z = -h) = 0$, some algebra leads to $F = D \cosh k(z + h)$. 
+
+Next, we impose the boundary condition at $z = \zeta$. In general this boundary condition is nonlinear: to be precise we would
+set $\partial_t^2 \phi(x,\zeta,t) + g \partial_z\phi(x,\zeta,t)$. We will keep the equation at zeroth order in $\eta$, so that 
+$\partial_t^2 \phi(x,0,t) + g \partial_z \phi(x,0,t) = 0$. Plugging our general solution into this, we find that 
+
+$$
+	\omega^2(t) = g k \tanh k h
+$$
+
+There are two obvious limits here. In the first, $k h \gg 1$, corresponding to wavelengths much shorter than the
+fluid depth. This is a "deep water" limit and in this case $\omega^2 = g k$, so that $v_p = \sqrt{\frac{g}{k}}$
+and $v_g = \frac{1}{2} \sqrt{\frac{g}{k}$. So long-wavelength modes propagate more qucly than short-wavelength modes.
+We can see this in the atmosphere in the satellite picture of teh Tonga explosion that we saw earlier.
+
+Another limit is "shallow water", in which $kh \ll 1$, so the wavelength is long compared to the height. This is often
+an important limit in both the linear and nonlinear problem, in part as planetary fluids have important motion on scales larger
+than the fluid depth. In this limit, $\omega^2 = gh k^2$, so the phase and group velocity are $v = \sqrt{gh}$,
+and the waves are nondispersive: Gaussian wavepackets will remain Gaussian and not spread. The pressure wave
+you see in the Tonga explosion viseo has the same dispersion relation (with $c$ = speed of sound).
 

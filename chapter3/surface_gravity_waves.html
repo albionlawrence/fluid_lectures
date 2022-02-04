@@ -375,20 +375,44 @@ is <em>irrotational</em>: since we are working with the inviscid equations, we a
 the initial state at <span class="math notranslate nohighlight">\(t = 0\)</span> is irrotational (2d vorticity is conserved along fluid trajectories).
 This means we can consider <span class="math notranslate nohighlight">\({\vec v} = {\vec \nabla}\phi\)</span>. Bernoulli’s equation (just the Euler equation
 for this case) plus incompressibility gives us:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d90c8af-c234-4ed2-8eea-c7183085c816">
-<span class="eqno">(28)<a class="headerlink" href="#equation-2d90c8af-c234-4ed2-8eea-c7183085c816" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d945681e-ae69-43c7-b9bb-5f21f5a2b038">
+<span class="eqno">(28)<a class="headerlink" href="#equation-d945681e-ae69-43c7-b9bb-5f21f5a2b038" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t \phi +  \frac{p}{\rho} + \frac{1}{2}({\vec \nabla}\phi)^2 + g z = 0 \\
 	&amp; {\vec \nabla} \cdot {\vec v} = \nabla^2 \phi = 0
 \end{align}\]</div>
-<p>To solve this we must further supplement this with boundary conditions. In this case, at <span class="math notranslate nohighlight">\(z = - j\)</span> we must have
-<span class="math notranslate nohighlight">\(v)z = \partial_z \phi = 0\)</span>, At the free surface, we demand <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = \partial_t \zeta\)</span>.
-Thus, at the surfface where <span class="math notranslate nohighlight">\(p = p_0\)</span>, we have <span class="math notranslate nohighlight">\(p_0 =  - \rho(\partial_t \phi + g \zeta\)</span>. Taking the time deivative of
-this and using teh boundary conditions, we find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ce96085-24ec-4233-a8b1-0246bfca7b6e">
-<span class="eqno">(29)<a class="headerlink" href="#equation-4ce96085-24ec-4233-a8b1-0246bfca7b6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<p>We will assume that the perturbations are in some sense small, in particular that <span class="math notranslate nohighlight">\(\zeta \ll h\)</span>, and
+To solve this we must further supplement this with boundary conditions. In this case, at <span class="math notranslate nohighlight">\(z = - j\)</span> we must have
+<span class="math notranslate nohighlight">\(v_z = \partial_z \phi = 0\)</span>, At the free surface, we demand <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = \partial_t \zeta\)</span>.
+Thus, at the surface where <span class="math notranslate nohighlight">\(p = p_0\)</span>, we have <span class="math notranslate nohighlight">\(p_0 =  - \rho(\partial_t \phi + g \zeta\)</span>. Taking the time deivative of
+this and using the boundary conditions, we find:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6e273b07-f5ba-41b2-bdcd-80f0903ab228">
+<span class="eqno">(29)<a class="headerlink" href="#equation-6e273b07-f5ba-41b2-bdcd-80f0903ab228" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t^2 \phi + g \partial_z \phi\Big|_{z = \zeta} = 0\\
 	&amp; \nabla^2 \phi = 0
 \end{align}\]</div>
+<p>We are going to look for solutions which oscillate in <span class="math notranslate nohighlight">\(t,x\)</span>: that is, they take the form</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi(x,z,t) = {\rm Re} \left[ C e^{i k x - \omega(k) t} F(z) \right]
+\]</div>
+<p>Laplace’s equation then gives us <span class="math notranslate nohighlight">\(\partial_z^2 F = k^2 F\)</span>, which means <span class="math notranslate nohighlight">\(F = A e^{kz} + B e^{-kz}\)</span>. If we
+impose <span class="math notranslate nohighlight">\(\partial_z \phi(z = -h) = 0\)</span>, some algebra leads to <span class="math notranslate nohighlight">\(F = D \cosh k(z + h)\)</span>.</p>
+<p>Next, we impose the boundary condition at <span class="math notranslate nohighlight">\(z = \zeta\)</span>. In general this boundary condition is nonlinear: to be precise we would
+set <span class="math notranslate nohighlight">\(\partial_t^2 \phi(x,\zeta,t) + g \partial_z\phi(x,\zeta,t)\)</span>. We will keep the equation at zeroth order in <span class="math notranslate nohighlight">\(\eta\)</span>, so that
+<span class="math notranslate nohighlight">\(\partial_t^2 \phi(x,0,t) + g \partial_z \phi(x,0,t) = 0\)</span>. Plugging our general solution into this, we find that</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega^2(t) = g k \tanh k h
+\]</div>
+<p>There are two obvious limits here. In the first, <span class="math notranslate nohighlight">\(k h \gg 1\)</span>, corresponding to wavelengths much shorter than the
+fluid depth. This is a “deep water” limit and in this case <span class="math notranslate nohighlight">\(\omega^2 = g k\)</span>, so that <span class="math notranslate nohighlight">\(v_p = \sqrt{\frac{g}{k}}\)</span>
+and <span class="math notranslate nohighlight">\(v_g = \frac{1}{2} \sqrt{\frac{g}{k}\)</span>. So long-wavelength modes propagate more qucly than short-wavelength modes.
+We can see this in the atmosphere in the satellite picture of teh Tonga explosion that we saw earlier.</p>
+<p>Another limit is “shallow water”, in which <span class="math notranslate nohighlight">\(kh \ll 1\)</span>, so the wavelength is long compared to the height. This is often
+an important limit in both the linear and nonlinear problem, in part as planetary fluids have important motion on scales larger
+than the fluid depth. In this limit, <span class="math notranslate nohighlight">\(\omega^2 = gh k^2\)</span>, so the phase and group velocity are <span class="math notranslate nohighlight">\(v = \sqrt{gh}\)</span>,
+and the waves are nondispersive: Gaussian wavepackets will remain Gaussian and not spread. The pressure wave
+you see in the Tonga explosion viseo has the same dispersion relation (with <span class="math notranslate nohighlight">\(c\)</span> = speed of sound).</p>
 </div>
 </div>
 
