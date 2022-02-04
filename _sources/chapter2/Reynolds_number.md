@@ -71,6 +71,14 @@ far from the cylinder, particularly in the turbulent wake behind the cylinder, w
 is low in the thin layer close to the boundary where the boundary conditions set the velocity
 to zero. 
 
+We can see the effects of varying the Reynolds number by looking at flow past a cylinder with varying velocity:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8WtEuw0GLg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here you already see at $Re = 10$ that a wake develops. One has to cank up the Reynolds number well past $10^3$ to see fully developed turbulence:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l3CRE3EF2lA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Fluids in more complicated situations are controlled by a wider variety of dimensionless
 numbers. For example, on a sphere rotating witn angular frequency $\Omega$, at latitude
 $\phi$, the vertical projection of the angular velocity is $f = \Omega \sin\phi$, and the 
@@ -86,7 +94,7 @@ important) at $\lesssim (few)\times 10$km.
 Another use of this scaling is that since in dimensionless coordinates only the Reynolds number
 appears, we know that if we rescale $L$, $U$, and $\nu$ so that the geometry of a configuration
 is the same and the Reynolds number does not change, the geometry of the flow is identical. Thus,
-for example, if we wan to understand the behavior of the flow around a full-sized wing, or a boat
+for example, if we want to understand the behavior of the flow around a full-sized wing, or a boat
 in the water, we can do a laboratory experiment with a much smaller wing or model boat if we change 
 $L$ and $\nu$ as well so that the Reynolds number does not change. For a nice discussion of
 the uses of similarity, see {cite:p}`doi:10.1063/PT.3.1258`. 

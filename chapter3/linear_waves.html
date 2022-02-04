@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear waves &#8212; Physics 111a -- Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Surface waves" href="surface_waves.html" />
+    <link rel="prev" title="Waves in fluids" href="Waves.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/swimming-lab.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Physics 111a -- Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Physics 111a: Introduction to Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/Basic_intro.html">
+   Basic Equations and Concepts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/whatis_fluid.html">
+     What is a Fluid?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/euler.html">
+     Equations for Ideal Fluids
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Hydrostatics.html">
+     Hydrostatics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Vorticity.html">
+     Vorticity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Bernoulli.html">
+     Bernoulli’s Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Vorticity_dynamics.html">
+     Vorticity Dynamics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter2/Intro_viscosity.html">
+   Viscosity: a first pass
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/navier_stokes_1.html">
+     Introduction to the Navier-Stokes equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Reynolds_number.html">
+     Dimensional analysis and the Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/simple_viscous_flow.html">
+     Simple examplew of viscous flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Diffusion.html">
+     Introduction to diffusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/diffusion_viscosity.html">
+     Diffusion and Viscosity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Gibbs_phenomenon.html">
+     Gibbs phenomenon in Acheson 2.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/cylindrical.html">
+     Simple solutions in cylindrical coordinates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Waves.html">
+   Waves in fluids
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Linear waves
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="surface_waves.html">
+       Surface waves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="surface_gravity_waves.html">
+       Surface Gravity Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter3/linear_waves.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/linear_waves.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dispersion-relations">
+   Dispersion relations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-and-group-velocity">
+   Phase and group velocity
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Linear waves</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dispersion-relations">
+   Dispersion relations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-and-group-velocity">
+   Phase and group velocity
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="linear-waves">
+<h1>Linear waves<a class="headerlink" href="#linear-waves" title="Permalink to this headline">¶</a></h1>
+<p>We will start with <em>linear waves</em>. Roughly speaking, this means that we start with a background solution
+<span class="math notranslate nohighlight">\({\vec V}\)</span>, <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span> to the Navier-stokes equation, write <span class="math notranslate nohighlight">\({\vec v} = {\vec V} + {\vec \delta v}\)</span>,
+<span class="math notranslate nohighlight">\(\rho = \rho_0 + \delta \rho\)</span>, <span class="math notranslate nohighlight">\(p = p_0 + \delta p\)</span>, and expand the
+fully nonlinear equations such as</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t {\vec v} + {\vec v} \cdot {\vec\nabla} {\vec v} = - \frac{1}{\rho} {\vec\nabla} p + \nu \nabla^2 {\vec v} - {\hat g} {\hat z}
+\]</div>
+<p>to first order in <span class="math notranslate nohighlight">\({\vec \delta v}\)</span>, <span class="math notranslate nohighlight">\(\delta\rho\)</span>, <span class="math notranslate nohighlight">\(\delta p\)</span>. The result is a set of linear partial differential equations.</p>
+<p>In the case of shear or stratified flows, with <span class="math notranslate nohighlight">\({\vec V}\)</span>, <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span> depending on space (or space and time), the
+equations can still be quite complicated.</p>
+<div class="section" id="dispersion-relations">
+<h2>Dispersion relations<a class="headerlink" href="#dispersion-relations" title="Permalink to this headline">¶</a></h2>
+<p>When the background is constant, however, we get linear equations
+with constant coefficients, and we ca (depending on boundary conditions) find a complete basis of solutions
+of the form <span class="math notranslate nohighlight">\(e^{i \omega t - i {\vec k}\cdot{\vec x}}\)</span>. The equations of motion
+then give a <em>dispersion relation</em> <span class="math notranslate nohighlight">\(\omega(k)\)</span> which characterizes the dynamics of the wave.</p>
+<p>For example, different dispersion relations will allow for long- or short-wavelength modes to travel faster,
+meaning ripples in a fluid excited by a disturbance will be more widely or narrowly spaced, respectively, as
+one looks farther from the disturbance. Through the <em>phase velocity</em> <span class="math notranslate nohighlight">\(v_p = \omega/k\)</span> and the <em>group velocity</em>
+<span class="math notranslate nohighlight">\(v_g = \frac{d\omega}{dk}\)</span> (here I have written the expressions for one-dimensional flow, for simplicity’s sake),
+we can work out how quickly the wave travels and evolves, and so on.</p>
+</div>
+<div class="section" id="phase-and-group-velocity">
+<h2>Phase and group velocity<a class="headerlink" href="#phase-and-group-velocity" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\phi(x,t)\)</span> solve some linear differential equation with constant coefficients. This could be the Schr”odinger equation
+<span class="math notranslate nohighlight">\(i \hbar \partial_t \phi = \frac{\hbar^2}{2m} \partial_x^2 \phi\)</span>, for which <span class="math notranslate nohighlight">\(\omega(k) = \frac{\hbar k^2}{2m}\)</span>; or the
+relativistic wave equation (Klein-Gordon equation) <span class="math notranslate nohighlight">\(\partial_t^2 \phi = c^2 \partial_x^2 \phi\)</span> for which <span class="math notranslate nohighlight">\(\omega = c k\)</span>.</p>
+<p>In actual solutions to linear differential equations, we build <em>wave packets</em> of the form</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi(x,t) = \int_{-\infty}^{\infty} dk {\tilde\phi}(k) e^{i \omega(k) t - i k x}
+\]</div>
+<p>The point is that if <span class="math notranslate nohighlight">\( e^{i \omega(k) t - i k x}\)</span> solves the wave equation for every <span class="math notranslate nohighlight">\(k\)</span>, and the equation is <em>linear</em>,
+then sums of soluions are sill solutions (as long as the boundary conditions also hold).</p>
+<p>In this equation, the role of the phase velocity is reasonably clear; for a component of a given
+wavelength <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(v_p = \omega/k\)</span> will tell you how fast a crest of valley will move; when <span class="math notranslate nohighlight">\(x = v_p t\)</span>,
+the phase factor for a given <span class="math notranslate nohighlight">\(k\)</span> remains constant in <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Unless <span class="math notranslate nohighlight">\(\omega(k) = ck\)</span> for <span class="math notranslate nohighlight">\(c = v_p\)</span> constant, each component will travel at a different speed, and we expect the
+wave to <em>disperse</em> as the different wavenumbers separate. (Thus the term <em>dispersion relation</em>). To get some sense
+of the behavior of a wavepacket, let us consider one that is built from a small range of wavenumbers. This mean that
+it should make sense to expand <span class="math notranslate nohighlight">\(\omega(k)\)</span> about a fixed wavenumebr <span class="math notranslate nohighlight">\(k_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega(k) = \omega(k_0) + (k - k_0) \omega'(k) + 
+	\frac{1}{2} (k - k_0)^2 \omega''(k_0) + \ldots \equiv \omega_0 + (k - k_0) v_g(k_0) + 
+\]</div>
+<p>Plugging this into our wavepacket above, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi(x,t) = e^{ -i k_0 (x - v_p(k_0) t)} 
+	\int_{-\infty}^{\infty} dk {\tilde\phi}(k) e^{- i (k- k_0) (x - v_g t) - \ldots}
+\]</div>
+<p>The integrand controls the shape or <em>envelope</em> of the wavepacket in <span class="math notranslate nohighlight">\(x\)</span>; and clearly this
+envelope moves with velocity <span class="math notranslate nohighlight">\(v_g\)</span>. If we think of a wave with wavenumber <span class="math notranslate nohighlight">\(k_0\)</span> modulated
+by some envelope function</p>
+<div class="math notranslate nohighlight">
+\[
+	\psi(x) = \int_{-\infty}^{\infty} dk {\tilde\phi}(k) e^{- i (k- k_0) (x - v_g t) - \ldots}
+\]</div>
+<p>the wave and the envelope will generally travel at different speeds.</p>
+<p>As a concrete example, we can choose</p>
+<div class="math notranslate nohighlight">
+\[
+	{\tilde \phi}(k) = {\tilde \phi}_0 \ell \sqrt{\pi} e^{-\frac{\ell^2 (k - k_0)^2}{4}}
+\]</div>
+<p>In this case the Fourier integral above can be done explicitly, and we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi(x,t) = \frac{{\tilde \phi}_0 \ell}{2} 
+	\frac{e^{i \omega_0 t - i k_0 x}}{\sqrt{\frac{\ell^4}{16} + \frac{t^2 (\omega''(k_0))^2}{4}}}
+	e^{- \frac{(x - \omega'(k_0) t)^2}{\ell^2 + 4\frac{t^2}{\ell^2} (\omega''(k_0))^2}}
+\]</div>
+<p>Here we see that <span class="math notranslate nohighlight">\(v_g = \omega'\)</span> gives he velocity of the packet; higher derivatives of <span class="math notranslate nohighlight">\(\omega\)</span>
+cause dispersion and distortion of the packet.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Waves.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Waves in fluids</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="surface_waves.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Surface waves</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Albion Lawrence<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
