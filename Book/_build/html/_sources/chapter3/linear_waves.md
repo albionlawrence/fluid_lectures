@@ -89,3 +89,77 @@ $$
 
 Here we see that $v_g = \omega'$ gives he velocity of the packet; higher derivatives of $\omega$ 
 cause dispersion and distortion of the packet.
+
+So far we have been discussing waves propagating in 1 dimension. In higher dimensions, the most natural
+definition of the group velocity is as a vector ${\vec c}_g = {\vec nabla} \omega(k)$. This will have
+a definite direction depending on the velocity. The results cam sometimes be surprising for water waves.
+For solutions to the wave equation $c_s^2 \partial_t^2 \phi - c_s^2 {\vec\nabla}^2 \phi = 0$ (for some $c_s$), 
+$\omega = c_s \sqrt{\vec k}^2$, so ${\vec c_g} = c_s {\hat k}$, where ${\hat k}$ is the unit vector pointing
+along ${\vec k}$. In other words, the group velocity vector points along wavefronts. For *internal gravity
+waves*, which we will discuss, in a certain short wavelength limit, the group velocity is *parallel* 
+to the wavefronts. 
+
+## Group velocity and the large-time response
+
+For dispersive waves, at sufficiently large times, we expect the different wavelengths to saeparate out in space.
+In this setup, we expect that *locally* in space and time, the wavenumber will be reasonably constant and vary slowly ($\Delta k/k \ll 1$.
+where $\Delta k$ is the variation over a wavelength in space or a period in time), and that
+it will vary slowly in. The mathematics in this situation is close to that of geometric optics and
+the WKB approximation.
+
+Given some wave equation we will consider a solution of the form $\phi(x,t) = {\rm Re} A(x,t) e^{i\theta(x,t)}$. Of course we can always
+write $\phi$ in such a form: the question is whether it is meaningful to do so. The upshot is that we are assuming in this
+presentation that $A$ is slowly varying in $x,t$, 
+
+If we define
+
+$$
+	k = \frac{\partial\theta}{\partial x}\ ; \ \ \omega = - \frac{\partial \theta}{\partial t}\ ,
+$$
+
+we can write
+
+$$
+	\theta = \int \left[ k dx - \omega dt \right]
+$$
+
+Given this equation,
+
+$$
+	\partial_t k + \partial_x \omega = 0 = \partial_t k +  \partial_x k \partial_k \omega = \partial_t k + c_g  \partial_x k
+$$
+
+That is, if we follow a trajectory moving with the group velocity, $k$ will remain constant. NOte this generalized naturally to higher
+dimensions:
+
+$$
+	\partial_t {\vec k} + {\vec c}\cdot{\vec \nabla} {\vec k} = 0
+$$
+
+(These equations are central to ray tracing, a technique used when the variation of the local
+wavelength is slow, essentially the geometric optics approximation). The solution is:
+
+$$
+	k(x,t) = f(x - c_g(x,t) t)
+$$
+
+This is a bit implicit but it does encode the fact that $k$ remains constant along the lines $x = c_g(k) t$ 
+from which we can see that if $c_g(k)$ is not constant, some wavenumebrs will move faster than others, 
+indicating dispersion. 
+
+If we build up a wave packet with Fourier modes, this form can be justified for large $x,t$ by the *stationary phase* 
+approximation. It is worth sketching this out. Consider a wavepacket
+
+$$
+	\phi(x,t) = \int \frac{dk}{2\pi} e^{i k x - i \omega(k) t} {\tilde \phi}(k)
+$$
+
+In the lage $x,t$ limit the exponential will generally be varying very rapidly with $k$ and these oscillations will integrate to
+nearly zero. The only regions that will contribute ae those near which the argument $\theta$ of the integral satisfies 
+$\partial_k \theta = 0$. This will occur when $x = \partial_k \omega(k) t = c_g t$, and we can rougly write:
+
+$$
+	\phi(x,t) \sim e^{i k(x,t) - i \omega(k(x,t)) x} {\tilde \phi}(k(x,t))
+$$
+
+A more careful treatment will give additional contributions to the prefactor of the integral.
