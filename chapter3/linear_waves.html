@@ -324,6 +324,11 @@
    Phase and group velocity
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-velocity-and-the-large-time-response">
+   Group velocity and the large-time response
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -352,6 +357,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#phase-and-group-velocity">
    Phase and group velocity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-velocity-and-the-large-time-response">
+   Group velocity and the large-time response
   </a>
  </li>
 </ul>
@@ -440,6 +450,69 @@ by some envelope function</p>
 \]</div>
 <p>Here we see that <span class="math notranslate nohighlight">\(v_g = \omega'\)</span> gives he velocity of the packet; higher derivatives of <span class="math notranslate nohighlight">\(\omega\)</span>
 cause dispersion and distortion of the packet.</p>
+<p>So far we have been discussing waves propagating in 1 dimension. In higher dimensions, the most natural
+definition of the group velocity is as a vector <span class="math notranslate nohighlight">\({\vec c}_g = {\vec nabla} \omega(k)\)</span>. This will have
+a definite direction depending on the velocity. The results cam sometimes be surprising for water waves.
+For solutions to the wave equation <span class="math notranslate nohighlight">\(c_s^2 \partial_t^2 \phi - c_s^2 {\vec\nabla}^2 \phi = 0\)</span> (for some <span class="math notranslate nohighlight">\(c_s\)</span>),
+<span class="math notranslate nohighlight">\(\omega = c_s \sqrt{\vec k}^2\)</span>, so <span class="math notranslate nohighlight">\({\vec c_g} = c_s {\hat k}\)</span>, where <span class="math notranslate nohighlight">\({\hat k}\)</span> is the unit vector pointing
+along <span class="math notranslate nohighlight">\({\vec k}\)</span>. In other words, the group velocity vector points along wavefronts. For <em>internal gravity
+waves</em>, which we will discuss, in a certain short wavelength limit, the group velocity is <em>parallel</em>
+to the wavefronts.</p>
+</div>
+<div class="section" id="group-velocity-and-the-large-time-response">
+<h2>Group velocity and the large-time response<a class="headerlink" href="#group-velocity-and-the-large-time-response" title="Permalink to this headline">¶</a></h2>
+<p>For dispersive waves, at sufficiently large times, we expect the different wavelengths to saeparate out in space.
+In this setup, we expect that <em>locally</em> in space and time, the wavenumber will be reasonably constant and vary slowly (<span class="math notranslate nohighlight">\(\Delta k/k \ll 1\)</span>.
+where <span class="math notranslate nohighlight">\(\Delta k\)</span> is the variation over a wavelength in space or a period in time), and that
+it will vary slowly in. The mathematics in this situation is close to that of geometric optics and
+the WKB approximation.</p>
+<p>Given some wave equation we will consider a solution of the form <span class="math notranslate nohighlight">\(\phi(x,t) = {\rm Re} A(x,t) e^{i\theta(x,t)}\)</span>. Of course we can always
+write <span class="math notranslate nohighlight">\(\phi\)</span> in such a form: the question is whether it is meaningful to do so. The upshot is that we are assuming in this
+presentation that <span class="math notranslate nohighlight">\(A\)</span> is slowly varying in <span class="math notranslate nohighlight">\(x,t\)</span>,</p>
+<p>If we define</p>
+<div class="math notranslate nohighlight">
+\[
+	k = \frac{\partial\theta}{\partial x}\ ; \ \ \omega = - \frac{\partial \theta}{\partial t}\ ,
+\]</div>
+<p>we can write</p>
+<div class="math notranslate nohighlight">
+\[
+	\theta = \int \left[ k dx - \omega dt \right]
+\]</div>
+<p>Given this equation,</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t k + \partial_x \omega = 0 = \partial_t k +  \partial_x k \partial_k \omega = \partial_t k + c_g  \partial_x k
+\]</div>
+<p>That is, if we follow a trajectory moving with the group velocity, <span class="math notranslate nohighlight">\(k\)</span> will remain constant. NOte this generalized naturally to higher
+dimensions:</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t {\vec k} + {\vec c}\cdot{\vec \nabla} {\vec k} = 0
+\]</div>
+<p>(These equations are central to ray tracing, a technique used when the variation of the local
+wavelength is slow, essentially the geometric optics approximation). The solution is:</p>
+<div class="math notranslate nohighlight">
+\[
+	k(x,t) = f(x - c_g(x,t) t)
+\]</div>
+<p>This is a bit implicit but it does encode the fact that <span class="math notranslate nohighlight">\(k\)</span> remains constant along the lines <span class="math notranslate nohighlight">\(x = c_g(k) t\)</span>
+from which we can see that if <span class="math notranslate nohighlight">\(c_g(k)\)</span> is not constant, some wavenumebrs will move faster than others,
+indicating dispersion.</p>
+<p>If we build up a wave packet with Fourier modes, this form can be justified for large <span class="math notranslate nohighlight">\(x,t\)</span> by the <em>stationary phase</em>
+approximation. It is worth sketching this out. Consider a wavepacket</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi(x,t) = \int \frac{dk}{2\pi} e^{i k x - i \omega(k) t} {\tilde \phi}(k)
+\]</div>
+<p>In the lage <span class="math notranslate nohighlight">\(x,t\)</span> limit the exponential will generally be varying very rapidly with <span class="math notranslate nohighlight">\(k\)</span> and these oscillations will integrate to
+nearly zero. The only regions that will contribute ae those near which the argument <span class="math notranslate nohighlight">\(\theta\)</span> of the integral satisfies
+<span class="math notranslate nohighlight">\(\partial_k \theta = 0\)</span>. This will occur when <span class="math notranslate nohighlight">\(x = \partial_k \omega(k) t = c_g t\)</span>, and we can rougly write:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi(x,t) \sim e^{i k(x,t) - i \omega(k(x,t)) x} {\tilde \phi}(k(x,t))
+\]</div>
+<p>A more careful treatment will give additional contributions to the prefactor of the integral.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>

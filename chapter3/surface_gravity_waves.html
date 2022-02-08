@@ -319,6 +319,16 @@
    Setup in 2 dimensions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions-and-their-properties">
+   Solutions and their properties
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lagrangian-picture">
+   Lagrangian picture
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -342,6 +352,16 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup-in-2-dimensions">
    Setup in 2 dimensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions-and-their-properties">
+   Solutions and their properties
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lagrangian-picture">
+   Lagrangian picture
   </a>
  </li>
 </ul>
@@ -375,8 +395,8 @@ is <em>irrotational</em>: since we are working with the inviscid equations, we a
 the initial state at <span class="math notranslate nohighlight">\(t = 0\)</span> is irrotational (2d vorticity is conserved along fluid trajectories).
 This means we can consider <span class="math notranslate nohighlight">\({\vec v} = {\vec \nabla}\phi\)</span>. Bernoulli’s equation (just the Euler equation
 for this case) plus incompressibility gives us:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d945681e-ae69-43c7-b9bb-5f21f5a2b038">
-<span class="eqno">(28)<a class="headerlink" href="#equation-d945681e-ae69-43c7-b9bb-5f21f5a2b038" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d3e7638-4841-4a92-8d81-c8b52874cc7b">
+<span class="eqno">(28)<a class="headerlink" href="#equation-0d3e7638-4841-4a92-8d81-c8b52874cc7b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t \phi +  \frac{p}{\rho} + \frac{1}{2}({\vec \nabla}\phi)^2 + g z = 0 \\
 	&amp; {\vec \nabla} \cdot {\vec v} = \nabla^2 \phi = 0
 \end{align}\]</div>
@@ -385,8 +405,8 @@ To solve this we must further supplement this with boundary conditions. In this 
 <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = 0\)</span>, At the free surface, we demand <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = \partial_t \zeta\)</span>.
 Thus, at the surface where <span class="math notranslate nohighlight">\(p = p_0\)</span>, we have <span class="math notranslate nohighlight">\(p_0 =  - \rho(\partial_t \phi + g \zeta\)</span>. Taking the time deivative of
 this and using the boundary conditions, we find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e273b07-f5ba-41b2-bdcd-80f0903ab228">
-<span class="eqno">(29)<a class="headerlink" href="#equation-6e273b07-f5ba-41b2-bdcd-80f0903ab228" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7badcab0-f7dd-4ce7-b565-b83d1bdb47a1">
+<span class="eqno">(29)<a class="headerlink" href="#equation-7badcab0-f7dd-4ce7-b565-b83d1bdb47a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t^2 \phi + g \partial_z \phi\Big|_{z = \zeta} = 0\\
 	&amp; \nabla^2 \phi = 0
 \end{align}\]</div>
@@ -406,13 +426,118 @@ set <span class="math notranslate nohighlight">\(\partial_t^2 \phi(x,\zeta,t) + 
 \]</div>
 <p>There are two obvious limits here. In the first, <span class="math notranslate nohighlight">\(k h \gg 1\)</span>, corresponding to wavelengths much shorter than the
 fluid depth. This is a “deep water” limit and in this case <span class="math notranslate nohighlight">\(\omega^2 = g k\)</span>, so that <span class="math notranslate nohighlight">\(v_p = \sqrt{\frac{g}{k}}\)</span>
-and <span class="math notranslate nohighlight">\(v_g = \frac{1}{2} \sqrt{\frac{g}{k}\)</span>. So long-wavelength modes propagate more qucly than short-wavelength modes.
+and <span class="math notranslate nohighlight">\(v_g = \frac{1}{2} \sqrt{\frac{g}{k}}\)</span>. So long-wavelength modes propagate more qucly than short-wavelength modes.
 We can see this in the atmosphere in the satellite picture of teh Tonga explosion that we saw earlier.</p>
 <p>Another limit is “shallow water”, in which <span class="math notranslate nohighlight">\(kh \ll 1\)</span>, so the wavelength is long compared to the height. This is often
 an important limit in both the linear and nonlinear problem, in part as planetary fluids have important motion on scales larger
 than the fluid depth. In this limit, <span class="math notranslate nohighlight">\(\omega^2 = gh k^2\)</span>, so the phase and group velocity are <span class="math notranslate nohighlight">\(v = \sqrt{gh}\)</span>,
 and the waves are nondispersive: Gaussian wavepackets will remain Gaussian and not spread. The pressure wave
 you see in the Tonga explosion viseo has the same dispersion relation (with <span class="math notranslate nohighlight">\(c\)</span> = speed of sound).</p>
+</div>
+<div class="section" id="solutions-and-their-properties">
+<h2>Solutions and their properties<a class="headerlink" href="#solutions-and-their-properties" title="Permalink to this headline">¶</a></h2>
+<p>Given the above, we have found that oscillatory solutions take the form:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi = C \cos(\omega(k) t - kx - \delta) \cos(k(z + h))
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is an arbitrary phase. We can now write the physical variables as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a7aec661-1e38-4d99-9c86-5ebac73df618">
+<span class="eqno">(30)<a class="headerlink" href="#equation-a7aec661-1e38-4d99-9c86-5ebac73df618" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	\zeta &amp; = &amp; - \frac{1}{g} \partial_t \phi = C\frac{\omega}{g} \sin(\omega t - k x - \delta) \cosh[k(z + h)] \\
+	v_x &amp; = &amp; \partial_x \phi = C k \sin(\omega t - k x - \delta) \cosh[k(z + h)] \\
+	v_z &amp; = &amp; \partial_z \phi = C k \cos(\omega t - k x - \delta) \sinh[k(z + h)]
+\end{align}\]</div>
+<p>Note the nontrivial phase relations. At the crests (at fixed <span class="math notranslate nohighlight">\(z\)</span>), <span class="math notranslate nohighlight">\(\zeta\)</span> is maximal when <span class="math notranslate nohighlight">\(v_x\)</span> is positive and minimal
+when <span class="math notranslate nohighlight">\(v_x\)</span> is negative, while <span class="math notranslate nohighlight">\(v_z\)</span> will as expected vanish here.</p>
+<p>With this we can test he validity of the linear regime. This will hold when the advective term <span class="math notranslate nohighlight">\({\vec v} \cdot {\vec\nabla} {\vec v}\)</span>
+is small compared to linear terms such as <span class="math notranslate nohighlight">\({\dot {\vec v}}\)</span>. The latter <span class="math notranslate nohighlight">\(\sim \omega C k\)</span>; the former <span class="math notranslate nohighlight">\(\sim C^2 k^3\)</span>. Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+	C^2 k^3 \ll C \omega k \Rightarrow \frac{\omega}{k} = c_p \gg C k \sim |{\vec v}|
+\]</div>
+<p>In other words <span class="math notranslate nohighlight">\({\vec v}\)</span> must be small compared to the phase velocity.</p>
+</div>
+<div class="section" id="lagrangian-picture">
+<h2>Lagrangian picture<a class="headerlink" href="#lagrangian-picture" title="Permalink to this headline">¶</a></h2>
+<p>It is worth understanding what individual particles are doing in this flow. For this, we would like to solve the
+equations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-35794405-1a03-46a7-9fef-122fee5cec90">
+<span class="eqno">(31)<a class="headerlink" href="#equation-35794405-1a03-46a7-9fef-122fee5cec90" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	{\dot x}(t) &amp; = &amp; v_x = C k \sin(\omega t - k x - \delta) \cosh[k(z + h)] \\
+	{\dot z}(t) &amp; = &amp; v_z = C k \cos(\omega t - k x - \delta) \sinh[k(z + h)]
+\end{align}\]</div>
+<p>These are horribly nonlinear, even though the underlying equations are linear. However, we are
+assuming <span class="math notranslate nohighlight">\({\vec v}\)</span> is in some sense small, in that <span class="math notranslate nohighlight">\(C k^2/\omega \equiv \epsilon \ll 1\)</span>.
+We will write <span class="math notranslate nohighlight">\({\vec x} = {\vec x}_0 + \epsilon {\vec x}_1 + \epsilon^2 {\vec x}_2 + \ldots\)</span>, where
+<span class="math notranslate nohighlight">\({\vac x_0}\)</span> is a constant. We will also write
+and <span class="math notranslate nohighlight">\(v_x = \epsilon \omega/k \sin(\omega t - k x - \delta) \cosh[k(z + h)]\)</span>, and similarly for <span class="math notranslate nohighlight">\(v_z\)</span>.</p>
+<p>Now expanding the Lagrangian particle equations in powers of <span class="math notranslate nohighlight">\(\eps\)</span>, we find to lowest order:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5dc26257-5cc8-4a6a-a20c-a58585f8aa40">
+<span class="eqno">(32)<a class="headerlink" href="#equation-5dc26257-5cc8-4a6a-a20c-a58585f8aa40" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	{\dot x}_1 &amp; = &amp; \frac{\omega}{k} \sin(\omega t - k x_0 - \delta) \cosh[k(z_0 + h)]\\
+	{\dot x}_1 &amp; = &amp; \frac{\omega}{k} \cos(\omega t - k x_0 - \delta) \sinh[k(z_0 + h)]\\
+\end{align}\]</div>
+<p>With a bit of algebra, we find that to this order,</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{(x - x_0)^2}{\cosh^2(k(z_0 + h))} + \frac{(z - z_0)^2}{\sinh^2(k(z_0 + h))} = \frac{\epsilon^2}{k^2}
+\]</div>
+<p>This is the equation for an ellipse. In the deep water limit, with <span class="math notranslate nohighlight">\(k (z_0 + h) \gg 1\)</span>, the hyberbolic functions
+become exponentials and we get a circle:</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{(x - x_0)^2} + \frac{(z - z_0)^2} = \frac{\epsilon^2}{k^2} e^{- k(z_0 + h)}
+\]</div>
+<p>Thus, even though the=is “monochromatic wave” wave may be moving at the phase velocity,
+to lowest order the particles are just moving in circles. which get smaller at depth.</p>
+<p>It is worth at least mentioning the effects of the next order corrections. At this point the above equations are
+not in fact technically adequate as at order <span class="math notranslate nohighlight">\(\epsilon^2\)</span>, the nonlinear term in Euler’s equations will also
+contribute. However, in the deep water limit this ends up no contributing.
+Since we are looking at inviscid flow, we can use Bernoulli’s theorem</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t \phi + \frac{1}{2} {\vec v}^2 + g z + \frac{p}{\rho} = 0
+\]</div>
+<p>together with the boundary conditions. We would expand <span class="math notranslate nohighlight">\(\phi, \zeta, p\)</span> in <span class="math notranslate nohighlight">\(\epsilon\)</span>, and the first
+nonlinear correction appears at order <span class="math notranslate nohighlight">\(\epsilon^2\)</span>. This has the form</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t \phi_2 + \frac{p_2}{\rho} + \frac{1}{2} \left({\vec v}_1\right)^2 + {\vec v}_2 \cdot
+	{\vec v}_0 + g z = 0
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\({\vec v^{(0)} = 0\)</span> we have the same equation as for <span class="math notranslate nohighlight">\(\phi_1,{\vec v}_1\)</span>, but with the term<br />
+<span class="math notranslate nohighlight">\(\frac{1}{2} \left({\vec v}_1\right)^2\)</span>. Next, as before we work at <span class="math notranslate nohighlight">\(z = \eta\)</span>,
+expanding <span class="math notranslate nohighlight">\(\eta = \epsilon \zeta_1 + \epsilon^2 \zeta_2 + \ldots\)</span>. Solving
+the boundary cunditions order by order we have <span class="math notranslate nohighlight">\(\partial_t \zeta_k = \partial_z \phi_k\)</span>.</p>
+<p>At the surface we have</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t \phi_2 + \frac{p_2}{\rho} + \frac{1}{2} \left({\vec v}_1\right)^2 + g \zeta_2 = 0
+\]</div>
+<p>Taking the time derivative of this equation, and imposing the boundary conditions, we get</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t^2 \phi_2 + \frac{p_2}{\rho} + {\vec v}_1\cdot {\dot {\vec v}_1} + g \partial_z \phi_2  = 0
+\]</div>
+<p>Now let us work in the deep water limit, replacing the hyberbolic funvtions in <span class="math notranslate nohighlight">\({\vec v}_1\)</span> with exponentials,
+we find that the nonlinear term <span class="math notranslate nohighlight">\(v_x {\dot v}_x + v_z {\dot v})z = 0\)</span>. Thus the second order solutions solve the same
+equations as the first order solutions, and we can to this order maintain the form of the velocities and Lagrangian
+trajectories.</p>
+<p>This still leaves us with solving the equations for <span class="math notranslate nohighlight">\({\vec x}_2\)</span>. Expanding the Lagrangian equations for <span class="math notranslate nohighlight">\({\vec x}\)</span>
+to order <span class="math notranslate nohighlight">\(\epsilon^2\)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	{\dot x}_2 &amp; = &amp; - \frac{\omega}{2 k} x_1 \cos(\omega t - k x_0) e^{k(z_0 + h)} 
+	+ \frac{\omega}{2k} z_1 \sin(\omega t - k x_0) e^{k(z_0 + h)}\\
+\end{split}\]</div>
+<p>and similarly for <span class="math notranslate nohighlight">\(z_2\)</span>. Now inserting the first order solutions in, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	{\dot x}_2 = \frac{\omega}{2k} e^{2 k (z_0 + h)}
+\]</div>
+<p>So we get a constant drift at this order, known as the <em>Stokes drift</em>, which is extremely important in
+understanding transport of particles by waves.</p>
 </div>
 </div>
 
