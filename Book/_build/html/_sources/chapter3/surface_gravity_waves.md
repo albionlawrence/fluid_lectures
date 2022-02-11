@@ -61,7 +61,7 @@ $$
 There are two obvious limits here. In the first, $k h \gg 1$, corresponding to wavelengths much shorter than the
 fluid depth. This is a "deep water" limit and in this case $\omega^2 = g k$, so that $v_p = \sqrt{\frac{g}{k}}$
 and $v_g = \frac{1}{2} \sqrt{\frac{g}{k}}$. So long-wavelength modes propagate more qucly than short-wavelength modes.
-We can see this in the atmosphere in the satellite picture of teh Tonga explosion that we saw earlier.
+We can see this in the atmosphere in the satellite picture of the Tonga explosion that we saw earlier.
 
 Another limit is "shallow water", in which $kh \ll 1$, so the wavelength is long compared to the height. This is often
 an important limit in both the linear and nonlinear problem, in part as planetary fluids have important motion on scales larger
@@ -110,10 +110,10 @@ equations:
 These are horribly nonlinear, even though the underlying equations are linear. However, we are
 assuming ${\vec v}$ is in some sense small, in that $C k^2/\omega \equiv \epsilon \ll 1$. 
 We will write ${\vec x} = {\vec x}_0 + \epsilon {\vec x}_1 + \epsilon^2 {\vec x}_2 + \ldots$, where
-${\vac x_0}$ is a constant. We will also write
+${\vec x_0}$ is a constant. We will also write
 and $v_x = \epsilon \omega/k \sin(\omega t - k x - \delta) \cosh[k(z + h)]$, and similarly for $v_z$.
 
-Now expanding the Lagrangian particle equations in powers of $\eps$, we find to lowest order:
+Now expanding the Lagrangian particle equations in powers of $\epsilon$, we find to lowest order:
 
 \begin{align}
 	{\dot x}_1 & = & \frac{\omega}{k} \sin(\omega t - k x_0 - \delta) \cosh[k(z_0 + h)]\\
@@ -130,7 +130,7 @@ This is the equation for an ellipse. In the deep water limit, with $k (z_0 + h) 
 become exponentials and we get a circle:
 
 $$
-	\frac{(x - x_0)^2} + \frac{(z - z_0)^2} = \frac{\epsilon^2}{k^2} e^{- k(z_0 + h)}
+	(x - x_0)^2 + (z - z_0)^2 = \frac{\epsilon^2}{k^2} e^{- k(z_0 + h)}
 $$
 
 Thus, even though the=is "monochromatic wave" wave may be moving at the phase velocity,

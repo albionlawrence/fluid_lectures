@@ -27,4 +27,5 @@ chapters:
     sections:
     - file: chapter3/surface_waves
     - file: chapter3/surface_gravity_waves
+    - file: chapter3/capillary_waves
 - file: bibliography

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Waves in fluids &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Capillary waves &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear waves" href="linear_waves.html" />
-    <link rel="prev" title="Simple solutions in cylindrical coordinates" href="../chapter2/cylindrical.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Surface Gravity Waves" href="surface_gravity_waves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -189,7 +189,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Waves.html">
    Waves in fluids
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -197,17 +197,17 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2 has-children">
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="linear_waves.html">
      Linear waves
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="surface_waves.html">
        Surface waves
@@ -218,8 +218,8 @@
        Surface Gravity Waves
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="capillary_waves.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Capillary waves
       </a>
      </li>
@@ -273,7 +273,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter3/Waves.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter3/capillary_waves.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -293,7 +293,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/Waves.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/capillary_waves.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -321,7 +321,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Waves in fluids</h1>
+                <h1>Capillary waves</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -332,38 +332,80 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="waves-in-fluids">
-<h1>Waves in fluids<a class="headerlink" href="#waves-in-fluids" title="Permalink to this headline">¶</a></h1>
-<p>We ar all familiar with the basic phenomena of <em>waves</em> in a fluid: a
-series of finite disturbances, often spaced regularly, propagating through
-the fluid. Some examples include:</p>
-<ul class="simple">
-<li><p>Surface waves that we see on the beach are an obvious example, or
-that appeal when we drop a stone in he water; the oscillatory motion
-can be driven by gravity or surface tension.</p></li>
-<li><p>Sound comes from propagating compression-rarefaction waves in the air.</p></li>
-<li><p>Tidal forcing interacting wih complex bottom topography of the ocean
-generates a complicated spectrum of <em>internal gravity waves</em> propagating
-through the global ocean.</p></li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WYmRnSRsS7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>[Caption: <em>“This animation shows density layers in the South China Sea being perturbed by the regular back-and-forth tidal flow through the Luzon Strait. These leads to large amplitude internal waves (shown in red underwater, and in white when seen from above), being radiated west to the Chinese continental shelf. “</em>.]</p>
-<ul class="simple">
-<li><p><em>Rossby waves</em> (which we will not cover) are planetary-scale waves in which
-the Earth’s rotation (and the associated Coriolis force) plays a central role.
-These are responsible for the undulation of atmospheric jets such as the jet stream bounding the polar vortex, as you can see at <a class="reference external" href="https://oceanservice.noaa.gov/facts/rossby-wave.html">this website</a>.</p></li>
-</ul>
-<p>The goal of this chapter is to explain the physics of water waves. Along the way we wil encounter a number of important mathematical techniques and concepts
-whose utility extends well beyon hydrodynamics:</p>
-<ul class="simple">
-<li><p>Linearization of nonlinear equations</p></li>
-<li><p>Dispersion relations <span class="math notranslate nohighlight">\(\omega(k)\)</span>, Phase and group velocity</p></li>
-<li><p>Ray tracing and the method of characteristics</p></li>
-<li><p>Nonlinear waves and solitons</p></li>
-</ul>
-<p>So we will be spending a bit of time on this subject!</p>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="capillary-waves">
+<h1>Capillary waves<a class="headerlink" href="#capillary-waves" title="Permalink to this headline">¶</a></h1>
+<p>Next we wish to add the effect of surface tension. This arises in an interface between two fluids – water and air,
+oil and water, alcohol and water. It is typically expressed in the free energy of a fluid as the the coefficient
+<span class="math notranslate nohighlight">\(\gamma\)</span> of an area-dependent term <span class="math notranslate nohighlight">\(F_{st} = \sigma A\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the area of the surface. Fluids are bound together by
+an intermolecular force, and the tension arises from the difference in attractive force between molecules of the different fluids;
+thus the specific value depends on what fluids are n each side of the interface, the temperature, the presence of impurities, and so on.
+Furthermore, the surface tension can be positive or negative. When positive – for water and air, or water and oil – the fluids are
+inmiscible; wen negative, the fluids will mix rapidly. (You can find an excellent and not-too-long discussion of all this
+in <span id="id1">[<a class="reference internal" href="../bibliography.html#id3">Batchelor, 2000</a>]</span>.)</p>
+<p>We expect the surface tension to change the boundary conditions for the fluid surface. For the present purposes I will
+resort to some hand-waving. A good general derivation of the effects of surface tension would follow from
+writing the different stresses on fluid elements in terms of the stress tensor. That formalism will
+be developed later.</p>
+<p>We are considering waves above a flat surface so let us restrict ourselves to that. When the interface is flat,
+the tension exerts an equal and opposite force on each of the surface fluid elements. When it is curved, there will be a net force
+perpendicular to the fluid surface. This force should be matched by a jump in pressure across the surface (otherwise we take
+the pressure to be continuous.)  If we consider a linear wave propagating in the <span class="math notranslate nohighlight">\(x\)</span> direction, the curvature of the surface
+is clearly proportional to <span class="math notranslate nohighlight">\(\partial_x^2 \zeta\)</span>, so we expect the vertical force to be <span class="math notranslate nohighlight">\(\propto \sigma \partial_x^2 \zeta\)</span>.
+It turns out that this proportionality is an equality (when $\sigma is defined as above. Thus we demand, at the boundary,</p>
+<div class="math notranslate nohighlight">
+\[
+	p_0 - p = \sigma \frac{\partial^2 \zeta}{\partial x^2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_0\)</span> is the pressure of the air (or of the fluid above the fluid under consideration).</p>
+<p>Now we again wich to consider irrotational flow, for a small perurbation from the resting state. We
+return to Bernoulli’s equation:</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t \phi + \frac{p}{\rho} + \frac{1}{2} {\vec u}^2 + g \eta = 0 = 
+\]</div>
+<p>Assuming again that <span class="math notranslate nohighlight">\(\phi, {\vec u}, \eta \sim {\cal O}(\epsilon)\)</span> and ignoring <span class="math notranslate nohighlight">\({\cal O}(\epsilon^2)\)</span> terms, we find
+can absorb the constant <span class="math notranslate nohighlight">\(p_0\)</span> into <span class="math notranslate nohighlight">\(\partial_t \phi\)</span>, and combine these two equations to find</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t \phi + g \eta - \frac{\sigma}{\rho} \frac{\partial^2}{\partial x}^2 \eta = 0
+\]</div>
+<p>We combine these with <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = \partial_t \eta\)</span> to get the boundary equations of motion.
+Finally, the solution must solve Laplace’s equation <span class="math notranslate nohighlight">\(\nabla^2 \phi = 0\)</span>.</p>
+<p>As before, Laplace’s equation combined with the bottom boundary conditions leads to</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi = A \cos(\omega t - k x - \delta) \cosh(k(z + h))
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\delta\)</span> an arbitrary phase. The top boundary conditions then impose a dispersion relation <span class="math notranslate nohighlight">\(\omega(k)\)</span>.
+We can then get general solutions by linear combinations
+of these solutions. For a fixed value of <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(\partial_x^2\)</span> acting on the sin gives <span class="math notranslate nohighlight">\(- k^2\)</span>, so for this wave the boundary conditions
+are the same as for the surface gravity wave if we replace <span class="math notranslate nohighlight">\(g \to g + \frac{\sigma}{\rho} k^2\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega^2(k) = \left(g + \frac{\sigma}{\rho} k^2\right) k \tanh kh
+\]</div>
+<p>In the limit <span class="math notranslate nohighlight">\(kh \to \infty\)</span> (deep water), this bcomes</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega^2(k) \sim gk + \frac{\sigma}{\rho} k^3
+\]</div>
+<p>Note that if the <span class="math notranslate nohighlight">\(gk\)</span> term is subdominant, as will happen for sufficiently large <span class="math notranslate nohighlight">\(k\)</span>, this is exactly the form
+we deduced by dimensional analysis.</p>
+<p>With this in hand we can ask when we make a transition between gravity waves and capilary waves. The surface tension
+dominates when <span class="math notranslate nohighlight">\(k^2 \gg \frac{g \rho}{\sigma}\)</span>. Taking <span class="math notranslate nohighlight">\(g \sim 9.8 m/s^2\)</span>, <span class="math notranslate nohighlight">\(\rho \sim 10^3 kg/m^3\)</span> and <span class="math notranslate nohighlight">\(\sigma \sim .07 N/m\)</span>,
+we find <span class="math notranslate nohighlight">\(\lambda = \frac{2\pi}{k} \ll .017 m \ 1.7 cm\)</span>.</p>
+<p>Note that the phase speed in deep water is</p>
+<div class="math notranslate nohighlight">
+\[
+	c = \frac{\omega}{k} = \sqrt{\frac{g}{k} + \frac{\sigma}{\rho} k}
+\]</div>
+<p>There is clearly a <span class="math notranslate nohighlight">\(k\)</span> for which this is minimal.</p>
+<p>Now consider the observed phenomenal of water flowing steadily past an obstacle (stone, fishing line, etc). If the flow is not
+too fast and we do not excite turbulent motion, we ofen see steady waves about the object. This is obly possible if, in the rest frame
+of the fluid, the waves are mving with phase velocity <span class="math notranslate nohighlight">\(U\)</span>. Thus <span class="math notranslate nohighlight">\(U\)</span> must be less than the mininum possible phase
+velocity given when <span class="math notranslate nohighlight">\(k = \sqrt{\rho g/\sigma}\)</span>, or <span class="math notranslate nohighlight">\(c^2 = 2 \sqrt{g \sigma/\rho}\)</span>. Above this velocity both capilary waves
+and gravity waves can propagae with velocity <span class="math notranslate nohighlight">\(U\)</span>. The former have a group velocity larger han the phase velocity, and the latter smaller,
+so we will see upstream capillary waves and downstream gravity waves.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -391,17 +433,17 @@ whose utility extends well beyon hydrodynamics:</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../chapter2/cylindrical.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="surface_gravity_waves.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Simple solutions in cylindrical coordinates</p>
+            <p class="prev-next-title">Surface Gravity Waves</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="linear_waves.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear waves</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

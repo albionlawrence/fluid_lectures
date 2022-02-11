@@ -1,0 +1,10 @@
+# Capillary waves
+
+Next we wish to add the effect of surface tension. This arises in an interface between two fluids -- water and air, 
+oil and water, alcohol and water. It is typically expressed in the free energy of a fluid as the the coefficient 
+$\gamma$ of an area-dependent term $F_{st} = \gamma A$, where $A$ is the area of the surface. Fluids are bound together by
+an intermolecular force, and the tension arises from the differene in attractive force between molecules of the different fluids;
+thus the specific value depends on what fluids are n each side of the interface, the temperature, the presence of impurities, and so on.
+Furthermore, the surface tension can be positive or negative. When positive -- for water and air, or water and oil -- the fluids are
+inmiscible; wen negative, the fluids will mix rapidly. [You can find an excellent and not-too-long discussion of all this
+in {cite:p}`batchelor2000introduction`.
