@@ -1,0 +1,46 @@
+# Internal gravity waves
+
+An important class of waves in the ocean (and atmosphere) are *internal 
+gravity waves*, waves which appear in *stratified fluids*, 
+with a density increasing with depth, so that bouyancy forces act on 
+fluid parcels. (For frequencies close to the "inertial frequency" 
+$f = 2\Omega\sin\theta$, where $\Omega$ is the rotational 
+frequency of he earth, and $\theta$ the latitutde, these are
+called *inertia-gravity waves*; in these the Coriolis foce plays an
+important role in the wave dynamics.)
+
+In the ocean, the main driver of such waves is a combination of wind 
+exciting waves at the inertial frequency, and tidal forcing interacting with
+complex bottom topography. Subsequent nonlinear interactions in the ocean --
+interactions between waves, interactions between waves and turbulent 
+motion -- generates a near-continuum of gravity waves at every frequency
+between the inrtial frequency and the *Brunt-V&auml;is&auml;l&auml; frequency*
+which we will define below. This continuum is known as the *Garrett-Munk* 
+continuum (see for example {cite:p}`Garrett1979-li` and prior papers by those authors therein. A nice review of internal waves and this continuum can be found in [this out-of-print article](https://ocw.mit.edu/resources/res-12-000-evolution-of-physical-oceanography-spring-2007/part-2/wunsch_chapter9.pdf) by Walter Munk.)
+
+![mooring spectrum](ocean_ke.png "Mooring spectrum")
+
+*Kinetic energy as a function of frequency, measured from a mooring at 128m 
+depth along the Mid-Atlantic Ridge. Figure taken from Fig. 1 of {cite:p}`doi:10.1146/annurev.fluid.40.111406.102139`.*
+
+Here we will ignore the effects of the earth's rotation and concentate on bouyancy-driven waves which, as we will see, already leads to unexpected behavior.
+
+## Equations of motion
+
+We start from a background state in which he fluid is at rest, and the density
+has a profile $\rho_0(z)$. The only nontrivial equation is the $z$ component
+of the Navier-Stokes equation,
+
+$$
+	- \frac{1}{\rho_0} \frac{\partial p_0(z)}\partial_z} - gz = 0
+$$
+
+(The other components of the equation simply require $p_0$ to have no 
+$x$- or $y$-dependence.
+
+We will consider perturbations which are independent of the $y$ direction,
+and controlled by a small parameter $\epsilon$. Thus,
+
+\begin{align}
+  u(x,z,t) & = & \epsilon u_1(x,z,t) + \epsilon^2 u_2(x,z,t) + \ldots\\
+  
