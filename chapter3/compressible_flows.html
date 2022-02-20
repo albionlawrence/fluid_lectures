@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compressible flows: linear theory &#8212; Physics 111a -- Fluid Mechanics</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Internal gravity waves" href="igw.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/swimming-lab.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Physics 111a -- Fluid Mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Physics 111a: Introduction to Fluid Mechanics
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/Basic_intro.html">
+   Basic Equations and Concepts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/whatis_fluid.html">
+     What is a Fluid?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/euler.html">
+     Equations for Ideal Fluids
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Hydrostatics.html">
+     Hydrostatics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Vorticity.html">
+     Vorticity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Bernoulli.html">
+     Bernoulli’s Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter1/Vorticity_dynamics.html">
+     Vorticity Dynamics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter2/Intro_viscosity.html">
+   Viscosity: a first pass
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/navier_stokes_1.html">
+     Introduction to the Navier-Stokes equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Reynolds_number.html">
+     Dimensional analysis and the Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/simple_viscous_flow.html">
+     Simple examplew of viscous flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Diffusion.html">
+     Introduction to diffusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/diffusion_viscosity.html">
+     Diffusion and Viscosity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/Gibbs_phenomenon.html">
+     Gibbs phenomenon in Acheson 2.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter2/cylindrical.html">
+     Simple solutions in cylindrical coordinates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Waves.html">
+   Waves in fluids
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="linear_waves.html">
+     Linear waves
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="surface_waves.html">
+       Surface waves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="surface_gravity_waves.html">
+       Surface Gravity Waves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="capillary_waves.html">
+       Capillary waves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="igw.html">
+       Internal gravity waves
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Compressible flows: linear theory
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter3/compressible_flows.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/compressible_flows.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sound-waves">
+   Sound waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plane-wave-solutions">
+     Plane wave solutions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spherical-waves">
+     Spherical waves
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supersonic-flows-past-an-airfoil">
+   Supersonic flows past an airfoil
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Compressible flows: linear theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sound-waves">
+   Sound waves
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plane-wave-solutions">
+     Plane wave solutions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spherical-waves">
+     Spherical waves
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supersonic-flows-past-an-airfoil">
+   Supersonic flows past an airfoil
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="compressible-flows-linear-theory">
+<h1>Compressible flows: linear theory<a class="headerlink" href="#compressible-flows-linear-theory" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand\eps{\epsilon}
+\newcommand\vv{{\vec v}}\]</div>
+<p>While most of this course foused on incompressible flows, it is worth
+spending a little time on compressible flows one encounters in particular
+in gas dynamics. In this section we’ll focus on the inviscid limit. The
+Euler equations are as before:</p>
+<div class="math notranslate nohighlight">
+\[
+ \partial_t {\vec v} +_ {\vec v}\cdot{\vec \nabla} {\vec v} = - \frac{1}{\rho} {\vec \nabla} p + {\vec F}_{ext}\ ,
+\]</div>
+<p>but the continuity equation is</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t \rho + {\vec \nabla}\cdot(\rho {\vec v}) = 
+	\partial_t \rho + {\vec v}\cdot{\vec \nabla} \rho +
+	\rho {\vec \nabla}\cdot{\vec v} = 0
+\]</div>
+<p>and the final term does not in general vanish. Finally, to close these
+equations, we will need some kinf of equation of state <span class="math notranslate nohighlight">\(p = p(\rho)\)</span>.
+In general <span class="math notranslate nohighlight">\(p\)</span> will depend on othe themrodynamic variables such as temperature
+as well, in which case we will need equations for those quantities;
+we are assuming here that those are fixed. Two candidate equations of state
+are:</p>
+<div class="math notranslate nohighlight">
+\[
+	p = \rho T
+\]</div>
+<p>for an isothermal ideal gas; suc gases will have heat
+exchange between warmer compressed regions and colder rarified regions.
+Another, for cases of no heat exchange, is the adiabatic gas law</p>
+<div class="math notranslate nohighlight">
+\[
+	p = C \rho^{\gamma}
+\]</div>
+<p>which turns out to be more relevant for sound waves. For this case, we can
+define the <em>speed of sound</em> <span class="math notranslate nohighlight">\(c_s\)</span> via:</p>
+<div class="math notranslate nohighlight">
+\[
+	c_s^2 = \frac{\partial p}{\partial \rho} \Big|_{fixed\ entropy} 
+\]</div>
+<p>For the equation of state above,</p>
+<div class="math notranslate nohighlight">
+\[
+	c_s^2 = \gamma C \rho^{\gamma - 1} = \frac{\gamma p}{\rho}
+\]</div>
+<p>We will see below why we idenify this with the speed of sound waves.</p>
+<div class="section" id="sound-waves">
+<h2>Sound waves<a class="headerlink" href="#sound-waves" title="Permalink to this headline">¶</a></h2>
+<p>Once again we start from a static solution with constant density and pressure:
+<span class="math notranslate nohighlight">\({\vec v} = 0\)</span>, <span class="math notranslate nohighlight">\(p= p_0\)</span>,  <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span>, with backgound speed of sound
+<span class="math notranslate nohighlight">\( c_{s0}^2 = \gamma p_0/\rho_0\)</span>. We expand</p>
+<div class="amsmath math notranslate nohighlight" id="equation-496c6bc4-5afb-4543-9d2d-bceec3919ec5">
+<span class="eqno">(36)<a class="headerlink" href="#equation-496c6bc4-5afb-4543-9d2d-bceec3919ec5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	{\vec v} &amp; = \eps \vv_1 + \eps^2 \vv_2 + \ldots\\
+	\rho &amp; = \rho_0 + \eps \rho_1 + \eps^2 \rho_2 + \ldots\\
+	p &amp; = p_0 + \eps p_1 + \eps^2 p_2 + \ldots
+\end{align}\]</div>
+<p>The Euler nd mass conservation equations are satisfied to order
+<span class="math notranslate nohighlight">\({\cal O}(\eps^0)\)</span>. At <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>, the equations are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d901cc17-5960-4388-8801-1d790d2aac69">
+<span class="eqno">(37)<a class="headerlink" href="#equation-d901cc17-5960-4388-8801-1d790d2aac69" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; \partial_t \vv_1 = - \frac{1}{\rho_0} {\vec\nabla} p_1\\
+	&amp; \partial_t \rho_1 + \rho_0 {\vec\nabla}\cdot{\vec v} = 0\\
+	&amp; p_1 = c_{s0}^2 \rho_1
+\end{align}\]</div>
+<p>Taking thecurl of the first equation, we have
+<span class="math notranslate nohighlight">\(\partial_t {\vec \nabla} \times \vv_1 = 0\)</span>, so hat vorticity is conserved.
+If we perturb our system with irrotational flow, it remains irrotational,
+so let us do hat. we can then wrote <span class="math notranslate nohighlight">\(\vv_1 = {\vec\nabla}\phi_1\)</span>, and
+our equations become:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-11714421-1d5a-4f8c-b8ec-95a848e84169">
+<span class="eqno">(38)<a class="headerlink" href="#equation-11714421-1d5a-4f8c-b8ec-95a848e84169" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; \partial_t {\vec \nabla} \phi_1 + \frac{c_{s0}^2}{\rho_0} 
+	{\vec\nabla} \rho_1 = 0\\
+	&amp; \partial_t \rho_1 + \rho_0 {\vac\nabla}^2 \phi_1 = 0
+\end{align}\]</div>
+<p>The first equation is in fact a pure gradient:</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec \nabla} \left(\partial_t \phi_1 + \frac{c_{s0}^2}{\rho_0} \rho_1\right) = 1
+\]</div>
+<p>The term in parentheses is therefore a funciton of time only. defining this as
+<span class="math notranslate nohighlight">\(D(t)\)</span>, if we redfine <span class="math notranslate nohighlight">\(\phi_1 \to \phi_1 - \int_0^t dt' D(t')\)</span>, then the velocities do not change, and we have</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_yt \phi_1 + \frac{c_{s0}^2}{\rho_0} \rho_1 = 0
+\]</div>
+<p>Taking the time derivative of this equation and inserting the conservation
+equation we are left with the wave equation</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t^2\phi_1 - c_{s0}^2 {\vec \nabla}^2 \phi_1 = 0
+\]</div>
+<div class="section" id="plane-wave-solutions">
+<h3>Plane wave solutions<a class="headerlink" href="#plane-wave-solutions" title="Permalink to this headline">¶</a></h3>
+<p>Let us consider waves propaating in three dimensions, with boundaries at
+infinity. We can attempt a separation of variables:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_1 = X(x)Y(y)Z(z)T(t)
+\]</div>
+<p>Inserting this into the wave equation and dividing by <span class="math notranslate nohighlight">\(\phi_1\)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+	{\ddot T}{T} - c_{s0}^2 
+	\left(\frac{X''(x)}{X} + \frac{Y''(y)}{Y} + \frac{Z''(z)}{Z} \right) = 0
+\]</div>
+<p>Each term depends on an independent variable and thus must be equal to a
+constant. Thus, we define</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{X''(x)}{X} = - k_x^2
+\]</div>
+<p>and similarly for <span class="math notranslate nohighlight">\(Y,Z\)</span>. For the solution to remain finie at infinity,
+we must have <span class="math notranslate nohighlight">\(k_x^2 &gt; 0\)</span>, so that a general solution to the above is</p>
+<div class="math notranslate nohighlight">
+\[
+	X = {\rm Re} X_0 e^{i k_x x}
+\]</div>
+<p>More generally, we have</p>
+<div class="math notranslate nohighlight">
+\[
+	X Y Z = {\rm Re} (A e^{- i {\vec k} \cdot {\vec x}
+\]</div>
+<p>(the minus sign is conventional). Finally, we have</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{\ddot T}{T} = - c_{s0}^2 {\vec k}^2
+\]</div>
+<p>Defining <span class="math notranslate nohighlight">\(\omega = c_{s0} \sqrt{\vec k}^2\)</span>, we have the solution:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_1 = {\rm Re} (C e^{i \omega t - i {\vec k} \cdot{\vec x}
+\]</div>
+<p>These describe <em>longitudinal waves</em>: <span class="math notranslate nohighlight">\({\vec v}_1 = {\vec \nabla} \phi_1\)</span>
+points in the direction <span class="math notranslate nohighlight">\({\vec k}\)</span>.</p>
+<p>Note this is a complete set of solutions; in other words, for any initial
+condition <span class="math notranslate nohighlight">\(\phi_1({\vec x},t=0)\)</span>, we can always decompose this via a Fourier
+integral into plane waves:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_i(x,t=0) = \int \frac{d^3 k}{(2\pi)^3} e^{- i {\vec k}\cdot{\vec x}}
+	{\tilde \phi}({\vec k})
+\]</div>
+<p>from which the time evolution is:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_i(x,t) = \int \frac{d^3 k}{(2\pi)^3} e^{i c_{s0} |{\vec k}| t - i {\vec k}\cdot{\vec x}}
+	{\tilde \phi}({\vec k})
+\]</div>
+<p>Now let us consider the case of waves moving purely in the <span class="math notranslate nohighlight">\(x\)</span> direction
+(<span class="math notranslate nohighlight">\(k_y = k_z = 0\)</span>). In this case, <span class="math notranslate nohighlight">\(\omega = c_{s0}|k|\)</span>, <span class="math notranslate nohighlight">\(k = \pm |k|\)</span>, so
+the solutions are:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_k(x,t) = {\rm Re} A e^{ic_{s0} |k| - i ({\rm sign}(k)) |k| x}
+\]</div>
+<p>A general solution will be a linear combination of these; we thus find
+that the general solution as the form:</p>
+<div class="math notranslate nohighlight">
+\[
+	f(x,t) = f_+(x + c_{s0} t) + f_-(x - c_{s0}t)
+\]</div>
+<p>Another way to see this is to define <span class="math notranslate nohighlight">\(x_{\pm} = x \pm c_{s0} t\)</span>. Is is
+sraightforward to show, using the chain rule, that</p>
+<div class="math notranslate nohighlight">
+\[ 
+	\frac{\partial}{\partial x_+} \frac{\partial}{\partial x_-} \phi_1 = 0
+\]</div>
+<p>From this equation the above general solution follows immediately.</p>
+<p>The upshot is that a given initial configuration always splits into a
+left- and right-moving wave packet, each of which travels at speed <span class="math notranslate nohighlight">\(c_{s0}\)</span>
+without distortion.</p>
+<p>Finally, we can ask when the linnear approximaion is good. In the present case we will ask when <span class="math notranslate nohighlight">\(\eps \rho_1 \ll \rho_0\)</span>. Consider a solution at late times such
+that the left- and right-moving wavepackets are well-=separated, and focus on one such (we will choose <span class="math notranslate nohighlight">\(f_-\)</span> for specificity). Starting with</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t v_1 = - \frac{1}{\rho_0} \partial_x p_1
+\]</div>
+<p>and using <span class="math notranslate nohighlight">\(\partial_t v_1 = c_{s0} \partial_x v_1\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+	c_{s0} v_1 = - \frac{p_1}{\rho_0} + {\rm constant}
+\]</div>
+<p>We set the constant to zero by demanding that the velocity perturbation
+vanishes when the pressure does (alternatively, by choosing the correct
+frame of reference). Finally, setting <span class="math notranslate nohighlight">\(p_1 = c_{s0}^2 \rho_1\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+	\eps v_1 = - \frac{c_{s0} \eps \rho_1}{\rho_0}
+\]</div>
+<p>From this we see that</p>
+<div class="math notranslate nohighlight">
+\[
+	\eps \rho_1/\rho_0 \ll 1 \Rightarrow \frac{\eps v_1}{c_{s0}} \ll 1
+\]</div>
+<p>In other words the small amoplitude limit corresponds to velocity perturbations
+much slower than the sound speed.</p>
+</div>
+<div class="section" id="spherical-waves">
+<h3>Spherical waves<a class="headerlink" href="#spherical-waves" title="Permalink to this headline">¶</a></h3>
+<p>Returning to three dimensions, let us consider spherically symmetric
+waves emanating from the origin. This means that <span class="math notranslate nohighlight">\(\phi_1(r,\theta,\phi) = \phi_1(r)\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec \nabla}^2 \phi_1 = \frac{1}{r^2} \partial_r (r^2 \partial_r) \phi_1
+\]</div>
+<p>The wave equation is then</p>
+<div class="math notranslate nohighlight">
+\[
+	\partial_t^2 - \frac{c_{s0}^2}{r^2} \partial_r (r^2 \partial_r) \phi_1 = 0
+\]</div>
+<p>If we set <span class="math notranslate nohighlight">\(phi_1 = f(r)/r\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+	\left(\partial_t^2 - c_{s0}^2 \partial_r^2\right) f = 0
+\]</div>
+<p>so that a general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_1 = \frac{f_+(r - c_{s0} t)}{r} +  \frac{f_-(r - c_{s0} t)}{r}
+\]</div>
+<p>which is a sum of waves outgoing from and ingoing to the origin.</p>
+</div>
+</div>
+<div class="section" id="supersonic-flows-past-an-airfoil">
+<h2>Supersonic flows past an airfoil<a class="headerlink" href="#supersonic-flows-past-an-airfoil" title="Permalink to this headline">¶</a></h2>
+<p>The next steps is to consider a steady (constant-velocity)
+flow <span class="math notranslate nohighlight">\({\vec v} = U {\hat x}\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span>, <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span>, in the presence
+of a very thin airfoil. We expect that if the aifoil is sufficiently
+thin it will induce only a very small perturbation of the basic
+state, so that a linear theory, first order in perturbations,
+applies.</p>
+<p>In this case we set</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9de9faf9-8c0b-4fb5-89d7-5b97639fa83d">
+<span class="eqno">(39)<a class="headerlink" href="#equation-9de9faf9-8c0b-4fb5-89d7-5b97639fa83d" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+	{\vec v} &amp; = U{\hat x} + \eps \vv_1 + \eps^2 \vv_2 + \ldots\\
+	p &amp; = p_0 + \eps p_1 + \eps^2 p_2 + \ldots\\
+	\rho &amp; = \rho_0 + \eps \rho_1 + \eps^2 \rho_2 + \ldots
+\end{align}\]</div>
+<p>We will assume that the airfoil is straight and long enough in the <span class="math notranslate nohighlight">\(y\)</span> direction
+that the perurbations depend on <span class="math notranslate nohighlight">\(x,z\)</span> only, and that <span class="math notranslate nohighlight">\(v_y \equiv V\)</span> vanishes,
+leaving us with 2d flow. Setting <span class="math notranslate nohighlight">\(\vv_1 = u_1 {\hat x} + w_1 {\hat z}\)</span>, and following the same logic as before, we have the Euler equations
+at order <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7fd90303-2771-4aaa-a407-11308b477e81">
+<span class="eqno">(40)<a class="headerlink" href="#equation-7fd90303-2771-4aaa-a407-11308b477e81" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; \rho_0 U \partial_x u_1 = - \partial_x p_1\\
+	&amp; \rho_0 U \partial_x v_1 = - \partial_y p_1\\
+\end{align}\]</div>
+<p>and the mass conservation equation:</p>
+<div class="math notranslate nohighlight">
+\[
+	\rho_0(\partial_x u_q + \partial_y v_1) + U \partial_x \rho_1 = 0
+\]</div>
+<p>Next, we take the <span class="math notranslate nohighlight">\(x\)</span> derivative of the second of te two Euler equations
+above, and subtract the <span class="math notranslate nohighlight">\(y\)</span> derivative of the first, to find:</p>
+<div class="math notranslate nohighlight">
+\[
+	\rho_0 U \partial_x (\partial_x v_1 - \partial_y u_1) = 0
+\]</div>
+<p>In other words the voriticity is <span class="math notranslate nohighlight">\(x\)</span>-independent at order <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>.
+Since it vanishes at  <span class="math notranslate nohighlight">\(x \to - \infty\)</span>, where the velocity is just
+<span class="math notranslate nohighlight">\(U{\hat x}\)</span>, it vanishes everywhere, and we can consider potential
+flow <span class="math notranslate nohighlight">\({\vec v}_1 = {\vec \nabla} \phi_1\)</span>. Using this in the
+mass conservation equations we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\rho_0 {\vec \nabla}^2 \phi_1 + \frac{U}\partial_x \rho_1 = 0
+\]</div>
+<p>where the Laplacian is taken to be two-dimensional.
+Now once again we take the linearized version of the equation of state:
+<span class="math notranslate nohighlight">\(p_1 = c_{s0}^2 \rho_1\)</span>, plug this into the equation above, and hen
+use the <span class="math notranslate nohighlight">\(x\)</span> component of the Euler equation to eliminate <span class="math notranslate nohighlight">\(p_1\)</span>, and we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\left(1 - \frac{U^2}{c_{s0}^2}\right) \partial_x^2 \phi_1 + 
+	\partial_y^2 \phi_1 = 0
+\]</div>
+<p>We define the <em>Mach number</em> as <span class="math notranslate nohighlight">\(M = \frac{U}{c_{s0}}\)</span>. we cna see that
+qualitatively the equations loof very different for <span class="math notranslate nohighlight">\(M &gt; 1\)</span> as fo <span class="math notranslate nohighlight">\(M &lt; 1\)</span>,
+as it changes the relative sign of the derivatives.</p>
+<p>The next step is to impose boundary conditions. Let the airfoil
+shape be <span class="math notranslate nohighlight">\(y(x) = \eps f(x)\)</span>, with <span class="math notranslate nohighlight">\(y'(x) = \eps f'(x)\)</span> (<span class="math notranslate nohighlight">\(y\)</span> could get large
+if the wing is too wide, even if <span class="math notranslate nohighlight">\(y'\)</span> is small; we will not consider that
+possibility). If we demand that the normal velocity
+vanishes/the velocity is tangent ot the wing, then the boundary condition is</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{v_y}{v_x} \sim \frac{\eps v_1}{U + \eps u_1} \sim \eps f'(x)
+\]</div>
+<p>which at leadig order in <span class="math notranslate nohighlight">\(\eps\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[
+	v_1\Big|_{y = y(x)} = U f'(x)
+\]</div>
+<p>To leading oder in <span class="math notranslate nohighlight">\(\eps\)</span> we can evaluate <span class="math notranslate nohighlight">\(v_1\)</span> at <span class="math notranslate nohighlight">\(y = 0\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+	v_1(x,0) = \partial_y \phi_1(x,0) = U f'(x)
+\]</div>
+<p>Now let us solve this equation for <em>supersonic flow</em> <span class="math notranslate nohighlight">\(M &gt; 1\)</span>. In this case, we can define <span class="math notranslate nohighlight">\(\tau = \frac{x}{\sqrt{M^2 - 1}}\)</span> and the equation of motion
+for <span class="math notranslate nohighlight">\(\phi_1\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[
+	\left[\partial_{\tau}^2 - \partial_y^2\right] \phi_1 = 0
+\]</div>
+<p>This is essentially identical to the wave equation for sound waves, in which
+“time” is a rescaled <span class="math notranslate nohighlight">\(x\)</span>. We know the general solutions:</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_1 = f_+(y - \tau) + f_-(y + \tau)
+\]</div>
+<p>which we can rewrite as</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_1 = F_+(x - \beta y) + F_+(x + \beta y)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta = \sqrt{M^2 - 1}\)</span>.</p>
+<p>In such supersonic flow we assume that the airfoil will generate
+compression waves which travel at the speed <span class="math notranslate nohighlight">\(c_s\)</span>. By causality,
+we expect the disturbance to trail the leading edge of the airfoil.
+We take <span class="math notranslate nohighlight">\(\phi\)</span> to vanish upstream of the airfoil.
+Now if we take the tip of the airfoil to lie at the origin,
+we expect <span class="math notranslate nohighlight">\(\phi\)</span> to start changing first at the tip. By causality
+only <span class="math notranslate nohighlight">\(F_+\)</span> can start to change above the wing (because <span class="math notranslate nohighlight">\(F_-\)</span> nonzero
+near the tip would imply it is nonvanishing ahead of the airfoil),
+while only <span class="math notranslate nohighlight">\(F_-\)</span> can be nonzero below it. Thus <span class="math notranslate nohighlight">\(\phi\)</span> will vanish
+all he way up to <span class="math notranslate nohighlight">\(x = \beta y\)</span> for <span class="math notranslate nohighlight">\(y &gt; 0\)</span>, <span class="math notranslate nohighlight">\(x = - \beta y\)</span> for
+<span class="math notranslate nohighlight">\(y &lt; 0\)</span>. By continuity <span class="math notranslate nohighlight">\(F_+(0) = 0\)</span> above the wing and <span class="math notranslate nohighlight">\(F_-(0) = 0\)</span> below.</p>
+<p>Now Let the wing have extent <span class="math notranslate nohighlight">\(L\)</span>. Imposing the boundary conditions we have
+<span class="math notranslate nohighlight">\(\phi'_1 = F'_-(x) = - \frac{U}{B} f'(x)\)</span>, so that we get
+<span class="math notranslate nohighlight">\(\phi_1 = F_+(x) = - \frac{U}{\beta} f(x) + c\)</span> for <span class="math notranslate nohighlight">\(y &gt; 0^{+}\)</span>,
+where <span class="math notranslate nohighlight">\(c\)</span> is a constant which is set to
+zero by demanding <span class="math notranslate nohighlight">\(F_-(0) = 0\)</span>. Similarly, below th wing we have
+<span class="math notranslate nohighlight">\(\phi_1 = F_+(x) = - \frac{U}{\beta} f(x)\)</span>. Finally,
+For <span class="math notranslate nohighlight">\(x &gt; L\)</span> the airfoil vanishes again, so that <span class="math notranslate nohighlight">\(F_{\pm}(x &gt; L) = 0\)</span>.</p>
+<p>The full solution becomes</p>
+<div class="math notranslate nohighlight">
+\[
+	\phi_1 = - \frac{U}{\beta} f(x \mp \beta y) \ \pm y &gt; 0,\ 0 &lt; x \pm \beta y &lt; L
+\]</div>
+<p>Note that this means that the streamlines have the same shape as the airfoil.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="igw.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Internal gravity waves</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Albion Lawrence<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
