@@ -1,0 +1,163 @@
+# Compressible flows: linear theory
+
+```{math}
+\newcommand\eps{\epsilon}
+\newcommand\vv{{\vec v}}
+```
+
+While most of this course foused on incompressible flows, it is worth
+spending a little time on compressible flows one encounters in particular
+in gas dynamics. In this section we'll focus on the inviscid limit. The
+Euler equations are as before:
+
+$$
+ \partial_t {\vec v} +_ {\vec v}\cdot{\vec \nabla} {\vec v} = - \frac{1}{\rho} {\vec \nabla} p + {\vec F}_{ext}\ ,
+$$
+
+but the continuity equation is
+
+$$
+	\partial_t \rho + {\vec nabla}\cdot(\rho {\vec v}) = 
+	\partial_t \rho + {\vec v}\cdot{\vec \nabla} \rho +
+	\rho {\vec \nabla}\cdot{\vec v} = 0
+$$
+
+and the final term does not in general vanish. Finally, to close these
+equations, we will need some kinf of equation of state $p = p(\rho)$.
+In general $p$ will depend on othe themrodynamic variables such as temperature
+as well, in which case we will need equations for those quantities;
+we are assuming here that those are fixed. Two candidate equations of state 
+are:
+
+$$
+	p = \rho T
+##
+
+for an isothermal ideal gas; suc gases will have heat 
+exchange between warmer compressed regions and colder rarified regions.
+Another, for cases of no heat exchange, is the adiabatic gas law
+
+$$
+	p = C \rho^{\gamma}
+$$
+
+which turns out to be more relevant for sound waves. For this case, we can
+define the *speed of sound* $c_s$ via:
+
+$$
+	c_s^2 = \frac{\partial p}{\partial \rho} \Big|_{fixed\ entropy} 
+$$
+
+For the equation of state above, 
+
+$$
+	c_s^2 = \gamma C \rho^{\gamma - 1} = \frac{\gamma p}{\rho}
+$$
+
+We will see below why we idenify this with the speed of sound waves.
+
+## Sound waves
+
+Once again we start from a static solution with constant density and pressure:
+${\vec v} = 0$, $p= p_0$,  $\rho = \rho_0$, with backgound speed of sound 
+$ c_{s0}^2 = \gamma p_0/\rho_0$. We expand
+
+\begin{align}
+	{\vec v} & = \eps \vv_1 + \eps^2 \vv_2 + \ldots\\
+	\rho & = \rho_0 + \eps \rho_1 + \eps^2 \rho_2 + \ldots\\
+	p & = p_0 + \eps p_1 + \eps^2 p_2 + \ldots
+\end{align}
+
+The Euler nd mass conservation equations are satisfied to order 
+${\cal O}(\eps^0)$. At ${\cal O}(\eps)$, the equations are:
+
+\begin{align}
+	& \partial_t \vv_1 = - \frac{1}{\rho_0} {\vec\nabla} p_1\\
+	& \partial_t \rho_1 + \rho_0 {\vec\nabla}\cdot{\vec v} = 0\\
+	& p_1 = c_{s0}^2 \rho_1
+\end{align}
+
+Taking thecurl of the first equation, we have 
+$\partial_t {\vec \nabla} \times \vv_1 = 0$, so hat vorticity is conserved.
+If we perturb our system with irrotational flow, it remains irrotational,
+so let us do hat. we can then wrote $\vv_1 = {\vac\nabla}\phi_1$, and
+our equations become:
+
+\begin{align}
+	& \partial_t {\vec \nabla} \phi_1 + \frac{c_{s0}^2}{\rho_0} 
+	{\vec\nabla} \rho_1 = 0\\
+	\partial_t \rho_1 + \rho_0 {\vac\nabla}^2 \phi_1 = 0
+\end{align}
+
+The first equation is in fact a pure gradient:
+
+$$
+	{\vec \nabla} \left(\partial_t \phi_1 + \frac{c_{s0}^2}{\rho_0} \rho_1\right) = 1
+$$
+
+The term in parentheses is therefore a funciton of time only. defining this as 
+$D(t)$, if we redfine $\phi_1 \to \phi_1 - \int_0^t dt' D(t')$, then the velocities do not change, and we have
+
+$$
+	\partial_yt \phi_1 + \frac{c_{s0}^2}{\rho_0} \rho_1 = 0
+$$
+
+Taking the time derivative of this equation and inserting the conservation
+equation we are left with the wave equation
+
+$$
+	\partial_t^2\phi_1 - c_{s0}^2 {\vec \nabla}^2 \phi_1 = 0
+$$
+
+### Plane wave solutions
+
+Let us consider waves propaating in three dimensions, with boundaries at 
+infinity. We can attempt a separation of variables:
+
+$$
+	\phi_1 = X(x)Y(y)Z(z)T(t)
+$$
+
+Inserting this into the wave equation and dividing by $\phi_1$, we find:
+
+$$
+	{\ddot T}{T} - c_{s0}^2 
+	\left(\frac{X''(x)}{X} + \frac{Y''(y)}{Y} + \frac{Z''(z)}{Z} \right) = 0
+$$
+
+Each term depends on an independent variable and thus must be equal to a
+constant. Thus, we define
+
+$$
+	\frac{X''(x)}{X} = - k_x^2
+$$
+
+and similarly for $Y,Z$. For the solution to remain finie at infinity,
+we must have $k_x^2 > 0$, so that a general solution to the above is
+
+$$
+	X = {\rm Re} X_0 e^{i k_x x}
+$$
+
+More generally, we have
+
+$$
+	X Y Z = {\rm Re} (A e^{- i {\vec k} \cdot {\vec x}
+$$
+
+(the minus sign is conventional). Finally, we have 
+
+$$
+	\frac{\ddot T}{T} = - c_{s0}^2 {\vec k}^2
+$$
+
+Defining $\omega = c_{s0} \sqrt{\vec k}^2$, we have the solution:
+
+$$
+	\phi_1 = {\rm Re} (C e^{i \omega t - i {\vec k} \cdot{\vec x}
+$$
+
+Now let us consider the case of wave smoving purely in the $x$ direction 
+($k_y = k_z = 0$) 
+
+	
