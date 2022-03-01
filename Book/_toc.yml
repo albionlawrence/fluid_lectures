@@ -30,4 +30,7 @@ chapters:
     - file: chapter3/capillary_waves
     - file: chapter3/igw
     - file: chapter3/compressible_flows
+  - file: chapter3/nonlinear_waves
+    sections:
+    - file: chapter3/shallow_water
 - file: bibliography

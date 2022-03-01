@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Internal gravity waves &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Nonlinear waves &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Compressible flows: linear theory" href="compressible_flows.html" />
-    <link rel="prev" title="Capillary waves" href="capillary_waves.html" />
+    <link rel="next" title="The Shallow Water System" href="shallow_water.html" />
+    <link rel="prev" title="Compressible flows: linear theory" href="compressible_flows.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -198,16 +198,16 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="linear_waves.html">
      Linear waves
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="surface_waves.html">
        Surface waves
@@ -223,8 +223,8 @@
        Capillary waves
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="igw.html">
        Internal gravity waves
       </a>
      </li>
@@ -235,11 +235,11 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="nonlinear_waves.html">
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
      Nonlinear waves
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
@@ -247,7 +247,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="shallow_water.html">
-       The Shallow Water Equations
+       The Shallow Water System
       </a>
      </li>
     </ul>
@@ -300,7 +300,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter3/igw.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter3/nonlinear_waves.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -320,7 +320,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/igw.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/nonlinear_waves.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -341,19 +341,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equations-of-motion">
-   Equations of motion
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -361,140 +348,75 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Internal gravity waves</h1>
+                <h1>Nonlinear waves</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equations-of-motion">
-   Equations of motion
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="internal-gravity-waves">
-<h1>Internal gravity waves<a class="headerlink" href="#internal-gravity-waves" title="Permalink to this headline">¶</a></h1>
-<div class="math notranslate nohighlight">
-\[\newcommand\eps{\epsilon}\]</div>
-<p>An important class of waves in the ocean (and atmosphere) are <em>internal
-gravity waves</em>, waves which appear in <em>stratified fluids</em>,
-with a density increasing with depth, so that bouyancy forces act on
-fluid parcels. (For frequencies close to the “inertial frequency”
-<span class="math notranslate nohighlight">\(f = 2\Omega\sin\theta\)</span>, where <span class="math notranslate nohighlight">\(\Omega\)</span> is the rotational
-frequency of the earth, and <span class="math notranslate nohighlight">\(\theta\)</span> the latitude, these are
-called <em>inertia-gravity waves</em>; in these the Coriolis force plays an
-important role in the wave dynamics.)</p>
-<p>In the ocean, the main driver of such waves is a combination of te wind
-exciting waves at the inertial frequency, and tidal forcing interacting with
-complex bottom topography. Subsequent nonlinear interactions in the ocean –
-interactions between waves, interactions between waves and turbulent
-motion – generates a near-continuum of gravity waves at every frequency
-between the inrtial frequency and the <em>Brunt-Väisälä frequency</em>
-which we will define below. This continuum is known as the <em>Garrett-Munk</em>
-continuum (see for example <span id="id1">[<a class="reference internal" href="../bibliography.html#id10">Garrett and Munk, 1979</a>]</span> and prior papers by those authors therein. A nice review of internal waves and this continuum can be found in <a class="reference external" href="https://ocw.mit.edu/resources/res-12-000-evolution-of-physical-oceanography-spring-2007/part-2/wunsch_chapter9.pdf">this out-of-print article</a> by Walter Munk.)</p>
-<p><img alt="mooring spectrum" src="../_images/ocean_ke.png" /></p>
-<p><em>Kinetic energy as a function of frequency, measured from a mooring at 128m
-depth along the Mid-Atlantic Ridge. Figure taken from Fig. 1 of <span id="id2">[<a class="reference internal" href="../bibliography.html#id9">Ferrari and Wunsch, 2009</a>]</span>.</em></p>
-<p>Here we will ignore the effects of the earth’s rotation and concentate on bouyancy-driven waves which, as we will see, already leads
-to unexpected behavior.</p>
-<div class="section" id="equations-of-motion">
-<h2>Equations of motion<a class="headerlink" href="#equations-of-motion" title="Permalink to this headline">¶</a></h2>
-<p>We start from a background state in which he fluid is at rest, and the density
-has a profile <span class="math notranslate nohighlight">\(\rho_0(z)\)</span>. The only nontrivial equation is the <span class="math notranslate nohighlight">\(z\)</span> component
-of the Navier-Stokes equation,</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="nonlinear-waves">
+<h1>Nonlinear waves<a class="headerlink" href="#nonlinear-waves" title="Permalink to this headline">¶</a></h1>
+<p>So far in this section we have focused on small-amplitude waves which can be
+well-described by <em>linea</em> partial differential equations in space and time. In
+thesese cases there is a fairly systematic method for solving the equations.
+We find a set of soluions which at fixed time provide a complete set of
+functions of space (such as sines and/or cosines) in which any initial
+condition can represented as a linear combination of these functions.
+The time evolution  then follows by summing the time-evolved components.
+This is he essence of solutions to both Maxwell’s and Schr”odinger’s
+equations as well as to the diffusion equation. The result is waves which
+may or may not disperse, with modes of different wavelength having distinct
+phase velocities.</p>
+<p>When we pass to nonlinear equations, there is generally no such
+systematic method for solving them, except perhaps in the case that
+the nonlinearity is weak. Qualitatively different phenomena can emerge,
+such as shocks, singularities, and turbulence, in which through nonlinear
+effects, energy can be passed to shorter and shorter distance scales (or in
+the case of 2d turbulence, longer and longer scales).</p>
+<p>To get a hint of how this might happen, let us consider he following
+nonlinear ODE:</p>
 <div class="math notranslate nohighlight">
 \[
-	- \frac{1}{\rho_0} \frac{\partial p_0(z)}{\partial_z} - gz = 0
+	{\ddot x} + \Omega^2 x - g x^2 = 0
 \]</div>
-<p>(The other components of the equation simply require <span class="math notranslate nohighlight">\(p_0\)</span> to have no
-<span class="math notranslate nohighlight">\(x\)</span>- or <span class="math notranslate nohighlight">\(y\)</span>-dependence.</p>
-<p>We will consider perturbations which are independent of the <span class="math notranslate nohighlight">\(y\)</span> direction,
-and controlled by a small parameter <span class="math notranslate nohighlight">\(\epsilon\)</span>. Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb929fbc-ea26-439a-a0cc-c107e983609a">
-<span class="eqno">(33)<a class="headerlink" href="#equation-fb929fbc-ea26-439a-a0cc-c107e983609a" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	u(x,z,t) &amp; = \eps u_1 + \eps^2 u_2 + \ldots\\
-    w(x,z,t) &amp; = \eps w_1 + \eps^2 w_2 + \ldots\\
-	\rho(x,z,t) &amp; = \rho_0(z) + \eps \rho_1 + \eps^2 \rho_2 + \ldots\\
-	p(x,z,t) &amp; =  p_0(z) + \eps p_1 + \eps^2 p_2 + \ldots
-\end{align}\]</div>
-<p>Now we can insert these into the Navier-Stokes equations, the incompressibility equations,
-and the equation for mass conservation. Keeping only the
-<span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span> terms, we find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-220bce82-925b-4dd0-9ee0-a8e8b2dc7adb">
-<span class="eqno">(34)<a class="headerlink" href="#equation-220bce82-925b-4dd0-9ee0-a8e8b2dc7adb" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; \rho_0(z) \partial_t u_1 = - \partial_x p_1\\
-	&amp; \rho_0(z) \partial_t w_1 = - \partial_z p_1 - g \rho_1\\
-	&amp; \partial_x u_1 + \partial_z w_1 = 0\\
-	&amp; \partial_t \rho_1 + w_1 \partial_z \rho_0 = 0
-\end{align}\]</div>
-<p>The complication here is that <span class="math notranslate nohighlight">\(\rho_0(z)\)</span>, <span class="math notranslate nohighlight">\(p_0(z)\)</span> can have a complicated dependence on <span class="math notranslate nohighlight">\(z\)</span>.</p>
-<p>We next work by separation of variables. Since these equations are linear in <span class="math notranslate nohighlight">\(x,t\)</span> and the
-coefficients do not depend on these, we look fo solutions of the form
-<span class="math notranslate nohighlight">\(\theta(x,z,t) = {\hat \theta}(z) e^{i\omega t - i k x}\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> stands for any of the fields
-<span class="math notranslate nohighlight">\(u_1,w_1,\rho_1,p_1\)</span>. The above equations become:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6ee3635-a4d5-4e63-b0a0-680be371f537">
-<span class="eqno">(35)<a class="headerlink" href="#equation-a6ee3635-a4d5-4e63-b0a0-680be371f537" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; \omega \rho_0 {\hat u}_1 = k {\hat p}_1\\
-	&amp; i \omega \rho_0 {\hat w}_1 = - \partial_z {\hat p}_1 - {\hat \rho}_1 g\\
-	&amp; - i k {\hat u}_1 + \partial_z {\hat w}_1 = 0\\
-	&amp; i \omega {\hat \rho}_1 + {\hat w}_1 \partial_z \rho_0 = 0
-\end{align}\]</div>
-<p>Note some sign differences from the Acheson, because I flip the signs of <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(k\)</span> relative to it.
-We can use the first and third equations to eliminate <span class="math notranslate nohighlight">\({\hat u}_1\)</span>, <span class="math notranslate nohighlight">\({\hat p}_1\)</span>, and the second equation to eliminate
-<span class="math notranslate nohighlight">\({\hat \rho}_1\)</span>, to finally find:</p>
+<p>where we take <span class="math notranslate nohighlight">\(\epsilon = g/\Omega^2 \ll 1\)</span>. We can then expand</p>
 <div class="math notranslate nohighlight">
 \[
-	\partial_z^2 {\hat w}_1 + \frac{\partial_z \rho_0}{\rho_0} \partial_z {\hat w_1}
-	+ k^2 \left(\frac{N^2}{\omega^2} - 1 \right) {\hat w}_1 = 0
+	x = x_0 + \epsilon x_1 + \ldots
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(N^2 = - \frac{g}{\rho_0} \partial_z \rho_0\)</span> is the (square of) the aforementioned Brunt-Väisälä frequency.
-Note that <span class="math notranslate nohighlight">\(N^2\)</span> is positive when <span class="math notranslate nohighlight">\(\rho_0\)</span> is decreasing as <span class="math notranslate nohighlight">\(z\)</span> increases, coresponding to the case that bouyancy is
-a restoring force.</p>
-<p>For general stratificaion, the perurbation equations are still notrivial due to the <span class="math notranslate nohighlight">\(z\)</span>-dependence of the coefficients.
-We will choose <span class="math notranslate nohighlight">\({\hat \rho}_0 = C e^{- z/H}\)</span> with <span class="math notranslate nohighlight">\(C,H\)</span> constants. The equation for the vertical velocity becomes</p>
+<p>where <span class="math notranslate nohighlight">\({\ddot x_0} + \Omega^2 x_0 = 0\)</span>. This is solved by <span class="math notranslate nohighlight">\(x_0 = X \cos\Omega t\)</span>
+(we have shifted an extra phase away by redefining the origin of <span class="math notranslate nohighlight">\(t\)</span>.) Now
+at order <span class="math notranslate nohighlight">\(\epsilon\)</span> we have:</p>
 <div class="math notranslate nohighlight">
 \[
-	\partial_z^2 {\hat w}_1 - \frac{1}{H} \partial_z {\hat w}_1 + k^2\left(\frac{g}{H \omega^2} - 1\right){\hat w}_1 = 0
+	{\ddot x}_1 + \Omega^2 x_1 = \Omega^2 X \cos^2 \Omega t = \frac{1}{2} 
+	\Omega^2 X (1 + \cos 2 \Omega t)
 \]</div>
-<p>Finally, we can set <span class="math notranslate nohighlight">\({\hat w}_1 = e^{\alpha z} W\)</span>, where <span class="math notranslate nohighlight">\(W\)</span> is a constant. The above equation then becomes</p>
+<p>We will solve this with Green’s function techniques. That is, if we find
+<span class="math notranslate nohighlight">\(G\)</span> such that <span class="math notranslate nohighlight">\(\partial_t^2 G(t,t') + \Omega^2 G(t,t') = \delta(t - t')\)</span>,
+then we merely need write</p>
 <div class="math notranslate nohighlight">
 \[
-	\alpha^2  - \frac{\alpha}{H} +  k^2\left(\frac{N^2}{\omega^2} - 1\right) = 0
+	x_1 = \Omega^2 \int_0^{\infty} dt' G(t,t') x_0(t')^2
 \]</div>
-<p>Solving the quadratic equation:</p>
+<p>You can convince yourself that</p>
 <div class="math notranslate nohighlight">
 \[
-	\alpha = \frac{1}{2H} \pm \sqrt{\frac{1}{4 H^2} + k^2 \left(1 - \frac{N^2}{\omega^2}\right)}
+	G(t,t') = \frac{1}{\Omega} \sin \Omega (t-t') \theta(t-t')
 \]</div>
-<p>Defining <span class="math notranslate nohighlight">\(i m = \alpha - \frac{1}{2H}\)</span> so that <span class="math notranslate nohighlight">\({\hat w}_1 = W e^{\frac{y}{2H} + i \omega - i k x - i m z}\)</span>
-and solving for <span class="math notranslate nohighlight">\(\omega\)</span> to get the dispersion relation, we find:</p>
+<p>satisfies this equation, and because of the Heaviside step function ensures that response follows stimulus. Returbing to the problem above, we find</p>
 <div class="math notranslate nohighlight">
 \[
-	\omega^2 = \frac{N^2 k^2}{k^2 + m^2 + \frac{1}{4 H^2}}
+	x_1 = \frac{1}{12} X (- 4 + 3 \Cos \Omega t + \Cos 3 \Omega t)
 \]</div>
-<p>Note first that, as stated, <span class="math notranslate nohighlight">\(N^2 &gt; 0\)</span> is necessary for stability – for the perturbation to oscillate rather than run away.
-<span class="math notranslate nohighlight">\(N^2 &lt; 0\)</span> would mean that <span class="math notranslate nohighlight">\(\omega\)</span> was imaginary; a general solution will grow exponentially, and perturbation will fail.</p>
-<p>This is a highly anisotropic dispersion relation with the unusual property that the group velocitiy points <em>along</em> the wavefronts.
-The wavefronts are the curves pependicular to <span class="math notranslate nohighlight">\({\vec k}\)</span>. The group velocity for given <span class="math notranslate nohighlight">\(k,m\)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[
-	{\vec v}_g = {\vec\nabla}_k \omega = \frac{\omega m}{k(k^2 + m^2)} \left(m {\hat x} - k {\hat z}\right)
-\]</div>
-<p>This is clearly orthogonal to <span class="math notranslate nohighlight">\({\vec k} = k {\hat x} + m {\hat z}\)</span>, and points downwards when the wave is travelling up and
-towards positive <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>so you can see that higher frequencies get excited at this leading
+nonlinear order.</p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -523,17 +445,17 @@ towards positive <span class="math notranslate nohighlight">\(x\)</span>.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="capillary_waves.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="compressible_flows.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Capillary waves</p>
+            <p class="prev-next-title">Compressible flows: linear theory</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="compressible_flows.html" title="next page">
+    <a class='right-next' id="next-link" href="shallow_water.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Compressible flows: linear theory</p>
+        <p class="prev-next-title">The Shallow Water System</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

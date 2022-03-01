@@ -9,11 +9,11 @@ gravity waves*, waves which appear in *stratified fluids*,
 with a density increasing with depth, so that bouyancy forces act on 
 fluid parcels. (For frequencies close to the "inertial frequency" 
 $f = 2\Omega\sin\theta$, where $\Omega$ is the rotational 
-frequency of he earth, and $\theta$ the latitutde, these are
-called *inertia-gravity waves*; in these the Coriolis foce plays an
+frequency of the earth, and $\theta$ the latitude, these are
+called *inertia-gravity waves*; in these the Coriolis force plays an
 important role in the wave dynamics.)
 
-In the ocean, the main driver of such waves is a combination of wind 
+In the ocean, the main driver of such waves is a combination of te wind 
 exciting waves at the inertial frequency, and tidal forcing interacting with
 complex bottom topography. Subsequent nonlinear interactions in the ocean --
 interactions between waves, interactions between waves and turbulent 
@@ -66,10 +66,10 @@ ${\cal O}(\eps)$ terms, we find:
 
 The complication here is that $\rho_0(z)$, $p_0(z)$ can have a complicated dependence on $z$.
 
-We next work by sepaation of variables. Since these equations are linear in $x,t$ and the 
+We next work by separation of variables. Since these equations are linear in $x,t$ and the 
 coefficients do not depend on these, we look fo solutions of the form 
 $\theta(x,z,t) = {\hat \theta}(z) e^{i\omega t - i k x}$, where $\theta$ stands for any of the fields
-$u_1,w_1,\rho_1,p_1$. The amobe equations become:
+$u_1,w_1,\rho_1,p_1$. The above equations become:
 
 \begin{align}
 	& \omega \rho_0 {\hat u}_1 = k {\hat p}_1\\
@@ -104,7 +104,7 @@ $$
 	\alpha^2  - \frac{\alpha}{H} +  k^2\left(\frac{N^2}{\omega^2} - 1\right) = 0
 $$
 
-Slving the quadratic equation:
+Solving the quadratic equation:
 
 $$
 	\alpha = \frac{1}{2H} \pm \sqrt{\frac{1}{4 H^2} + k^2 \left(1 - \frac{N^2}{\omega^2}\right)}
