@@ -58,7 +58,7 @@ $$
 satisfies this equation, and because of the Heaviside step function ensures that response follows stimulus. Returbing to the problem above, we find
 
 $$
-	x_1 = \frac{1}{12} X (- 4 + 3 \Cos \Omega t + \Cos 3 \Omega t)
+	x_1 = \frac{1}{12} X (- 4 + 3 \cos \Omega t + \cos 3 \Omega t)
 $$
 
 so you can see that higher frequencies get excited at this leading 
