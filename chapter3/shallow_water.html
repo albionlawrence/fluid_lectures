@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linear waves &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>The Shallow Water System &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Surface waves" href="surface_waves.html" />
-    <link rel="prev" title="Waves in fluids" href="Waves.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Nonlinear waves" href="nonlinear_waves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -198,11 +198,11 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="linear_waves.html">
      Linear waves
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
@@ -235,19 +235,19 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="nonlinear_waves.html">
      Nonlinear waves
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="shallow_water.html">
-       The Shallow Water Equations
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       The Shallow Water System
       </a>
      </li>
     </ul>
@@ -300,7 +300,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter3/linear_waves.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter3/shallow_water.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -320,7 +320,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/linear_waves.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/shallow_water.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -347,18 +347,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dispersion-relations">
-   Dispersion relations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#phase-and-group-velocity">
-   Phase and group velocity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-velocity-and-the-large-time-response">
-   Group velocity and the large-time response
+  <a class="reference internal nav-link" href="#the-shallow-water-equations">
+   The shallow water equations
   </a>
  </li>
 </ul>
@@ -371,7 +361,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linear waves</h1>
+                <h1>The Shallow Water System</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -382,18 +372,8 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dispersion-relations">
-   Dispersion relations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#phase-and-group-velocity">
-   Phase and group velocity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-velocity-and-the-large-time-response">
-   Group velocity and the large-time response
+  <a class="reference internal nav-link" href="#the-shallow-water-equations">
+   The shallow water equations
   </a>
  </li>
 </ul>
@@ -405,148 +385,83 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="linear-waves">
-<h1>Linear waves<a class="headerlink" href="#linear-waves" title="Permalink to this headline">¶</a></h1>
-<p>We will start with <em>linear waves</em>. Roughly speaking, this means that we start with a background solution
-<span class="math notranslate nohighlight">\({\vec V}\)</span>, <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span> to the Navier-stokes equation, write <span class="math notranslate nohighlight">\({\vec v} = {\vec V} + {\vec \delta v}\)</span>,
-<span class="math notranslate nohighlight">\(\rho = \rho_0 + \delta \rho\)</span>, <span class="math notranslate nohighlight">\(p = p_0 + \delta p\)</span>, and expand the
-fully nonlinear equations such as</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-shallow-water-system">
+<h1>The Shallow Water System<a class="headerlink" href="#the-shallow-water-system" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\p}{\partial}\]</div>
+<p>The first example we will work with are the <em>shallow water equations</em>. These
+are simplifications of the Navier-Stokes equation when the height of the
+fluid region is small compared to its length, and they are extremely
+important as model equations for planetary oceans and atmospheres.</p>
+<div class="section" id="the-shallow-water-equations">
+<h2>The shallow water equations<a class="headerlink" href="#the-shallow-water-equations" title="Permalink to this headline">¶</a></h2>
+<p>We begin with he incompressible Navier-Stokes equations with constant density:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b3a90813-10ed-46a3-bde4-c82e4403dc66">
+<span class="eqno">(41)<a class="headerlink" href="#equation-b3a90813-10ed-46a3-bde4-c82e4403dc66" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; \p_t u + u \p_x u + v \p_y u + w \p_z u = - \frac{1}{\rho} \p_x p\\
+	&amp; \p_t v + u \p_x v + v \p_y v + w \p_z v = - \frac{1}{\rho} \p_y p\\
+	&amp; \p_t w + u \p_x u + v \p_y w + w \p_z u = - \frac{1}{\rho} \p_z p - g\\
+	&amp;\p_x u \p_y v + \p_z w = 0
+\end{align}\]</div>
+<p>We consider a fluid extending from <span class="math notranslate nohighlight">\(z = 0\)</span> to height <span class="math notranslate nohighlight">\(h(x,y,t)\)</span> (in general
+we can also work with nontrivial bottom topography, but we will for now
+consider flat bottoms.) The boundary condiions are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-71b46b64-5f62-456b-849b-831a05fc9b28">
+<span class="eqno">(42)<a class="headerlink" href="#equation-71b46b64-5f62-456b-849b-831a05fc9b28" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	w(x,y,0,t) &amp; = 0\\
+	w \Big|_{z = h} &amp; = \frac{d}{dt} h(x,y,t) = \p_t h + u\p_x h + v \p_x h
+\end{align}\]</div>
+<p>where in the second line we have used he fact that <span class="math notranslate nohighlight">\(w\)</span> a the surface
+should be the velocity of a fluid parcel</p>
+<p>We first convert the incompressibility condition to an equation for the height
+by integrating the former over the entire vertical water column:</p>
 <div class="math notranslate nohighlight">
 \[
-	\partial_t {\vec v} + {\vec v} \cdot {\vec\nabla} {\vec v} = - \frac{1}{\rho} {\vec\nabla} p + \nu \nabla^2 {\vec v} - {\hat g} {\hat z}
+	\int_0^h dz {\vec\nabla}\cdot{\vec u} = 0 
+	= \int_0^{h} dz (\p_x u + \p_y v) + w(x,y,\eta,t)
 \]</div>
-<p>to first order in <span class="math notranslate nohighlight">\({\vec \delta v}\)</span>, <span class="math notranslate nohighlight">\(\delta\rho\)</span>, <span class="math notranslate nohighlight">\(\delta p\)</span>. The result is a set of linear partial differential equations.</p>
-<p>In the case of shear or stratified flows, with <span class="math notranslate nohighlight">\({\vec V}\)</span>, <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(p_0\)</span> depending on space (or space and time), the
-equations can still be quite complicated.</p>
-<div class="section" id="dispersion-relations">
-<h2>Dispersion relations<a class="headerlink" href="#dispersion-relations" title="Permalink to this headline">¶</a></h2>
-<p>When the background is constant, however, we get linear equations
-with constant coefficients, and we ca (depending on boundary conditions) find a complete basis of solutions
-of the form <span class="math notranslate nohighlight">\(e^{i \omega t - i {\vec k}\cdot{\vec x}}\)</span>. The equations of motion
-then give a <em>dispersion relation</em> <span class="math notranslate nohighlight">\(\omega(k)\)</span> which characterizes the dynamics of the wave.</p>
-<p>For example, different dispersion relations will allow for long- or short-wavelength modes to travel faster,
-meaning ripples in a fluid excited by a disturbance will be more widely or narrowly spaced, respectively, as
-one looks farther from the disturbance. Through the <em>phase velocity</em> <span class="math notranslate nohighlight">\(v_p = \omega/k\)</span> and the <em>group velocity</em>
-<span class="math notranslate nohighlight">\(v_g = \frac{d\omega}{dk}\)</span> (here I have written the expressions for one-dimensional flow, for simplicity’s sake),
-we can work out how quickly the wave travels and evolves, and so on.</p>
-</div>
-<div class="section" id="phase-and-group-velocity">
-<h2>Phase and group velocity<a class="headerlink" href="#phase-and-group-velocity" title="Permalink to this headline">¶</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(\phi(x,t)\)</span> solve some linear differential equation with constant coefficients. This could be the Schr”odinger equation
-<span class="math notranslate nohighlight">\(i \hbar \partial_t \phi = \frac{\hbar^2}{2m} \partial_x^2 \phi\)</span>, for which <span class="math notranslate nohighlight">\(\omega(k) = \frac{\hbar k^2}{2m}\)</span>; or the
-relativistic wave equation (Klein-Gordon equation) <span class="math notranslate nohighlight">\(\partial_t^2 \phi = c^2 \partial_x^2 \phi\)</span> for which <span class="math notranslate nohighlight">\(\omega = c k\)</span>.</p>
-<p>In actual solutions to linear differential equations, we build <em>wave packets</em> of the form</p>
+<p>where we have used the boundary conditions. Next, we can pull the horizontal
+deivatives outside of the integral if we subtract their action on the
+integration limits.</p>
 <div class="math notranslate nohighlight">
 \[
-	\phi(x,t) = \int_{-\infty}^{\infty} dk {\tilde\phi}(k) e^{i \omega(k) t - i k x}
+	w + \p_x \int_0^{h} dz u + \p_y \int_0^{h} dz v - u \p_x h - v \p_y h = 0
 \]</div>
-<p>The point is that if <span class="math notranslate nohighlight">\( e^{i \omega(k) t - i k x}\)</span> solves the wave equation for every <span class="math notranslate nohighlight">\(k\)</span>, and the equation is <em>linear</em>,
-then sums of soluions are sill solutions (as long as the boundary conditions also hold).</p>
-<p>In this equation, the role of the phase velocity is reasonably clear; for a component of a given
-wavelength <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(v_p = \omega/k\)</span> will tell you how fast a crest of valley will move; when <span class="math notranslate nohighlight">\(x = v_p t\)</span>,
-the phase factor for a given <span class="math notranslate nohighlight">\(k\)</span> remains constant in <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<p>Unless <span class="math notranslate nohighlight">\(\omega(k) = ck\)</span> for <span class="math notranslate nohighlight">\(c = v_p\)</span> constant, each component will travel at a different speed, and we expect the
-wave to <em>disperse</em> as the different wavenumbers separate. (Thus the term <em>dispersion relation</em>). To get some sense
-of the behavior of a wavepacket, let us consider one that is built from a small range of wavenumbers. This mean that
-it should make sense to expand <span class="math notranslate nohighlight">\(\omega(k)\)</span> about a fixed wavenumebr <span class="math notranslate nohighlight">\(k_0\)</span>:</p>
+<p>Substituting the top boundary conditions, we have</p>
 <div class="math notranslate nohighlight">
 \[
-	\omega(k) = \omega(k_0) + (k - k_0) \omega'(k) + 
-	\frac{1}{2} (k - k_0)^2 \omega''(k_0) + \ldots \equiv \omega_0 + (k - k_0) v_g(k_0) + 
+	\p_t h + \p_x \int_0^{h} dz u + \p_y \int_0^{h} dz v = 0
 \]</div>
-<p>Plugging this into our wavepacket above, we find:</p>
+<p>Next we start to make some approximations. Assuming that characteristic
+vertical scales are of order <span class="math notranslate nohighlight">\(H\)</span>, horizonal scales of order <span class="math notranslate nohighlight">\(L\)</span>, and time
+scales of order <span class="math notranslate nohighlight">\(T\)</span>, we set <span class="math notranslate nohighlight">\(w \sim H/T\)</span>, <span class="math notranslate nohighlight">\(u, v \sim L/T\)</span>. Thus <span class="math notranslate nohighlight">\(w\)</span> is
+considerably smaller than <span class="math notranslate nohighlight">\(u,v\)</span>. There is no reason for the pressure term to
+drop out, so we rplace the momentum equation for <span class="math notranslate nohighlight">\(w\)</span> with the hydrostatic
+condition (we will justify this self-consistently at the end). We can then
+set <span class="math notranslate nohighlight">\(\p_z p = - \rho g\)</span>, or <span class="math notranslate nohighlight">\(p = p_0 + \rho g (h - z)\)</span>. The horizontal
+momentum equations become, after we drop the terms proportional to u:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ce832a11-7e5e-4293-bb66-8a42eb7f2416">
+<span class="eqno">(43)<a class="headerlink" href="#equation-ce832a11-7e5e-4293-bb66-8a42eb7f2416" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; \p_t u + u \p_x u + v \p_y u = - g \p_x h\\
+	&amp; \p_t v + u \p_x v + v \p_y v = - g \p_y h
+\end{align}\]</div>
+<p>Since the right hand side is independent of <span class="math notranslate nohighlight">\(z\)</span>, we can start with <span class="math notranslate nohighlight">\(u,v\)</span>
+constant in <span class="math notranslate nohighlight">\(z\)</span>, and it will continue to be so. Then the integrals
+in our conservation condition just become multupilication by <span class="math notranslate nohighlight">\(h\)</span> and we have</p>
 <div class="math notranslate nohighlight">
 \[
-	\phi(x,t) = e^{ -i k_0 (x - v_p(k_0) t)} 
-	\int_{-\infty}^{\infty} dk {\tilde\phi}(k) e^{- i (k- k_0) (x - v_g t) - \ldots}
+	\p_t h + \p_x (h u) + \p_y (h v) = 0
 \]</div>
-<p>The integrand controls the shape or <em>envelope</em> of the wavepacket in <span class="math notranslate nohighlight">\(x\)</span>; and clearly this
-envelope moves with velocity <span class="math notranslate nohighlight">\(v_g\)</span>. If we think of a wave with wavenumber <span class="math notranslate nohighlight">\(k_0\)</span> modulated
-by some envelope function</p>
-<div class="math notranslate nohighlight">
-\[
-	\psi(x) = \int_{-\infty}^{\infty} dk {\tilde\phi}(k) e^{- i (k- k_0) (x - v_g t) - \ldots}
-\]</div>
-<p>the wave and the envelope will generally travel at different speeds.</p>
-<p>As a concrete example, we can choose</p>
-<div class="math notranslate nohighlight">
-\[
-	{\tilde \phi}(k) = {\tilde \phi}_0 \ell \sqrt{\pi} e^{-\frac{\ell^2 (k - k_0)^2}{4}}
-\]</div>
-<p>In this case the Fourier integral above can be done explicitly, and we find</p>
-<div class="math notranslate nohighlight">
-\[
-	\phi(x,t) = \frac{{\tilde \phi}_0 \ell}{2} 
-	\frac{e^{i \omega_0 t - i k_0 x}}{\sqrt{\frac{\ell^4}{16} + \frac{t^2 (\omega''(k_0))^2}{4}}}
-	e^{- \frac{(x - \omega'(k_0) t)^2}{\ell^2 + 4\frac{t^2}{\ell^2} (\omega''(k_0))^2}}
-\]</div>
-<p>Here we see that <span class="math notranslate nohighlight">\(v_g = \omega'\)</span> gives he velocity of the packet; higher derivatives of <span class="math notranslate nohighlight">\(\omega\)</span>
-cause dispersion and distortion of the packet.</p>
-<p>So far we have been discussing waves propagating in 1 dimension. In higher dimensions, the most natural
-definition of the group velocity is as a vector <span class="math notranslate nohighlight">\({\vec c}_g = {\vec nabla} \omega(k)\)</span>. This will have
-a definite direction depending on the velocity. The results cam sometimes be surprising for water waves.
-For solutions to the wave equation <span class="math notranslate nohighlight">\(c_s^2 \partial_t^2 \phi - c_s^2 {\vec\nabla}^2 \phi = 0\)</span> (for some <span class="math notranslate nohighlight">\(c_s\)</span>),
-<span class="math notranslate nohighlight">\(\omega = c_s \sqrt{\vec k}^2\)</span>, so <span class="math notranslate nohighlight">\({\vec c_g} = c_s {\hat k}\)</span>, where <span class="math notranslate nohighlight">\({\hat k}\)</span> is the unit vector pointing
-along <span class="math notranslate nohighlight">\({\vec k}\)</span>. In other words, the group velocity vector points along wavefronts. For <em>internal gravity
-waves</em>, which we will discuss, in a certain short wavelength limit, the group velocity is <em>parallel</em>
-to the wavefronts.</p>
-</div>
-<div class="section" id="group-velocity-and-the-large-time-response">
-<h2>Group velocity and the large-time response<a class="headerlink" href="#group-velocity-and-the-large-time-response" title="Permalink to this headline">¶</a></h2>
-<p>For dispersive waves, at sufficiently large times, we expect the different wavelengths to saeparate out in space.
-In this setup, we expect that <em>locally</em> in space and time, the wavenumber will be reasonably constant and vary slowly (<span class="math notranslate nohighlight">\(\Delta k/k \ll 1\)</span>.
-where <span class="math notranslate nohighlight">\(\Delta k\)</span> is the variation over a wavelength in space or a period in time), and that
-it will vary slowly in. The mathematics in this situation is close to that of geometric optics and
-the WKB approximation.</p>
-<p>Given some wave equation we will consider a solution of the form <span class="math notranslate nohighlight">\(\phi(x,t) = {\rm Re} A(x,t) e^{i\theta(x,t)}\)</span>. Of course we can always
-write <span class="math notranslate nohighlight">\(\phi\)</span> in such a form: the question is whether it is meaningful to do so. The upshot is that we are assuming in this
-presentation that <span class="math notranslate nohighlight">\(A\)</span> is slowly varying in <span class="math notranslate nohighlight">\(x,t\)</span>,</p>
-<p>If we define</p>
-<div class="math notranslate nohighlight">
-\[
-	k = \frac{\partial\theta}{\partial x}\ ; \ \ \omega = - \frac{\partial \theta}{\partial t}\ ,
-\]</div>
-<p>we can write</p>
-<div class="math notranslate nohighlight">
-\[
-	\theta = \int \left[ k dx - \omega dt \right]
-\]</div>
-<p>Given this equation,</p>
-<div class="math notranslate nohighlight">
-\[
-	\partial_t k + \partial_x \omega = 0 = \partial_t k +  \partial_x k \partial_k \omega = \partial_t k + c_g  \partial_x k
-\]</div>
-<p>That is, if we follow a trajectory moving with the group velocity, <span class="math notranslate nohighlight">\(k\)</span> will remain constant. NOte this generalized naturally to higher
-dimensions:</p>
-<div class="math notranslate nohighlight">
-\[
-	\partial_t {\vec k} + {\vec c}\cdot{\vec \nabla} {\vec k} = 0
-\]</div>
-<p>(These equations are central to ray tracing, a technique used when the variation of the local
-wavelength is slow, essentially the geometric optics approximation). The solution is:</p>
-<div class="math notranslate nohighlight">
-\[
-	k(x,t) = f(x - c_g(x,t) t)
-\]</div>
-<p>This is a bit implicit but it does encode the fact that <span class="math notranslate nohighlight">\(k\)</span> remains constant along the lines <span class="math notranslate nohighlight">\(x = c_g(k) t\)</span>
-from which we can see that if <span class="math notranslate nohighlight">\(c_g(k)\)</span> is not constant, some wavenumebrs will move faster than others,
-indicating dispersion.</p>
-<p>If we build up a wave packet with Fourier modes, this form can be justified for large <span class="math notranslate nohighlight">\(x,t\)</span> by the <em>stationary phase</em>
-approximation. It is worth sketching this out. Consider a wavepacket</p>
-<div class="math notranslate nohighlight">
-\[
-	\phi(x,t) = \int \frac{dk}{2\pi} e^{i k x - i \omega(k) t} {\tilde \phi}(k)
-\]</div>
-<p>In the lage <span class="math notranslate nohighlight">\(x,t\)</span> limit the exponential will generally be varying very rapidly with <span class="math notranslate nohighlight">\(k\)</span> and these oscillations will integrate to
-nearly zero. The only regions that will contribute ae those near which the argument <span class="math notranslate nohighlight">\(\theta\)</span> of the integral satisfies
-<span class="math notranslate nohighlight">\(\partial_k \theta = 0\)</span>. This will occur when <span class="math notranslate nohighlight">\(x = \partial_k \omega(k) t = c_g t\)</span>, and we can rougly write:</p>
-<div class="math notranslate nohighlight">
-\[
-	\phi(x,t) \sim e^{i k(x,t) - i \omega(k(x,t)) x} {\tilde \phi}(k(x,t))
-\]</div>
-<p>A more careful treatment will give additional contributions to the prefactor of the integral.</p>
-</div>
-<div class="toctree-wrapper compound">
+<p>Note that this appears as a conservation equation much like that of the
+density, in the compressible case. We do not impose incompressibility on
+the horizontal velocities; a divergence will be compensated by a change in
+heigh, so that the total mass of the fluid is conserved.</p>
+<p>These are the <em>shallow water equations</em>. Now note that if we consider
+the scaling of the momentum equations, then balancing the advective derivative
+against the bouyancy forcing we have <span class="math notranslate nohighlight">\(u^2 \sim g H\)</span>, and matching this to the
+first term, a time scale of <span class="math notranslate nohighlight">\(T^{-1} \sim u/L \sim \sqrt{g H}/L\)</span>. We then have
+<span class="math notranslate nohighlight">\(w \sim H/T \sim (H/L) \sqrt{g H} \ll \sqrt{g H} \sim u\)</span>, and our
+approximations are self-consistent.</p>
 </div>
 </div>
 
@@ -575,17 +490,17 @@ nearly zero. The only regions that will contribute ae those near which the argum
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Waves.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="nonlinear_waves.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Waves in fluids</p>
+            <p class="prev-next-title">Nonlinear waves</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="surface_waves.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Surface waves</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
