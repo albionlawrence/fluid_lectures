@@ -360,13 +360,13 @@ This is essentially identical to the wave equation for sound waves, in which
 "time" is a rescaled $x$. We know the general solutions:
 
 $$
-	\phi_1 = f_+(y - \tau) + f_-(y + \tau)
+	\phi_1 = f_-(y - \tau) + f_+(y + \tau)
 $$
 
 which we can rewrite as
 
 $$
-	\phi_1 = F_+(x - \beta y) + F_+(x + \beta y)
+	\phi_1 = f_-(x - \beta y) + f_+(x + \beta y)
 $$
 
 where $\beta = \sqrt{M^2 - 1}$. 
@@ -374,29 +374,38 @@ where $\beta = \sqrt{M^2 - 1}$.
 In such supersonic flow we assume that the airfoil will generate 
 compression waves which travel at the speed $c_s$. By causality,
 we expect the disturbance to trail the leading edge of the airfoil.
+A basic argument is that at a point in time, the tip of the airfoil moving
+through the fluid would generate a circular compression wave travelling 
+at speed $c_s$. But the airfoil is moving faster than this compression 
+wave, so it always leave the wave behind.
+
 We take $\phi$ to vanish upstream of the airfoil. 
 Now if we take the tip of the airfoil to lie at the origin, 
 we expect $\phi$ to start changing first at the tip. By causality 
-only $F_+$ can start to change above the wing (because $F_-$ nonzero 
-near the tip would imply it is nonvanishing ahead of the airfoil), 
-while only $F_-$ can be nonzero below it. Thus $\phi$ will vanish 
-all he way up to $x = \beta y$ for $y > 0$, $x = - \beta y$ for 
+only $f_-$ can start to change above the wing (because $f_+$ nonzero 
+near the tip would imply it is nonvanishing ahead of the airfoil, 
+out to arbitrarily large values of $-x$ and $y$), 
+while only $f_+$ can be nonzero below it. Thus $\phi$ will vanish 
+all the way along $x = \beta y$ for $y > 0$, and along $x = - \beta y$ for 
 $y < 0$. By continuity $F_+(0) = 0$ above the wing and $F_-(0) = 0$ below. 
 
-Now Let the wing have extent $L$. Imposing the boundary conditions we have
-$\phi'_1 = F'_-(x) = - \frac{U}{B} f'(x)$, so that we get 
-$\phi_1 = F_+(x) = - \frac{U}{\beta} f(x) + c$ for $y > 0^{+}$,
+Now let the wing have extent $L$. Imposing the boundary conditions we have
+$\phi'_1 = f'_-(x) = - \frac{U}{B} f'(x)$, so that we get 
+$\phi_1 = f_-(x) = - \frac{U}{\beta} f(x) + c$ for $y > 0^{+}$,
 where $c$ is a constant which is set to
-zero by demanding $F_-(0) = 0$. Similarly, below th wing we have
-$\phi_1 = F_+(x) = - \frac{U}{\beta} f(x)$. Finally, 
-For $x > L$ the airfoil vanishes again, so that $F_{\pm}(x > L) = 0$.
+zero by demanding $f_+(0) = 0$. Similarly, below the wing we have
+$\phi_1 = f_-(x) = - \frac{U}{\beta} f(x)$. Finally, 
+For $x > L$ the airfoil vanishes again, so that $f_{\pm}(x > L) = 0$.
 
 The full solution becomes
 
 $$
-	\phi_1 = - \frac{U}{\beta} f(x \mp \beta y) \ \pm y > 0,\ 0 < x \pm \beta y < L
+	\phi_1 = - \frac{U}{\beta} f(x \mp \beta y) \ {\rm for}\  \pm y > 0,\ 0 < x \pm \beta y < L
 $$
 
-Note that this means that the streamlines have the same shape as the airfoil.
+This means that the streamlines have the same shape as the airfoil; in
+particular, $v_y = \partial_y \phi = U f'(x - \beta y)$ for $y > 0$, so that
+$v_y/U \sim f'$.
+
 
 
