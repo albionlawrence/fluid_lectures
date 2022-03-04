@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Waves in fluids &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>The Method of Chaacteristics &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear waves" href="linear_waves.html" />
-    <link rel="prev" title="Simple solutions in cylindrical coordinates" href="../chapter2/cylindrical.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="The Shallow Water System" href="shallow_water.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -189,7 +189,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Waves.html">
    Waves in fluids
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -197,7 +197,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="linear_waves.html">
      Linear waves
@@ -235,23 +235,23 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="nonlinear_waves.html">
      Nonlinear waves
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="shallow_water.html">
        The Shallow Water System
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="characteristics.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        The Method of Chaacteristics
       </a>
      </li>
@@ -305,7 +305,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter3/Waves.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter3/characteristics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -325,7 +325,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/Waves.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/characteristics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -346,6 +346,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -353,48 +366,55 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Waves in fluids</h1>
+                <h1>The Method of Chaacteristics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="waves-in-fluids">
-<h1>Waves in fluids<a class="headerlink" href="#waves-in-fluids" title="Permalink to this headline">¶</a></h1>
-<p>We ar all familiar with the basic phenomena of <em>waves</em> in a fluid: a
-series of finite disturbances, often spaced regularly, propagating through
-the fluid. Some examples include:</p>
-<ul class="simple">
-<li><p>Surface waves that we see on the beach are an obvious example, or
-that appeal when we drop a stone in he water; the oscillatory motion
-can be driven by gravity or surface tension.</p></li>
-<li><p>Sound comes from propagating compression-rarefaction waves in the air.</p></li>
-<li><p>Tidal forcing interacting wih complex bottom topography of the ocean
-generates a complicated spectrum of <em>internal gravity waves</em> propagating
-through the global ocean.</p></li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WYmRnSRsS7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>[Caption: <em>“This animation shows density layers in the South China Sea being perturbed by the regular back-and-forth tidal flow through the Luzon Strait. These leads to large amplitude internal waves (shown in red underwater, and in white when seen from above), being radiated west to the Chinese continental shelf. “</em>.]</p>
-<ul class="simple">
-<li><p><em>Rossby waves</em> (which we will not cover) are planetary-scale waves in which
-the Earth’s rotation (and the associated Coriolis force) plays a central role.
-These are responsible for the undulation of atmospheric jets such as the jet stream bounding the polar vortex, as you can see at <a class="reference external" href="https://oceanservice.noaa.gov/facts/rossby-wave.html">this website</a>.</p></li>
-</ul>
-<p>The goal of this chapter is to explain the physics of water waves. Along the way we wil encounter a number of important mathematical techniques and concepts
-whose utility extends well beyon hydrodynamics:</p>
-<ul class="simple">
-<li><p>Linearization of nonlinear equations</p></li>
-<li><p>Dispersion relations <span class="math notranslate nohighlight">\(\omega(k)\)</span>, Phase and group velocity</p></li>
-<li><p>Ray tracing and the method of characteristics</p></li>
-<li><p>Nonlinear waves and solitons</p></li>
-</ul>
-<p>So we will be spending a bit of time on this subject!</p>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-method-of-chaacteristics">
+<h1>The Method of Chaacteristics<a class="headerlink" href="#the-method-of-chaacteristics" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\p}{\partial}\]</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The essential point of the method of characteristics is as follows.
+Let us say we have a equation</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t u + A(x,t,u) \p_x u = 0
+\]</div>
+<p>This is a nonlinear first order differential equation. We looks for
+paths <span class="math notranslate nohighlight">\(t(s), x(s)\)</span> such that <span class="math notranslate nohighlight">\(u\)</span> is constant all along the
+path. Using the chain rule, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_s u = \p_s t \p_t u + \p_s x \p_x u = 0
+\]</div>
+<p>If we choose <span class="math notranslate nohighlight">\(\p_s t = 1\)</span>, <span class="math notranslate nohighlight">\(\p_s x = A\)</span>, then <span class="math notranslate nohighlight">\(\p_s u\)</span> = 0<span class="math notranslate nohighlight">\( by 
+the equations of motion. he game, then, is to solve these
+equations to find a set of lines in \)</span>(t,x)<span class="math notranslate nohighlight">\( on which \)</span>u<span class="math notranslate nohighlight">\( is constant.
+If we can do so, hen if for example the line \)</span>t = 0$ crossed these
+lines transversally, then we can propagate the initial data along the
+characteristics.</p>
 </div>
 </div>
 
@@ -423,17 +443,17 @@ whose utility extends well beyon hydrodynamics:</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../chapter2/cylindrical.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="shallow_water.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Simple solutions in cylindrical coordinates</p>
+            <p class="prev-next-title">The Shallow Water System</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="linear_waves.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear waves</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
