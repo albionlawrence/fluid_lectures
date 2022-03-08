@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Method of Chaacteristics &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Shallow water equations 2 &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bibliography" href="../bibliography.html" />
-    <link rel="prev" title="The Shallow Water System" href="shallow_water.html" />
+    <link rel="prev" title="The Method of Chaacteristics" href="characteristics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -250,9 +250,14 @@
        The Shallow Water System
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="characteristics.html">
+       The Method of Chaacteristics
+      </a>
+     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       The Method of Chaacteristics
+       Shallow water equations 2
       </a>
      </li>
     </ul>
@@ -305,7 +310,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter3/characteristics.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter3/swe_solutions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -325,7 +330,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/characteristics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/swe_solutions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -352,18 +357,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-linear-equations">
-   Example: linear equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-shallow-water-equations">
-   Example: shallow water equations
+  <a class="reference internal nav-link" href="#dam-break">
+   Dam break
   </a>
  </li>
 </ul>
@@ -376,7 +371,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Method of Chaacteristics</h1>
+                <h1>Shallow water equations 2</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -387,18 +382,8 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-linear-equations">
-   Example: linear equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-shallow-water-equations">
-   Example: shallow water equations
+  <a class="reference internal nav-link" href="#dam-break">
+   Dam break
   </a>
  </li>
 </ul>
@@ -410,105 +395,54 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-method-of-chaacteristics">
-<h1>The Method of Chaacteristics<a class="headerlink" href="#the-method-of-chaacteristics" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="shallow-water-equations-2">
+<h1>Shallow water equations 2<a class="headerlink" href="#shallow-water-equations-2" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
 \[\newcommand{\p}{\partial}\]</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The essential point of the method of characteristics is as follows.
-Let us say we have a equation</p>
+<p>Now that we have discussed the method of characteristics and found
+characteristic equations for invariants <span class="math notranslate nohighlight">\(u \pm 2c\)</span>, we consider two
+applications: the flow caused by a dam break; and the formation of
+a tidal bore.</p>
+<div class="section" id="dam-break">
+<h2>Dam break<a class="headerlink" href="#dam-break" title="Permalink to this headline">¶</a></h2>
+<p>Consider, for <span class="math notranslate nohighlight">\(t &lt;0\)</span>, a static situation wth water at constant height <span class="math notranslate nohighlight">\(h_0\)</span>
+for <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, behind a dam at <span class="math notranslate nohighlight">\(x = 0\)</span>, and no water for <span class="math notranslate nohighlight">\(x &gt; 0\)</span>. Then
+we remove the dam and let the water begin to flow.</p>
+<p>For <span class="math notranslate nohighlight">\(t &lt; 0\)</span> the characteristics are quite simple: <span class="math notranslate nohighlight">\(c_0 = \sqrt{g h_0}\)</span>, so
+<span class="math notranslate nohighlight">\(\p_s t = 1\)</span>, <span class="math notranslate nohighlight">\(\p_s x = u \pm c_0\)</span> are the characteristics along which
+<span class="math notranslate nohighlight">\(u \pm 2 c_0\)</span> are constant. Note that <span class="math notranslate nohighlight">\(u = 0\)</span>, so that</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_t u + A(x,t,u) \p_x u = 0
+	d_t x = u \pm c_0 = \pm c_0
 \]</div>
-<p>This is a nonlinear first order differential equation. We looks for
-paths <span class="math notranslate nohighlight">\(t(s), x(s)\)</span> such that <span class="math notranslate nohighlight">\(u\)</span> is constant all along the
-path. Using the chain rule, we find:</p>
+<p>are the characteristics: these are straight lines covering the
+quadrant <span class="math notranslate nohighlight">\(x &lt; 0, t &lt; 0\)</span>.</p>
+<p>Now let us release the dam at <span class="math notranslate nohighlight">\(t = 0\)</span>. For <span class="math notranslate nohighlight">\(t &lt; 0\)</span> the characteristics
+remain the same. As they emerge, the will not remain straight. However, on the
+characteristic cuves <span class="math notranslate nohighlight">\(C_{\pm}\)</span>, the invariants <span class="math notranslate nohighlight">\(\Gamma_{\pm} = u \pm 2c\)</span> remain
+invariant as we continue each beyond <span class="math notranslate nohighlight">\(t &gt; 0\)</span>; that is,
+<span class="math notranslate nohighlight">\(\Gamma \pm 2 c = \pm 2 c_0\)</span>. If we follow two such charateristics <span class="math notranslate nohighlight">\(C_{\pm}\)</span>
+which did not meet for <span class="math notranslate nohighlight">\(t &lt; 0\)</span>, we expect that they begin to curve for <span class="math notranslate nohighlight">\(t &gt; 0\)</span>.
+If they meet at some later point <span class="math notranslate nohighlight">\(P\)</span>, then <span class="math notranslate nohighlight">\(u - 2 c = - 2 c_0\)</span>,
+<span class="math notranslate nohighlight">\(u + 2c = 2 c_0\)</span>, so that it is still true that <span class="math notranslate nohighlight">\(u = 0\)</span>, <span class="math notranslate nohighlight">\(c = c_0\)</span>. This is
+a consistent solution, so we take it to be true, and we can continue the
+straight characteristics through to <span class="math notranslate nohighlight">\(t &gt; 0\)</span>.</p>
+<p>This will break down for the characteristic <span class="math notranslate nohighlight">\(C_-\)</span> emerging
+from <span class="math notranslate nohighlight">\(t = x = 0\)</span>, which is described by <span class="math notranslate nohighlight">\(x = - c_0 t\)</span>.
+Beyond this, the <span class="math notranslate nohighlight">\(C_+\)</span> charateristics will emerge and may
+begin to (and indeed do) curve. Along these we will continue
+to find <span class="math notranslate nohighlight">\(u + 2 c = 2 c_0\)</span> for any charateristic. Negative charateristics
+meeting these will solve <span class="math notranslate nohighlight">\(u - 2c = k\)</span> for some constant <span class="math notranslate nohighlight">\(k\)</span>, so that
+where these charateristics meet, <span class="math notranslate nohighlight">\(u = c_0 + k/2\)</span>, <span class="math notranslate nohighlight">\(c = \frac{1}{4}(2 c_0 - k)\)</span>.
+In other words, <span class="math notranslate nohighlight">\(u, c\)</span> are constant, and</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_s u = \p_s t \p_t u + \p_s x \p_x u = 0
+	d_t x = u - c = \half c_0 + \frac{3 k}{4}
 \]</div>
-<p>If we choose <span class="math notranslate nohighlight">\(\p_s t = 1\)</span>, <span class="math notranslate nohighlight">\(\p_s x = A\)</span>, then <span class="math notranslate nohighlight">\(\p_s u = 0\)</span> by
-the equations of motion. he game, then, is to solve these
-equations to find a set of lines in <span class="math notranslate nohighlight">\((t,x)\)</span> on which <span class="math notranslate nohighlight">\(u\)</span> is constant.
-If we can do so, then if for example the line <span class="math notranslate nohighlight">\(t = 0\)</span> crossed these
-lines transversally, then we can propagate the initial data along the
-characteristics.</p>
-<p>This can be generalized to the case of multiple variables (we will
-study a case with two).  In general, the quantities conserved along the
-characteristics will be called <em>Riemann invariants</em> and there is a procedure
-for at leas trying to identify them. A more general discussion can be found
-in Chapter 3 of <span id="id1">[<a class="reference internal" href="../bibliography.html#id4">Chorin <em>et al.</em>, 1990</a>]</span>; we will actually discuss
-the case of 2 variables (<span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(h\)</span> for the shallow water equations.<br />
-In this more general case, there are separate families of
-characteristics for each invariant and one will not be constant along
-the other’s characteristics.</p>
-<p>Note also:</p>
-<ul class="simple">
-<li><p>There is no guarantee that we can <em>find</em> the characteristics.</p></li>
-<li><p>If the characteristics cross, we hit a discontinuity as the invariants
-will jump across the locus where hey meet; in other words we will hit a shock.
-This is a case we will discuss.</p></li>
-</ul>
-</div>
-<div class="section" id="example-linear-equations">
-<h2>Example: linear equations<a class="headerlink" href="#example-linear-equations" title="Permalink to this headline">¶</a></h2>
-<p>Let us consider the simple case</p>
-<div class="math notranslate nohighlight">
-\[
-	\p_t u + a(x,t) \p_x u = b(x,t)
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(a,b\)</span> are known. Here we demand</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e60bd0a9-b5f1-4a61-a2a4-694a716ca06f">
-<span class="eqno">(44)<a class="headerlink" href="#equation-e60bd0a9-b5f1-4a61-a2a4-694a716ca06f" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \p_s t = 1\\
-	&amp; &amp; \p_s x = a(x,t)
-\end{align}\]</div>
-<p>These are first order (nonlinear) ODEs which can in principle be solved
-to find the characteristics.  In this case,</p>
-<div class="math notranslate nohighlight">
-\[
-	\p_s u(t(s),x(s)) = b
-\]</div>
-<p>so that <span class="math notranslate nohighlight">\(v + \int_{s_0}^s d\tau b(x(\tau),t(\tau))\)</span> is conserved
-along characteristics.</p>
-<p>In the simple case that <span class="math notranslate nohighlight">\(b= 0, a = v\)</span>, the characteristics are:
-<span class="math notranslate nohighlight">\(t = s\)</span> (here we choose <span class="math notranslate nohighlight">\(s\)</span> to remove the integration constant),
-<span class="math notranslate nohighlight">\(x = v s + x_0\)</span>, that is, they are straight lines <span class="math notranslate nohighlight">\(x - v t = x_0\)</span>.
-Given any initial condition <span class="math notranslate nohighlight">\(v(x,0) = v(x_0)\)</span>, the solution is then
-<span class="math notranslate nohighlight">\(v(x - vt)\)</span>.</p>
-</div>
-<div class="section" id="example-shallow-water-equations">
-<h2>Example: shallow water equations<a class="headerlink" href="#example-shallow-water-equations" title="Permalink to this headline">¶</a></h2>
-<p>Here we return to the SWEs for one hoizontal direction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99520c48-b552-4b43-9c8c-c473914f1980">
-<span class="eqno">(45)<a class="headerlink" href="#equation-99520c48-b552-4b43-9c8c-c473914f1980" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \p_t u + u \p_x u = - g \p_x h\\
-	&amp; &amp; \p_t h + \p_x (u h) = 0
-\end{align}\]</div>
-<p>Here we have two equations. In fact we can unpack them by defining
-<span class="math notranslate nohighlight">\(c = \sqrt{g h}\)</span> (for linearized surface gravity waves in the shallow water
-limit, this is the phase velocity), for which the equations can be written</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bcfcb533-d738-47f0-8c8d-94fd5d7e7931">
-<span class="eqno">(46)<a class="headerlink" href="#equation-bcfcb533-d738-47f0-8c8d-94fd5d7e7931" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \p_t u + u \p_x u + 2c \p_x c = 0\\
-	&amp; &amp; \p_t (2c) + u \p_x (2c) + c \p_x u = 0
-\end{align}\]</div>
-<p>The sum and difference give:</p>
-<div class="math notranslate nohighlight">
-\[
-	\left[ \p_t + (u \pm c) \p_x \right] (u \pm 2c) = 0
-\]</div>
-<p>For these cases, we have two families of characteristics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc56d901-b1dc-4293-aa68-d74f83b5fc4d">
-<span class="eqno">(47)<a class="headerlink" href="#equation-fc56d901-b1dc-4293-aa68-d74f83b5fc4d" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \p_s t = 1\\
-	&amp; &amp; \p_s x = u \pm c
-\end{align}\]</div>
-<p>along which the Riemann invariants <span class="math notranslate nohighlight">\(\Gamma_{\pm} = u \pm 2c\)</span> are conserved.
-The game now is to solve the characteristic equations, which we will do in two
-specific situations.</p>
+<p>in other words, these are straight lines determined by <span class="math notranslate nohighlight">\(k\)</span>.
+In order that they do not cross for <span class="math notranslate nohighlight">\(t &gt; 0\)</span> which would ensure an
+inconsistancy, they must emanate
+from the origin.</p>
 </div>
 </div>
 
@@ -537,11 +471,11 @@ specific situations.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="shallow_water.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="characteristics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The Shallow Water System</p>
+            <p class="prev-next-title">The Method of Chaacteristics</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../bibliography.html" title="next page">

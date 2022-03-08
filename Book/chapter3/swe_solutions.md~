@@ -1,0 +1,25 @@
+# Shallow water equations 2
+
+Now that we have discussed the method of characteristics and found
+characteristic equations for invariants $u \pm 2c$, we consider two 
+applications: the flow caused by a dam break; and the formation of
+a tidal bore.
+
+## Dam break 
+
+Consider, for $t <0$, a static situation wth water at constant height $h_0$
+for $x < 0$, behind a dam at $x = 0$, and no water for $x > 0$. Then
+we remove the dam and let the water begin to flow.
+
+For $t < 0$ the characteristics are quite simple: $c_0 = \sqrt{g h_0}$, so
+$\p_s t = 1$, $\p_s x = u \pm c_0$ are the characteristics along which
+$u \pm 2 c_0$ are constant. Note that $u = 0$, so that 
+
+$$
+	d_t x = u \pm c_0 = \pm c_0
+$$
+
+are the characteristics: these are straight lines covering the 
+quadrant $x < 0, t < 0$.
+
+Now let us release the dam at $t = 0$. 

@@ -34,4 +34,5 @@ chapters:
     sections:
     - file: chapter3/shallow_water
     - file: chapter3/characteristics
+    - file: chapter3/swe_solutions
 - file: bibliography
