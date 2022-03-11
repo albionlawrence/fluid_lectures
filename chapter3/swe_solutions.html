@@ -361,6 +361,16 @@
    Dam break
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinear-distortion">
+   Nonlinear distortion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bore">
+   Bore
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -386,6 +396,16 @@
    Dam break
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinear-distortion">
+   Nonlinear distortion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bore">
+   Bore
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -398,7 +418,8 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="shallow-water-equations-2">
 <h1>Shallow water equations 2<a class="headerlink" href="#shallow-water-equations-2" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
-\[\newcommand{\p}{\partial}\]</div>
+\[\newcommand{\p}{\partial}
+\newcommand{\half}{\frac{1}{2}}\]</div>
 <p>Now that we have discussed the method of characteristics and found
 characteristic equations for invariants <span class="math notranslate nohighlight">\(u \pm 2c\)</span>, we consider two
 applications: the flow caused by a dam break; and the formation of
@@ -439,10 +460,121 @@ In other words, <span class="math notranslate nohighlight">\(u, c\)</span> are c
 \[
 	d_t x = u - c = \half c_0 + \frac{3 k}{4}
 \]</div>
-<p>in other words, these are straight lines determined by <span class="math notranslate nohighlight">\(k\)</span>.
+<p>These are straight lines determined by <span class="math notranslate nohighlight">\(k\)</span>.
 In order that they do not cross for <span class="math notranslate nohighlight">\(t &gt; 0\)</span> which would ensure an
 inconsistancy, they must emanate
-from the origin.</p>
+from the origin. Along these characteristics, then, <span class="math notranslate nohighlight">\(x = (u - c) t\)</span> or
+<span class="math notranslate nohighlight">\(u - c = x/t\)</span>. If we combine with <span class="math notranslate nohighlight">\(u + 2c = c_0\)</span>, we find by subtracting
+these to find <span class="math notranslate nohighlight">\(c\)</span>, or adding a linear combination to find <span class="math notranslate nohighlight">\(u\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3fb2824b-3c9a-4b13-8406-e96e14047bb4">
+<span class="eqno">(48)<a class="headerlink" href="#equation-3fb2824b-3c9a-4b13-8406-e96e14047bb4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; &amp; c = \frac{1}{3} \left(2 c_0 - \frac{x}{t}\right)\\
+	&amp; &amp; u = \frac{1}{3} \left(c_0 + 2 \frac{x}{t}\right)
+\end{align}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(c\)</span> cannot be negative, we must have <span class="math notranslate nohighlight">\(x \leq 2t\)</span>. Therefore,
+using <span class="math notranslate nohighlight">\(h = c^2/g\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-35a125e8-6e31-4250-8ffa-f868ab411561">
+<span class="eqno">(49)<a class="headerlink" href="#equation-35a125e8-6e31-4250-8ffa-f868ab411561" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; &amp; h = h_0 \qquad x &lt; - c_0 t\\
+	&amp; &amp; h = \frac{1}{9g} \left(2 c_0 - \frac{x}{t}\right)^2 \qquad
+	- c_0 t \leq x  \leq 2 c_0 t \\
+	&amp; &amp; h = 0 x &gt;  2c_0 t
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_0 = \sqrt{h_0 g}\)</span>.</p>
+</div>
+<div class="section" id="nonlinear-distortion">
+<h2>Nonlinear distortion<a class="headerlink" href="#nonlinear-distortion" title="Permalink to this headline">¶</a></h2>
+<p>By plotting out the solution, it should be clear that the discontinuity
+smooths out with time (though there will be a kink at <span class="math notranslate nohighlight">\(x = - c_0 t\)</span>).
+This is the result of the nonlinearity of the problem. Following the
+text, let us consider the <span class="math notranslate nohighlight">\(x \in [- c_0t, 2 c_0 t]\)</span>. Starting with
+<span class="math notranslate nohighlight">\((\p_t + (u - c) \p_x) (u - 2c) = 0\)</span>, and using <span class="math notranslate nohighlight">\(u + 2 c = 2 c_0\)</span>
+in this region, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t c + (2 c_0 - 3c) \p_x c = 0
+\]</div>
+<p>Defining <span class="math notranslate nohighlight">\(z = 3c - 2 c_0\)</span>, this becomes</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t z - z \p_x z = 0
+\]</div>
+<p>This is a nonlinear equation whose general solution is the implicit one:</p>
+<div class="math notranslate nohighlight">
+\[
+	z = F(x + zt)
+\]</div>
+<p>for any function <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p>Now at <span class="math notranslate nohighlight">\(t = 0\)</span>, <span class="math notranslate nohighlight">\(z = z(0) = F(x)\)</span>. Just after <span class="math notranslate nohighlight">\(t = 0\)</span>, say at <span class="math notranslate nohighlight">\(t = \epsilon\)</span>,
+<span class="math notranslate nohighlight">\(h\)</span> (and thus <span class="math notranslate nohighlight">\(z\)</span>) is strongly decreasing across <span class="math notranslate nohighlight">\(x = 0\)</span>. At some later <span class="math notranslate nohighlight">\(t\)</span>,
+the same value of <span class="math notranslate nohighlight">\(z\)</span> which was at <span class="math notranslate nohighlight">\(x_0\)</span> for <span class="math notranslate nohighlight">\(t = 0 + \epsilon\)</span> occurs at
+<span class="math notranslate nohighlight">\(x = - t z\)</span>. Larger values of <span class="math notranslate nohighlight">\(z(\epsilon)\)</span> and thus of <span class="math notranslate nohighlight">\(h(\epsilon)\)</span>
+propagate to the left more quickly, leading to a nonlinear distortion of the
+initial step.</p>
+<p>Note that if we had the equation <span class="math notranslate nohighlight">\(\p_t z + z \p_x z = 0\)</span>, the general solution
+would have been <span class="math notranslate nohighlight">\(z = F (x -  zt)\)</span>, and distortions would have traveled to
+the right with larger <span class="math notranslate nohighlight">\(z\)</span> traveling faster. If the initial configuration
+had <span class="math notranslate nohighlight">\(z\)</span> *decreasing<span class="math notranslate nohighlight">\( to the right, we would get the wave pilong up
+on itself, with \)</span>\p_x z = F’(x - zt) - t \p_x z F’(x - zt)$ or</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_x z = \frac{F'(x - zt)}{1 + t F'(x - zt)}
+\]</div>
+<p>This first becomes steepest at the maximum negative slope of <span class="math notranslate nohighlight">\(F\)</span>, determined
+by the maximum <span class="math notranslate nohighlight">\(F_0\)</span> at <span class="math notranslate nohighlight">\(t = 0\)</span>, <span class="math notranslate nohighlight">\(t = - 1/F_0\)</span>.</p>
+</div>
+<div class="section" id="bore">
+<h2>Bore<a class="headerlink" href="#bore" title="Permalink to this headline">¶</a></h2>
+<p>We now consider the opposite case. For <span class="math notranslate nohighlight">\(x &gt; 0\)</span>, we begin for <span class="math notranslate nohighlight">\(t &lt; 0\)</span>
+with a fluid at rest, at height <span class="math notranslate nohighlight">\(h_0\)</span>. for <span class="math notranslate nohighlight">\(t &gt; 0\)</span>, we begin moving the
+dam to the right with an <em>accelerated</em> speed <span class="math notranslate nohighlight">\(U = \alpha t\)</span>,
+so that there is no fluid when <span class="math notranslate nohighlight">\(x &lt; \half \alpha t^2\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(t &lt; 0\)</span>, <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, <span class="math notranslate nohighlight">\(u, c = 0\)</span>. For <span class="math notranslate nohighlight">\(t &lt; 0\)</span>, <span class="math notranslate nohighlight">\(x &gt; 0\)</span>, <span class="math notranslate nohighlight">\(u = 0\)</span>, <span class="math notranslate nohighlight">\(c = c_0\)</span>,
+and the two characteristics <span class="math notranslate nohighlight">\(C_{\pm}\)</span> are <span class="math notranslate nohighlight">\(\p_s t = 1, \p_s x = u \pm c_0\)</span>,
+so that <span class="math notranslate nohighlight">\(\p_t x = u \pm x_0 = \pm c_0\)</span>.</p>
+<p>As we begin to move the dam at <span class="math notranslate nohighlight">\(t = 0\)</span>, the same argument as above applies.
+The invariants <span class="math notranslate nohighlight">\(\Gamma_{\pm} = u \pm 2c = \pm 2 c_0\)</span>. If two charateristics
+have not met for <span class="math notranslate nohighlight">\(t &lt; 0\)</span>, we expect them to meet for <span class="math notranslate nohighlight">\(t &gt; 0\)</span>, at which point,
+solving <span class="math notranslate nohighlight">\(\Gamma_{\pm} = \pm 2 c_0\)</span> gives <span class="math notranslate nohighlight">\(u = 0\)</span>, <span class="math notranslate nohighlight">\(c = c_0\)</span>. This works
+up to the positive-slope charateristic <span class="math notranslate nohighlight">\(C_+\)</span> which leaves the origin,
+<span class="math notranslate nohighlight">\(x = c_0 t\)</span>. Thus we have water which remains still to the right of
+<span class="math notranslate nohighlight">\(x = c_0 t\)</span>, and is distorted between <span class="math notranslate nohighlight">\(\half \alpha t^2 &lt; x &lt; c_0 t\)</span>.
+Within this distorted region, we expect the characteristics <span class="math notranslate nohighlight">\(C_-\)</span> to continue
+(at least close to <span class="math notranslate nohighlight">\(x = c_0 t\)</span>). For these, <span class="math notranslate nohighlight">\(\Gamma_- = u - 2c = - 2 c_0\)</span> still
+holds. We can inser this into the equation <span class="math notranslate nohighlight">\([\p_t + (u + c) \p_x](u + 2c) = 0\)</span>
+to find:</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t u + \left(\frac{3 u}{2} + c_0\right) \p_x u = 0
+\]</div>
+<p>setting <span class="math notranslate nohighlight">\(z = \frac{3 u}{2} + c_0\)</span> and considering the previous section, we find
+the general solution:</p>
+<div class="math notranslate nohighlight">
+\[
+	u = F\left[x - \left(\frac{3 u}{2} + c_0\right)t\right]
+\]</div>
+<p>This wil break down at finite time. Now we can find <span class="math notranslate nohighlight">\(F\)</span> by imposing boundary
+conditions <span class="math notranslate nohighlight">\(u(x = \half \alpha t^2) = \alpha t\)</span> which gives</p>
+<div class="math notranslate nohighlight">
+\[
+	\alpha t = F(- \alpha t^2 - c_0 t)
+\]</div>
+<p>We can invert this to find</p>
+<div class="math notranslate nohighlight">
+\[
+	F(\xi) = \half \left[- c_0 + (c_0^2 - 4\alpha \xi)^{1/2}\right]^{1/2}
+\]</div>
+<p>We can now solve for <span class="math notranslate nohighlight">\(u\)</span> to find:</p>
+<div class="math notranslate nohighlight">
+\[
+	u = - \half(c_0 - \frac{3}{2} \alpha t) + [(c_0 - \frac{3}{2} \alpha t)^2 - 4\alpha(x - c_0 t)]^{1/2}
+\]</div>
+<p>Using <span class="math notranslate nohighlight">\(u = 2(c - c_0)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+	c = c_0 - \frac{1}{4}(c_0 - \frac{3}{2} \alpha t + \frac{1}{4} 
+	[(c_0 - \frac{3}{2} \alpha t)^2 - 4\alpha(x - c_0 t)]^{1/2}
+\]</div>
 </div>
 </div>
 
