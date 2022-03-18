@@ -112,7 +112,7 @@ initial step.
 Note that if we had the equation $\p_t z + z \p_x z = 0$, the general solution
 would have been $z = F (x -  zt)$, and distortions would have traveled to
 the right with larger $z$ traveling faster. If the initial configuration
-had $z$ *decreasing$ to the right, we would get the wave pilong up
+had $z$ *decreasing* to the right, we would get the wave pilong up
 on itself, with $\p_x z = F'(x - zt) - t \p_x z F'(x - zt)$ or
 
 $$
@@ -178,7 +178,58 @@ $$
 Using $u = 2(c - c_0)$, 
 
 $$
-	c = c_0 - \frac{1}{4}(c_0 - \frac{3}{2} \alpha t + \frac{1}{4} 
+	c = c_0 - \frac{1}{4}\left(c_0 - \frac{3}{2} \alpha t\right) + \frac{1}{4} 
 	[(c_0 - \frac{3}{2} \alpha t)^2 - 4\alpha(x - c_0 t)]^{1/2}
 $$
 
+As $t$ gets larger, $c$ is largest at $x = \alpha t$, and decreases to 
+$x = c_0 t$ where $c = c_0$, the resting value. When $t = 2 c_0/(3\alpha)$,
+the square root has a zero at $x = c_0 t$, and thus becomes singular. The
+shallow water equations break down; in practice a sudden jump in height occurs,
+called a *bore* or *hydraulic jump*. 
+
+Just for fun, here is a discussion of hydraulic jumps and their uses. Note that
+in the tank demonstration a barries is placed downstream of a flowing current. You could imagine being in the rest frame of the current, in which it looks
+like te barrier is moving upstream, as in our problem,
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7tjf8HWiR3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+It is also worth looking more closely at the characteristics in the region
+$t > x/c_0$, where $x = c_0 t$ is the bounding characteristic below which
+$C_{\pn}$ are intersecting straight lines and $c = c_0$, $u = 0$. First,
+the plate itself has the trajectory $x = \half \alpha t^2$, so that 
+above the curve $t = \sqrt{2 x/\alpha}$, there is no fluid. 
+
+Now firs consider the characteristic $C_-$ which cross $x = c_0 t$. Along these
+characteristics, $u - 2 c = - 2 c_0$. Along characteristics $C_+$ emanating
+from the wall trajectory, we have $u + 2c = {\rm constant)$, so that
+$u, c$ remain constant along any trajectory $C_+$ in this region. At the
+point $C_+$ hits the wall,  $u = d_t x = \alpha t_1$; 
+$u - 2 c = c_0$ along any characteristic $C_+$ so 
+
+$$ 
+	c = \half u + c_0 = \half \alpha t_1 + c_0
+$$
+
+Now along $C_+$, $\p_s t = 1 \Rightarrow t = s$, and
+
+$$
+	\p_s x = d_t x = (u + c) = c_0 + \frac{3}{2} \alpha t_1
+$$
+
+Finally, setting he initial conditions as $x = \alpha t_1^2$ at $t = t_1$, 
+we have
+
+$$
+	x = \half \alpha t_1^2 + \left(c_0 + \frac{3}{2} c_0 t_1 \right)(t - t_1)
+$$
+
+Note that this means $x$ increases *more quickly* than $c_0 t$, and the
+curve $C_+$ will eventually cross $x = c_0 t$. When this happens, because
+$u, c$ ar econstant along these charateristics, but differ between
+characteristics, we get a singularity and the equations break down.
+
+Said another way, the formation of a singularity in the flow -- a shock or some
+oter breakdown of the quations at hand -- occurs when two charateristics in
+a family $C_i$ cross; since the Riemann invariant $\Gamma_i$ varies within
+this family, the solution becomes multivalued at this point.
