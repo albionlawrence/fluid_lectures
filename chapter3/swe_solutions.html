@@ -466,15 +466,15 @@ inconsistancy, they must emanate
 from the origin. Along these characteristics, then, <span class="math notranslate nohighlight">\(x = (u - c) t\)</span> or
 <span class="math notranslate nohighlight">\(u - c = x/t\)</span>. If we combine with <span class="math notranslate nohighlight">\(u + 2c = c_0\)</span>, we find by subtracting
 these to find <span class="math notranslate nohighlight">\(c\)</span>, or adding a linear combination to find <span class="math notranslate nohighlight">\(u\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3fb2824b-3c9a-4b13-8406-e96e14047bb4">
-<span class="eqno">(48)<a class="headerlink" href="#equation-3fb2824b-3c9a-4b13-8406-e96e14047bb4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-898c28c5-00db-4a24-8248-ea96b1f0c6c8">
+<span class="eqno">(48)<a class="headerlink" href="#equation-898c28c5-00db-4a24-8248-ea96b1f0c6c8" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; c = \frac{1}{3} \left(2 c_0 - \frac{x}{t}\right)\\
 	&amp; &amp; u = \frac{1}{3} \left(c_0 + 2 \frac{x}{t}\right)
 \end{align}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(c\)</span> cannot be negative, we must have <span class="math notranslate nohighlight">\(x \leq 2t\)</span>. Therefore,
 using <span class="math notranslate nohighlight">\(h = c^2/g\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35a125e8-6e31-4250-8ffa-f868ab411561">
-<span class="eqno">(49)<a class="headerlink" href="#equation-35a125e8-6e31-4250-8ffa-f868ab411561" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c8518cd-410f-47e1-8daa-078f709d7403">
+<span class="eqno">(49)<a class="headerlink" href="#equation-8c8518cd-410f-47e1-8daa-078f709d7403" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; h = h_0 \qquad x &lt; - c_0 t\\
 	&amp; &amp; h = \frac{1}{9g} \left(2 c_0 - \frac{x}{t}\right)^2 \qquad
 	- c_0 t \leq x  \leq 2 c_0 t \\
@@ -514,8 +514,8 @@ initial step.</p>
 <p>Note that if we had the equation <span class="math notranslate nohighlight">\(\p_t z + z \p_x z = 0\)</span>, the general solution
 would have been <span class="math notranslate nohighlight">\(z = F (x -  zt)\)</span>, and distortions would have traveled to
 the right with larger <span class="math notranslate nohighlight">\(z\)</span> traveling faster. If the initial configuration
-had <span class="math notranslate nohighlight">\(z\)</span> *decreasing<span class="math notranslate nohighlight">\( to the right, we would get the wave pilong up
-on itself, with \)</span>\p_x z = F’(x - zt) - t \p_x z F’(x - zt)$ or</p>
+had <span class="math notranslate nohighlight">\(z\)</span> <em>decreasing</em> to the right, we would get the wave pilong up
+on itself, with <span class="math notranslate nohighlight">\(\p_x z = F'(x - zt) - t \p_x z F'(x - zt)\)</span> or</p>
 <div class="math notranslate nohighlight">
 \[
 	\p_x z = \frac{F'(x - zt)}{1 + t F'(x - zt)}
@@ -572,9 +572,52 @@ conditions <span class="math notranslate nohighlight">\(u(x = \half \alpha t^2) 
 <p>Using <span class="math notranslate nohighlight">\(u = 2(c - c_0)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-	c = c_0 - \frac{1}{4}(c_0 - \frac{3}{2} \alpha t + \frac{1}{4} 
+	c = c_0 - \frac{1}{4}\left(c_0 - \frac{3}{2} \alpha t\right) + \frac{1}{4} 
 	[(c_0 - \frac{3}{2} \alpha t)^2 - 4\alpha(x - c_0 t)]^{1/2}
 \]</div>
+<p>As <span class="math notranslate nohighlight">\(t\)</span> gets larger, <span class="math notranslate nohighlight">\(c\)</span> is largest at <span class="math notranslate nohighlight">\(x = \alpha t\)</span>, and decreases to
+<span class="math notranslate nohighlight">\(x = c_0 t\)</span> where <span class="math notranslate nohighlight">\(c = c_0\)</span>, the resting value. When <span class="math notranslate nohighlight">\(t = 2 c_0/(3\alpha)\)</span>,
+the square root has a zero at <span class="math notranslate nohighlight">\(x = c_0 t\)</span>, and thus becomes singular. The
+shallow water equations break down; in practice a sudden jump in height occurs,
+called a <em>bore</em> or <em>hydraulic jump</em>.</p>
+<p>Just for fun, here is a discussion of hydraulic jumps and their uses. Note that
+in the tank demonstration a barries is placed downstream of a flowing current. You could imagine being in the rest frame of the current, in which it looks
+like te barrier is moving upstream, as in our problem,</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7tjf8HWiR3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>It is also worth looking more closely at the characteristics in the region
+<span class="math notranslate nohighlight">\(t &gt; x/c_0\)</span>, where <span class="math notranslate nohighlight">\(x = c_0 t\)</span> is the bounding characteristic below which
+<span class="math notranslate nohighlight">\(C_{\pn}\)</span> are intersecting straight lines and <span class="math notranslate nohighlight">\(c = c_0\)</span>, <span class="math notranslate nohighlight">\(u = 0\)</span>. First,
+the plate itself has the trajectory <span class="math notranslate nohighlight">\(x = \half \alpha t^2\)</span>, so that
+above the curve <span class="math notranslate nohighlight">\(t = \sqrt{2 x/\alpha}\)</span>, there is no fluid.</p>
+<p>Now firs consider the characteristic <span class="math notranslate nohighlight">\(C_-\)</span> which cross <span class="math notranslate nohighlight">\(x = c_0 t\)</span>. Along these
+characteristics, <span class="math notranslate nohighlight">\(u - 2 c = - 2 c_0\)</span>. Along characteristics <span class="math notranslate nohighlight">\(C_+\)</span> emanating
+from the wall trajectory, we have <span class="math notranslate nohighlight">\(u + 2c = {\rm constant)\)</span>, so that
+<span class="math notranslate nohighlight">\(u, c\)</span> remain constant along any trajectory <span class="math notranslate nohighlight">\(C_+\)</span> in this region. At the
+point <span class="math notranslate nohighlight">\(C_+\)</span> hits the wall,  <span class="math notranslate nohighlight">\(u = d_t x = \alpha t_1\)</span>;
+<span class="math notranslate nohighlight">\(u - 2 c = c_0\)</span> along any characteristic <span class="math notranslate nohighlight">\(C_+\)</span> so</p>
+<div class="math notranslate nohighlight">
+\[ 
+	c = \half u + c_0 = \half \alpha t_1 + c_0
+\]</div>
+<p>Now along <span class="math notranslate nohighlight">\(C_+\)</span>, <span class="math notranslate nohighlight">\(\p_s t = 1 \Rightarrow t = s\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_s x = d_t x = (u + c) = c_0 + \frac{3}{2} \alpha t_1
+\]</div>
+<p>Finally, setting he initial conditions as <span class="math notranslate nohighlight">\(x = \alpha t_1^2\)</span> at <span class="math notranslate nohighlight">\(t = t_1\)</span>,
+we have</p>
+<div class="math notranslate nohighlight">
+\[
+	x = \half \alpha t_1^2 + \left(c_0 + \frac{3}{2} c_0 t_1 \right)(t - t_1)
+\]</div>
+<p>Note that this means <span class="math notranslate nohighlight">\(x\)</span> increases <em>more quickly</em> than <span class="math notranslate nohighlight">\(c_0 t\)</span>, and the
+curve <span class="math notranslate nohighlight">\(C_+\)</span> will eventually cross <span class="math notranslate nohighlight">\(x = c_0 t\)</span>. When this happens, because
+<span class="math notranslate nohighlight">\(u, c\)</span> ar econstant along these charateristics, but differ between
+characteristics, we get a singularity and the equations break down.</p>
+<p>Said another way, the formation of a singularity in the flow – a shock or some
+oter breakdown of the quations at hand – occurs when two charateristics in
+a family <span class="math notranslate nohighlight">\(C_i\)</span> cross; since the Riemann invariant <span class="math notranslate nohighlight">\(\Gamma_i\)</span> varies within
+this family, the solution becomes multivalued at this point.</p>
 </div>
 </div>
 
