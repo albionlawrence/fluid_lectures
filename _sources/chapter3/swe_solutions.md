@@ -233,3 +233,103 @@ Said another way, the formation of a singularity in the flow -- a shock or some
 oter breakdown of the quations at hand -- occurs when two charateristics in
 a family $C_i$ cross; since the Riemann invariant $\Gamma_i$ varies within
 this family, the solution becomes multivalued at this point.
+
+## Hydraulic jumps
+
+![hydraulic](hj_pic.jpeg) 
+
+*Image from Wikipedia entry on hydraulic jumps*
+
+In general a hydraulic jump occurs when a thin layer of fluid flows towards a
+a thicker layer; alternatively, by working in a moving frame, the 
+thicker layer could be pushed towars the thinner one, as above. At the jump the
+shallow water equations will break down; fully turbulent flow is activated,
+and acts to dissipate energy. This being said, we can learn a bit about 
+the jump within the shallow water approximation, assuming it holds on each side
+of the jump, by demanding mass and momentum are conserved; and that the jump
+region dissipates energy, so that the fluid loses energy as it propagates
+through the shock. 
+
+We take the flow upstream from the jump to have velocity $U_1$ and 
+height $h_1$, and downstream from the jump to have velocity $U_2$ and
+heig $h_2$. The density is constant throughout. 
+
+A dimensionless number which helps characterize shallow water flow is
+the *Froude number*, the ratio of the fluid velocity to the speed
+of surface waves:
+
+$$
+	 Fr = \frac{U}{\sqrt{g h}}
+$$
+
+This is an analog of the Mach number (velocity
+compared to the speed of sound waves) an indeed flow with $Fr < 1$ is called 
+*subcritical* while flow with $Fr > 1$ is called *supercritical*.
+
+1. *Mass conservation*. We demand that the mass flux entering the jump is equal
+to that leaing the jump. The mass per unit area upstream is $h_1 \rho$ and
+downstream is $h_2 \rho$, and the mass flux on each side is $U_i h_i \rho$, so
+we demand
+
+$$ 
+	U_1 h_1 = U_2 h_2
+$$
+
+2. *Momentum conservation*. We demand that the *flux* of momentum into the jump
+is equal to that out of the jump, that is, that momentum is no lost in the
+jump. Momentum flux gets two contributions in this case. The first
+is the direct transport of momentum by the flow. That is, if the momentum per
+unit area is $\rho h_i U_i$, the momentum *flux* is $\rho h_i U_i^2$.
+Newton's second law ${\dot p} = f$ also tells us that momentum flux
+will get a contirbution from any force acting on the fluid. In this case
+it will be the pressure, which on each side of the jump is
+
+\begin{align}
+	\int_0^{h_i} dy p_i & = \int_0^{h_i} dy \rho g (h_i - y)\\
+	& = & \rho g h_i^2
+\end{align}
+
+Combining these, and factoring out the common factor of $\rho$, we have
+
+$$
+	\half g h_1^2 + h_1 U_1^2 = \half g h_2 + h_2 U_2^2
+$$
+
+3. *Energy should be dissipated*. As you are asked to show in problem (3.20),
+the rate of energy loss hrough the jump is
+
+$$
+	{\dot E} = \frac{\rho g U_1 (h_2 - h_1)^3}{h_2}
+$$
+
+From these equations we can quickly deduce a few aspects of the flow.
+First, the demand that the energy dissipation be positive means
+that $h_2 > h_1$, si that the system jumps upwards.
+
+Secondly, the Froude numbers upstream of and downstream from 
+the jump can be written entirely in terms of $h_i$, using
+mass an momentum conservation:
+
+\begin{align}
+	Fr_1 & = & \frac{U_1}{\sqrt{g h_1}} = 
+	\sqrt{\frac{h_2(h_1 + h_2)}{2 h_1^2}}\\
+	Fr_2 & = & \frac{U_2}{\sqrt{g h_2}} =
+	\sqrt{\frac{h_1(h_1 + h_2)}{2 h_2^2}}
+\end{align}
+
+Since $h_1 + h_2 > 2 h_1$, we have
+
+$$
+	F_1 > \sqrt{\frac{2 h_1 h_2}{2 h_1^2}} = \sqrt{\frac{h_2}{h_1}} > 1
+$$
+
+Similarly, using $h_1 + h_2 < 2 h_2$,
+
+$$
+	F_2 < 0
+$$
+
+So the flow transitions across the jump from supercritical to subcritical.
+
+
+

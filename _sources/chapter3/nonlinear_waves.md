@@ -7,7 +7,7 @@ We find a set of soluions which at fixed time provide a complete set of
 functions of space (such as sines and/or cosines) in which any initial 
 condition can represented as a linear combination of these functions. 
 The time evolution  then follows by summing the time-evolved components. 
-This is he essence of solutions to both Maxwell's and Schr\"odinger's 
+This is he essence of solutions to both Maxwell's and Schr&ouml;dinger's 
 equations as well as to the diffusion equation. The result is waves which
 may or may not disperse, with modes of different wavelength having distinct
 phase velocities.
