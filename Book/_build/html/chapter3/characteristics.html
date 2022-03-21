@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Method of Chaacteristics &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>The Method of Characteristics &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="next" title="Shallow water equations 2" href="swe_solutions.html" />
     <link rel="prev" title="The Shallow Water System" href="shallow_water.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -252,7 +252,12 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       The Method of Chaacteristics
+       The Method of Characteristics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="swe_solutions.html">
+       Shallow water equations 2
       </a>
      </li>
     </ul>
@@ -376,7 +381,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Method of Chaacteristics</h1>
+                <h1>The Method of Characteristics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -410,8 +415,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-method-of-chaacteristics">
-<h1>The Method of Chaacteristics<a class="headerlink" href="#the-method-of-chaacteristics" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-method-of-characteristics">
+<h1>The Method of Characteristics<a class="headerlink" href="#the-method-of-characteristics" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
 \[\newcommand{\p}{\partial}\]</div>
 <div class="section" id="introduction">
@@ -460,8 +465,8 @@ This is a case we will discuss.</p></li>
 	\p_t u + a(x,t) \p_x u = b(x,t)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(a,b\)</span> are known. Here we demand</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e60bd0a9-b5f1-4a61-a2a4-694a716ca06f">
-<span class="eqno">(44)<a class="headerlink" href="#equation-e60bd0a9-b5f1-4a61-a2a4-694a716ca06f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5d997c46-d209-4e47-b8e8-dcb8c15a954b">
+<span class="eqno">(44)<a class="headerlink" href="#equation-5d997c46-d209-4e47-b8e8-dcb8c15a954b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_s t = 1\\
 	&amp; &amp; \p_s x = a(x,t)
 \end{align}\]</div>
@@ -482,16 +487,16 @@ Given any initial condition <span class="math notranslate nohighlight">\(v(x,0) 
 <div class="section" id="example-shallow-water-equations">
 <h2>Example: shallow water equations<a class="headerlink" href="#example-shallow-water-equations" title="Permalink to this headline">¶</a></h2>
 <p>Here we return to the SWEs for one hoizontal direction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99520c48-b552-4b43-9c8c-c473914f1980">
-<span class="eqno">(45)<a class="headerlink" href="#equation-99520c48-b552-4b43-9c8c-c473914f1980" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-604b164d-1b5e-43ca-8d48-fe2cfc1de6c3">
+<span class="eqno">(45)<a class="headerlink" href="#equation-604b164d-1b5e-43ca-8d48-fe2cfc1de6c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_t u + u \p_x u = - g \p_x h\\
 	&amp; &amp; \p_t h + \p_x (u h) = 0
 \end{align}\]</div>
 <p>Here we have two equations. In fact we can unpack them by defining
 <span class="math notranslate nohighlight">\(c = \sqrt{g h}\)</span> (for linearized surface gravity waves in the shallow water
 limit, this is the phase velocity), for which the equations can be written</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bcfcb533-d738-47f0-8c8d-94fd5d7e7931">
-<span class="eqno">(46)<a class="headerlink" href="#equation-bcfcb533-d738-47f0-8c8d-94fd5d7e7931" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8073d319-aaaa-4cf0-ba5e-62d567cd4649">
+<span class="eqno">(46)<a class="headerlink" href="#equation-8073d319-aaaa-4cf0-ba5e-62d567cd4649" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_t u + u \p_x u + 2c \p_x c = 0\\
 	&amp; &amp; \p_t (2c) + u \p_x (2c) + c \p_x u = 0
 \end{align}\]</div>
@@ -501,8 +506,8 @@ limit, this is the phase velocity), for which the equations can be written</p>
 	\left[ \p_t + (u \pm c) \p_x \right] (u \pm 2c) = 0
 \]</div>
 <p>For these cases, we have two families of characteristics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc56d901-b1dc-4293-aa68-d74f83b5fc4d">
-<span class="eqno">(47)<a class="headerlink" href="#equation-fc56d901-b1dc-4293-aa68-d74f83b5fc4d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-31a42c98-dd06-4f78-b2de-8de6af4b4d6d">
+<span class="eqno">(47)<a class="headerlink" href="#equation-31a42c98-dd06-4f78-b2de-8de6af4b4d6d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_s t = 1\\
 	&amp; &amp; \p_s x = u \pm c
 \end{align}\]</div>
@@ -544,10 +549,10 @@ specific situations.</p>
             <p class="prev-next-title">The Shallow Water System</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="swe_solutions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Shallow water equations 2</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

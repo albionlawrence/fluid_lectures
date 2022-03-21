@@ -1,4 +1,4 @@
-# The Method of Chaacteristics
+# The Method of Characteristics
 
 ```{math}
 \newcommand{\p}{\partial}
