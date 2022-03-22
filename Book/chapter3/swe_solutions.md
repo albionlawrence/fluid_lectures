@@ -142,7 +142,7 @@ $x = c_0 t$. Thus we have water which remains still to the right of
 $x = c_0 t$, and is distorted between $\half \alpha t^2 < x < c_0 t$.
 Within this distorted region, we expect the characteristics $C_-$ to continue
 (at least close to $x = c_0 t$). For these, $\Gamma_- = u - 2c = - 2 c_0$ still
-holds. We can inser this into the equation $[\p_t + (u + c) \p_x](u + 2c) = 0$
+holds. We can insert this into the equation $[\p_t + (u + c) \p_x](u + 2c) = 0$
 to find:
 
 $$
@@ -166,7 +166,7 @@ $$
 We can invert this to find
 
 $$
-	F(\xi) = \half \left[- c_0 + (c_0^2 - 4\alpha \xi)^{1/2}\right]^{1/2}
+	F(\xi) = \half \left[- c_0 + (c_0^2 - 4\alpha \xi)^{1/2}\right]
 $$
 
 We can now solve for $u$ to find:
@@ -196,16 +196,17 @@ like te barrier is moving upstream, as in our problem,
 
 It is also worth looking more closely at the characteristics in the region
 $t > x/c_0$, where $x = c_0 t$ is the bounding characteristic below which
-$C_{\pn}$ are intersecting straight lines and $c = c_0$, $u = 0$. First,
+$C_{\pm}$ are intersecting straight lines and $c = c_0$, $u = 0$. First,
 the plate itself has the trajectory $x = \half \alpha t^2$, so that 
 above the curve $t = \sqrt{2 x/\alpha}$, there is no fluid. 
 
 Now firs consider the characteristic $C_-$ which cross $x = c_0 t$. Along these
 characteristics, $u - 2 c = - 2 c_0$. Along characteristics $C_+$ emanating
-from the wall trajectory, we have $u + 2c = {\rm constant)$, so that
+from the wall trajectory, we have $u + 2c = {\rm constant}$, so that
 $u, c$ remain constant along any trajectory $C_+$ in this region. At the
 point $C_+$ hits the wall,  $u = d_t x = \alpha t_1$; 
-$u - 2 c = c_0$ along any characteristic $C_+$ so 
+$u - 2 c = - 2 c_0$ along any characteristic $C_-$ which intersects this 
+trajectory, so 
 
 $$ 
 	c = \half u + c_0 = \half \alpha t_1 + c_0
@@ -217,7 +218,7 @@ $$
 	\p_s x = d_t x = (u + c) = c_0 + \frac{3}{2} \alpha t_1
 $$
 
-Finally, setting he initial conditions as $x = \alpha t_1^2$ at $t = t_1$, 
+Finally, setting he initial conditions as $x = \half \alpha t_1^2$ at $t = t_1$, 
 we have
 
 $$
@@ -271,9 +272,9 @@ to that leaing the jump. The mass per unit area upstream is $h_1 \rho$ and
 downstream is $h_2 \rho$, and the mass flux on each side is $U_i h_i \rho$, so
 we demand
 
-$$ 
-	U_1 h_1 = U_2 h_2
-$$
+    $$ 
+	    U_1 h_1 = U_2 h_2
+    $$
 
 2. *Momentum conservation*. We demand that the *flux* of momentum into the jump
 is equal to that out of the jump, that is, that momentum is no lost in the
@@ -284,23 +285,23 @@ Newton's second law ${\dot p} = f$ also tells us that momentum flux
 will get a contirbution from any force acting on the fluid. In this case
 it will be the pressure, which on each side of the jump is
 
-\begin{align}
-	\int_0^{h_i} dy p_i & = \int_0^{h_i} dy \rho g (h_i - y)\\
-	& = & \rho g h_i^2
-\end{align}
+    \begin{align}
+	    \int_0^{h_i} dy p_i & = \int_0^{h_i} dy \rho g (h_i - y)\\
+	    & = & \rho g h_i^2
+    \end{align}
 
-Combining these, and factoring out the common factor of $\rho$, we have
+    Combining these, and factoring out the common factor of $\rho$, we have
 
-$$
-	\half g h_1^2 + h_1 U_1^2 = \half g h_2 + h_2 U_2^2
-$$
+    $$
+	    \half g h_1^2 + h_1 U_1^2 = \half g h_2 + h_2 U_2^2
+    $$
 
 3. *Energy should be dissipated*. As you are asked to show in problem (3.20),
 the rate of energy loss hrough the jump is
 
-$$
-	{\dot E} = \frac{\rho g U_1 (h_2 - h_1)^3}{h_2}
-$$
+    $$
+	    {\dot E} = \frac{\rho g U_1 (h_2 - h_1)^3}{h_2}
+    $$
 
 From these equations we can quickly deduce a few aspects of the flow.
 First, the demand that the energy dissipation be positive means
@@ -308,7 +309,7 @@ that $h_2 > h_1$, si that the system jumps upwards.
 
 Secondly, the Froude numbers upstream of and downstream from 
 the jump can be written entirely in terms of $h_i$, using
-mass an momentum conservation:
+mass and momentum conservation:
 
 \begin{align}
 	Fr_1 & = & \frac{U_1}{\sqrt{g h_1}} = 
