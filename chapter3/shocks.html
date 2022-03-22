@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -354,6 +356,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-homentropic-flow">
+   1d homentropic flow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moving-piston">
+   Moving piston
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matching-solutions-across-shock-fronts">
+   Matching solutions across shock fronts
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -366,6 +391,29 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-homentropic-flow">
+   1d homentropic flow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moving-piston">
+   Moving piston
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matching-solutions-across-shock-fronts">
+   Matching solutions across shock fronts
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -374,6 +422,143 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="shock-waves-in-gas-dynamics">
 <h1>Shock waves in gas dynamics<a class="headerlink" href="#shock-waves-in-gas-dynamics" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\half}{\frac{1}{2}}
+\newcommand{\p}{\partial}\]</div>
+<div class="section" id="d-homentropic-flow">
+<h2>1d homentropic flow<a class="headerlink" href="#d-homentropic-flow" title="Permalink to this headline">¶</a></h2>
+<p>We start with the momentum equation and the equations for
+mass conservation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e6d250a0-2fab-48b7-be32-67cac35dde98">
+<span class="eqno">(52)<a class="headerlink" href="#equation-e6d250a0-2fab-48b7-be32-67cac35dde98" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; &amp; \p_t u + u \p_x u = - \frac{1}{\rho} \p_x p\\
+	&amp; &amp; \p_t \rho + \p_x (\rho u) = 0
+\end{align}\]</div>
+<p>We also assume that the gas is <em>homentropic</em>: that is, that the entropy
+takes the form <span class="math notranslate nohighlight">\(S = \ln p/\rho^{|gamma} \equiv \ln c\)</span> is not just
+conserved for each fluid element (as in (3.57) of Acheson), but constant
+throughout the flow. We will now solve Acheson problem 3.22 to find
+equations for the 1d homentropic gas which are more suitable for analysis
+via the method of characteristics.</p>
+<p>Letting <span class="math notranslate nohighlight">\(p = c \rho^{\gamma}\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t u + u \p_x u = - c \gamma \rho^{\gamma - 2} \p_x \rho
+\]</div>
+<p>Now let <span class="math notranslate nohighlight">\(a^2 = \gamma p/\rho = \gamma c \rho^{\gamma - 1}\)</span> be the speed of sound
+for small fluctuations about <span class="math notranslate nohighlight">\(u = 0\)</span> and <span class="math notranslate nohighlight">\(p, \rho\)</span> the background pressure and
+density. Following the shallow water equation analysis, we will recast
+our equations in tems of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>Taking the derivative of the definition of <span class="math notranslate nohighlight">\(a^2\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	a \p_x a = \half \gamma c (\gamma - 1) \rho^{\gamma - 2} \p_x \rho
+\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight" id="equation-finalme">
+<span class="eqno">(53)<a class="headerlink" href="#equation-finalme" title="Permalink to this equation">¶</a></span>\[\p_t u + u \p_x u +  \frac{2}{\gamma - 1} a \p_x a = 0\]</div>
+<p>Next, we recast the mass conservation equation as</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t \rho + u \p_x \rho + \rho \p_x u = 0
+\]</div>
+<p>By the same arguemnt as above,</p>
+<div class="math notranslate nohighlight">
+\[
+	a \p_t a = \half \gamma c (\gamma - 1) \rho^{\gamma - 2} \p_t \rho
+\]</div>
+<p>Multiplying the mass conservation equation by
+<span class="math notranslate nohighlight">\(\frac{\gamma c}{a} \rho^{\gamma - 2}\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{2}{\gamma - 1} (\p_t a + u \p_x a) + a \p_x u = 0
+\]</div>
+<p>Finally, adding and subtracting this form of the mass conservation equation
+from <a class="reference internal" href="#equation-finalme">(53)</a>, we get the equations</p>
+<div class="math notranslate nohighlight" id="equation-swe-like">
+<span class="eqno">(54)<a class="headerlink" href="#equation-swe-like" title="Permalink to this equation">¶</a></span>\[\begin{split}
+	&amp; &amp; \left( \p_t + (u + c) \p_x\right) (u + \frac{2}{\gamma - 1} a)\\
+	&amp; &amp; \left( \p_t + (u - c) \p_x\right) (u - \frac{2}{\gamma - 1} a)
+\end{split}\]</div>
+<p>You may realize at this point that these equations are very close to tose
+for the shallow water equations with <span class="math notranslate nohighlight">\(c \to a\)</span>, except for the factor
+of <span class="math notranslate nohighlight">\(\gamma - 1\)</span> in the denominators of the right hand side.</p>
+</div>
+<div class="section" id="moving-piston">
+<h2>Moving piston<a class="headerlink" href="#moving-piston" title="Permalink to this headline">¶</a></h2>
+<p>Now we can consider an analog of the todal bore problem, a piston moving
+with velocity <span class="math notranslate nohighlight">\(U = \alpha t\)</span> into a gas that has initial sound speed <span class="math notranslate nohighlight">\(a_0\)</span>
+and initial velocity <span class="math notranslate nohighlight">\(u = 0\)</span>. We can follow the discussion of the SWEs,
+defining characteristic failies</p>
+<div class="math notranslate nohighlight">
+\[
+	C_{\pm}:\ \p_s t(s) = 1\ , \ \ \p_s x(s) = u \pm a
+\]</div>
+<p>with associated Riemann invariants</p>
+<div class="math notranslate nohighlight">
+\[
+	\Gamma_{\pm} = u \pm \frac{2}{\gamma - 1} a
+\]</div>
+<p>Once again, for <span class="math notranslate nohighlight">\(t &lt; 0\)</span>, <span class="math notranslate nohighlight">\(u = 0, a = a_0\)</span>,
+<span class="math notranslate nohighlight">\(\Gamma_{\pm} = \pm  \frac{2}{\gamma - 1} a_0\)</span>, and the characteristics are</p>
+<div class="math notranslate nohighlight">
+\[
+	C_{\pm}:\ t = s\ ; \ \ d_t x = \pm a_0
+\]</div>
+<p>so characteristics are straight lines. As we continue to positive <span class="math notranslate nohighlight">\(t\)</span>, this
+story continues until the <span class="math notranslate nohighlight">\(C_-\)</span> geodesics hit the line <span class="math notranslate nohighlight">\(x = a_0 t\)</span>. Finally,
+we can continue the <span class="math notranslate nohighlight">\(C_-\)</span> geodesics past this point to the piston boundary at
+<span class="math notranslate nohighlight">\(x = \half \alpha t^2\)</span>. In this region the Riemann invariant <span class="math notranslate nohighlight">\(\Gamma_-\)</span>
+is still</p>
+<div class="math notranslate nohighlight">
+\[
+	u - \frac{2}{\gamma - 1}a = - \frac{2}{\gamma - 1} a_0
+\]</div>
+<p>we can use this to solve for <span class="math notranslate nohighlight">\(a\)</span> and apply the solution to the first equation
+in <a class="reference internal" href="#equation-swe-like">(54)</a> to get:</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_t u + \left(\half(\gamma+1) u + a_0\right) \p_x u = 0
+\]</div>
+<p>Defining <span class="math notranslate nohighlight">\(z = (\half(gamma+1) u + a_0\)</span> we once again find
+<span class="math notranslate nohighlight">\(\p_t z + z \p_x z = 0\)</span>. In analogy to teh shallow water equations,</p>
+<div class="math notranslate nohighlight">
+\[
+	u = F(x - (\half(\gamma + 1)u + a_0)t)
+\]</div>
+<p>At time <span class="math notranslate nohighlight">\(t = 2 a_0/((\gamma + 1)\alpha)\)</span> the solutions become singular;
+in this case the resulting singularity is called a <em>shock</em>.</p>
+</div>
+<div class="section" id="matching-solutions-across-shock-fronts">
+<h2>Matching solutions across shock fronts<a class="headerlink" href="#matching-solutions-across-shock-fronts" title="Permalink to this headline">¶</a></h2>
+<p>As in the case of the hydraulic jump, while we may not be able to describe
+the shock itself without a fuller microscopic description, we can
+constrain the flow on both sides of the shock. Here we demand not only
+conservation of mass and momentum flux, but conservation of energy flux.
+This last is distinct from the hydraulic jump case, in which we assume
+the region at the jump can dissipate energy. The result are the
+<em>Rankine-Hugoniot equations</em>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	&amp; &amp; \rho_1 u_1 = \rho_2 u_2\\
+	&amp; &amp; p_1 + \rho_1 u_1^2 = p_2 + \rho_2 u_2^2\\
+	&amp; &amp; \half u_1^2 + \frac{1}{\gamma - 1} a_1^2 = \half u_2^2 + 
+	\frac{1}{\gamma - 1} a_2^2
+\end{split}\]</div>
+<p>Finally, we demand that the entropy <span class="math notranslate nohighlight">\(S = \ln p\rho^{-\gamma}\)</span> should increase
+as fluid flows across the shock, so that</p>
+<div class="math notranslate nohighlight">
+\[
+	p_2 \rho_2^{-\gamma} \geq p_1 \rho_1^{-\gamma}
+\]</div>
+<p>In this case the Froude number (the ration of the fluid velocity to the
+velociy of surface waves in the shallow water limit) is replaced by the Mach
+number <span class="math notranslate nohighlight">\(M_i = u_i/a_i\)</span>. In the present case, some work leads to</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M_1 &gt; 1\)</span>, <span class="math notranslate nohighlight">\(M_2 &lt; 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p_2 &gt; p_1\)</span>, <span class="math notranslate nohighlight">\(\rho_2 &gt; \rho_1\)</span>.</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
