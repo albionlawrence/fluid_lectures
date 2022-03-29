@@ -36,4 +36,7 @@ chapters:
     - file: chapter3/characteristics
     - file: chapter3/swe_solutions
     - file: chapter3/shocks
+- file: chapter4/viscous_flows
+  sections:
+  - file: chapter4/stokes_drag
 - file: bibliography

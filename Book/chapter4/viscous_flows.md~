@@ -1,0 +1,8 @@
+# Flows at low Reynolds number
+
+In our discussion of wave motion we have been focusing on the inviscid limit
+of the fluid equations. There is much more to say about this limit, which is
+important for many "real-world" ("real-universe?") applications. 
+
+To fill out our picture of the range of fluid motion, we will spend osme time
+considering flows with extremely *low* viscosity.

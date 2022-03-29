@@ -1,0 +1,51 @@
+# Stokes Drag
+
+```{math}
+\newcommand{\p}{\partial}
+```
+
+## Introduction: 
+
+A feature of low-viscosity flow past an object is that the drag is
+*linea* in the velocity of te object (or of the flow past a stationary object).
+This is already apparent in dimensional analysis; to get a force per unit
+mass due to the flow, we need a quantity with dimensions of $m/s^2$.
+Now, balancing the pressure term against the viscosity, 
+
+
+$$
+	\frac{{\vec\nabla p}}{\rho} = \nu \nabla^2 {\vec u}
+$$
+
+and using the dimensionalization we found last time, we deduce
+that $p \sim \rho \nu U/R$. This is the pressure per unit area, so the
+force on our object is of order $p R^2 \sim \rho\nu U R \equiv \nu U R$.
+
+We will verify this explicitly in a moment for the sphere, but we can first
+note that the drag force is linear in the velocity. Thus, to maintain
+a constant velociy we must apply a constant force. The resulting dynamics
+is sometimes called *Aristotelian*.
+
+## Flow past a sphere
+
+Next we consider a sphere of radius $R$, centered at the origin, in
+an incompressible fluid whose velocity asymptotes to a constant 
+value ${\vec u} = U {\hat x}$  far from the sphere, and whose pressure 
+asumptotes to a constant value $p_0$.
+
+We write the flow in spherical coordinates $(r,\theta,\phi)$ for which
+$r$ is the distance from the center of the sphere; $\theta$ the angle 
+from the $x$ axis, and $\phi$ the azimuthal angle away from the $y$ axis 
+in the $y-z$ plane. The oncoming flow as wll as he sphere is clearly
+independent of $\phi$, and there is no force that would induce
+motion in this direction so that we can write the velocity as
+
+$$
+	{\vec u} = u_r(r,\theta) {\hat r} + u_{\theta}(r,\theta){\hat \theta}
+$$
+
+Incompressibility menas that
+
+$$
+	{\vec\nabla}\cdot
+

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shock waves in gas dynamics &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Stokes Drag &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bibliography" href="../bibliography.html" />
-    <link rel="prev" title="Shallow water equations 2" href="swe_solutions.html" />
+    <link rel="prev" title="Flows at low Reynolds number" href="viscous_flows.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -188,18 +188,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Waves.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter3/Waves.html">
    Waves in fluids
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="linear_waves.html">
+    <a class="reference internal" href="../chapter3/linear_waves.html">
      Linear waves
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -209,63 +209,80 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="surface_waves.html">
+      <a class="reference internal" href="../chapter3/surface_waves.html">
        Surface waves
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="surface_gravity_waves.html">
+      <a class="reference internal" href="../chapter3/surface_gravity_waves.html">
        Surface Gravity Waves
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="capillary_waves.html">
+      <a class="reference internal" href="../chapter3/capillary_waves.html">
        Capillary waves
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="igw.html">
+      <a class="reference internal" href="../chapter3/igw.html">
        Internal gravity waves
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="compressible_flows.html">
+      <a class="reference internal" href="../chapter3/compressible_flows.html">
        Compressible flows: linear theory
       </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="nonlinear_waves.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../chapter3/nonlinear_waves.html">
      Nonlinear waves
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="shallow_water.html">
+      <a class="reference internal" href="../chapter3/shallow_water.html">
        The Shallow Water System
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="characteristics.html">
+      <a class="reference internal" href="../chapter3/characteristics.html">
        The Method of Characteristics
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="swe_solutions.html">
+      <a class="reference internal" href="../chapter3/swe_solutions.html">
        Shallow water equations 2
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../chapter3/shocks.html">
        Shock waves in gas dynamics
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Stokes Drag
+    </a>
    </li>
   </ul>
  </li>
@@ -315,7 +332,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter3/shocks.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter4/stokes_drag.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -335,7 +352,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3/shocks.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/stokes_drag.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -362,18 +379,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-homentropic-flow">
-   1d homentropic flow
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#moving-piston">
-   Moving piston
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matching-solutions-across-shock-fronts">
-   Matching solutions across shock fronts
+  <a class="reference internal nav-link" href="#flow-past-a-sphere">
+   Flow past a sphere
   </a>
  </li>
 </ul>
@@ -386,7 +398,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Shock waves in gas dynamics</h1>
+                <h1>Stokes Drag</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -397,18 +409,13 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-homentropic-flow">
-   1d homentropic flow
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#moving-piston">
-   Moving piston
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matching-solutions-across-shock-fronts">
-   Matching solutions across shock fronts
+  <a class="reference internal nav-link" href="#flow-past-a-sphere">
+   Flow past a sphere
   </a>
  </li>
 </ul>
@@ -420,146 +427,154 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="shock-waves-in-gas-dynamics">
-<h1>Shock waves in gas dynamics<a class="headerlink" href="#shock-waves-in-gas-dynamics" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="stokes-drag">
+<h1>Stokes Drag<a class="headerlink" href="#stokes-drag" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
-\[\newcommand{\half}{\frac{1}{2}}
-\newcommand{\p}{\partial}\]</div>
-<div class="section" id="d-homentropic-flow">
-<h2>1d homentropic flow<a class="headerlink" href="#d-homentropic-flow" title="Permalink to this headline">¶</a></h2>
-<p>We start with the momentum equation and the equations for
-mass conservation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5453ff3f-61c4-4022-9c76-8eb6051e5100">
-<span class="eqno">(52)<a class="headerlink" href="#equation-5453ff3f-61c4-4022-9c76-8eb6051e5100" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; &amp; \p_t u + u \p_x u = - \frac{1}{\rho} \p_x p\\
-	&amp; &amp; \p_t \rho + \p_x (\rho u) = 0
+\[\newcommand{\p}{\partial}
+\newcommand{\half}{\frac{1}{2}}\]</div>
+<div class="section" id="introduction">
+<h2>Introduction:<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>A feature of low-viscosity flow past an object is that the drag is
+<em>linea</em> in the velocity of te object (or of the flow past a stationary object).
+This is already apparent in dimensional analysis; to get a force per unit
+mass due to the flow, we need a quantity with dimensions of <span class="math notranslate nohighlight">\(m/s^2\)</span>.
+Now, balancing the pressure term against the viscosity,</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{{\vec\nabla p}}{\rho} = \nu \nabla^2 {\vec u}
+\]</div>
+<p>and using the dimensionalization we found last time, we deduce
+that <span class="math notranslate nohighlight">\(p \sim \rho \nu U/R\)</span>. This is the pressure per unit area, so the
+force on our object is of order <span class="math notranslate nohighlight">\(p R^2 \sim \rho\nu U R \equiv \nu U R\)</span>.</p>
+<p>We will verify this explicitly in a moment for the sphere, but we can first
+note that the drag force is linear in the velocity. Thus, to maintain
+a constant velociy we must apply a constant force. The resulting dynamics
+is sometimes called <em>Aristotelian</em>.</p>
+</div>
+<div class="section" id="flow-past-a-sphere">
+<h2>Flow past a sphere<a class="headerlink" href="#flow-past-a-sphere" title="Permalink to this headline">¶</a></h2>
+<p>Next we consider a sphere of radius <span class="math notranslate nohighlight">\(R\)</span>, centered at the origin, in
+an incompressible fluid whose velocity asymptotes to a constant
+value <span class="math notranslate nohighlight">\({\vec u} = U {\hat x}\)</span>  far from the sphere, and whose pressure
+asumptotes to a constant value <span class="math notranslate nohighlight">\(p_0\)</span>.</p>
+<p>We write the flow in spherical coordinates <span class="math notranslate nohighlight">\((r,\theta,\phi)\)</span> for which
+<span class="math notranslate nohighlight">\(r\)</span> is the distance from the center of the sphere; <span class="math notranslate nohighlight">\(\theta\)</span> the angle
+from the <span class="math notranslate nohighlight">\(x\)</span> axis, and <span class="math notranslate nohighlight">\(\phi\)</span> the azimuthal angle away from the <span class="math notranslate nohighlight">\(y\)</span> axis
+in the <span class="math notranslate nohighlight">\(y-z\)</span> plane. The oncoming flow as wll as he sphere is clearly
+independent of <span class="math notranslate nohighlight">\(\phi\)</span>, and there is no force that would induce
+motion in this direction so that we can write the velocity as</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec u} = u_r(r,\theta) {\hat r} + u_{\theta}(r,\theta){\hat \theta}
+\]</div>
+<p>Incompressibility meass that</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec\nabla}\cdot{\vec u} = \frac{1}{r^2} \p_r (r^2 u_r) + 
+	\frac{1}{r\sin\theta} \p_{\theta} (\sin\theta u_{\theta}) = 0
+\]</div>
+<p>Multiplying through by <span class="math notranslate nohighlight">\(r^2\sin\theta\)</span> we can rewrite this as:</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_r (r^2 \sin\theta u_r) + \p_{\theta} (r \sin\theta u_{\theta})
+\]</div>
+<p>If we write <span class="math notranslate nohighlight">\(r^2 \sin\theta u_r = v_r\)</span>,
+<span class="math notranslate nohighlight">\(r\sin\theta u_{\theta} = v_{\theta}\)</span>, then Poincare’s theorem tells
+us that we can write <span class="math notranslate nohighlight">\(\p_r v_r + \p_{\theta} v_{\theta} = 0\)</span>. Using
+Poincaré theorem, we can write <span class="math notranslate nohighlight">\(v_r =  \p_{\theta} \Psi\)</span>,
+<span class="math notranslate nohighlight">\(v_{\theta} = - \p_r \Psi\)</span>, or</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c1a912cf-85df-4b0a-8de9-233e978c5756">
+<span class="eqno">(55)<a class="headerlink" href="#equation-c1a912cf-85df-4b0a-8de9-233e978c5756" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	u_r &amp; = \frac{1}{r^2 \sin\theta} \p_{\theta}\Psi(r,\theta)\\
+	u_{\theta} &amp; =  - \frac{1}{r \sin\theta} \p_{r}\Psi(r,\theta)
 \end{align}\]</div>
-<p>We also assume that the gas is <em>homentropic</em>: that is, that the entropy
-takes the form <span class="math notranslate nohighlight">\(S = \ln p/\rho^{\gamma} \equiv \ln c\)</span> is not just
-conserved for each fluid element (as in (3.57) of Acheson), but constant
-throughout the flow. We will now solve Acheson problem 3.22 to find
-equations for the 1d homentropic gas which are more suitable for analysis
-via the method of characteristics.</p>
-<p>Letting <span class="math notranslate nohighlight">\(p = c \rho^{\gamma}\)</span>, we find</p>
+<p>Now let us return to the “creeping flow equations”. Using (A.9)</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_t u + u \p_x u = - c \gamma \rho^{\gamma - 2} \p_x \rho
+	{\vec\nabla} \times {\vec\nabla} \times {\vec u} = 
+	{\vec \nabla} {\vec\nabla}\cdot{\vec u} - \nabla^2 {\vec u}
 \]</div>
-<p>Now let <span class="math notranslate nohighlight">\(a^2 = \gamma p/\rho = \gamma c \rho^{\gamma - 1}\)</span> be the speed of sound
-for small fluctuations about <span class="math notranslate nohighlight">\(u = 0\)</span> and <span class="math notranslate nohighlight">\(p, \rho\)</span> the background pressure and
-density. Following the shallow water equation analysis, we will recast
-our equations in tems of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<p>Taking the derivative of the definition of <span class="math notranslate nohighlight">\(a^2\)</span>, we find</p>
+<p>combined with incompressibility, we have the equation</p>
 <div class="math notranslate nohighlight">
 \[
-	a \p_x a = \half \gamma c (\gamma - 1) \rho^{\gamma - 2} \p_x \rho
+	{\vec \nabla} p = - \eta {\vec\nabla} \times {\vec\nabla} \times {\vec u}
 \]</div>
-<p>so that</p>
-<div class="math notranslate nohighlight" id="equation-finalme">
-<span class="eqno">(53)<a class="headerlink" href="#equation-finalme" title="Permalink to this equation">¶</a></span>\[\p_t u + u \p_x u +  \frac{2}{\gamma - 1} a \p_x a = 0\]</div>
-<p>Next, we recast the mass conservation equation as</p>
+<p>where <span class="math notranslate nohighlight">\(\eta = \rho \nu\)</span> is the shear viscosity. Next, we can use (A.40)
+of the text to write</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cd570f5d-508a-404d-bce2-d85e167a2a43">
+<span class="eqno">(56)<a class="headerlink" href="#equation-cd570f5d-508a-404d-bce2-d85e167a2a43" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	 {\vec\nabla} \times {\vec u} &amp; = \frac{1}{r}
+		 (\p_r (r u_{\theta}) - \p_{\theta} u_r)  {\hat\phi}\\
+		 &amp; = 
+		 \left( - \frac{1}{r\sin\theta} \p_r^2 \Psi
+		 - \frac{1}{r} \p_{\theta} \frac{1}{r^2\sin\theta} \p_{\theta} \Psi\right) 
+		 {\hat\phi}\\
+		 &amp; = - \frac{1}{r\sin\theta} \left( \p_r^2 \Psi + 
+		 \frac{\sin\theta}{r^2} \p_{\theta}\frac{1}{\sin\theta}
+		 \p_{\theta}\Psi\right) {\hat\phi}
+\end{align}\]</div>
+<p>Taking the curl again, we have</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_t \rho + u \p_x \rho + \rho \p_x u = 0
+	{\vec\nabla} p = \frac{\mu {\hat r} }{r^2\sin\theta} \p_{\theta} ( \p_r^2 \Psi +  
+	\frac{\sin\theta}{r^2} \p_{\theta}\frac{1}{\sin\theta} \p_{\theta}\Psi)
+	- \frac{\mu {\hat \theta}}{r\sin\theta} \p_r  ( \p_r^2 \Psi +  
+	\frac{\sin\theta}{r^2} \p_{\theta}\frac{1}{\sin\theta} \p_{\theta}\Psi)
 \]</div>
-<p>By the same arguemnt as above,</p>
+<p>Now define</p>
 <div class="math notranslate nohighlight">
 \[
-	a \p_t a = \half \gamma c (\gamma - 1) \rho^{\gamma - 2} \p_t \rho
+	D^2 \equiv \p_r^2 + \sin\theta\p_{\theta}\frac{1}{\sin\theta} \p_{\theta}
 \]</div>
-<p>Multiplying the mass conservation equation by
-<span class="math notranslate nohighlight">\(\frac{\gamma c}{a} \rho^{\gamma - 2}\)</span>, we find</p>
+<p>and we have</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b62c0312-09d6-45ea-b221-043361b949ab">
+<span class="eqno">(57)<a class="headerlink" href="#equation-b62c0312-09d6-45ea-b221-043361b949ab" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	\p_r p &amp; = \frac{\mu}{r^2 \sin\theta} \p_{\theta} D^2 \Psi\\
+	\frac{1}{r} \p_{\theta} p &amp; = - \frac{\mu}{r\sin\theta} \p_r D^2 \Psi
+\end{align}\]</div>
+<p>Now multiply the second line by <span class="math notranslate nohighlight">\(r\)</span>, take %\p_{\theta} of the first line and
+subtract <span class="math notranslate nohighlight">\(\p_r\)</span> of he second line, multiply everything by <span class="math notranslate nohighlight">\(\sin\theta\)</span>, and we
+find <span class="math notranslate nohighlight">\((D^2)^2 \Psi = 0\)</span>.</p>
+<p>The next goal is to solve this. We first look for a solution as <span class="math notranslate nohighlight">\(r \to \infty\)</span>.
+<span class="math notranslate nohighlight">\({\vec u} \to  U {\hat x}\)</span> means in spherical coordinates <span class="math notranslate nohighlight">\(u_r \to U \cos\theta\)</span>,
+<span class="math notranslate nohighlight">\(u_{\theta} \to - U \sin\theta\)</span>. We can plug this into the equations defining <span class="math notranslate nohighlight">\(\Psi\)</span>.
+Using <span class="math notranslate nohighlight">\(\p_{\theta} \Psi = r^2 \sin\theta u_r = r^2 U \sin\theta\cos\theta\)</span>, which
+can be solved by taking <span class="math notranslate nohighlight">\(\Psi = \half r^2 U \sin^2\theta\)</span>, which yields the correct
+expression for <span class="math notranslate nohighlight">\(u_{\theta}\)</span> as well.</p>
+<p>Based on this, and the fact that the object in the center is spherically symmetric, we
+expect no further change to the angular dependence as we appoach the sphere.
+we will assume that <span class="math notranslate nohighlight">\(\Psi = f(r) \sin^2\theta\)</span>, in which case</p>
 <div class="math notranslate nohighlight">
 \[
-	\frac{2}{\gamma - 1} (\p_t a + u \p_x a) + a \p_x u = 0
+	D^4 \Psi = 0 \Rightarrow \left(\p_r^2 - \frac{2}{r^2}\right)^2 f = 0
 \]</div>
-<p>Finally, adding and subtracting this form of the mass conservation equation
-from <a class="reference internal" href="#equation-finalme">(53)</a>, we get the equations</p>
-<div class="math notranslate nohighlight" id="equation-swe-like">
-<span class="eqno">(54)<a class="headerlink" href="#equation-swe-like" title="Permalink to this equation">¶</a></span>\[\begin{split}
-	&amp; &amp; \left( \p_t + (u + c) \p_x\right) (u + \frac{2}{\gamma - 1} a)\\
-	&amp; &amp; \left( \p_t + (u - c) \p_x\right) (u - \frac{2}{\gamma - 1} a)
-\end{split}\]</div>
-<p>You may realize at this point that these equations are very close to tose
-for the shallow water equations with <span class="math notranslate nohighlight">\(c \to a\)</span>, except for the factor
-of <span class="math notranslate nohighlight">\(\gamma - 1\)</span> in the denominators of the right hand side.</p>
-</div>
-<div class="section" id="moving-piston">
-<h2>Moving piston<a class="headerlink" href="#moving-piston" title="Permalink to this headline">¶</a></h2>
-<p>Now we can consider an analog of the todal bore problem, a piston moving
-with velocity <span class="math notranslate nohighlight">\(U = \alpha t\)</span> into a gas that has initial sound speed <span class="math notranslate nohighlight">\(a_0\)</span>
-and initial velocity <span class="math notranslate nohighlight">\(u = 0\)</span>. We can follow the discussion of the SWEs,
-defining characteristic failies</p>
+<p>We can search for solutions of power law type by setting <span class="math notranslate nohighlight">\(f = r^n\)</span>. Inserting this
+into te above gives us</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c31fcdac-d6bd-4c53-8921-f146d0e9b096">
+<span class="eqno">(58)<a class="headerlink" href="#equation-c31fcdac-d6bd-4c53-8921-f146d0e9b096" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	 \left(\p_r^2 - \frac{2}{r^2}\right)^2 r^n &amp; = 
+	 (n(n - 1) - 2) \left(\p_r^2 - \frac{2}{r^2}\right) r^{n-2} \\
+	 &amp; = (n(n-1) - 2)((n-2)(n-3) - 2)
+\end{align}\]</div>
+<p>This vanishes when either of the quadratic expressions shown vanishes.
+<span class="math notranslate nohighlight">\(n(n-1) - 2 = n^2 - n - 2 = (n - 2)(n+1) = 0\)</span> if <span class="math notranslate nohighlight">\(n = 2, -1\)</span>. Similarly,
+<span class="math notranslate nohighlight">\((n-2)(n-3) - 2 = n^2 - 5 n + 4 = (n-4)(n-1) = 0\)</span> of <span class="math notranslate nohighlight">\(n = 1,4\)</span>. Thus,
+the general solution is</p>
 <div class="math notranslate nohighlight">
 \[
-	C_{\pm}:\ \p_s t(s) = 1\ , \ \ \p_s x(s) = u \pm a
+	f(r) = \frac{A}{r} + B r + C r^2 + D r^4
 \]</div>
-<p>with associated Riemann invariants</p>
+<p>To match the behavior at infinity, <span class="math notranslate nohighlight">\(D = 0\)</span>; the dominant part is <span class="math notranslate nohighlight">\(C r^2\)</span>,
+and we have <span class="math notranslate nohighlight">\(\Psi = f \sin^2\theta \Rightarrow \half r^2 U \sin^2\theta\)</span>, so that
+<span class="math notranslate nohighlight">\(c = \half U\)</span>.</p>
+<p>Next, we need to impose the boundary conditions, which amount to <span class="math notranslate nohighlight">\(u_r(R,\theta)
+= u_{\theta}(R,\theta) = 0\)</span>. The condition on <span class="math notranslate nohighlight">\(u_r\)</span> gives <span class="math notranslate nohighlight">\(f(R) = 0\)</span>. The condition
+on <span class="math notranslate nohighlight">\(u_{\theta}\)</span> gives <span class="math notranslate nohighlight">\(f'(R) = 0\)</span>. These are two equations in two unknowns <span class="math notranslate nohighlight">\(A,B\)</span> and
+the full solution becomes</p>
 <div class="math notranslate nohighlight">
 \[
-	\Gamma_{\pm} = u \pm \frac{2}{\gamma - 1} a
+	\Psi = \frac{1}{4} U \left(2 r^2 + \frac{R^2}{r} - 3 R r\right)\sin^2\theta
 \]</div>
-<p>Once again, for <span class="math notranslate nohighlight">\(t &lt; 0\)</span>, <span class="math notranslate nohighlight">\(u = 0, a = a_0\)</span>,
-<span class="math notranslate nohighlight">\(\Gamma_{\pm} = \pm  \frac{2}{\gamma - 1} a_0\)</span>, and the characteristics are</p>
-<div class="math notranslate nohighlight">
-\[
-	C_{\pm}:\ t = s\ ; \ \ d_t x = \pm a_0
-\]</div>
-<p>so characteristics are straight lines. As we continue to positive <span class="math notranslate nohighlight">\(t\)</span>, this
-story continues until the <span class="math notranslate nohighlight">\(C_-\)</span> geodesics hit the line <span class="math notranslate nohighlight">\(x = a_0 t\)</span>. Finally,
-we can continue the <span class="math notranslate nohighlight">\(C_-\)</span> geodesics past this point to the piston boundary at
-<span class="math notranslate nohighlight">\(x = \half \alpha t^2\)</span>. In this region the Riemann invariant <span class="math notranslate nohighlight">\(\Gamma_-\)</span>
-is still</p>
-<div class="math notranslate nohighlight">
-\[
-	u - \frac{2}{\gamma - 1}a = - \frac{2}{\gamma - 1} a_0
-\]</div>
-<p>we can use this to solve for <span class="math notranslate nohighlight">\(a\)</span> and apply the solution to the first equation
-in <a class="reference internal" href="#equation-swe-like">(54)</a> to get:</p>
-<div class="math notranslate nohighlight">
-\[
-	\p_t u + \left(\half(\gamma+1) u + a_0\right) \p_x u = 0
-\]</div>
-<p>Defining <span class="math notranslate nohighlight">\(z = (\half(\gamma+1) u + a_0\)</span> we once again find
-<span class="math notranslate nohighlight">\(\p_t z + z \p_x z = 0\)</span>. In analogy to teh shallow water equations,</p>
-<div class="math notranslate nohighlight">
-\[
-	u = F(x - (\half(\gamma + 1)u + a_0)t)
-\]</div>
-<p>At time <span class="math notranslate nohighlight">\(t = 2 a_0/((\gamma + 1)\alpha)\)</span> the solutions become singular;
-in this case the resulting singularity is called a <em>shock</em>.</p>
-</div>
-<div class="section" id="matching-solutions-across-shock-fronts">
-<h2>Matching solutions across shock fronts<a class="headerlink" href="#matching-solutions-across-shock-fronts" title="Permalink to this headline">¶</a></h2>
-<p>As in the case of the hydraulic jump, while we may not be able to describe
-the shock itself without a fuller microscopic description, we can
-constrain the flow on both sides of the shock. Here we demand not only
-conservation of mass and momentum flux, but conservation of energy flux.
-This last is distinct from the hydraulic jump case, in which we assume
-the region at the jump can dissipate energy. The point here is that the
-shock front is expected to be extremely thin; alhough in practice dissipative
-processes are important inside the shock front, the front is too thin for these processes to deplete energy of fluid moving through it.</p>
-<p>The result are the <em>Rankine-Hugoniot equations</em>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-	&amp; &amp; \rho_1 u_1 = \rho_2 u_2\\
-	&amp; &amp; p_1 + \rho_1 u_1^2 = p_2 + \rho_2 u_2^2\\
-	&amp; &amp; \half u_1^2 + \frac{1}{\gamma - 1} a_1^2 = \half u_2^2 + 
-	\frac{1}{\gamma - 1} a_2^2
-\end{split}\]</div>
-<p>Finally, we demand that the entropy <span class="math notranslate nohighlight">\(S = \ln p\rho^{-\gamma}\)</span> should increase
-as fluid flows across the shock, so that</p>
-<div class="math notranslate nohighlight">
-\[
-	p_2 \rho_2^{-\gamma} \geq p_1 \rho_1^{-\gamma}
-\]</div>
-<p>In this case the Froude number (the ration of the fluid velocity to the
-velociy of surface waves in the shallow water limit) is replaced by the Mach
-number <span class="math notranslate nohighlight">\(M_i = u_i/a_i\)</span>. In the present case, some work leads to</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(M_1 &gt; 1\)</span>, <span class="math notranslate nohighlight">\(M_2 &lt; 1\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(p_2 &gt; p_1\)</span>, <span class="math notranslate nohighlight">\(\rho_2 &gt; \rho_1\)</span>.</p></li>
-</ul>
 </div>
 </div>
 
@@ -576,7 +591,7 @@ number <span class="math notranslate nohighlight">\(M_i = u_i/a_i\)</span>. In t
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapter3"
+            path: "./chapter4"
         },
         predefinedOutput: true
     }
@@ -588,11 +603,11 @@ number <span class="math notranslate nohighlight">\(M_i = u_i/a_i\)</span>. In t
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="swe_solutions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="viscous_flows.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Shallow water equations 2</p>
+            <p class="prev-next-title">Flows at low Reynolds number</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
