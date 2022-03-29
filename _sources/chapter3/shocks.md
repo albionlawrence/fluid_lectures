@@ -16,7 +16,7 @@ mass conservation:
 \end{align}
 
 We also assume that the gas is *homentropic*: that is, that the entropy
-takes the form $S = \ln p/\rho^{|gamma} \equiv \ln c$ is not just 
+takes the form $S = \ln p/\rho^{\gamma} \equiv \ln c$ is not just 
 conserved for each fluid element (as in (3.57) of Acheson), but constant 
 throughout the flow. We will now solve Acheson problem 3.22 to find 
 equations for the 1d homentropic gas which are more suitable for analysis 
@@ -118,7 +118,7 @@ $$
 	\p_t u + \left(\half(\gamma+1) u + a_0\right) \p_x u = 0
 $$
 
-Defining $z = (\half(gamma+1) u + a_0$ we once again find 
+Defining $z = (\half(\gamma+1) u + a_0$ we once again find 
 $\p_t z + z \p_x z = 0$. In analogy to teh shallow water equations,
 
 $$
@@ -135,8 +135,11 @@ the shock itself without a fuller microscopic description, we can
 constrain the flow on both sides of the shock. Here we demand not only
 conservation of mass and momentum flux, but conservation of energy flux.
 This last is distinct from the hydraulic jump case, in which we assume
-the region at the jump can dissipate energy. The result are the 
-*Rankine-Hugoniot equations*:
+the region at the jump can dissipate energy. The point here is that the
+shock front is expected to be extremely thin; alhough in practice dissipative
+processes are important inside the shock front, the front is too thin for these processes to deplete energy of fluid moving through it.
+
+The result are the *Rankine-Hugoniot equations*:
 
 $$
 	& & \rho_1 u_1 = \rho_2 u_2\\
