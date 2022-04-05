@@ -1,0 +1,164 @@
+# Corner eddies
+
+```{math}
+\newcommand{\p}{\partial}
+```
+
+Next we want to describe a behavior of creeping flow that occurs when one 
+encounters a (concave) corner; below some threshold angle, eddies start 
+to appear. Mathematically, there are an infinite family of increasingly
+smaller nested eddies as one approaches the corner; of couse, physically 
+these will of course get cut off by microphysics, and at any rate the eddies
+rapidly become too small to be observed.
+
+## Setup: the vorticity equations
+
+We consider 2-dimensional creeping flow inside a wedge open at some angle 
+$2 \alpha$, symmetric about $\theta = 0$ in the $r-\theta$ plane. We leave
+aside what is driving the flow -- in one experiment, 
+it is a rotating cylinder just outside of the wedge -- and assume the wedge
+extends out to infinity. Thus the equations are
+
+$$
+	& - \frac{1}{\rho} \p_r p + \nu \nabla^2 u = 0 \\
+	& {\vec\nabla}\cdot{\vec u} = 0\\
+	& u_r \Big|_{\theta = \pm \alpha} = 0\\
+	& u_{\theta} \Big|_{\theta = \pm \alpha} = 0
+$$
+
+Because we are working in two dimensions, the incompressibility condition
+in a simply connected domain means that we can write, in Cartesian 
+coordinates, the velocity in terms of the *stream function* $\psi$:
+
+$$
+	& u_x = \p_y \psi\\
+	& u_y = - \p_x \psi
+$$
+	
+In polar coordinates we can write:
+
+$$
+	& u_r = \frac{1}{r} \p_{\theta} \psi\\
+	& u_{\theta} = - \p_r \psi
+$$
+
+The vorticity in two dimensions is defined as
+
+$$
+	\omega = \p_x u_y - \p_y u_x = - \nabla^2 \psi
+$$
+
+If we imagined this fluid was trapped on the $x-y$ plane, we wold have
+${\vec\nabla} \times {\vec u} = -\nabla^2 \psi\ {\hat z}$. 
+
+We can eliminate the pressure in this case by taking the curl of
+the creeping flow equations to find:
+
+$$
+	- \nu \nabla^2 \nabla^2 \psi & = - \nu \left(\frac{1}{r}\frac{\p}{\p r}\left(r\frac{\p}{\p r}\right) + \frac{1}{r^2}\frac{\p^2}{\p\theta^2}\right)^2 \psi\\
+	& = -\nu \left(\frac{\p^2}{\p r^2} + \frac{1}{r}\frac{\p}{\p r} + \frac{1}{r^2}\frac{\p^2}{\p\theta^2}\right)^2 \psi = 0
+$$
+
+So now we have one scalar equation for $\psi$.
+
+## General Solution
+
+Since every term in this equation scales the same under rescalings of $r$,
+we will consider solutions of the form $\psi = r^{\ell} f(\theta)$. This
+is a guess, it makes sense because in the equation above, every term will be 
+proportional to $r^{\ell - 4}$. Plugging this in and dropping the $-\nu$
+prefactor, we find:
+
+$$
+	\left((\ell - 2)^2 + \p_{\theta}^2\right)\left(\ell^2 + \p_{\theta}^2\right) f(\theta) r^{\ell - 4}
+$$
+
+This means that either $(\ell^2 + \p_{\theta}^2)f = 0$ or 
+$((\ell - 2)^2 + \p_{\theta}^2) f = 0$, so we have the following general
+solution for fixed $\ell$:
+
+$$
+	\psi = r^{\ell} \left(A \cos\ell\theta + B \sin\ell\theta
+	+ C \cos (\ell - 2)\theta + D \sin(\ell - 2)\theta\right)
+$$
+
+Here we have four unknowns, reflecting the fact that we have set up a
+fourth order differential equation. Two of them will be fixed by
+the two boundary conditions. We will fix two more by considering 
+flows in which $u_r$ changes sign under $\theta \to - \theta$, which 
+eliminates the sine terms (recall $u_r = - \frac{1}{r} \p_{\theta} \psi$.)
+The other solutions will involve inflow or outflow from the corner.
+Thus we set $B = D = 0$. Finally, we demand $u_r = u_{\theta} = 0$ at
+$\theta = \pm \alpha$, which translates to:
+
+$$
+	& u_r = - \frac{1}{r} \p_{\theta} \psi\Big|_{\theta = \pm\alpha} = \pm r^{\ell}
+	\left(A \ell \sin \ell \alpha + 
+	C (\ell - 2) \sin (\ell - 2) \alpha\right) = 0\\
+	& u_{\theta}\Big|_{\theta = \pm\alpha} = - \frac{\p}{\p r} \psi = \ell r^{\ell -1}
+		\left(A \cos \ell \alpha + C \cos(\ell - 2)\alpha\right) = 0
+$$
+
+Moving the terms proportional to $C$ to the othe side of the equation,
+and then dividing one equation by the other, we find:
+
+$$
+	\ell \tan\ell \alpha = (\ell - 2) \tan (\ell - 2) \alpha
+$$
+
+Next, we combine half angle formulae:
+
+$$
+	\tan x = \frac{\sin 2x}{1 + \cos 2x} = \frac{1 - \cos 2x}{\sin 2x}
+$$
+
+with addition formulae 
+
+$$
+	\cos(2(\ell - 2)\alpha) & = \cos (2(\ell - 1)\alpha - 2\alpha)
+	= \cos 2(\ell - 1)\alpha \cos 2\alpha + 
+	 \sin 2(\ell - 1)\alpha \sin 2\alpha\\
+	\sin(2(\ell - 2)\alpha) & =  \sin (2(\ell - 1)\alpha - 2\alpha)
+	=  \sin 2(\ell - 1)\alpha \cos 2\alpha -
+	 \cos 2(\ell - 1)\alpha \sin 2\alpha
+$$
+
+to find:
+
+$$
+	\frac{sin 2(\ell - 1) \alpha}{2(\ell -1)\alpha} = - \frac{\sin 2\alpha}{2\alpha}
+$$
+
+which is a condition on $\ell$. 
+
+## When do corner eddies form?
+
+Now in this equation, $\ell$ can be real or imaginary. If it is real, 
+solutions will flow simply in once side of the wedge and ou the other.
+
+If it is imaginary, the linearity of the differential equation $\nabla^4 \psi = 0$ means that we can take the real or imaginary part of the solution and still get a solution. For a solution proportional to $r^{a + i b}$, we can write this as
+
+$$
+	\psi = r^a e^{i b \ln r} f(\theta) = r^a \left(\cos b \ln r + i b \sin \ln r\right) f(\theta)
+$$
+
+Consider $u_{\theta}$ at $\theta = 0$ generated by the real part of the above: 
+clearly this oscillates with increasing rapidity as $r \to 0$, indicating an
+infinite sequence of increasingly smaller counterrotating eddies. 
+
+The condition on $\ell$ is prohibitive to solve analytically. We can, however,
+ask when real solutions no longer become available. The question
+of whether there are simultaneous solutions comes by first plotting
+$\sin y/y$ as a function of $y$. For $y = 2\alpha$, $0 \leq \alpha \leq \pi$, 
+we find the value of $\sin y/y$ and mark the vertical axis at value $Q$.
+Mark it also at $-Q$; if this is larger than the
+minimum of $\sin y/y$, there will be one or more points $y_i$ on the curve
+$\sin y/y$ with this value, we can just solve $2(\ell -1) \alpha = y_i$ for
+$\ell$.
+
+However, $\sin y/y$ has a maximum of $1$ at the origin and a minimum of 
+$\sim - .217$. Thus there will be no real solutions 
+if $\sin 2\alpha/2\alpha > .217$, which happens at $\alpha \sim 146.3^{\circ}$. 
+Thus there is a threshold
+angle below which we form "corner eddies".
+
