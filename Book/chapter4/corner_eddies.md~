@@ -1,0 +1,26 @@
+# Corner eddies
+
+Next we want to describe a behavior of creeping flow that occurs when one 
+encounters a (concave) corner; below some threshold angle, eddies start 
+to appear. Mathematically, there are an infinite family of increasingly
+smaller nested eddies as one approaches the corner; of couse, physically 
+these will of course get cut off by microphysics, and at any rate the eddies
+rapidly become too small to be observed.
+
+## Setup: the vorticity equations
+
+We consider 2-dimensional creeping flow inside a wedge open at some angle 
+$\alpha$, symmetric about $\theta = 0$ in the $r-\theta$ plane. We leave
+aside what is driving the flow -- in one experiment, 
+it is a rotating cylinder just outside of the wedge -- and assume the wedge
+extends out to infinity. Thus the equations are
+
+$$
+	& - \frac{1}{\rho} \p_r p + \nu \nabla^2 u = 0 \\
+	& {\vec\nabla}\cdot{\vec u} = 0\\
+	& u_r \Big|_{\theta = \pm \alpha/2} = 0\\
+	& u_{\theta} \Big|_{\theta = \pm \alpha/2} = 0
+$$
+
+Because we are working in two dimensions, we can simplfy this by working
+wi

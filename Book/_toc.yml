@@ -39,4 +39,5 @@ chapters:
 - file: chapter4/viscous_flows
   sections:
   - file: chapter4/stokes_drag
+  - file: chapter4/corner_eddies
 - file: bibliography
