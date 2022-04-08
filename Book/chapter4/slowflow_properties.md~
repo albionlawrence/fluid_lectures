@@ -1,0 +1,64 @@
+# General properties of creeping flow
+
+```{math}
+\newcommand{\p}{\partial}
+```
+
+Before continuing we wish to break and describe two general (and important!) 
+properties of the creeping flow equations: first, that for fixed boundary 
+conditions, a given solution is *unique*; second, that the solutions
+are *reversible* (also known as the "scallop theorem"): if we flip the
+sign of the boundary conditions, we flip the sign of the whole flow,
+which presents a chalenge for low-$Re$ swimming.
+
+## Uniqueness
+
+The first thing we wish to show is that for fixed Dirichlet boundary conditions
+${\vec u}({\vec x})\Big|_B = {\vec u}_B({\vec x})$, the solutions to the
+creeping flow equations are *unique*. Note that the equations
+
+```{math}
+:label: creep
+	& - {\vec\nabla} p + \eta \nabla^2 {\vec u} = 0\\
+	& {\vec\nabla}\cdot{\vec u} = 0
+```
+
+have no time derivatives. This means that the solution at *any* time is
+governed by the boundary conditions, and time-dependent flow will
+only occur throug time-dependent boundary conditions. This is very much 
+in contrast to the full Navier-Stokes equations, in which the time
+derivative matters, and solutions depend on initial conditions.
+
+To see this we consider the possibility that there are two solutions,
+${\vec u}_{i=1,2}$ and $p_{i=1,2}$, satisfying the same boundary 
+conditions ${\vec u}_i({\vec x})\Big|_B = {\vec u}_B({\vec x})$. 
+Because the creeping flow equations are linear, the difference 
+${\vec V} = {\vec u}_2 - {\vec u}_1$, $P = p_2 - p_1$ 
+also solves the creeping flow equations with ${\vec D}\Big|_B = 0$.
+
+Now let us take the dot product of ${\vec V}$ with ({ref}`creep`)
+acting on $P,{\vec V}$, and integrate the result over the domain D
+with boundary $\p D = B$:
+
+$$
+	\int_D d^d x \left(- \Delta^i \nabla_i P + \eta V^j \nabla^i \nabla_i V_j\right) = 0
+$$
+
+Here I have expressed the dot product in terms of sums over indices, using Einstein summation notation,
+to make sure we get the next step right, and kept the dimension general (could be 2 or 3, or 10, or whatever). 
+We now wish to integrate the result by parts. Since the
+boundary terms are proportional to $V$ (with no derivative acting on it), they will vanish.
+Furthermore, upon integrating by parts, the bulk part of the first term is proportional to
+$\nabla^i V_i \equiv {\vec\nabla}\cdot{\vec V}$, which vanishes due to incompressibility of 
+both ${\vec u}_i$. Thus, we are left with
+
+$$
+	\eta \int_D d^d x \p_i V_j \p_i V_j= 0
+$$
+
+But this is a sum (over $i,j$ of squares at every point in $D$, which means that $\p_i V_j = 0$
+for every $i,j$ and every point in $D$. Because it is true for very $i$, $V_j$ must be constant
+in every direction. Since it vanishes at the boundary, it must vanish everywhere, and
+${\vec v}_1 = {\vec v}_2$, thus proving uniqueness.
+
+## Reversibility

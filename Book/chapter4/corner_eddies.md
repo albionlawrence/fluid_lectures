@@ -158,7 +158,7 @@ $\ell$.
 
 However, $\sin y/y$ has a maximum of $1$ at the origin and a minimum of 
 $\sim - .217$. Thus there will be no real solutions 
-if $\sin 2\alpha/2\alpha > .217$, which happens at $\alpha \sim 146.3^{\circ}$. 
+if $\sin 2\alpha/2\alpha > .217$, which happens at $2 \alpha \sim 146.3^{\circ}$. 
 Thus there is a threshold
 angle below which we form "corner eddies".
 
