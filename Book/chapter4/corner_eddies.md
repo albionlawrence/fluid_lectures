@@ -87,7 +87,7 @@ fourth order differential equation. Two of them will be fixed by
 the two boundary conditions. We will fix two more by considering 
 flows in which $u_r$ changes sign under $\theta \to - \theta$, which 
 eliminates the sine terms (recall $u_r = - \frac{1}{r} \p_{\theta} \psi$.)
-The other solutions will involve inflow or outflow from the corner.
+This will ensure the solutions inherit he symmetry of the boundary forcing.
 Thus we set $B = D = 0$. Finally, we demand $u_r = u_{\theta} = 0$ at
 $\theta = \pm \alpha$, which translates to:
 

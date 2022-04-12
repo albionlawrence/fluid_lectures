@@ -1,0 +1,27 @@
+# Swimming at low Reynolds number
+
+As we have argued, the fluid flow as $Re \to 0$ is
+fixd completely by the boundary conditions at that time. 
+The only way for an object to move forward at low Reynolds number
+through some kind of repetitive motion is if it executes a protocol 
+which takes a *loop* in the space of possible shapes. 
+So, a single paddle will not do; a *flexible* paddle might, or 
+two independent hinges.
+
+Oher option are available -- fo example, a rotating corkscrew. We'll look at 
+a simpler one, which is a wave traveling along a flexible membrane.
+
+## Waving of a think flexible sheet
+
+We consider 2d flow again, with a membrane extended along teh $x$ direction
+which is waving in the $y$ direction. We ignore, for now, the finite size
+of his object. We wish to show tha this motion induces both oscillatory
+flow of the fluid and an additional steady flow along the $x$ axis.
+We can then boost into te rest frame of the steady flow, so that the
+membrane itself is swimming in the $-x$ direction.
+
+We take the membrane shape to be:
+
+$$
+	y = a \sin(kx - \omega t)
+$$

@@ -41,4 +41,5 @@ chapters:
   - file: chapter4/stokes_drag
   - file: chapter4/corner_eddies
   - file: chapter4/slowflow_properties
+  - file: chapter4/swimming
 - file: bibliography
