@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corner eddies &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Swimming at low Reynolds number &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="General properties of creeping flow" href="slowflow_properties.html" />
-    <link rel="prev" title="Stokes Drag" href="stokes_drag.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="General properties of creeping flow" href="slowflow_properties.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -284,8 +284,8 @@
      Stokes Drag
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="corner_eddies.html">
      Corner eddies
     </a>
    </li>
@@ -294,8 +294,8 @@
      General properties of creeping flow
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="swimming.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Swimming at low Reynolds number
     </a>
    </li>
@@ -347,7 +347,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter4/corner_eddies.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter4/swimming.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -367,7 +367,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/corner_eddies.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/swimming.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -394,18 +394,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-the-vorticity-equations">
-   Setup: the vorticity equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-solution">
-   General Solution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-do-corner-eddies-form">
-   When do corner eddies form?
+  <a class="reference internal nav-link" href="#waving-of-a-thin-flexible-sheet">
+   Waving of a thin flexible sheet
   </a>
  </li>
 </ul>
@@ -418,7 +408,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Corner eddies</h1>
+                <h1>Swimming at low Reynolds number</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -429,18 +419,8 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-the-vorticity-equations">
-   Setup: the vorticity equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-solution">
-   General Solution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-do-corner-eddies-form">
-   When do corner eddies form?
+  <a class="reference internal nav-link" href="#waving-of-a-thin-flexible-sheet">
+   Waving of a thin flexible sheet
   </a>
  </li>
 </ul>
@@ -452,149 +432,221 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="corner-eddies">
-<h1>Corner eddies<a class="headerlink" href="#corner-eddies" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="swimming-at-low-reynolds-number">
+<h1>Swimming at low Reynolds number<a class="headerlink" href="#swimming-at-low-reynolds-number" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
-\[\newcommand{\p}{\partial}\]</div>
-<p>Next we want to describe a behavior of creeping flow that occurs when one
-encounters a (concave) corner; below some threshold angle, eddies start
-to appear. Mathematically, there are an infinite family of increasingly
-smaller nested eddies as one approaches the corner; of couse, physically
-these will of course get cut off by microphysics, and at any rate the eddies
-rapidly become too small to be observed.</p>
-<div class="section" id="setup-the-vorticity-equations">
-<h2>Setup: the vorticity equations<a class="headerlink" href="#setup-the-vorticity-equations" title="Permalink to this headline">¶</a></h2>
-<p>We consider 2-dimensional creeping flow inside a wedge open at some angle
-<span class="math notranslate nohighlight">\(2 \alpha\)</span>, symmetric about <span class="math notranslate nohighlight">\(\theta = 0\)</span> in the <span class="math notranslate nohighlight">\(r-\theta\)</span> plane. We leave
-aside what is driving the flow – in one experiment,
-it is a rotating cylinder just outside of the wedge – and assume the wedge
-extends out to infinity. Thus the equations are</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-	&amp; - \frac{1}{\rho} \p_r p + \nu \nabla^2 u = 0 \\
-	&amp; {\vec\nabla}\cdot{\vec u} = 0\\
-	&amp; u_r \Big|_{\theta = \pm \alpha} = 0\\
-	&amp; u_{\theta} \Big|_{\theta = \pm \alpha} = 0
-\end{split}\]</div>
-<p>Because we are working in two dimensions, the incompressibility condition
-in a simply connected domain means that we can write, in Cartesian
-coordinates, the velocity in terms of the <em>stream function</em> <span class="math notranslate nohighlight">\(\psi\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-	&amp; u_x = \p_y \psi\\
-	&amp; u_y = - \p_x \psi
-\end{split}\]</div>
-<p>In polar coordinates we can write:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-	&amp; u_r = \frac{1}{r} \p_{\theta} \psi\\
-	&amp; u_{\theta} = - \p_r \psi
-\end{split}\]</div>
-<p>The vorticity in two dimensions is defined as</p>
+\[\newcommand{\p}{\partial}
+\newcommand{\eps}{\epsilon}
+\newcommand{\half}{\frac{1}{2}}\]</div>
+<p>As we have argued, the fluid flow as <span class="math notranslate nohighlight">\(Re \to 0\)</span> is
+fixd completely by the boundary conditions at that time.
+The only way for an object to move forward at low Reynolds number
+through some kind of repetitive motion is if it executes a protocol
+which takes a <em>loop</em> in the space of possible shapes.
+So, a single paddle will not do; a <em>flexible</em> paddle might, or
+two independent hinges.</p>
+<p>Oher option are available – fo example, a rotating corkscrew. We’ll look at
+a simpler one, which is a wave traveling along a flexible membrane.</p>
+<div class="section" id="waving-of-a-thin-flexible-sheet">
+<h2>Waving of a thin flexible sheet<a class="headerlink" href="#waving-of-a-thin-flexible-sheet" title="Permalink to this headline">¶</a></h2>
+<p>We consider 2d flow again, with a membrane extended along teh <span class="math notranslate nohighlight">\(x\)</span> direction
+which is waving in the <span class="math notranslate nohighlight">\(y\)</span> direction. We ignore, for now, the finite size
+of his object. We wish to show tha this motion induces both oscillatory
+flow of the fluid and an additional steady flow along the <span class="math notranslate nohighlight">\(x\)</span> axis.
+We can then boost into te rest frame of the steady flow, so that the
+membrane itself is swimming in the <span class="math notranslate nohighlight">\(-x\)</span> direction.</p>
+<p>We take the membrane shape to be:</p>
 <div class="math notranslate nohighlight">
 \[
-	\omega = \p_x u_y - \p_y u_x = - \nabla^2 \psi
+	y = a \sin(kx - \omega t)
 \]</div>
-<p>If we imagined this fluid was trapped on the <span class="math notranslate nohighlight">\(x-y\)</span> plane, we wold have
-<span class="math notranslate nohighlight">\({\vec\nabla} \times {\vec u} = -\nabla^2 \psi\ {\hat z}\)</span>.</p>
-<p>We can eliminate the pressure in this case by taking the curl of
-the creeping flow equations to find:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-	- \nu \nabla^2 \nabla^2 \psi &amp; = - \nu \left(\frac{1}{r}\frac{\p}{\p r}\left(r\frac{\p}{\p r}\right) + \frac{1}{r^2}\frac{\p^2}{\p\theta^2}\right)^2 \psi\\
-	&amp; = -\nu \left(\frac{\p^2}{\p r^2} + \frac{1}{r}\frac{\p}{\p r} + \frac{1}{r^2}\frac{\p^2}{\p\theta^2}\right)^2 \psi = 0
-\end{split}\]</div>
-<p>So now we have one scalar equation for <span class="math notranslate nohighlight">\(\psi\)</span>.</p>
-</div>
-<div class="section" id="general-solution">
-<h2>General Solution<a class="headerlink" href="#general-solution" title="Permalink to this headline">¶</a></h2>
-<p>Since every term in this equation scales the same under rescalings of <span class="math notranslate nohighlight">\(r\)</span>,
-we will consider solutions of the form <span class="math notranslate nohighlight">\(\psi = r^{\ell} f(\theta)\)</span>. This
-is a guess, it makes sense because in the equation above, every term will be
-proportional to <span class="math notranslate nohighlight">\(r^{\ell - 4}\)</span>. Plugging this in and dropping the <span class="math notranslate nohighlight">\(-\nu\)</span>
-prefactor, we find:</p>
+<p>In particular we take the infintesimal pieces of the sheet to reside at
+fixed <span class="math notranslate nohighlight">\(x\)</span>, and move up and down.</p>
+<p>The exact boundary conditions will clearly be difficult to impose.
+We will take the limit tha the oscillations are small compared to
+the wavelength:</p>
 <div class="math notranslate nohighlight">
 \[
-	\left((\ell - 2)^2 + \p_{\theta}^2\right)\left(\ell^2 + \p_{\theta}^2\right) f(\theta) r^{\ell - 4}
+	\eps = ak \ll 1
 \]</div>
-<p>This means that either <span class="math notranslate nohighlight">\((\ell^2 + \p_{\theta}^2)f = 0\)</span> or
-<span class="math notranslate nohighlight">\(((\ell - 2)^2 + \p_{\theta}^2) f = 0\)</span>, so we have the following general
-solution for fixed <span class="math notranslate nohighlight">\(\ell\)</span>:</p>
+<p>(actually the wavelength is <span class="math notranslate nohighlight">\(\lambda = 2\pi/k\)</span>, but <span class="math notranslate nohighlight">\(\epsilon\)</span> is
+the parameter which will appear).</p>
+<p>Once again, because this is 2d incompressible flow, we can describe
+the velociy in terms of a streamfunction:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; u_x = \p_y \psi\\
+&amp; u_y - - \p_x \psi\end{split}\]</div>
+<p>Taking the curl of the slow/ceeping flow equation we find</p>
 <div class="math notranslate nohighlight">
 \[
-	\psi = r^{\ell} \left(A \cos\ell\theta + B \sin\ell\theta
-	+ C \cos (\ell - 2)\theta + D \sin(\ell - 2)\theta\right)
+	(\nabla^2)^2 \psi = 0
 \]</div>
-<p>Here we have four unknowns, reflecting the fact that we have set up a
-fourth order differential equation. Two of them will be fixed by
-the two boundary conditions. We will fix two more by considering
-flows in which <span class="math notranslate nohighlight">\(u_r\)</span> changes sign under <span class="math notranslate nohighlight">\(\theta \to - \theta\)</span>, which
-eliminates the sine terms (recall <span class="math notranslate nohighlight">\(u_r = - \frac{1}{r} \p_{\theta} \psi\)</span>.)
-This will ensure the solutions inherit he symmetry of the boundary forcing.
-Thus we set <span class="math notranslate nohighlight">\(B = D = 0\)</span>. Finally, we demand <span class="math notranslate nohighlight">\(u_r = u_{\theta} = 0\)</span> at
-<span class="math notranslate nohighlight">\(\theta = \pm \alpha\)</span>, which translates to:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-	&amp; u_r = - \frac{1}{r} \p_{\theta} \psi\Big|_{\theta = \pm\alpha} = \pm r^{\ell}
-	\left(A \ell \sin \ell \alpha + 
-	C (\ell - 2) \sin (\ell - 2) \alpha\right) = 0\\
-	&amp; u_{\theta}\Big|_{\theta = \pm\alpha} = - \frac{\p}{\p r} \psi = \ell r^{\ell -1}
-		\left(A \cos \ell \alpha + C \cos(\ell - 2)\alpha\right) = 0
-\end{split}\]</div>
-<p>Moving the terms proportional to <span class="math notranslate nohighlight">\(C\)</span> to the othe side of the equation,
-and then dividing one equation by the other, we find:</p>
+<p>Because the individual elements of the membrane are oscillating vertically,
+and the no-slip condition means that the fluid velocity at the membrane
+equals the membrane velocity</p>
 <div class="math notranslate nohighlight">
 \[
-	\ell \tan\ell \alpha = (\ell - 2) \tan (\ell - 2) \alpha
+	{\vec v}_{membrane} = {\hat y} \frac{d}{dt} a \sin(k x - \omega t)
+	= - a\omega \cos(kx - \omega t)\ ,
 \]</div>
-<p>Next, we combine half angle formulae:</p>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; v_x = \p_y \psi(x,y = a\sin(kx - \omega t)) = 0\\
+&amp;v_y = - \p_x \psi(x,y = a\sin(kx - \omega t)) = 
+- a \omega \cos(kx - \omega t)\end{split}\]</div>
+<p>These are obviously noninear boundary conditions. They are also time-dependent.
+However, <span class="math notranslate nohighlight">\(x,t\)</span> only appear <em>explicitly</em> in the equations in the form
+<span class="math notranslate nohighlight">\(kx - \omega t\)</span>. If we solve the equations at <span class="math notranslate nohighlight">\(t = 0\)</span>, we can
+find solutions at other times <span class="math notranslate nohighlight">\(t\)</span> by replacing <span class="math notranslate nohighlight">\(x \to x - \omega t/k\)</span>.
+So we will do that.</p>
+<p>At this point, we are going to nondimensionalize the problem. This
+will make the formulae simpler (fewer parameters floating around,
+and will isolate the dimensionless parameters which control
+the solution. We rescale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; k x = X\\
+&amp;k y = Y\\
+&amp;\frac{k}{\omega a} \psi = \Psi\end{split}\]</div>
+<p>All of the capitalized quantities are now dimensionless. The
+form of the bulk equations for the steamfunction remain unchanged:</p>
 <div class="math notranslate nohighlight">
 \[
-	\tan x = \frac{\sin 2x}{1 + \cos 2x} = \frac{1 - \cos 2x}{\sin 2x}
+	\left(\p_X^2 + \p_Y^2\right)^2 \Psi = 0
 \]</div>
-<p>with addition formulae</p>
+<p>The boundary conditions become</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-	\cos(2(\ell - 2)\alpha) &amp; = \cos (2(\ell - 1)\alpha - 2\alpha)
-	= \cos 2(\ell - 1)\alpha \cos 2\alpha + 
-	 \sin 2(\ell - 1)\alpha \sin 2\alpha\\
-	\sin(2(\ell - 2)\alpha) &amp; =  \sin (2(\ell - 1)\alpha - 2\alpha)
-	=  \sin 2(\ell - 1)\alpha \cos 2\alpha -
-	 \cos 2(\ell - 1)\alpha \sin 2\alpha
-\end{split}\]</div>
-<p>to find:</p>
+\[\begin{split}&amp; \p_Y \Psi(X,Y = \eps \cos X) = 0\\
+&amp; \p_X \Psi(X, Y = \eps \cos X) = \cos X\end{split}\]</div>
+<p>We are going to try and solve these equations in a power series in
+<span class="math notranslate nohighlight">\(\eps\)</span>. Looking at the structure of these equations, we see
+<span class="math notranslate nohighlight">\(\Psi\)</span> should start at <span class="math notranslate nohighlight">\({\cal O}(1)\)</span> in order that
+the second equation be solvable, so:</p>
 <div class="math notranslate nohighlight">
 \[
-	\frac{sin 2(\ell - 1) \alpha}{2(\ell -1)\alpha} = - \frac{\sin 2\alpha}{2\alpha}
+	\Psi = \Psi_0 + \eps \Psi_1 + \eps^2 \Psi_2 + \ldots
 \]</div>
-<p>which is a condition on <span class="math notranslate nohighlight">\(\ell\)</span>.</p>
-</div>
-<div class="section" id="when-do-corner-eddies-form">
-<h2>When do corner eddies form?<a class="headerlink" href="#when-do-corner-eddies-form" title="Permalink to this headline">¶</a></h2>
-<p>Now in this equation, <span class="math notranslate nohighlight">\(\ell\)</span> can be real or imaginary. If it is real,
-solutions will flow simply in once side of the wedge and ou the other.</p>
-<p>If it is imaginary, the linearity of the differential equation <span class="math notranslate nohighlight">\(\nabla^4 \psi = 0\)</span> means that we can take the real or imaginary part of the solution and still get a solution. For a solution proportional to <span class="math notranslate nohighlight">\(r^{a + i b}\)</span>, we can write this as</p>
+<p>(unlike the book, I prefer to match the index of <span class="math notranslate nohighlight">\(\Psi\)</span> with the
+order of <span class="math notranslate nohighlight">\(\eps\)</span>).  We can expand the boundary conditions in <span class="math notranslate nohighlight">\(\eps\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \p_Y \Psi(X,0) + \eps \sin X \p_Y^2 \Psi(X,0) + \ldots = 0\\
+&amp; \p_X \Psi(X,0) + \eps \sin X \p_Y \p_X \Psi(X,0) + \ldots = \cos X\end{split}\]</div>
+<p>Inserting the above expansion we have:</p>
+<div class="math notranslate nohighlight" id="equation-expansion">
+<span class="eqno">(61)<a class="headerlink" href="#equation-expansion" title="Permalink to this equation">¶</a></span>\[\begin{split}&amp; \p_Y \Psi_0(X,0) = 0\\
+&amp; \p_X \Psi_0(X,0) = \cos X\\
+&amp; \p_Y \Psi_1 + \sin X \p_Y^2 \Psi_0 = 0\\
+&amp; \p_X \Psi_1 + \sin X \p_Y \p_X \Psi_0 = 0\end{split}\]</div>
+<p>At lowest order we are working on the UHP and the boundary conditions
+depend only on <span class="math notranslate nohighlight">\(X\)</span>; thus we will try a separation-of-variables
+ans&amp;umla;tz <span class="math notranslate nohighlight">\(\Psi_0 = F(X) G(Y)\)</span>. The boundary conditions
+already guarantee that <span class="math notranslate nohighlight">\(F(X) = \sin X\)</span>. The bulk equation for <span class="math notranslate nohighlight">\(G\)</span> is then</p>
 <div class="math notranslate nohighlight">
 \[
-	\psi = r^a e^{i b \ln r} f(\theta) = r^a \left(\cos b \ln r + i b \sin \ln r\right) f(\theta)
+	\left(\p_Y^2 - 1\right)^2 G = 0
 \]</div>
-<p>Consider <span class="math notranslate nohighlight">\(u_{\theta}\)</span> at <span class="math notranslate nohighlight">\(\theta = 0\)</span> generated by the real part of the above:
-clearly this oscillates with increasing rapidity as <span class="math notranslate nohighlight">\(r \to 0\)</span>, indicating an
-infinite sequence of increasingly smaller counterrotating eddies.</p>
-<p>The condition on <span class="math notranslate nohighlight">\(\ell\)</span> is prohibitive to solve analytically. We can, however,
-ask when real solutions no longer become available. The question
-of whether there are simultaneous solutions comes by first plotting
-<span class="math notranslate nohighlight">\(\sin y/y\)</span> as a function of <span class="math notranslate nohighlight">\(y\)</span>. For <span class="math notranslate nohighlight">\(y = 2\alpha\)</span>, <span class="math notranslate nohighlight">\(0 \leq \alpha \leq \pi\)</span>,
-we find the value of <span class="math notranslate nohighlight">\(\sin y/y\)</span> and mark the vertical axis at value <span class="math notranslate nohighlight">\(Q\)</span>.
-Mark it also at <span class="math notranslate nohighlight">\(-Q\)</span>; if this is larger than the
-minimum of <span class="math notranslate nohighlight">\(\sin y/y\)</span>, there will be one or more points <span class="math notranslate nohighlight">\(y_i\)</span> on the curve
-<span class="math notranslate nohighlight">\(\sin y/y\)</span> with this value, we can just solve <span class="math notranslate nohighlight">\(2(\ell -1) \alpha = y_i\)</span> for
-<span class="math notranslate nohighlight">\(\ell\)</span>.</p>
-<p>However, <span class="math notranslate nohighlight">\(\sin y/y\)</span> has a maximum of <span class="math notranslate nohighlight">\(1\)</span> at the origin and a minimum of
-<span class="math notranslate nohighlight">\(\sim - .217\)</span>. Thus there will be no real solutions
-if <span class="math notranslate nohighlight">\(\sin 2\alpha/2\alpha &gt; .217\)</span>, which happens at <span class="math notranslate nohighlight">\(2 \alpha \sim 146.3^{\circ}\)</span>.
-Thus there is a threshold
-angle below which we form “corner eddies”.</p>
+<p>Setting <span class="math notranslate nohighlight">\(\Phi = (\p_Y^2 - 1) G\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\Phi = A' e^Y + B' e^{-Y}
+\]</div>
+<p>is the most general solution. Now in solving</p>
+<div class="math notranslate nohighlight">
+\[
+	\left(\p_Y^2 - 1\right)^2 G = \Phi =  A' e^Y + B' e^{-Y}
+\]</div>
+<p>a general solution takes the form</p>
+<div class="math notranslate nohighlight">
+\[
+	G = C e^Y + D e^{-Y} + {\tilde G}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\({\tilde Psi}\)</span> is a <em>particular</em> solution to:</p>
+<div class="math notranslate nohighlight">
+\[
+	\left(\p_Y^2 - 1\right) {\tilde G} =  A' e^Y + B' e^{-Y}
+\]</div>
+<p>which can be:</p>
+<div class="math notranslate nohighlight">
+\[
+	{\tilde G = \half Y (A' e^Y + B' e^{-Y})
+\]</div>
+<p>Now for <span class="math notranslate nohighlight">\(y &gt; 0\)</span> we need <span class="math notranslate nohighlight">\({\vec v} \to 0\)</span> as <span class="math notranslate nohighlight">\(y \to \infty\)</span> so we must have <span class="math notranslate nohighlight">\(A' = C = 0\)</span>.
+Now we must impose the boundary conditions at <span class="math notranslate nohighlight">\(Y =0\)</span>. Since $<span class="math notranslate nohighlight">\(F(X) = \sin x\)</span>,
+<span class="math notranslate nohighlight">\(u_y = - \p_C \Psi_0 = \cos X\)</span> is
+satisfied at <span class="math notranslate nohighlight">\(y = 0\)</span> if <span class="math notranslate nohighlight">\(D = 1\)</span>. Finally <span class="math notranslate nohighlight">\(\p_Y G = 0\)</span>, which means <span class="math notranslate nohighlight">\(\half B' - 1 = 0\)</span>, and the
+solution for <span class="math notranslate nohighlight">\(y &gt; 0\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[
+	G = (1 + Y) e^{-Y}
+\]</div>
+<p>while for <span class="math notranslate nohighlight">\(Y &lt; 0\)</span>, we must have <span class="math notranslate nohighlight">\(B' = D = 0\)</span>, and after the same arguments:</p>
+<div class="math notranslate nohighlight">
+\[
+	G = (1 - Y) e^Y
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Psi &amp; = (1 + Y) e^{-Y} \sin X\ \ {\rm for}\ Y &gt; 0\\
+&amp; = (1 - Y) e^Y \sin X \ \ {\rm for}\ Y &lt; 0\end{split}\]</div>
+<p>Now we can sove for <span class="math notranslate nohighlight">\(\Psi_1\)</span> in <a class="reference internal" href="#equation-expansion">(61)</a>. This still satisfies the
+equation <span class="math notranslate nohighlight">\((\p_X^2 + \p_Y^2)^2 \Psi_1 = 0\)</span>.
+Le us start with <span class="math notranslate nohighlight">\(Y \to 0^+\)</span>, for which:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \p_Y \Psi_1 - \sin^2 X = 0\\
+&amp; \p_X \Psi_1 = 0\end{split}\]</div>
+<p>We further write <span class="math notranslate nohighlight">\(\sin^2 X = \half(1 - \cos 2 X)\)</span>. Now <span class="math notranslate nohighlight">\(\Psi_1\)</span> is the sum of two terms,
+one for which <span class="math notranslate nohighlight">\(\p_Y \psi_{1a} = \half\)</span> at <span class="math notranslate nohighlight">\(Y = 0\)</span>, and one for which
+<span class="math notranslate nohighlight">\(\p_Y \Psi_{1b} + \half \cos 2 X = 0\)</span>. The latter piece will again be solved as before with</p>
+<div class="math notranslate nohighlight">
+\[
+	\Psi_{1b} = (E + F y) e^{-2Y} \cos 2X
+\]</div>
+<p>To solve for <span class="math notranslate nohighlight">\(\Psi_{1a}\)</span> he boundary conditions suggest we consider constant <span class="math notranslate nohighlight">\(x\)</span> dependence
+in our separation-of-variables ans&amp;umla;tz so that <span class="math notranslate nohighlight">\(\p_Y^4 \Psi_{1a} = 0\)</span>. This is solved by
+the cubic</p>
+<div class="math notranslate nohighlight">
+\[
+	\Psi_{1a} = H_0 + H_1 Y + H_2 Y^2 + H_3 Y^3
+\]</div>
+<p>Now we need to combine these. Using <span class="math notranslate nohighlight">\(\p_X \Psi_1 = 0\)</span> we find <span class="math notranslate nohighlight">\(E = 0\)</span>. <span class="math notranslate nohighlight">\(H_0\)</span> has no
+physical meaning as only derivatives of <span class="math notranslate nohighlight">\(\Psi\)</span> are physical, and we can set it to zero.
+<span class="math notranslate nohighlight">\(H_{2,3}\)</span> will give components of he veocity scaling as<br />
+<span class="math notranslate nohighlight">\(U_{X} = \p_Y \Psi = \sim 2 H_2 Y + 3 H_3 Y^2 \to \pm \infty\)</span> as <span class="math notranslate nohighlight">\(y \to \infty\)</span>
+so we must set <span class="math notranslate nohighlight">\(H_{2,3} = 0\)</span>. Finally, we want <span class="math notranslate nohighlight">\(\p_Y \Psi_1 = \sin^2 X = \half(1 - \cos 2X)\)</span>
+at <span class="math notranslate nohighlight">\(Y = 0\)</span>, so we must have <span class="math notranslate nohighlight">\(H_1 = \half\)</span>, <span class="math notranslate nohighlight">\(F = - \half\)</span>, or</p>
+<div class="math notranslate nohighlight">
+\[
+	\Psi_1 = \half \left(Y - Y e^{-2Y}\cos 2 X\right)
+\]</div>
+<p>So that</p>
+<div class="math notranslate nohighlight">
+\[
+	\Psi = (1 + Y) e^{-Y} \sin X + \eps \half  \left(Y - Y e^{-2Y}\cos 2 X\right)
+\]</div>
+<p>Redimensionalizing and shifing <span class="math notranslate nohighlight">\(kx \to kx - \omega t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+	\psi = \frac{\omega a}{k} \left[ \left(1 + ky\right) e^{-ky}\sin(kx - \omega t)
+		+ \half \eps ky  \left(1 - e^{-2ky} \cos (2kx - 2\omega t)\right)\right] + \ldots
+\]</div>
+<p>we can compute the velocity:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; u_x = \p_y \psi = - \eps \omega y e^{-k y} \sin(kx - \omega t)
++ \eps^2 c \left[\half + (ky - \half)e^{-2ky} \cos(2(kx - \omega t))\right] + \ldots\\
+&amp; u_y = - \p_x \psi = \eps c \left(1 + k y\right) e^{-ky} \cos(kx - \omega t)
++ \eps^2 c ky e^{-2k y} \sin(2kx - 2 \omega t) + \ldots\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(c = \omega/k\)</span>; note further
+that the rescaling <span class="math notranslate nohighlight">\(\Psi \to \psi\)</span> means ta even though it appears that <span class="math notranslate nohighlight">\(\Psi\)</span> was nonvanishing
+as <span class="math notranslate nohighlight">\(\eps \to 0\)</span>, <span class="math notranslate nohighlight">\({\vec u}\)</span> is still vanishing in this limit.</p>
+<p>The upshot is that in addition to an oscillatory flow, we have a steady component</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec u}_{steady} = \half \eps^2 c {\hat x} = \frac{k a^2 \omega}{2} {\hat x}
+\]</div>
+<p>If we boost into the rest frame of the steady flow, each infinitesimal piece of the
+membrane will be moving as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; x = x_0 - \frac{k a^2 \omega t}{2}\\
+&amp; y = a \sin\left[kx_0 - \left(\half k^2 a^2 + 1\right)\omega t\right]\end{split}\]</div>
 </div>
 </div>
 
@@ -623,17 +675,17 @@ angle below which we form “corner eddies”.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="stokes_drag.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="slowflow_properties.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Stokes Drag</p>
+            <p class="prev-next-title">General properties of creeping flow</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="slowflow_properties.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">General properties of creeping flow</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
