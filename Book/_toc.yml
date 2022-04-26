@@ -42,4 +42,7 @@ chapters:
   - file: chapter4/corner_eddies
   - file: chapter4/slowflow_properties
   - file: chapter4/swimming
+  - file: chapter4/thin_films
+  - file: chapter4/hele_shaw
+  - file: chapter4/adhesion
 - file: bibliography

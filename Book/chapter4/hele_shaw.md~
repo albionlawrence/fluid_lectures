@@ -1,0 +1,14 @@
+# Thin film example: the Hele-Shaw cell
+
+We first consider the example of plates at constant vertical coordinates 
+$z = 0,h$, with fluid driven by horizontal pressure gradients, and rigid 
+objects placed in the cell that the fluid must flow around (we take these
+to be straigt in the vertical direction). 
+
+In this case $u,v$ must vanish due to the  no-slip boundary conditions at 
+$z = 0,h$. In the previous section, this fixes $A,B,C,D$ so that 
+
+\begin{align}
+	& u = - \frac{z(h-z)}{2\nu} \p_x p\\
+	& v = - \frac{z(h-z)}{2\nu} \p_y p
+\end{align}

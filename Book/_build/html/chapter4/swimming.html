@@ -515,8 +515,8 @@ form of the bulk equations for the steamfunction remain unchanged:</p>
 \]</div>
 <p>The boundary conditions become</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}&amp; \p_Y \Psi(X,Y = \eps \cos X) = 0\\
-&amp; \p_X \Psi(X, Y = \eps \cos X) = \cos X\end{split}\]</div>
+\[\begin{split}&amp; \p_Y \Psi(X,Y = \eps \sin X) = 0\\
+&amp; \p_X \Psi(X, Y = \eps \sin X) = \cos X\end{split}\]</div>
 <p>We are going to try and solve these equations in a power series in
 <span class="math notranslate nohighlight">\(\eps\)</span>. Looking at the structure of these equations, we see
 <span class="math notranslate nohighlight">\(\Psi\)</span> should start at <span class="math notranslate nohighlight">\({\cal O}(1)\)</span> in order that
@@ -538,7 +538,7 @@ order of <span class="math notranslate nohighlight">\(\eps\)</span>).  We can ex
 &amp; \p_X \Psi_1 + \sin X \p_Y \p_X \Psi_0 = 0\end{split}\]</div>
 <p>At lowest order we are working on the UHP and the boundary conditions
 depend only on <span class="math notranslate nohighlight">\(X\)</span>; thus we will try a separation-of-variables
-ans&amp;umla;tz <span class="math notranslate nohighlight">\(\Psi_0 = F(X) G(Y)\)</span>. The boundary conditions
+ansätz <span class="math notranslate nohighlight">\(\Psi_0 = F(X) G(Y)\)</span>. The boundary conditions
 already guarantee that <span class="math notranslate nohighlight">\(F(X) = \sin X\)</span>. The bulk equation for <span class="math notranslate nohighlight">\(G\)</span> is then</p>
 <div class="math notranslate nohighlight">
 \[
@@ -559,7 +559,7 @@ already guarantee that <span class="math notranslate nohighlight">\(F(X) = \sin 
 \[
 	G = C e^Y + D e^{-Y} + {\tilde G}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\({\tilde Psi}\)</span> is a <em>particular</em> solution to:</p>
+<p>where <span class="math notranslate nohighlight">\({\tilde \Psi}\)</span> is a <em>particular</em> solution to:</p>
 <div class="math notranslate nohighlight">
 \[
 	\left(\p_Y^2 - 1\right) {\tilde G} =  A' e^Y + B' e^{-Y}
@@ -567,11 +567,11 @@ already guarantee that <span class="math notranslate nohighlight">\(F(X) = \sin 
 <p>which can be:</p>
 <div class="math notranslate nohighlight">
 \[
-	{\tilde G = \half Y (A' e^Y + B' e^{-Y})
+	{\tilde G} = \half Y (A' e^Y + B' e^{-Y})
 \]</div>
-<p>Now for <span class="math notranslate nohighlight">\(y &gt; 0\)</span> we need <span class="math notranslate nohighlight">\({\vec v} \to 0\)</span> as <span class="math notranslate nohighlight">\(y \to \infty\)</span> so we must have <span class="math notranslate nohighlight">\(A' = C = 0\)</span>.
-Now we must impose the boundary conditions at <span class="math notranslate nohighlight">\(Y =0\)</span>. Since $<span class="math notranslate nohighlight">\(F(X) = \sin x\)</span>,
-<span class="math notranslate nohighlight">\(u_y = - \p_C \Psi_0 = \cos X\)</span> is
+<p>Now for <span class="math notranslate nohighlight">\(Y &gt; 0\)</span> we need <span class="math notranslate nohighlight">\({\vec v} \to 0\)</span> as <span class="math notranslate nohighlight">\(Y \to \infty\)</span> so we must have <span class="math notranslate nohighlight">\(A' = C = 0\)</span>.
+Now we must impose the boundary conditions at <span class="math notranslate nohighlight">\(Y =0\)</span>. Since <span class="math notranslate nohighlight">\(F(X) = \sin x\)</span>,
+<span class="math notranslate nohighlight">\(u_y = - \p_X \Psi_0 = \cos X\)</span> is
 satisfied at <span class="math notranslate nohighlight">\(y = 0\)</span> if <span class="math notranslate nohighlight">\(D = 1\)</span>. Finally <span class="math notranslate nohighlight">\(\p_Y G = 0\)</span>, which means <span class="math notranslate nohighlight">\(\half B' - 1 = 0\)</span>, and the
 solution for <span class="math notranslate nohighlight">\(y &gt; 0\)</span> becomes</p>
 <div class="math notranslate nohighlight">

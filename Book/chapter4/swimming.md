@@ -104,8 +104,8 @@ $$
 The boundary conditions become
 
 ```{math}
-& \p_Y \Psi(X,Y = \eps \cos X) = 0\\
-& \p_X \Psi(X, Y = \eps \cos X) = \cos X
+& \p_Y \Psi(X,Y = \eps \sin X) = 0\\
+& \p_X \Psi(X, Y = \eps \sin X) = \cos X
 ```
 
 We are going to try and solve these equations in a power series in
@@ -137,7 +137,7 @@ Inserting the above expansion we have:
 
 At lowest order we are working on the UHP and the boundary conditions
 depend only on $X$; thus we will try a separation-of-variables
-ans&umla;tz $\Psi_0 = F(X) G(Y)$. The boundary conditions
+ans&auml;tz $\Psi_0 = F(X) G(Y)$. The boundary conditions
 already guarantee that $F(X) = \sin X$. The bulk equation for $G$ is then
 
 $$
@@ -162,7 +162,7 @@ $$
 	G = C e^Y + D e^{-Y} + {\tilde G}
 $$
 
-where ${\tilde Psi}$ is a *particular* solution to:
+where ${\tilde \Psi}$ is a *particular* solution to:
 
 $$
 	\left(\p_Y^2 - 1\right) {\tilde G} =  A' e^Y + B' e^{-Y}
@@ -171,12 +171,12 @@ $$
 which can be:
 
 $$
-	{\tilde G = \half Y (A' e^Y + B' e^{-Y})
+	{\tilde G} = \half Y (A' e^Y + B' e^{-Y})
 $$
 
-Now for $y > 0$ we need ${\vec v} \to 0$ as $y \to \infty$ so we must have $A' = C = 0$.
-Now we must impose the boundary conditions at $Y =0$. Since $$F(X) = \sin x$, 
-$u_y = - \p_C \Psi_0 = \cos X$ is
+Now for $Y > 0$ we need ${\vec v} \to 0$ as $Y \to \infty$ so we must have $A' = C = 0$.
+Now we must impose the boundary conditions at $Y =0$. Since $F(X) = \sin x$, 
+$u_y = - \p_X \Psi_0 = \cos X$ is
 satisfied at $y = 0$ if $D = 1$. Finally $\p_Y G = 0$, which means $\half B' - 1 = 0$, and the
 solution for $y > 0$ becomes
 
