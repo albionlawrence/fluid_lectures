@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flows at low Reynolds number &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Thin Film approximation &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Stokes Drag" href="stokes_drag.html" />
-    <link rel="prev" title="Shock waves in gas dynamics" href="../chapter3/shocks.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Swimming at low Reynolds number" href="swimming.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -270,7 +270,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="viscous_flows.html">
    Flows at low Reynolds number
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -278,7 +278,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="stokes_drag.html">
      Stokes Drag
@@ -299,19 +299,9 @@
      Swimming at low Reynolds number
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="thin_films.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Thin Film approximation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hele_shaw.html">
-     Thin film example: the Hele-Shaw cell
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="adhesion.html">
-     Thin films: adhesion between plates
     </a>
    </li>
   </ul>
@@ -362,7 +352,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter4/viscous_flows.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter4/thin_films.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -382,7 +372,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/viscous_flows.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/thin_films.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -403,19 +393,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generalities-creeping-flow">
-   Generalities: “Creeping Flow”
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -423,78 +400,94 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flows at low Reynolds number</h1>
+                <h1>Thin Film approximation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generalities-creeping-flow">
-   Generalities: “Creeping Flow”
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="flows-at-low-reynolds-number">
-<h1>Flows at low Reynolds number<a class="headerlink" href="#flows-at-low-reynolds-number" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="thin-film-approximation">
+<h1>Thin Film approximation<a class="headerlink" href="#thin-film-approximation" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
 \[\newcommand{\p}{\partial}\]</div>
-<p>In our discussion of wave motion we have been focusing on the inviscid limit
-of the fluid equations. There is much more to say about this limit, which is
-important for many “real-world” (“real-universe?”) applications.</p>
-<p>To fill out our picture of the range of fluid motion, we will spend osme time
-considering flows with extremely <em>low</em> viscosity.</p>
-<div class="section" id="generalities-creeping-flow">
-<h2>Generalities: “Creeping Flow”<a class="headerlink" href="#generalities-creeping-flow" title="Permalink to this headline">¶</a></h2>
-<p>Let us return to the full Navier-Stokes equations:</p>
+<p>The next level of approximation we will address is that of a thin film:
+a 3- or 2-d flow wih a small <em>aspect ratio</em>. That is, consider a flow
+between plates placed at vertical locations <span class="math notranslate nohighlight">\(z = 0\)</span>, <span class="math notranslate nohighlight">\(z = h(x,y)\)</span>.
+We consider motions with some characteristic <em>horizontal</em>
+length scale <span class="math notranslate nohighlight">\(L\)</span> such that <span class="math notranslate nohighlight">\(h \ll L\)</span>, and characteristic
+horizontal length velocity <span class="math notranslate nohighlight">\(U\)</span>.</p>
+<p>In this limit of low aspect ration the equations simplify
+substantially, to a version of th ecreeping flow equations, even at large
+horizontal Reynolds number <span class="math notranslate nohighlight">\(UL/\nu\)</span>. Due to the no-flux boundary conditions,
+the vertical velocity will be qite sall, but the vertical <em>derivatives</em>
+will scale as <span class="math notranslate nohighlight">\(\p_z \sim 1/h \gg \p_{x,y} \sum 1/L\)</span>.</p>
+<p>First, in the incompressibility conditions</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_t {\vec u} + {\vec u}\cdot{\vec\nabla}{\vec u} = 
-	- \frac{1}{\rho}{\vec \nabla} p + \nu \nabla^2 {\vec u} + 
-	{\vec f}_{external}
+	\p_x u + \p_y v + \p_z w = 0
 \]</div>
-<p>The last term corresponds to an externall applied force, and we shall ignore
-it.</p>
-<p>Now we consider an object in this fluid with characteristic size <span class="math notranslate nohighlight">\(R\)</span>,
-and the fluid velocity ar from this object having a characteristic scale <span class="math notranslate nohighlight">\(U\)</span>.
-The time scale for a fluid element to cross the object is <span class="math notranslate nohighlight">\(T = R/U\)</span>.</p>
-<p>If we assume that</p>
-<div class="math notranslate nohighlight">
-\[{\vec u}({\vec x},t) = U {\vec {\tilde u}}({\vec x}/R = \chi, t/T = \tau) \]</div>
-<p>such that</p>
-<div class="math notranslate nohighlight">
-\[ {\tilde {\vec u}},\ \p_{\chi} {\tilde {\vec u}},\ \p_{\tau} {\tilde {\vec u}}
-\sim {\cal O}(1)\ ,\]</div>
-<p>then the left-hand side of the Navie-Stokes equation scales as <span class="math notranslate nohighlight">\(U^2/R = U/T\)</span>,
-while the viscosity term on the right hand side scales as <span class="math notranslate nohighlight">\(\nu U/R^2\)</span>.
-This latter term dominates over the left hand side if</p>
+<p>the first two terms by supposition scale as <span class="math notranslate nohighlight">\(U/L\)</span>. If <span class="math notranslate nohighlight">\(W\)</span> has its own characteristic velocity <span class="math notranslate nohighlight">\(W\)</span>, the final term scales as <span class="math notranslate nohighlight">\(W/h\)</span>, which means that</p>
 <div class="math notranslate nohighlight">
 \[
-	Re = \frac{(U^2/R)}{\nu U/R^2} = \frac{U R}{\nu} \ll 1
+	W \sim \frac{h U}{L} \ll U
 \]</div>
-<p>that is, if the Reynolds number is small. In this chapter we take
-this to be true, and assume the pressure erm is of order the viscosity
-term.</p>
-<p>By way of interpretation, note that <span class="math notranslate nohighlight">\(U_{visc} = \nu/R\)</span> has dimensions
-of velocity, and we can thus write <span class="math notranslate nohighlight">\(Re = U/U_{visc}\)</span>. Thus, viscosity
-will become more important than the kinematic transport of fluid momentum
-when the velocity is low: thus, low-viscosity flow is sometimes
-called <em>creeping flow</em>.</p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<p>so the vertical velocity is comparably small.
+We cannot ignore it entirely however; it appears in the divergence
+equation at the same order as the horizontal divergence (which
+does not vanish), and the vertical component of the (vector)
+Navier-Stokes equation is proportional to <span class="math notranslate nohighlight">\(W\)</span>.</p>
+<p>Next, in the limit of low aspect ratio, we expect
+<span class="math notranslate nohighlight">\(\nu \nabla^2{\vec u} \sim \nu \p_z^2 {\vec u}\)</span>.</p>
+<p>Finally, we can compare the nonlinear advection term
+<span class="math notranslate nohighlight">\({\vec u}\cdot{\vec \nabla} {\vec u}\)</span> to the viscosity term
+<span class="math notranslate nohighlight">\(\nu \p_z^2 {\vac u}\)</span>. The latter scales as <span class="math notranslate nohighlight">\(\nu U/h^2\)</span> for
+the horizontal component and <span class="math notranslate nohighlight">\(\nu W/h^2\)</span> for the vertical component,
+while the former scales as <span class="math notranslate nohighlight">\(U^2/L\)</span> (note that <span class="math notranslate nohighlight">\(w\p_z \sim W/h \sim 
+U/L\)</span> as well, by the demand above that <span class="math notranslate nohighlight">\(\p_z u\)</span> balance
+the horizontal divergence). Thus, the ratio of these terms is</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{advection}{viscosity} \sim \frac{U L}{\nu} \frac{h^2}{L^2}
+	= Re \frac{h^2}{L^2}
+\]</div>
+<p>If we set the time scalee to be <span class="math notranslate nohighlight">\(T = L/U\)</span>, the <span class="math notranslate nohighlight">\(\p_t {\vec u}\)</span> term scales
+as the advection term does. In other words, in he thin film limit the
+creeping flow approximation will work even at large horizontal Reynolds number.</p>
+<p>The thin film limit of the creeping flow equations is thus:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-23361b89-84d1-43c2-a856-58a59c7f9fbb">
+<span class="eqno">(62)<a class="headerlink" href="#equation-23361b89-84d1-43c2-a856-58a59c7f9fbb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; \p_x p = \eta \p_z^2 u \\
+	&amp; \p_y p = \eta \p_z^2 v \\
+	&amp; \p_z p = \eta \p_z^2 w \\
+	&amp; \p_x u + \p_y v + \p_z w = 0
+\end{align}\]</div>
+<p>From these equations, because <span class="math notranslate nohighlight">\(W \ll U\)</span>,
+<span class="math notranslate nohighlight">\(\p_z p \sim \nu W/h^2 \ll \p_{x,y} \sim \nu U/h^2\)</span>.
+We can assume in the first two equations that <span class="math notranslate nohighlight">\(p\)</span> is
+therefore a function of <span class="math notranslate nohighlight">\(x,y\)</span> alone, so that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cd3109a9-4692-492d-b81c-aa3585ab9004">
+<span class="eqno">(63)<a class="headerlink" href="#equation-cd3109a9-4692-492d-b81c-aa3585ab9004" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; u = \frac{z^2}{2\eta} \p_x p + A(x,y) z + B(x,y)\\
+	&amp; v = \frac{z^2}{2\eta} \p_y p + C(x,y) z + D(x,y)
+\end{align}\]</div>
+<p>To progress any further requires solving for the boundary conditions.</p>
+<p>Before continuing it is worth considering the
+stress vector</p>
+<div class="math notranslate nohighlight">
+\[
+	{\vec t} = - p{\vec n} + \eta \left[2{\vec n} \cdot {\vec \nabla} {\vec u}
+	+ {\vec n} \times \left({\vec \nabla} \times {\vec u}\right)\right]
+\]</div>
+<p>From the equations above, <span class="math notranslate nohighlight">\(p \sim \eta U L/h^2\)</span>, while the largest
+component of the group in square brackets is <span class="math notranslate nohighlight">\(\eta U/h\)</span> from the <span class="math notranslate nohighlight">\({\hat z}\)</span>
+component of <span class="math notranslate nohighlight">\({\hat n}\)</span>. The pressure is thus larger by a factor of <span class="math notranslate nohighlight">\(L/h\)</span>, and
+thus dominates the force acting on the boundaries; the tangential force,
+due to viscosity, induced by the horizontal flow is much smaller.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -522,17 +515,17 @@ called <em>creeping flow</em>.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../chapter3/shocks.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="swimming.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Shock waves in gas dynamics</p>
+            <p class="prev-next-title">Swimming at low Reynolds number</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="stokes_drag.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stokes Drag</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
