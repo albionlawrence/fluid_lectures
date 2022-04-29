@@ -1,0 +1,54 @@
+# Thin film flow on a slope
+
+```{math}
+\newcommand{\p}{\partial}
+```
+
+The next example we visit is that of a thin film of water on an inclined plane.
+There are a few notable features of this problem:
+  - As compared to previous problems, we have an external force (gravity).
+  - We will be interested in the time-evolving profile of the film.
+  We will find that this is described by a nonlinear differential equation in
+  space and time, despite the fact that the creeping flow equations are
+  linear and have no time derivative.
+  
+We consider an inclined plane with slope $\alpha$ under the force of gravity,
+which we take ot act with force $-m g {\hat z}'$ where ${\hat z}'$ is the 
+vertical diection. We consider 2d flow, with one vertical and one horizontal
+direction. As with the treatment of the flow of a river, we work in coordinates
+$(x,z)$ along and perpendicular to the plane.
+
+The thin film equations now include the gravitational force:
+
+\begin{align}
+	& - \p_x p + \nu \nabla^2 u + \rho g \sin\alpha = 0\\
+	& - \p_z p - \rho g \cos\alpha = 0\\
+	& \p_x u + \p_z w = 0
+\end{align}
+
+where, in this approximation, we drop the viscosity term in the
+vertical momentum equation. We take the fluid profile to be defined
+by $z = h(x,y)$
+
+The second equation is straightforward to solve:
+
+$$
+	p = - \rho g z \cos\alpha + f(x,t)
+$$
+
+Next we need to consider the boundary conditions. At the plane they are the
+no-slip and no-flux conditions $u = w = 0$. At the free surface we need to 
+impose diffrent boundary conditions. We assume that the normal stress
+at the interface $z = h(x,y)$ is equal to the atmospheric pressure, and that the
+tangential viscous stress *vanishes*. (This would be different
+if the air was replaced by a high-viscosity fluid; then there can
+be tangential voiscous stress). 
+
+To impose this, we assume that the slope *of the film* with respect to the
+inclined plane is small. This means we can take the direction perpendicular
+to the film to be $\sim {\hat z}$ and the direction tangent to
+the film to be $\sim {\hat x}$. The boundary conditions at the free surface
+then become
+
+\begin{align}
+	p(z - h)

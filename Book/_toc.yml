@@ -45,4 +45,5 @@ chapters:
   - file: chapter4/thin_films
   - file: chapter4/hele_shaw
   - file: chapter4/adhesion
+  - file: chapter4/slope
 - file: bibliography
