@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flows at low Reynolds number &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Thin film flow on a slope &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Stokes Drag" href="stokes_drag.html" />
-    <link rel="prev" title="Shock waves in gas dynamics" href="../chapter3/shocks.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Thin films: adhesion between plates" href="adhesion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -270,7 +270,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="viscous_flows.html">
    Flows at low Reynolds number
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -278,7 +278,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="stokes_drag.html">
      Stokes Drag
@@ -314,8 +314,8 @@
      Thin films: adhesion between plates
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="slope.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Thin film flow on a slope
     </a>
    </li>
@@ -367,7 +367,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter4/viscous_flows.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter4/slope.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -387,7 +387,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/viscous_flows.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/slope.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -408,19 +408,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generalities-creeping-flow">
-   Generalities: “Creeping Flow”
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -428,78 +415,172 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flows at low Reynolds number</h1>
+                <h1>Thin film flow on a slope</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generalities-creeping-flow">
-   Generalities: “Creeping Flow”
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="flows-at-low-reynolds-number">
-<h1>Flows at low Reynolds number<a class="headerlink" href="#flows-at-low-reynolds-number" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="thin-film-flow-on-a-slope">
+<h1>Thin film flow on a slope<a class="headerlink" href="#thin-film-flow-on-a-slope" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
-\[\newcommand{\p}{\partial}\]</div>
-<p>In our discussion of wave motion we have been focusing on the inviscid limit
-of the fluid equations. There is much more to say about this limit, which is
-important for many “real-world” (“real-universe?”) applications.</p>
-<p>To fill out our picture of the range of fluid motion, we will spend osme time
-considering flows with extremely <em>low</em> viscosity.</p>
-<div class="section" id="generalities-creeping-flow">
-<h2>Generalities: “Creeping Flow”<a class="headerlink" href="#generalities-creeping-flow" title="Permalink to this headline">¶</a></h2>
-<p>Let us return to the full Navier-Stokes equations:</p>
+\[\newcommand{\p}{\partial}
+\newcommand{\half}{\frac{1}{2}}\]</div>
+<p>The next example we visit is that of a thin film of water on an inclined plane.
+There are a few notable features of this problem:</p>
+<ul class="simple">
+<li><p>As compared to previous problems, we have an external force (gravity).</p></li>
+<li><p>We will be interested in the time-evolving profile of the film.
+We will find that this is described by a nonlinear differential equation in
+space and time, despite the fact that the creeping flow equations are
+linear and have no time derivative.</p></li>
+</ul>
+<p>We consider an inclined plane with slope <span class="math notranslate nohighlight">\(\alpha\)</span> under the force of gravity,
+which we take ot act with force <span class="math notranslate nohighlight">\(-m g {\hat z}'\)</span> where <span class="math notranslate nohighlight">\({\hat z}'\)</span> is the
+vertical diection. We consider 2d flow, with one vertical and one horizontal
+direction. As with the treatment of the flow of a river, we work in coordinates
+<span class="math notranslate nohighlight">\((x,z)\)</span> along and perpendicular to the plane.</p>
+<p>The thin film equations now include the gravitational force:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f738066c-34b1-43b6-87d9-3ee674c9f18b">
+<span class="eqno">(65)<a class="headerlink" href="#equation-f738066c-34b1-43b6-87d9-3ee674c9f18b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; - \p_x p + \nu \nabla^2 u + \rho g \sin\alpha = 0\\
+	&amp; - \p_z p - \rho g \cos\alpha = 0\\
+	&amp; \p_x u + \p_z w = 0
+\end{align}\]</div>
+<p>where, in this approximation, we drop the viscosity term in the
+vertical momentum equation. We take the fluid profile to be defined
+by <span class="math notranslate nohighlight">\(z = h(x,y)\)</span></p>
+<p>Next we need to consider the boundary conditions. At the plane they are the
+no-slip and no-flux conditions <span class="math notranslate nohighlight">\(u = w = 0\)</span>. At the free surface we need to
+impose diffrent boundary conditions. We assume that the normal stress
+at the interface <span class="math notranslate nohighlight">\(z = h(x,y)\)</span> is equal to the atmospheric pressure, and that the
+tangential viscous stress <em>vanishes</em>. (This would be different
+if the air was replaced by a high-viscosity fluid; then there can
+be tangential voiscous stress).</p>
+<p>To impose this, we assume that the slope <em>of the film</em> with respect to the
+inclined plane is small. This means we can take the direction perpendicular
+to the film to be <span class="math notranslate nohighlight">\(\sim {\hat z}\)</span> and the direction tangent to
+the film to be <span class="math notranslate nohighlight">\(\sim {\hat x}\)</span>. Finally, the vertical velocity in the {\hat z}<span class="math notranslate nohighlight">\(
+direction should equal to \)</span>d_t h$, The boundary conditions at the free surface
+then become</p>
+<div class="amsmath math notranslate nohighlight" id="equation-28ce4361-083c-487d-890c-db0061c46c6e">
+<span class="eqno">(66)<a class="headerlink" href="#equation-28ce4361-083c-487d-890c-db0061c46c6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; p(x, z = h,t) = p_0\\
+	&amp; \eta \p_z u = 0
+	&amp; w = \p_t h + u \p_x h
+\end{align}\]</div>
+<p>We can see from this last equation that the boundary conditions
+introduces nonlinearity into the equations.</p>
+<p>The second equation in the thin film equations is straightforward to solve:</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_t {\vec u} + {\vec u}\cdot{\vec\nabla}{\vec u} = 
-	- \frac{1}{\rho}{\vec \nabla} p + \nu \nabla^2 {\vec u} + 
-	{\vec f}_{external}
+	p = - \rho g z \cos\alpha + f(x,t)
 \]</div>
-<p>The last term corresponds to an externall applied force, and we shall ignore
-it.</p>
-<p>Now we consider an object in this fluid with characteristic size <span class="math notranslate nohighlight">\(R\)</span>,
-and the fluid velocity ar from this object having a characteristic scale <span class="math notranslate nohighlight">\(U\)</span>.
-The time scale for a fluid element to cross the object is <span class="math notranslate nohighlight">\(T = R/U\)</span>.</p>
-<p>If we assume that</p>
-<div class="math notranslate nohighlight">
-\[{\vec u}({\vec x},t) = U {\vec {\tilde u}}({\vec x}/R = \chi, t/T = \tau) \]</div>
-<p>such that</p>
-<div class="math notranslate nohighlight">
-\[ {\tilde {\vec u}},\ \p_{\chi} {\tilde {\vec u}},\ \p_{\tau} {\tilde {\vec u}}
-\sim {\cal O}(1)\ ,\]</div>
-<p>then the left-hand side of the Navie-Stokes equation scales as <span class="math notranslate nohighlight">\(U^2/R = U/T\)</span>,
-while the viscosity term on the right hand side scales as <span class="math notranslate nohighlight">\(\nu U/R^2\)</span>.
-This latter term dominates over the left hand side if</p>
+<p>Using <span class="math notranslate nohighlight">\(p = p_0\)</span> at <span class="math notranslate nohighlight">\(z = h\)</span>, we have <span class="math notranslate nohighlight">\(f = p_0 + \rho g h(x,t) \cos\alpha\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
-	Re = \frac{(U^2/R)}{\nu U/R^2} = \frac{U R}{\nu} \ll 1
+	p = \rho g (h - z) \cos\alpha + p_0
 \]</div>
-<p>that is, if the Reynolds number is small. In this chapter we take
-this to be true, and assume the pressure erm is of order the viscosity
-term.</p>
-<p>By way of interpretation, note that <span class="math notranslate nohighlight">\(U_{visc} = \nu/R\)</span> has dimensions
-of velocity, and we can thus write <span class="math notranslate nohighlight">\(Re = U/U_{visc}\)</span>. Thus, viscosity
-will become more important than the kinematic transport of fluid momentum
-when the velocity is low: thus, low-viscosity flow is sometimes
-called <em>creeping flow</em>.</p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<p>We can insert this into the second momentum equations to find:</p>
+<div class="math notranslate nohighlight">
+\[
+	\eta \p_z^2 u = - g \sin\alpha + g \p_x h \cos\alpha
+\]</div>
+<p>We drop the last term under the assumption that the slope <span class="math notranslate nohighlight">\(\p_x h\)</span> is small:
+that is, he pressure contributes minimally to the vertical shear. Integrating
+this equation once from <span class="math notranslate nohighlight">\(z = h\)</span>, using the no-stress condition at <span class="math notranslate nohighlight">\(z = h\)</span>
+(this is why we integrate from there and not from the plane), we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\eta \p_z u = - g (z - h) \sin\alpha 
+\]</div>
+<p>Integrating again from the plane wheer <span class="math notranslate nohighlight">\(u = 0\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	u = \frac{g \sin \alpha}{\eta} \left( h z - \half z^2\right)
+\]</div>
+<p>Now we can solve the incompressibility condition:</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_z w = - \p_z u = - \frac{g z \sin\alpha}{\eta} \p_x h
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\p_x h\)</span> multiplies the only term on the RHS, and we expect <span class="math notranslate nohighlight">\(w\)</span> to be
+small, we cannot ignore this. Integrating once from the plane, and using
+the no-flux boundary codnitions, we have</p>
+<div class="math notranslate nohighlight">
+\[
+	w = - \frac{g z^2 \sin\alpha}{2 \eta}\p_x h
+\]</div>
+<p>Finally we impose the boundary conditions on <span class="math notranslate nohighlight">\(w\)</span> at the free surface.
+A bit of algebra leads to the equation</p>
+<div class="math notranslate nohighlight">
+\[
+	0 = \p_t h + u \p_x h - w = \p_t h + \frac{g\sin\alpha}{\nu} h^2 \p_x h
+\]</div>
+<p>Note the similarity to some of the nonlinear equations for dam breaks etc.
+We could this this equation with the same techniques, eg the
+method of characteristics. For not we will not go that far. We do note
+that as with that problem, the full solution arises from the implicit equation</p>
+<div class="math notranslate nohighlight">
+\[
+	h = F(x -  \frac{g\sin\alpha}{\nu} h^2 t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> is an arbitrary function. This could potentially develop
+singularities since the effective speed of different elements of the layer is
+<span class="math notranslate nohighlight">\(c =  \frac{g\sin\alpha}{\nu} h^2\)</span>, so that the higher parts flow faster.</p>
+<p>We assume that the profile stretches from some <span class="math notranslate nohighlight">\(x = 0\)</span> up the slope
+to a “nose” <span class="math notranslate nohighlight">\(x = x_N(t)\)</span> down the plane. We expect the slope to get
+smaller and smaller at <span class="math notranslate nohighlight">\(x = 0\)</span> as the film stretches, but the above
+pileup should lead to a steper slope at the nose. In practice surface
+tension effects will be considerable at the nose, a fact we ignore.</p>
+<p>We can attempt a <em>similarity solution</em> to the above equation. Noting
+<span class="math notranslate nohighlight">\(g/\nu\)</span> has dimension <span class="math notranslate nohighlight">\(1/LT\)</span>, and <span class="math notranslate nohighlight">\(x/t\)</span> has dimensions of velocity, we
+choose</p>
+<div class="math notranslate nohighlight">
+\[
+	h_{sim} = \left(\frac{\nu}{\sin]alpha}\right)^{1/2} \sqrt{\frac{x}{t}}
+\]</div>
+<p>We can show that this is an exact solution. In problem 7.10, which I
+did not assign, you can show that if you start from a film which
+is defined by a constant slope <span class="math notranslate nohighlight">\(\beta\)</span> above the plane,
+extending from <span class="math notranslate nohighlight">\(x = 0\)</span>, the film asymptotes to the above solution
+at large times. To see this, let us consider a family of initial conditions
+and solve the problem exactly (this is problem 7.10 in the book).</p>
+<p>At <span class="math notranslate nohighlight">\(t = 0\)</span>, we demand <span class="math notranslate nohighlight">\(h = \beta x\)</span>. Using the general form of our solution,
+this means <span class="math notranslate nohighlight">\(F(x) = \beta x\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+	h = \beta \left(x -  \frac{g\sin\alpha}{\nu} h^2 t\right)
+\]</div>
+<p>This is a quadratic equation we can solve, to find:</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{2 g \sin\alpha}{\nu} h = - \frac{1}{\beta t} + 
+		\sqrt{\frac{1}{\beta^2 t^2} + \frac{4g\sin\alpha}{\nu}\frac{x}{t}}
+\]</div>
+<p>As <span class="math notranslate nohighlight">\(t \to \infty\)</span>, the second term in the square root dominates. The square
+root then scales as <span class="math notranslate nohighlight">\(1/\sqrt{t}\)</span> and dominates over the first term on
+the RHS of the exact expression for <span class="math notranslate nohighlight">\(h\)</span>. The similarity solution then
+follows. Note that it is independent of <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>We assume this solution extends to the nose. Finally, we demand that the
+total area of the blob does not change with time (fluid is not being added
+or evaporated):</p>
+<div class="math notranslate nohighlight">
+\[
+	\ont_0^{x_N(t)} dx h_{sim}(x,t) = A =  
+	\left(\frac{\nu}{\sin]alpha}\right)^{1/2} \frac{2 x_N^{3/2}}{3 t^{1/2}}
+\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[
+	x_N(t) = \left(\frac{9 A^2 g \sin\alpha}{4\nu}\right)^{1/3} t^{1/3}
+\]</div>
+<p>As it happens, this agrees well wih experiment.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -527,17 +608,17 @@ called <em>creeping flow</em>.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../chapter3/shocks.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="adhesion.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Shock waves in gas dynamics</p>
+            <p class="prev-next-title">Thin films: adhesion between plates</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="stokes_drag.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stokes Drag</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
