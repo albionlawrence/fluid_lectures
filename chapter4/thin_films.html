@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="next" title="Thin film example: the Hele-Shaw cell" href="hele_shaw.html" />
     <link rel="prev" title="Swimming at low Reynolds number" href="swimming.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -304,6 +304,26 @@
      Thin Film approximation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -459,8 +479,8 @@ the horizontal divergence). Thus, the ratio of these terms is</p>
 as the advection term does. In other words, in he thin film limit the
 creeping flow approximation will work even at large horizontal Reynolds number.</p>
 <p>The thin film limit of the creeping flow equations is thus:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23361b89-84d1-43c2-a856-58a59c7f9fbb">
-<span class="eqno">(62)<a class="headerlink" href="#equation-23361b89-84d1-43c2-a856-58a59c7f9fbb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b389ad06-1e10-446f-971b-c021eb87582b">
+<span class="eqno">(62)<a class="headerlink" href="#equation-b389ad06-1e10-446f-971b-c021eb87582b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \p_x p = \eta \p_z^2 u \\
 	&amp; \p_y p = \eta \p_z^2 v \\
 	&amp; \p_z p = \eta \p_z^2 w \\
@@ -470,8 +490,8 @@ creeping flow approximation will work even at large horizontal Reynolds number.<
 <span class="math notranslate nohighlight">\(\p_z p \sim \nu W/h^2 \ll \p_{x,y} \sim \nu U/h^2\)</span>.
 We can assume in the first two equations that <span class="math notranslate nohighlight">\(p\)</span> is
 therefore a function of <span class="math notranslate nohighlight">\(x,y\)</span> alone, so that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd3109a9-4692-492d-b81c-aa3585ab9004">
-<span class="eqno">(63)<a class="headerlink" href="#equation-cd3109a9-4692-492d-b81c-aa3585ab9004" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4e848fef-f922-424e-b06d-06be5c885bc3">
+<span class="eqno">(63)<a class="headerlink" href="#equation-4e848fef-f922-424e-b06d-06be5c885bc3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; u = \frac{z^2}{2\eta} \p_x p + A(x,y) z + B(x,y)\\
 	&amp; v = \frac{z^2}{2\eta} \p_y p + C(x,y) z + D(x,y)
 \end{align}\]</div>
@@ -522,10 +542,10 @@ due to viscosity, induced by the horizontal flow is much smaller.</p>
             <p class="prev-next-title">Swimming at low Reynolds number</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="hele_shaw.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Thin film example: the Hele-Shaw cell</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

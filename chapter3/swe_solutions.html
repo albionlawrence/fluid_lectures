@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -269,6 +269,63 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/stokes_drag.html">
+     Stokes Drag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
    Bibliography
@@ -481,15 +538,15 @@ inconsistancy, they must emanate
 from the origin. Along these characteristics, then, <span class="math notranslate nohighlight">\(x = (u - c) t\)</span> or
 <span class="math notranslate nohighlight">\(u - c = x/t\)</span>. If we combine with <span class="math notranslate nohighlight">\(u + 2c = c_0\)</span>, we find by subtracting
 these to find <span class="math notranslate nohighlight">\(c\)</span>, or adding a linear combination to find <span class="math notranslate nohighlight">\(u\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1cfdbf7-bd7c-4834-898e-3a59b96901e1">
-<span class="eqno">(48)<a class="headerlink" href="#equation-e1cfdbf7-bd7c-4834-898e-3a59b96901e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7270f33d-949e-4672-be87-45dbb8bb506e">
+<span class="eqno">(48)<a class="headerlink" href="#equation-7270f33d-949e-4672-be87-45dbb8bb506e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; c = \frac{1}{3} \left(2 c_0 - \frac{x}{t}\right)\\
 	&amp; &amp; u = \frac{1}{3} \left(c_0 + 2 \frac{x}{t}\right)
 \end{align}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(c\)</span> cannot be negative, we must have <span class="math notranslate nohighlight">\(x \leq 2t\)</span>. Therefore,
 using <span class="math notranslate nohighlight">\(h = c^2/g\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91a33aa7-0552-4ea6-8f33-6bcfb0dafba2">
-<span class="eqno">(49)<a class="headerlink" href="#equation-91a33aa7-0552-4ea6-8f33-6bcfb0dafba2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c2569629-57c6-4f87-b5ec-07cbe91fdc14">
+<span class="eqno">(49)<a class="headerlink" href="#equation-c2569629-57c6-4f87-b5ec-07cbe91fdc14" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; h = h_0 \qquad x &lt; - c_0 t\\
 	&amp; &amp; h = \frac{1}{9g} \left(2 c_0 - \frac{x}{t}\right)^2 \qquad
 	- c_0 t \leq x  \leq 2 c_0 t \\
@@ -679,8 +736,8 @@ unit area is <span class="math notranslate nohighlight">\(\rho h_i U_i\)</span>,
 Newton’s second law <span class="math notranslate nohighlight">\({\dot p} = f\)</span> also tells us that momentum flux
 will get a contirbution from any force acting on the fluid. In this case
 it will be the pressure, which on each side of the jump is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-444648e8-f865-4147-a98f-a86c46dd5a66">
-<span class="eqno">(50)<a class="headerlink" href="#equation-444648e8-f865-4147-a98f-a86c46dd5a66" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e29a67fd-3c60-41f3-9bd9-5134c6c32002">
+<span class="eqno">(50)<a class="headerlink" href="#equation-e29a67fd-3c60-41f3-9bd9-5134c6c32002" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	    \int_0^{h_i} dy p_i &amp; = \int_0^{h_i} dy \rho g (h_i - y)\\
 	    &amp; = &amp; \rho g h_i^2
     \end{align}\]</div>
@@ -704,8 +761,8 @@ that <span class="math notranslate nohighlight">\(h_2 &gt; h_1\)</span>, si that
 <p>Secondly, the Froude numbers upstream of and downstream from
 the jump can be written entirely in terms of <span class="math notranslate nohighlight">\(h_i\)</span>, using
 mass and momentum conservation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67fcd79b-cbc5-4f57-8fa3-769675e56296">
-<span class="eqno">(51)<a class="headerlink" href="#equation-67fcd79b-cbc5-4f57-8fa3-769675e56296" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f60bc9fc-aa56-42ef-8bc5-770fe11e35fa">
+<span class="eqno">(51)<a class="headerlink" href="#equation-f60bc9fc-aa56-42ef-8bc5-770fe11e35fa" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	Fr_1 &amp; = &amp; \frac{U_1}{\sqrt{g h_1}} = 
 	\sqrt{\frac{h_2(h_1 + h_2)}{2 h_1^2}}\\
 	Fr_2 &amp; = &amp; \frac{U_2}{\sqrt{g h_2}} =

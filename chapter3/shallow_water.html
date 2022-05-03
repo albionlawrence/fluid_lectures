@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="next" title="The Method of Characteristics" href="characteristics.html" />
     <link rel="prev" title="Nonlinear waves" href="nonlinear_waves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -250,7 +250,79 @@
        The Shallow Water System
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="characteristics.html">
+       The Method of Characteristics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="swe_solutions.html">
+       Shallow water equations 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="shocks.html">
+       Shock waves in gas dynamics
+      </a>
+     </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/stokes_drag.html">
+     Stokes Drag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
    </li>
   </ul>
  </li>
@@ -396,8 +468,8 @@ important as model equations for planetary oceans and atmospheres.</p>
 <div class="section" id="the-shallow-water-equations">
 <h2>The shallow water equations<a class="headerlink" href="#the-shallow-water-equations" title="Permalink to this headline">¶</a></h2>
 <p>We begin with he incompressible Navier-Stokes equations with constant density:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3a90813-10ed-46a3-bde4-c82e4403dc66">
-<span class="eqno">(41)<a class="headerlink" href="#equation-b3a90813-10ed-46a3-bde4-c82e4403dc66" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-98757ae9-8903-4c5b-a0da-21effbab886a">
+<span class="eqno">(41)<a class="headerlink" href="#equation-98757ae9-8903-4c5b-a0da-21effbab886a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \p_t u + u \p_x u + v \p_y u + w \p_z u = - \frac{1}{\rho} \p_x p\\
 	&amp; \p_t v + u \p_x v + v \p_y v + w \p_z v = - \frac{1}{\rho} \p_y p\\
 	&amp; \p_t w + u \p_x u + v \p_y w + w \p_z u = - \frac{1}{\rho} \p_z p - g\\
@@ -406,8 +478,8 @@ important as model equations for planetary oceans and atmospheres.</p>
 <p>We consider a fluid extending from <span class="math notranslate nohighlight">\(z = 0\)</span> to height <span class="math notranslate nohighlight">\(h(x,y,t)\)</span> (in general
 we can also work with nontrivial bottom topography, but we will for now
 consider flat bottoms.) The boundary condiions are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71b46b64-5f62-456b-849b-831a05fc9b28">
-<span class="eqno">(42)<a class="headerlink" href="#equation-71b46b64-5f62-456b-849b-831a05fc9b28" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0dce96f4-657b-4df7-9197-3ef27382f5e3">
+<span class="eqno">(42)<a class="headerlink" href="#equation-0dce96f4-657b-4df7-9197-3ef27382f5e3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	w(x,y,0,t) &amp; = 0\\
 	w \Big|_{z = h} &amp; = \frac{d}{dt} h(x,y,t) = \p_t h + u\p_x h + v \p_x h
 \end{align}\]</div>
@@ -440,8 +512,8 @@ drop out, so we rplace the momentum equation for <span class="math notranslate n
 condition (we will justify this self-consistently at the end). We can then
 set <span class="math notranslate nohighlight">\(\p_z p = - \rho g\)</span>, or <span class="math notranslate nohighlight">\(p = p_0 + \rho g (h - z)\)</span>. The horizontal
 momentum equations become, after we drop the terms proportional to u:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce832a11-7e5e-4293-bb66-8a42eb7f2416">
-<span class="eqno">(43)<a class="headerlink" href="#equation-ce832a11-7e5e-4293-bb66-8a42eb7f2416" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07c700c4-9e5b-45b9-a4ff-25c5ec657724">
+<span class="eqno">(43)<a class="headerlink" href="#equation-07c700c4-9e5b-45b9-a4ff-25c5ec657724" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \p_t u + u \p_x u + v \p_y u = - g \p_x h\\
 	&amp; \p_t v + u \p_x v + v \p_y v = - g \p_y h
 \end{align}\]</div>
@@ -497,10 +569,10 @@ approximations are self-consistent.</p>
             <p class="prev-next-title">Nonlinear waves</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="characteristics.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">The Method of Characteristics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

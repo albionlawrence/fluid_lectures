@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -260,7 +260,69 @@
        Shallow water equations 2
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="shocks.html">
+       Shock waves in gas dynamics
+      </a>
+     </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/stokes_drag.html">
+     Stokes Drag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
    </li>
   </ul>
  </li>
@@ -465,8 +527,8 @@ This is a case we will discuss.</p></li>
 	\p_t u + a(x,t) \p_x u = b(x,t)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(a,b\)</span> are known. Here we demand</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d997c46-d209-4e47-b8e8-dcb8c15a954b">
-<span class="eqno">(44)<a class="headerlink" href="#equation-5d997c46-d209-4e47-b8e8-dcb8c15a954b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-10b4c893-d34e-4547-8c8f-fa85ab6bc361">
+<span class="eqno">(44)<a class="headerlink" href="#equation-10b4c893-d34e-4547-8c8f-fa85ab6bc361" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_s t = 1\\
 	&amp; &amp; \p_s x = a(x,t)
 \end{align}\]</div>
@@ -487,16 +549,16 @@ Given any initial condition <span class="math notranslate nohighlight">\(v(x,0) 
 <div class="section" id="example-shallow-water-equations">
 <h2>Example: shallow water equations<a class="headerlink" href="#example-shallow-water-equations" title="Permalink to this headline">¶</a></h2>
 <p>Here we return to the SWEs for one hoizontal direction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-604b164d-1b5e-43ca-8d48-fe2cfc1de6c3">
-<span class="eqno">(45)<a class="headerlink" href="#equation-604b164d-1b5e-43ca-8d48-fe2cfc1de6c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-96d152c4-b2b1-4b28-a576-6b5e7655e8e3">
+<span class="eqno">(45)<a class="headerlink" href="#equation-96d152c4-b2b1-4b28-a576-6b5e7655e8e3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_t u + u \p_x u = - g \p_x h\\
 	&amp; &amp; \p_t h + \p_x (u h) = 0
 \end{align}\]</div>
 <p>Here we have two equations. In fact we can unpack them by defining
 <span class="math notranslate nohighlight">\(c = \sqrt{g h}\)</span> (for linearized surface gravity waves in the shallow water
 limit, this is the phase velocity), for which the equations can be written</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8073d319-aaaa-4cf0-ba5e-62d567cd4649">
-<span class="eqno">(46)<a class="headerlink" href="#equation-8073d319-aaaa-4cf0-ba5e-62d567cd4649" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d29e4ef-ae66-41ed-8e36-648181dde729">
+<span class="eqno">(46)<a class="headerlink" href="#equation-0d29e4ef-ae66-41ed-8e36-648181dde729" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_t u + u \p_x u + 2c \p_x c = 0\\
 	&amp; &amp; \p_t (2c) + u \p_x (2c) + c \p_x u = 0
 \end{align}\]</div>
@@ -506,8 +568,8 @@ limit, this is the phase velocity), for which the equations can be written</p>
 	\left[ \p_t + (u \pm c) \p_x \right] (u \pm 2c) = 0
 \]</div>
 <p>For these cases, we have two families of characteristics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31a42c98-dd06-4f78-b2de-8de6af4b4d6d">
-<span class="eqno">(47)<a class="headerlink" href="#equation-31a42c98-dd06-4f78-b2de-8de6af4b4d6d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-11340d5f-a575-431d-84cc-f953798b2a83">
+<span class="eqno">(47)<a class="headerlink" href="#equation-11340d5f-a575-431d-84cc-f953798b2a83" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; &amp; \p_s t = 1\\
 	&amp; &amp; \p_s x = u \pm c
 \end{align}\]</div>
