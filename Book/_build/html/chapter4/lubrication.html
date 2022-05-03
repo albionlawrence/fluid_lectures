@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thin film example: the Hele-Shaw cell &#8212; Physics 111a -- Fluid Mechanics</title>
+    <title>Lubrication: sliding between surfaces &#8212; Physics 111a -- Fluid Mechanics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Thin films: adhesion between plates" href="adhesion.html" />
-    <link rel="prev" title="Thin Film approximation" href="thin_films.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Thin film flow on a slope" href="slope.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -304,8 +304,8 @@
      Thin Film approximation
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hele_shaw.html">
      Thin film example: the Hele-Shaw cell
     </a>
    </li>
@@ -319,8 +319,8 @@
      Thin film flow on a slope
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lubrication.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Lubrication: sliding between surfaces
     </a>
    </li>
@@ -372,7 +372,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapter4/hele_shaw.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapter4/lubrication.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -392,7 +392,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/hele_shaw.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter4/lubrication.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -413,6 +413,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linearly-sliding-surfaces">
+   Linearly sliding surfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eccentic-rotating-cylinders">
+   Eccentic rotating cylinders
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -420,69 +438,225 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Thin film example: the Hele-Shaw cell</h1>
+                <h1>Lubrication: sliding between surfaces</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linearly-sliding-surfaces">
+   Linearly sliding surfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eccentic-rotating-cylinders">
+   Eccentic rotating cylinders
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="thin-film-example-the-hele-shaw-cell">
-<h1>Thin film example: the Hele-Shaw cell<a class="headerlink" href="#thin-film-example-the-hele-shaw-cell" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lubrication-sliding-between-surfaces">
+<h1>Lubrication: sliding between surfaces<a class="headerlink" href="#lubrication-sliding-between-surfaces" title="Permalink to this headline">¶</a></h1>
 <div class="math notranslate nohighlight">
-\[\newcommand{\p}{\partial}\]</div>
-<p>We first consider the example of plates at constant vertical coordinates
-<span class="math notranslate nohighlight">\(z = 0,h\)</span>, with fluid driven by horizontal pressure gradients, and rigid
-objects placed in the cell that the fluid must flow around (we take these
-to be straigt in the vertical direction).</p>
-<p>In this case <span class="math notranslate nohighlight">\(u,v\)</span> must vanish due to the  no-slip boundary conditions at
-<span class="math notranslate nohighlight">\(z = 0,h\)</span>. In the previous section, this fixes <span class="math notranslate nohighlight">\(A,B,C,D\)</span> so that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96b77a1d-6dd8-4124-9bf4-90ea0fc0f410">
-<span class="eqno">(64)<a class="headerlink" href="#equation-96b77a1d-6dd8-4124-9bf4-90ea0fc0f410" title="Permalink to this equation">¶</a></span>\[\begin{align}
-	&amp; u = - \frac{z(h-z)}{2\nu} \p_x p\\
-	&amp; v = - \frac{z(h-z)}{2\nu} \p_y p
+\[\newcommand{\p}{\partial}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\eps}{\epsilon}\]</div>
+<p>Our last application will be to surfaces sliding past each other
+with a thin film of liquid between them. As you know, the presence
+of a fluid can reduce the friction considerably.</p>
+<p>If the surfaces are parallel the pressure is uniform and
+there is a frictional force exerted by the fluid, which you have
+worked out in various problem sets (eg the torque on
+a rotating disk), computed form the tangential stress.</p>
+<p>However, if the surfaces are not quie parallel, pressure starts to become
+important, and in fact will dominate the force on the surfaces. This can be
+seen from dimensional analysis. Starting with the thin film equations</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4ae29180-a7f1-44c2-a882-da48b68b3349">
+<span class="eqno">(67)<a class="headerlink" href="#equation-4ae29180-a7f1-44c2-a882-da48b68b3349" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	&amp; 0 = - \p_x p + \eta \p_z^2 u\\
+	&amp; 0 = - \p_y p + \eta \p_z^2 v\\
+	&amp; 0 = - \p_z p + \eta \p_z^2 w\\
+	&amp; 0 = \p_x u + \p_y v + \p_z w
 \end{align}\]</div>
-<p>Note here that in he approximation that <span class="math notranslate nohighlight">\(p = p(x,y)\)</span>, the ratio <span class="math notranslate nohighlight">\(u/v\)</span> is
-<span class="math notranslate nohighlight">\(z\)</span>-independent. Thus the flow direction, and the streamlines, are
-<span class="math notranslate nohighlight">\(z\)</span>-independent.</p>
-<p>Furthermore,</p>
+<p>From this the pressure scales as <span class="math notranslate nohighlight">\(\eta U L/h^2\)</span>. The tangential stress</p>
 <div class="math notranslate nohighlight">
 \[
-	{\vec u}_{hor.} = - \frac{z(h-z)}{2\eta} {\vec \nabla}_{hor.} p(x,y)
+	{\vec t} = \eta \left[2({\hat n}\cdot{\vec\nabla} {\vec u} + {\hat n} \times
+	({\vec\nabla}\times{\vec u})\right] 
 \]</div>
-<p>where the subscripts denote the horizontal components of the vectors. In
-other words, at any fixed <span class="math notranslate nohighlight">\(z\)</span> the horizontal velocities are pure gradients.
-Their curl (or the 2d analogs) is therefore zero:</p>
+<p>scales as <span class="math notranslate nohighlight">\(\eta U/h\)</span> (see the first term, when <span class="math notranslate nohighlight">\({\hat n}\)</span> has a vertical
+component, this will be the dominant term). The ratio of this term to the
+pressure term is of order the aspect ration <span class="math notranslate nohighlight">\(h/L\)</span>; the pressure force
+that is moving the bodies along dominates over the frictional force. The goal
+is to work out these pressure forces.</p>
+<p>To this end we will proceed by working out a couple of examples.
+We will work with effectively 2d problems for simplicity.</p>
+<div class="section" id="linearly-sliding-surfaces">
+<h2>Linearly sliding surfaces<a class="headerlink" href="#linearly-sliding-surfaces" title="Permalink to this headline">¶</a></h2>
+<p>In the first problem we consider a flat plate at <span class="math notranslate nohighlight">\(z = 0\)</span> moving at velocity
+<span class="math notranslate nohighlight">\(U\)</span> over a surface defined by <span class="math notranslate nohighlight">\(z = h(x)\)</span>. The lateral variation of <span class="math notranslate nohighlight">\(h\)</span>
+will be important to us. The boundary conditions will be <span class="math notranslate nohighlight">\(u = U\)</span>, <span class="math notranslate nohighlight">\(w = 0\)</span>
+at <span class="math notranslate nohighlight">\(z = 0\)</span> and <span class="math notranslate nohighlight">\(u = w = 0\)</span> at <span class="math notranslate nohighlight">\(z = h\)</span>. The fluid will be taken to extend
+from <span class="math notranslate nohighlight">\(x = 0\)</span> to <span class="math notranslate nohighlight">\(x = L\)</span> with constant pressure <span class="math notranslate nohighlight">\(p_0\)</span> on each side.</p>
+<p>As before, <span class="math notranslate nohighlight">\(w \ll u, v\)</span> means that <span class="math notranslate nohighlight">\(]p_z p \ll \p_{x,y} p\)</span> so we assume
+the pressure is independent of <span class="math notranslate nohighlight">\(z\)</span>. Then we can solve for the first of
+the thin-film equations to find:</p>
 <div class="math notranslate nohighlight">
 \[
-	\p_y u - \p_x v = 0
+	u = \frac{z^2}{2\eta} \p_x p + A z + B
 \]</div>
-<p>so that the 2d flow is <em>irrotational</em>.</p>
-<p>In irrotational flow, the circulation around any closed loop which can be
-shrunk to zero vanishes. This is because the vanishing of the circulation
-is based on the formula:</p>
+<p>Demanding <span class="math notranslate nohighlight">\(u = U\)</span> at <span class="math notranslate nohighlight">\(z = 0\)</span> gives <span class="math notranslate nohighlight">\(B = U\)</span>. Demanding <span class="math notranslate nohighlight">\(u = 0\)</span> at <span class="math notranslate nohighlight">\(z = h\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[ A = - \frac{U}{h} - \frac{h}{2\eta} \p_x p \]</div>
+<p>Thus</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b6385880-296f-4b6f-8886-4d3452970e11">
+<span class="eqno">(68)<a class="headerlink" href="#equation-b6385880-296f-4b6f-8886-4d3452970e11" title="Permalink to this equation">¶</a></span>\[\begin{align}
+	u &amp; = \frac{z (z - h)}{2\eta} \p_x p + \frac{U}{h}(h - z)\\
+	&amp; = \left[\frac{U}{h} - \frac{z}{2\eta} \p_x p\right](h -z)
+\end{align}\]</div>
+<p>We next apply the incompressibility condition. Integrating this over
+a slice of constant <span class="math notranslate nohighlight">\(x\)</span>, the integral over <span class="math notranslate nohighlight">\(\p_z w\)</span> vanishes as it is
+a total derivative with vanishing boundary tems (due to the boundary
+conditions on <span class="math notranslate nohighlight">\(w\)</span>. The remaining term is</p>
 <div class="math notranslate nohighlight">
 \[
-	\Gamma = \oint_{\p D} {\vec dx}\cdot {\vec u} = \int_D d^2 x {\vec \nabla}
-		\times {\vec u} = 0
+	\int_0^h(x) \p_x u = 0
 \]</div>
-<p>If <span class="math notranslate nohighlight">\(D\)</span> is not simply connected, there are multiple boundary components in
-<span class="math notranslate nohighlight">\(\p D\)</span>, and all that <span class="math notranslate nohighlight">\({\vec \nabla}\times {\vec u} = 0\)</span> gives us is
-that the sum of the circulation over boundary components vanishes.</p>
-<p>In the present case, however, the fact that <span class="math notranslate nohighlight">\({\vec u}\)</span> is a gradient means
-that at any fixed <span class="math notranslate nohighlight">\(z\)</span> and for any closed contour <span class="math notranslate nohighlight">\(C\)</span>,</p>
+<p>If we pull <span class="math notranslate nohighlight">\(\p_x\)</span> out of this integral, we get</p>
 <div class="math notranslate nohighlight">
 \[
-	\Gamma = - \frac{z(h-z)}{2\eta} \oint_C dx \p_x p + dy \p_y p
+	\p_x \int_0^h(x) \p_x u - \p_x h u(x,z-h) = \int_0^h(x) \p_x u = 0
 \]</div>
-<p>Since <span class="math notranslate nohighlight">\(p\)</span> is single-valued, and the above is a total derivative over
-a closed contour, <span class="math notranslate nohighlight">\(\Gamma = 0\)</span>. This is true even if <span class="math notranslate nohighlight">\(C\)</span> surrounds
-some internal obstacle. Thus the circulation vanishes around any obstacle.
-A particular consequence is that there is no lift.</p>
+<p>because the boundary term vanishes. The upshot is that</p>
+<div class="math notranslate nohighlight">
+\[
+	Q = \int_0^h(x) \p_x u\ ,
+\]</div>
+<p>the flux of fluid through any vertical section, is the same for all <span class="math notranslate nohighlight">\(x\)</span>. We
+can compute <span class="math notranslate nohighlight">\(Q\)</span> from our solution:</p>
+<div class="math notranslate nohighlight">
+\[
+	Q = \half U h - \frac{h^3}{12\eta} \p_x p
+\]</div>
+<p>Given this, we have a differential equation for <span class="math notranslate nohighlight">\(p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_x p = 6\eta \left[\frac{U}{h^2} - \frac{2 Q}{h^3}\right]
+\]</div>
+<p>We integrate this with the boundary condition that <span class="math notranslate nohighlight">\(p = p_0\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>,
+so that</p>
+<div class="math notranslate nohighlight">
+\[
+	p - p_0 = 6\eta \left[ U \int_0^x \frac{dx'}{h^2(x')}
+		- 2 Q \int_0^x \frac{dx'}{h(x')^2}\right]
+\]</div>
+<p>From this, <span class="math notranslate nohighlight">\(Q\)</span> will be determined by the demand that <span class="math notranslate nohighlight">\(p = p_0\)</span> at <span class="math notranslate nohighlight">\(x = L\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	Q = \half U \frac{\int_0^L \frac{dx}{h^2(x)}}{\int_0^L \frac{dx}{h^3(x)}}
+\]</div>
+<p>First, it is easy to check that if <span class="math notranslate nohighlight">\(h\)</span> is constant, <span class="math notranslate nohighlight">\(Q = U h/2\)</span>, <span class="math notranslate nohighlight">\(p = p_0\)</span>
+everywhere, and the fluid friction will dominate the force between the plates.</p>
+<p>To get a more nontrivial answer we consider a linear slope for the top surface,</p>
+<div class="math notranslate nohighlight">
+\[ h = h_1 + (h_2 - h_1)\frac{x}{L} \]</div>
+<p>The integrals are doable if a bit annoying, but the upshot is that</p>
+<div class="math notranslate nohighlight">
+\[
+	Q = U \frac{h_1 h_2}{h_1 + h_2}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+	p - p_0 = 6\nu U L \frac{(h_1 - h)(h_2 - h)}{(h_2^2 - h_1^2) h^2}
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(h_2 &lt; h_1\)</span> the top and bottom are negative so that <span class="math notranslate nohighlight">\(p - p_0 &gt; 0\)</span>,
+and we have a nontrivial pressure. Because of the slope there is a lateral
+component as well as a vertical component, and these will be large
+compared to the tangential stresses (by dimensional analysis, but it
+can be checked).</p>
+</div>
+<div class="section" id="eccentic-rotating-cylinders">
+<h2>Eccentic rotating cylinders<a class="headerlink" href="#eccentic-rotating-cylinders" title="Permalink to this headline">¶</a></h2>
+<p>The next example is a fixed outer cyliner with radius <span class="math notranslate nohighlight">\(r = (1 + \eps) a\)</span>,
+and an off-center inner cylinder with radius <span class="math notranslate nohighlight">\(a\)</span> rotating with
+tangential velocity <span class="math notranslate nohighlight">\(U = a\Omega\)</span>. We take the origin to be the
+center of the outer cylinder. The inner cylinder will be offset by
+<span class="math notranslate nohighlight">\(a\eps\lambda\)</span> with <span class="math notranslate nohighlight">\(\lambda \in [0,1]\)</span>. The equation for the
+radial position of the inner cylinder is</p>
+<div class="math notranslate nohighlight">
+\[
+	r_{inner}(\theta) = a + a\eps\lambda \cos\theta
+\]</div>
+<p>The straightforward way to see this is to set
+<span class="math notranslate nohighlight">\((x - a\eps\lambda)^2 + y^2 = a^2\)</span>, and rewrite in polar
+coordinates <span class="math notranslate nohighlight">\(x = r \cos\theta\)</span>, <span class="math notranslate nohighlight">\(y = r\sin\theta\)</span>. At fixed
+<span class="math notranslate nohighlight">\(\theta\)</span>, the radial distance between the inner and outer
+cylinders is thus</p>
+<div class="math notranslate nohighlight">
+\[
+	h(\theta) = a\eps(1 - \lambda\cos\theta)
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(\eps \ll 1\)</span>, the local geometry of the surfaces are flat, and
+we can at any <span class="math notranslate nohighlight">\(\theta\)</span> approximate this by the previous example with
+a linear slope, with the coordinate <span class="math notranslate nohighlight">\(x \sim a\theta\)</span>. The upshot is that</p>
+<div class="math notranslate nohighlight">
+\[
+	u_{\theta} = \left[ \frac{U}{h(\theta)} - \frac{z}{2\eta a} \p_{\theta} p
+	\right] (h(\theta) - z)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> is the distance across the gap.</p>
+<p>Similarly, we can use the incompressibility condition to demand that the
+flux btween the cylinders</p>
+<div class="math notranslate nohighlight">
+\[
+	Q = \half U h(\theta) - \frac{h^3}{12\eta a} \p_{\theta} p 
+\]</div>
+<p>is constant in <span class="math notranslate nohighlight">\(\theta\)</span>. This is somewhat less trivial to integrate but
+it can be done. The boundary condition we must impose is that
+<span class="math notranslate nohighlight">\(p(0) = p(2\pi)\)</span>.  As ever, this boundary condition fixes <span class="math notranslate nohighlight">\(Q\)</span>, which
+in this case is:</p>
+<div class="math notranslate nohighlight">
+\[
+	Q = U a \eps \left(\frac{1 - \lambda^2}{2 + \lambda^2}\right)
+\]</div>
+<p>Note that if <span class="math notranslate nohighlight">\(\lambda = 1\)</span> the cylinders touch and the flow goes to zero,
+as you may expect. If <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, there is flow.</p>
+<p>Next, we can try to get some information about <span class="math notranslate nohighlight">\(p\)</span>. NOte that <span class="math notranslate nohighlight">\(h(\theta)\)</span> is
+even in <span class="math notranslate nohighlight">\(\theta\)</span>. Looking at the equation for <span class="math notranslate nohighlight">\(Q\)</span>, this means <span class="math notranslate nohighlight">\(\p_{\thea} p\)</span> is
+even, or <span class="math notranslate nohighlight">\(p\)</span> is odd. By symmetry, there is thus no
+force in the <span class="math notranslate nohighlight">\(x\)</span> direction, but there is a net force in the <span class="math notranslate nohighlight">\(+y\)</span> direction.
+If we integrate <span class="math notranslate nohighlight">\(p(\theta)\)</span>, we find that</p>
+<div class="math notranslate nohighlight">
+\[
+	F = \frac{12\pi \eta U \lambda}{\eps^2 (1 - \lambda^2)^{1/2}(2 + \lambda^2)}
+\]</div>
+<p>so the load on the inner cylinder can in fact be quite large if <span class="math notranslate nohighlight">\(\lambda \to 1\)</span>.</p>
+<p>Finally, we can show that for a sufficiently large value of <span class="math notranslate nohighlight">\(\lambda\)</span> a
+counterrotating eddy can appear on the side with the larger gap. Again
+solving the differential equations, we find</p>
+<div class="math notranslate nohighlight">
+\[
+	\p_r u\big|_{r = h} = \frac{2 U a \eps \lambda}{h^2}
+		\left[ \frac{4\lambda^2 - 1}{\lambda(2 + \lambda^2)} - \cos\theta
+		\right]
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(\lambda &gt; \half(\sqrt{13} - 3) \sim .3\)</span>, there is a range
+for which <span class="math notranslate nohighlight">\(\p_r \theta\)</span> is positive at <span class="math notranslate nohighlight">\(z = h\)</span>, so that the flow
+is counter-rotating.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -510,17 +684,17 @@ A particular consequence is that there is no lift.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="thin_films.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="slope.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Thin Film approximation</p>
+            <p class="prev-next-title">Thin film flow on a slope</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="adhesion.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Thin films: adhesion between plates</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

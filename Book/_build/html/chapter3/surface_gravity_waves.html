@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -223,7 +223,106 @@
        Capillary waves
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="igw.html">
+       Internal gravity waves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="compressible_flows.html">
+       Compressible flows: linear theory
+      </a>
+     </li>
     </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="nonlinear_waves.html">
+     Nonlinear waves
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="shallow_water.html">
+       The Shallow Water System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="characteristics.html">
+       The Method of Characteristics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="swe_solutions.html">
+       Shallow water equations 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="shocks.html">
+       Shock waves in gas dynamics
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/stokes_drag.html">
+     Stokes Drag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
    </li>
   </ul>
  </li>
@@ -400,8 +499,8 @@ is <em>irrotational</em>: since we are working with the inviscid equations, we a
 the initial state at <span class="math notranslate nohighlight">\(t = 0\)</span> is irrotational (2d vorticity is conserved along fluid trajectories).
 This means we can consider <span class="math notranslate nohighlight">\({\vec v} = {\vec \nabla}\phi\)</span>. Bernoulli’s equation (just the Euler equation
 for this case) plus incompressibility gives us:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23e6383d-c013-416a-bcee-329c8d15bee9">
-<span class="eqno">(28)<a class="headerlink" href="#equation-23e6383d-c013-416a-bcee-329c8d15bee9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-569fdaf3-e364-43dd-9e5d-6e08ed0f1e86">
+<span class="eqno">(28)<a class="headerlink" href="#equation-569fdaf3-e364-43dd-9e5d-6e08ed0f1e86" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t \phi +  \frac{p}{\rho} + \frac{1}{2}({\vec \nabla}\phi)^2 + g z = 0 \\
 	&amp; {\vec \nabla} \cdot {\vec v} = \nabla^2 \phi = 0
 \end{align}\]</div>
@@ -410,8 +509,8 @@ To solve this we must further supplement this with boundary conditions. In this 
 <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = 0\)</span>, At the free surface, we demand <span class="math notranslate nohighlight">\(v_z = \partial_z \phi = \partial_t \zeta\)</span>.
 Thus, at the surface where <span class="math notranslate nohighlight">\(p = p_0\)</span>, we have <span class="math notranslate nohighlight">\(p_0 =  - \rho(\partial_t \phi + g \zeta\)</span>. Taking the time deivative of
 this and using the boundary conditions, we find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-299a1b3e-b4e9-40de-9e5b-c124d681185c">
-<span class="eqno">(29)<a class="headerlink" href="#equation-299a1b3e-b4e9-40de-9e5b-c124d681185c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0ed9e8d2-1a86-401d-b7a6-93f45b0d6e0d">
+<span class="eqno">(29)<a class="headerlink" href="#equation-0ed9e8d2-1a86-401d-b7a6-93f45b0d6e0d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t^2 \phi + g \partial_z \phi\Big|_{z = \zeta} = 0\\
 	&amp; \nabla^2 \phi = 0
 \end{align}\]</div>
@@ -447,8 +546,8 @@ you see in the Tonga explosion viseo has the same dispersion relation (with <spa
 	\phi = C \cos(\omega(k) t - kx - \delta) \cos(k(z + h))
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta\)</span> is an arbitrary phase. We can now write the physical variables as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3c23945-0642-4478-8732-293a6e678b1c">
-<span class="eqno">(30)<a class="headerlink" href="#equation-f3c23945-0642-4478-8732-293a6e678b1c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32801f10-7425-497f-a8f7-f9a235db61b5">
+<span class="eqno">(30)<a class="headerlink" href="#equation-32801f10-7425-497f-a8f7-f9a235db61b5" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	\zeta &amp; = &amp; - \frac{1}{g} \partial_t \phi = C\frac{\omega}{g} \sin(\omega t - k x - \delta) \cosh[k(z + h)] \\
 	v_x &amp; = &amp; \partial_x \phi = C k \sin(\omega t - k x - \delta) \cosh[k(z + h)] \\
 	v_z &amp; = &amp; \partial_z \phi = C k \cos(\omega t - k x - \delta) \sinh[k(z + h)]
@@ -467,8 +566,8 @@ is small compared to linear terms such as <span class="math notranslate nohighli
 <h2>Lagrangian picture<a class="headerlink" href="#lagrangian-picture" title="Permalink to this headline">¶</a></h2>
 <p>It is worth understanding what individual particles are doing in this flow. For this, we would like to solve the
 equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d78076f6-e086-46df-8bb0-52d0084eb004">
-<span class="eqno">(31)<a class="headerlink" href="#equation-d78076f6-e086-46df-8bb0-52d0084eb004" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8e5e73fd-fbcf-4b7d-a797-447122ecd6e0">
+<span class="eqno">(31)<a class="headerlink" href="#equation-8e5e73fd-fbcf-4b7d-a797-447122ecd6e0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	{\dot x}(t) &amp; = &amp; v_x = C k \sin(\omega t - k x - \delta) \cosh[k(z + h)] \\
 	{\dot z}(t) &amp; = &amp; v_z = C k \cos(\omega t - k x - \delta) \sinh[k(z + h)]
 \end{align}\]</div>
@@ -478,8 +577,8 @@ We will write <span class="math notranslate nohighlight">\({\vec x} = {\vec x}_0
 <span class="math notranslate nohighlight">\({\vec x_0}\)</span> is a constant. We will also write
 and <span class="math notranslate nohighlight">\(v_x = \epsilon \omega/k \sin(\omega t - k x - \delta) \cosh[k(z + h)]\)</span>, and similarly for <span class="math notranslate nohighlight">\(v_z\)</span>.</p>
 <p>Now expanding the Lagrangian particle equations in powers of <span class="math notranslate nohighlight">\(\epsilon\)</span>, we find to lowest order:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4dd2fdc-7f1e-4922-92a1-737063566cde">
-<span class="eqno">(32)<a class="headerlink" href="#equation-e4dd2fdc-7f1e-4922-92a1-737063566cde" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-04a7c49d-a306-4fe4-acdb-4134eefe553a">
+<span class="eqno">(32)<a class="headerlink" href="#equation-04a7c49d-a306-4fe4-acdb-4134eefe553a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	{\dot x}_1 &amp; = &amp; \frac{\omega}{k} \sin(\omega t - k x_0 - \delta) \cosh[k(z_0 + h)]\\
 	{\dot x}_1 &amp; = &amp; \frac{\omega}{k} \cos(\omega t - k x_0 - \delta) \sinh[k(z_0 + h)]\\
 \end{align}\]</div>

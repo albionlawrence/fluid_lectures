@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="next" title="Corner eddies" href="corner_eddies.html" />
     <link rel="prev" title="Flows at low Reynolds number" href="viscous_flows.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -284,6 +284,46 @@
      Stokes Drag
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -509,8 +549,8 @@ Poincaré theorem, we can write <span class="math notranslate nohighlight">\(v_r
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta = \rho \nu\)</span> is the shear viscosity. Next, we can use (A.40)
 of the text to write</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b7b98d1-487d-4385-b9ba-7e25afa0fc15">
-<span class="eqno">(56)<a class="headerlink" href="#equation-4b7b98d1-487d-4385-b9ba-7e25afa0fc15" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d2484b32-0ed5-49fb-9a90-25e4682814cf">
+<span class="eqno">(56)<a class="headerlink" href="#equation-d2484b32-0ed5-49fb-9a90-25e4682814cf" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	 {\vec\nabla} \times {\vec u} &amp; = \frac{1}{r}
 		 (\p_r (r u_{\theta}) - \p_{\theta} u_r)  {\hat\phi}\\
 		 &amp; = 
@@ -556,8 +596,8 @@ we will assume that <span class="math notranslate nohighlight">\(\Psi = f(r) \si
 \]</div>
 <p>We can search for solutions of power law type by setting <span class="math notranslate nohighlight">\(f = r^n\)</span>. Inserting this
 into te above gives us</p>
-<div class="amsmath math notranslate nohighlight" id="equation-119eab7f-9071-47df-b8a2-4fc208a8b9fd">
-<span class="eqno">(58)<a class="headerlink" href="#equation-119eab7f-9071-47df-b8a2-4fc208a8b9fd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f663830b-4bd7-4501-ad46-5905ef93bd9e">
+<span class="eqno">(58)<a class="headerlink" href="#equation-f663830b-4bd7-4501-ad46-5905ef93bd9e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	 \left(\p_r^2 - \frac{2}{r^2}\right)^2 r^n &amp; = 
 	 (n(n - 1) - 2) \left(\p_r^2 - \frac{2}{r^2}\right) r^{n-2} \\
 	 &amp; = (n(n-1) - 2)((n-2)(n-3) - 2)
@@ -643,8 +683,8 @@ nor will <span class="math notranslate nohighlight">\({\vec u}\)</span> have any
 <span class="math notranslate nohighlight">\({\hat r} = {\hat x} \cos\theta + {\hat\rho}\sin\theta\)</span>. Again, we expect that the
 <span class="math notranslate nohighlight">\({\hat\rho}\)</span> component will cancel upon integration over <span class="math notranslate nohighlight">\(\phi\)</span>, as the vector
 at <span class="math notranslate nohighlight">\(\phi\)</span> is equal and opposite to that at <span class="math notranslate nohighlight">\(\phi + \pi\)</span>. Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b440c280-26fc-4621-8dc8-f57ad702d996">
-<span class="eqno">(59)<a class="headerlink" href="#equation-b440c280-26fc-4621-8dc8-f57ad702d996" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-931c0aa3-0cb0-4438-8b51-d53d69433935">
+<span class="eqno">(59)<a class="headerlink" href="#equation-931c0aa3-0cb0-4438-8b51-d53d69433935" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	{\vec F}_{pressure} &amp; = - 2\pi R^2 \int d\theta \sin\theta {\hat x} \cos\theta
 	\left( p_{\infty} - \frac{3 \mu U R^3 }{2 r^2} \cos\theta\right)\\ 
 	&amp; = 3\pi \mu U R \int_{-1}^1 dy y^2  \\
@@ -729,10 +769,10 @@ This strategy is important in addressing boundary-layer problems.</p>
             <p class="prev-next-title">Flows at low Reynolds number</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="corner_eddies.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Corner eddies</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

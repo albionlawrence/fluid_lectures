@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -247,10 +247,82 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="shallow_water.html">
-       The Shallow Water Equations
+       The Shallow Water System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="characteristics.html">
+       The Method of Characteristics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="swe_solutions.html">
+       Shallow water equations 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="shocks.html">
+       Shock waves in gas dynamics
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/stokes_drag.html">
+     Stokes Drag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
    </li>
   </ul>
  </li>
@@ -423,8 +495,8 @@ of the Navier-Stokes equation,</p>
 <span class="math notranslate nohighlight">\(x\)</span>- or <span class="math notranslate nohighlight">\(y\)</span>-dependence.</p>
 <p>We will consider perturbations which are independent of the <span class="math notranslate nohighlight">\(y\)</span> direction,
 and controlled by a small parameter <span class="math notranslate nohighlight">\(\epsilon\)</span>. Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb929fbc-ea26-439a-a0cc-c107e983609a">
-<span class="eqno">(33)<a class="headerlink" href="#equation-fb929fbc-ea26-439a-a0cc-c107e983609a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4bb066d-0d0b-47a5-bb81-bb11cf1b8d8b">
+<span class="eqno">(33)<a class="headerlink" href="#equation-e4bb066d-0d0b-47a5-bb81-bb11cf1b8d8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	u(x,z,t) &amp; = \eps u_1 + \eps^2 u_2 + \ldots\\
     w(x,z,t) &amp; = \eps w_1 + \eps^2 w_2 + \ldots\\
 	\rho(x,z,t) &amp; = \rho_0(z) + \eps \rho_1 + \eps^2 \rho_2 + \ldots\\
@@ -433,8 +505,8 @@ and controlled by a small parameter <span class="math notranslate nohighlight">\
 <p>Now we can insert these into the Navier-Stokes equations, the incompressibility equations,
 and the equation for mass conservation. Keeping only the
 <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span> terms, we find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-220bce82-925b-4dd0-9ee0-a8e8b2dc7adb">
-<span class="eqno">(34)<a class="headerlink" href="#equation-220bce82-925b-4dd0-9ee0-a8e8b2dc7adb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-06669ded-45ab-4355-9d50-edf68c0285b2">
+<span class="eqno">(34)<a class="headerlink" href="#equation-06669ded-45ab-4355-9d50-edf68c0285b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \rho_0(z) \partial_t u_1 = - \partial_x p_1\\
 	&amp; \rho_0(z) \partial_t w_1 = - \partial_z p_1 - g \rho_1\\
 	&amp; \partial_x u_1 + \partial_z w_1 = 0\\
@@ -445,8 +517,8 @@ and the equation for mass conservation. Keeping only the
 coefficients do not depend on these, we look fo solutions of the form
 <span class="math notranslate nohighlight">\(\theta(x,z,t) = {\hat \theta}(z) e^{i\omega t - i k x}\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> stands for any of the fields
 <span class="math notranslate nohighlight">\(u_1,w_1,\rho_1,p_1\)</span>. The above equations become:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6ee3635-a4d5-4e63-b0a0-680be371f537">
-<span class="eqno">(35)<a class="headerlink" href="#equation-a6ee3635-a4d5-4e63-b0a0-680be371f537" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1ba145d0-0973-45a3-9611-2c1080fb1d41">
+<span class="eqno">(35)<a class="headerlink" href="#equation-1ba145d0-0973-45a3-9611-2c1080fb1d41" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \omega \rho_0 {\hat u}_1 = k {\hat p}_1\\
 	&amp; i \omega \rho_0 {\hat w}_1 = - \partial_z {\hat p}_1 - {\hat \rho}_1 g\\
 	&amp; - i k {\hat u}_1 + \partial_z {\hat w}_1 = 0\\

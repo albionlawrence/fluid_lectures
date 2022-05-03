@@ -42,8 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -250,7 +250,79 @@
        The Shallow Water System
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="characteristics.html">
+       The Method of Characteristics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="swe_solutions.html">
+       Shallow water equations 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="shocks.html">
+       Shock waves in gas dynamics
+      </a>
+     </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter4/viscous_flows.html">
+   Flows at low Reynolds number
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/stokes_drag.html">
+     Stokes Drag
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/corner_eddies.html">
+     Corner eddies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slowflow_properties.html">
+     General properties of creeping flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/swimming.html">
+     Swimming at low Reynolds number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/thin_films.html">
+     Thin Film approximation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/hele_shaw.html">
+     Thin film example: the Hele-Shaw cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/adhesion.html">
+     Thin films: adhesion between plates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/slope.html">
+     Thin film flow on a slope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter4/lubrication.html">
+     Lubrication: sliding between surfaces
+    </a>
    </li>
   </ul>
  </li>
@@ -473,16 +545,16 @@ define the <em>speed of sound</em> <span class="math notranslate nohighlight">\(
 <p>Once again we start from a static solution with constant density and pressure:
 <span class="math notranslate nohighlight">\({\vec v} = 0\)</span>, <span class="math notranslate nohighlight">\(p= p_0\)</span>,  <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span>, with backgound speed of sound
 <span class="math notranslate nohighlight">\( c_{s0}^2 = \gamma p_0/\rho_0\)</span>. We expand</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd52fe2b-1ee5-4027-b926-7189c347412b">
-<span class="eqno">(36)<a class="headerlink" href="#equation-bd52fe2b-1ee5-4027-b926-7189c347412b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6139c14b-71f5-4b41-939e-8f7ede3c26b2">
+<span class="eqno">(36)<a class="headerlink" href="#equation-6139c14b-71f5-4b41-939e-8f7ede3c26b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	{\vec v} &amp; = \eps \vv_1 + \eps^2 \vv_2 + \ldots\\
 	\rho &amp; = \rho_0 + \eps \rho_1 + \eps^2 \rho_2 + \ldots\\
 	p &amp; = p_0 + \eps p_1 + \eps^2 p_2 + \ldots
 \end{align}\]</div>
 <p>The Euler nd mass conservation equations are satisfied to order
 <span class="math notranslate nohighlight">\({\cal O}(\eps^0)\)</span>. At <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>, the equations are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f38de78-1304-4e5a-a82e-81b8a86dde4f">
-<span class="eqno">(37)<a class="headerlink" href="#equation-5f38de78-1304-4e5a-a82e-81b8a86dde4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fff7868b-39e7-4d9a-aa8c-fdeb54dcb169">
+<span class="eqno">(37)<a class="headerlink" href="#equation-fff7868b-39e7-4d9a-aa8c-fdeb54dcb169" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t \vv_1 = - \frac{1}{\rho_0} {\vec\nabla} p_1\\
 	&amp; \partial_t \rho_1 + \rho_0 {\vec\nabla}\cdot{\vec v} = 0\\
 	&amp; p_1 = c_{s0}^2 \rho_1
@@ -492,8 +564,8 @@ define the <em>speed of sound</em> <span class="math notranslate nohighlight">\(
 If we perturb our system with irrotational flow, it remains irrotational,
 so let us do hat. we can then wrote <span class="math notranslate nohighlight">\(\vv_1 = {\vec\nabla}\phi_1\)</span>, and
 our equations become:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1adb5bf8-da37-4040-ae5f-03600db24fab">
-<span class="eqno">(38)<a class="headerlink" href="#equation-1adb5bf8-da37-4040-ae5f-03600db24fab" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b37f4ad6-b90b-4eb9-b9d8-98c9eb698ebf">
+<span class="eqno">(38)<a class="headerlink" href="#equation-b37f4ad6-b90b-4eb9-b9d8-98c9eb698ebf" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \partial_t {\vec \nabla} \phi_1 + \frac{c_{s0}^2}{\rho_0} 
 	{\vec\nabla} \rho_1 = 0\\
 	&amp; \partial_t \rho_1 + \rho_0 {\vac\nabla}^2 \phi_1 = 0
@@ -656,8 +728,8 @@ thin it will induce only a very small perturbation of the basic
 state, so that a linear theory, first order in perturbations,
 applies.</p>
 <p>In this case we set</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4878c86c-e759-4a85-a7c6-b95f90be43ca">
-<span class="eqno">(39)<a class="headerlink" href="#equation-4878c86c-e759-4a85-a7c6-b95f90be43ca" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-0e2b8fb0-d0f8-4ca4-a04e-b285fe308c91">
+<span class="eqno">(39)<a class="headerlink" href="#equation-0e2b8fb0-d0f8-4ca4-a04e-b285fe308c91" title="Permalink to this equation">¶</a></span>\[\begin{align} 
 	{\vec v} &amp; = U{\hat x} + \eps \vv_1 + \eps^2 \vv_2 + \ldots\\
 	p &amp; = p_0 + \eps p_1 + \eps^2 p_2 + \ldots\\
 	\rho &amp; = \rho_0 + \eps \rho_1 + \eps^2 \rho_2 + \ldots
@@ -666,8 +738,8 @@ applies.</p>
 that the perurbations depend on <span class="math notranslate nohighlight">\(x,z\)</span> only, and that <span class="math notranslate nohighlight">\(v_y \equiv V\)</span> vanishes,
 leaving us with 2d flow. Setting <span class="math notranslate nohighlight">\(\vv_1 = u_1 {\hat x} + w_1 {\hat z}\)</span>, and following the same logic as before, we have the Euler equations
 at order <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-806095bb-9b5a-4971-aee3-10781d635f52">
-<span class="eqno">(40)<a class="headerlink" href="#equation-806095bb-9b5a-4971-aee3-10781d635f52" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dc213a47-036b-45c4-92c3-6d328ce1cc32">
+<span class="eqno">(40)<a class="headerlink" href="#equation-dc213a47-036b-45c4-92c3-6d328ce1cc32" title="Permalink to this equation">¶</a></span>\[\begin{align}
 	&amp; \rho_0 U \partial_x u_1 = - \partial_x p_1\\
 	&amp; \rho_0 U \partial_x v_1 = - \partial_y p_1\\
 \end{align}\]</div>
